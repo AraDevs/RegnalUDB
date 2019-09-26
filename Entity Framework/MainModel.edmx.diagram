@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0b17da8455c54c299ea8f0647f485bad" Name="Diagram1" ZoomLevel="29">
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Anuncio" Width="1.5" PointX="3" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Bitacora" Width="1.5" PointX="12.75" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Cargo" Width="1.5" PointX="10.5" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Departamento" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Distrito" Width="1.5" PointX="3" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Domicilio" Width="1.5" PointX="5.25" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Escolaridad" Width="1.5" PointX="5.25" PointY="26.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.EstadoCivil" Width="1.5" PointX="5.25" PointY="28.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.EventoCargo" Width="1.5" PointX="15.75" PointY="26.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Evento" Width="1.5" PointX="10.5" PointY="35.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.EventoSeccion" Width="1.5" PointX="12.75" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.EventosFuncione" Width="1.5" PointX="15.75" PointY="32.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.FichasMedica" Width="1.5" PointX="9.75" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Funcione" Width="1.5" PointX="13.5" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Grupos" Width="1.5" PointX="5.25" PointY="21.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Inscripcione" Width="1.5" PointX="9.75" PointY="28.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.ListaNegra" Width="1.5" PointX="9.75" PointY="31.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Localidade" Width="1.5" PointX="3" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.MiembroCargo" Width="1.5" PointX="12.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.MiembroEvento" Width="1.5" PointX="12.75" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.MiembroFuncion" Width="1.5" PointX="15.75" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Miembro" Width="1.5" PointX="7.5" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Movimiento" Width="1.5" PointX="10.5" PointY="11.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Municipio" Width="1.5" PointX="3" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Perfile" Width="1.5" PointX="13.5" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Provincia" Width="1.5" PointX="0.75" PointY="20.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Religion" Width="1.5" PointX="5.25" PointY="31.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Seccione" Width="1.5" PointX="5.25" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.TotalSeccion" Width="1.5" PointX="7.5" PointY="37.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ElSalvadorRegistroScoutsModel.Usuario" Width="1.5" PointX="15.75" PointY="18.125" IsExpanded="true" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Anuncios__idProv__45F365D3" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Bitacora__idMiem__7F2BE32F" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Bitacora__idMovi__00200768" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__EventoCar__idCar__151B244E" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__MiembroCa__idCar__18EBB532" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Municipio__idDep__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Distritos__idPro__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Grupos__idDistri__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Domicilio__idMun__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Miembros__idDomi__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Miembros__idEsco__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Miembros__idEsta__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__EventoCar__idEve__14270015" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__EventoSec__idEve__02FC7413" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__EventosFu__idEve__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__MiembroEv__idEve__07C12930" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__EventoSec__idSec__03F0984C" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__EventosFu__idFun__70DDC3D8" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__FichasMed__idMie__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__MiembroFu__idFun__0B91BA14" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Grupos__idLocali__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Miembros__idGrup__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__TotalSecc__idGru__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Inscripci__idMie__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__ListaNegr__idMie__0F624AF8" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__ListaNegr__respo__0E6E26BF" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__MiembroCa__idMem__17F790F9" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__MiembroEv__idMie__06CD04F7" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__MiembroFu__idMie__0A9D95DB" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Miembros__idReli__5EBF139D" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Miembros__idSecc__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Usuarios__idMiem__797309D9" ManuallyRouted="false" />
+        <AssociationConnector Association="ElSalvadorRegistroScoutsModel.FK__Usuarios__idPerf__7A672E12" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
