@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using RegnalUDB.Models;
 
 namespace RegnalUDB.Controllers
 {
     interface Controller<T>
     {
-        void saveRegister(T o);
-        List<T> getRegisters();
+        Operation<T> addRecord(T o);
+        Operation<T> updateRecord(T o);
+        Operation<T> deleteRecord(T o);
+        Operation<T> getRecords();
     }
 }

@@ -2,6 +2,8 @@
 using System.Windows.Forms;
 using RegnalUDB.Entity_Framework;
 using RegnalUDB.Controllers;
+using RegnalUDB.Models;
+
 namespace RegnalUDB
 {
     public partial class Form1 : Form
@@ -19,7 +21,7 @@ namespace RegnalUDB
         private void obtenerEscolaridades()
         {
             dgvData.DataSource = null;
-            dgvData.DataSource = sc.getRegisters();
+            dgvData.DataSource = sc.getRecords().Data;
             dgvData.Columns[0].Visible = false;
             dgvData.Columns[3].Visible = false;
         }
@@ -35,9 +37,15 @@ namespace RegnalUDB
             tempEs.grado = txtGrade.Text;
             byte baja = Convert.ToByte(checkBox1.Checked ? 1 : 0);
             tempEs.baja = baja;
-
-            sc.saveRegister(tempEs);
-            obtenerEscolaridades();
+            Operation<Escolaridad> operation = sc.addRecord(tempEs);
+            if (operation.State)
+            {
+                obtenerEscolaridades();
+            }
+            else
+            {
+                MessageBox.Show(operation.Error);
+            }
         }
     }
 }

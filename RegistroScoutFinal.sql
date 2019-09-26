@@ -286,3 +286,4 @@ idMembro int not null references Miembros(idMiembro),
 idCargo int not null references Cargos(idCargo),
 fecha date not null)
 
+select * from Escolaridad;

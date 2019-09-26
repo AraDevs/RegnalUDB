@@ -1,23 +1,49 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RegnalUDB.Entity_Framework;
+using RegnalUDB.Models;
 
 namespace RegnalUDB.Controllers
 {
-    class SchoolarshipController:Controller<Escolaridad>
+    class SchoolarshipController : Controller<Escolaridad>
     {
-        public List<Escolaridad> getRegisters()
+
+        public Operation<Escolaridad> addRecord(Escolaridad o)
         {
-            return EntitySingleton.Context.Escolaridads.ToList();
+            try
+            {
+                EntitySingleton.Context.Escolaridads.Add(o as Escolaridad);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Escolaridad>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Escolaridad>.getFailOperation(e.Message);
+            }
         }
 
-        public void saveRegister(Escolaridad o)
+        public Operation<Escolaridad> updateRecord(Escolaridad o)
         {
-            EntitySingleton.Context.Escolaridads.Add(o as Escolaridad);
-            EntitySingleton.Context.SaveChanges();
+            throw new NotImplementedException();
+        }
+
+        public Operation<Escolaridad> deleteRecord(Escolaridad o)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Operation<Escolaridad> getRecords()
+        {
+            try
+            {
+                List<Escolaridad> data = EntitySingleton.Context.Escolaridads.ToList();
+                return FactoryOperation<Escolaridad>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Escolaridad>.getFailOperation(e.Message);
+            }
         }
     }
 }
