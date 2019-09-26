@@ -7,19 +7,17 @@ using RegnalUDB.Entity_Framework;
 
 namespace RegnalUDB.Controllers
 {
-    class SchoolarshipController
+    class SchoolarshipController:Controller<Escolaridad>
     {
-        ElSalvadorRegistroScoutsEntities context = new ElSalvadorRegistroScoutsEntities();
-        public List<Escolaridad> obtenerEscolaridades()
+        public List<Escolaridad> getRegisters()
         {
-            
-            return context.Escolaridads.ToList();
+            return EntitySingleton.Context.Escolaridads.ToList();
         }
 
-        public void agregarEscolaridad(Escolaridad es)
+        public void saveRegister(Escolaridad o)
         {
-            context.Escolaridads.Add(es);
-            context.SaveChanges();
+            EntitySingleton.Context.Escolaridads.Add(o as Escolaridad);
+            EntitySingleton.Context.SaveChanges();
         }
     }
 }

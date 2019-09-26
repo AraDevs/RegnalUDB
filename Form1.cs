@@ -19,7 +19,7 @@ namespace RegnalUDB
         private void obtenerEscolaridades()
         {
             dgvData.DataSource = null;
-            dgvData.DataSource = sc.obtenerEscolaridades();
+            dgvData.DataSource = sc.getRegisters();
             dgvData.Columns[0].Visible = false;
             dgvData.Columns[3].Visible = false;
         }
@@ -36,7 +36,7 @@ namespace RegnalUDB
             byte baja = Convert.ToByte(checkBox1.Checked ? 1 : 0);
             tempEs.baja = baja;
 
-            sc.agregarEscolaridad(tempEs);
+            sc.saveRegister(tempEs);
             obtenerEscolaridades();
         }
     }
