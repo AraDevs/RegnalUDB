@@ -26,11 +26,11 @@ namespace RegnalUDB.Entity_Framework
         public System.DateTime fundacion { get; set; }
         public short grupoNum { get; set; }
         public string horario { get; set; }
-        public Nullable<byte> baja { get; set; }
+        public bool baja { get; set; }
         public int idDistrito { get; set; }
         public int idLocalidad { get; set; }
         public System.DateTime fechaRegistro { get; set; }
-        public Nullable<byte> registrado { get; set; }
+        public bool registrado { get; set; }
     
         public virtual Distrito Distrito { get; set; }
         public virtual Localidade Localidade { get; set; }

@@ -24,7 +24,7 @@ namespace RegnalUDB.Entity_Framework
         public string calleNumero { get; set; }
         public string colonia { get; set; }
         public string codigoPostal { get; set; }
-        public Nullable<byte> baja { get; set; }
+        public bool baja { get; set; }
         public int idMunicipio { get; set; }
         public string entreCalles { get; set; }
         public string referencia { get; set; }

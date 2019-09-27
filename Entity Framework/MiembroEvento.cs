@@ -17,7 +17,7 @@ namespace RegnalUDB.Entity_Framework
         public int idMiembroEvento { get; set; }
         public int idMiembro { get; set; }
         public int idEvento { get; set; }
-        public Nullable<byte> pagoPendiente { get; set; }
+        public bool pagoPendiente { get; set; }
     
         public virtual Evento Evento { get; set; }
         public virtual Miembro Miembro { get; set; }

@@ -22,7 +22,7 @@ namespace RegnalUDB.Entity_Framework
     
         public int idMunicipio { get; set; }
         public string nombre { get; set; }
-        public Nullable<byte> baja { get; set; }
+        public bool baja { get; set; }
         public int idDepartamento { get; set; }
     
         public virtual Departamento Departamento { get; set; }

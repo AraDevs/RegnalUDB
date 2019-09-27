@@ -29,9 +29,9 @@ namespace RegnalUDB.Entity_Framework
         public short numResponsables { get; set; }
         public short numIntagrantes { get; set; }
         public short minIntegrantes { get; set; }
-        public Nullable<byte> baja { get; set; }
+        public bool baja { get; set; }
         public string nombre { get; set; }
-        public byte esDolar { get; set; }
+        public bool esDolar { get; set; }
         public decimal importe { get; set; }
         public string descripcion { get; set; }
     

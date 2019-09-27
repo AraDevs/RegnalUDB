@@ -21,8 +21,10 @@ namespace RegnalUDB
 
         public static Operation<T> getDataOperation(List<T> data)
         {
-            Operation<T> operation = new Operation<T>();
-            operation.Data = data;
+            Operation<T> operation = new Operation<T>
+            {
+                Data = data
+            };
             return operation;
         }
     }

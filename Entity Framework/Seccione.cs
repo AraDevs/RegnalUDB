@@ -24,9 +24,9 @@ namespace RegnalUDB.Entity_Framework
         public int idSeccion { get; set; }
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
-        public Nullable<byte> baja { get; set; }
+        public bool baja { get; set; }
         public int rangoInicio { get; set; }
-        public Nullable<byte> rangoFin { get; set; }
+        public Nullable<int> rangoFin { get; set; }
         public string sexo { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

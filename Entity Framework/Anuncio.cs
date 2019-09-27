@@ -17,7 +17,7 @@ namespace RegnalUDB.Entity_Framework
         public int idAnuncio { get; set; }
         public string mensaje { get; set; }
         public System.DateTime vigencia { get; set; }
-        public Nullable<byte> baja { get; set; }
+        public bool baja { get; set; }
         public int idProvincia { get; set; }
     
         public virtual Provincia Provincia { get; set; }
