@@ -16,8 +16,8 @@ namespace RegnalUDB.Entity_Framework
     {
         public int idUsuario { get; set; }
         public string pass { get; set; }
-        public byte estatus { get; set; }
-        public Nullable<byte> baja { get; set; }
+        public bool estatus { get; set; }
+        public bool baja { get; set; }
         public int idMiembro { get; set; }
         public int idPerfil { get; set; }
     

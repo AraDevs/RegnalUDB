@@ -21,9 +21,17 @@ namespace RegnalUDB
         private void obtenerEscolaridades()
         {
             dgvData.DataSource = null;
-            dgvData.DataSource = sc.getRecords().Data;
-            dgvData.Columns[0].Visible = false;
-            dgvData.Columns[3].Visible = false;
+            if(sc.getRecords().Error != null)
+            {
+                MessageBox.Show("Ocurrio un error " + sc.getRecords().Error);
+            }
+            else
+            {
+                dgvData.DataSource = sc.getRecords().Data;
+                dgvData.Columns[0].Visible = false;
+                dgvData.Columns[3].Visible = false;
+            }
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -35,8 +43,7 @@ namespace RegnalUDB
         {
             Escolaridad tempEs = new Escolaridad();
             tempEs.grado = txtGrade.Text;
-            byte baja = Convert.ToByte(checkBox1.Checked ? 1 : 0);
-            tempEs.baja = baja;
+            tempEs.baja = checkBox1.Checked;
             Operation<Escolaridad> operation = sc.addRecord(tempEs);
             if (operation.State)
             {

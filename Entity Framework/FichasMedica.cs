@@ -24,37 +24,37 @@ namespace RegnalUDB.Entity_Framework
         public string telefono2 { get; set; }
         public string email { get; set; }
         public string sangre { get; set; }
-        public Nullable<decimal> peso { get; set; }
-        public Nullable<decimal> estatura { get; set; }
+        public decimal peso { get; set; }
+        public decimal estatura { get; set; }
         public string noafilacion { get; set; }
-        public Nullable<byte> ss { get; set; }
+        public bool ss { get; set; }
         public string ssOtro { get; set; }
-        public string piePlano { get; set; }
-        public string ortopedico { get; set; }
-        public string operacion { get; set; }
+        public bool piePlano { get; set; }
+        public bool ortopedico { get; set; }
+        public bool operacion { get; set; }
         public string operacionObs { get; set; }
-        public string limitacion { get; set; }
+        public bool limitacion { get; set; }
         public string limitacionObs { get; set; }
-        public string transfusion { get; set; }
+        public bool transfusion { get; set; }
         public string transfunsionObs { get; set; }
-        public string alergia { get; set; }
+        public bool alergia { get; set; }
         public string alergiaObs { get; set; }
-        public string cronica { get; set; }
+        public bool cronica { get; set; }
         public string cronicaObs { get; set; }
-        public string tratamiento { get; set; }
+        public bool tratamiento { get; set; }
         public string tratamientoObs { get; set; }
-        public string Oido { get; set; }
+        public bool Oido { get; set; }
         public string OidoObs { get; set; }
-        public string protesis { get; set; }
+        public bool protesis { get; set; }
         public string protesisObs { get; set; }
-        public string dieta { get; set; }
+        public bool dieta { get; set; }
         public string dietaObs { get; set; }
-        public string tabaco { get; set; }
+        public bool tabaco { get; set; }
         public string varcharObs { get; set; }
-        public string vacunacion { get; set; }
-        public string mujer { get; set; }
-        public Nullable<byte> natacion { get; set; }
-        public Nullable<System.DateTime> fecha { get; set; }
+        public bool vacunacion { get; set; }
+        public bool mujer { get; set; }
+        public int natacion { get; set; }
+        public System.DateTime fecha { get; set; }
         public string imagen { get; set; }
     
         public virtual Miembro Miembro { get; set; }

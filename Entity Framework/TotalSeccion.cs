@@ -27,8 +27,8 @@ namespace RegnalUDB.Entity_Framework
         public Nullable<int> dirigente { get; set; }
         public Nullable<int> padreScout { get; set; }
         public int idGrupo { get; set; }
-        public Nullable<byte> mes { get; set; }
-        public Nullable<short> anio { get; set; }
+        public Nullable<int> mes { get; set; }
+        public Nullable<int> anio { get; set; }
     
         public virtual Grupos Grupos { get; set; }
     }

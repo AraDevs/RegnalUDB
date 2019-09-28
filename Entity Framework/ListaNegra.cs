@@ -17,7 +17,7 @@ namespace RegnalUDB.Entity_Framework
         public int idListaNegra { get; set; }
         public string motivo { get; set; }
         public Nullable<int> responsable { get; set; }
-        public Nullable<byte> baja { get; set; }
+        public bool baja { get; set; }
         public Nullable<int> idMiembro { get; set; }
     
         public virtual Miembro Miembro { get; set; }

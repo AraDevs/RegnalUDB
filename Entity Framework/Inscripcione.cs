@@ -17,7 +17,7 @@ namespace RegnalUDB.Entity_Framework
         public int idInscripcion { get; set; }
         public System.DateTime fechaInicio { get; set; }
         public Nullable<System.DateTime> fechaFin { get; set; }
-        public Nullable<byte> baja { get; set; }
+        public bool baja { get; set; }
         public int idMiembro { get; set; }
     
         public virtual Miembro Miembro { get; set; }

@@ -33,9 +33,7 @@ namespace RegnalUDB.Entity_Framework
         public string nombre { get; set; }
         public string paterno { get; set; }
         public string materno { get; set; }
-        public Nullable<byte> estatus { get; set; }
-        public Nullable<byte> baja { get; set; }
-        public int idDatoPersonal { get; set; }
+        public bool baja { get; set; }
         public int idSeccion { get; set; }
         public int idGrupo { get; set; }
         public string fotoFileName { get; set; }

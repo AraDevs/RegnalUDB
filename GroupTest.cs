@@ -50,7 +50,7 @@ namespace RegnalUDB
             }
             else
             {
-                MessageBox.Show("Error al cargor los datos del formulario");
+                MessageBox.Show(getDistrictOperation.Error);
             }
 
         }

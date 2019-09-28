@@ -12,7 +12,7 @@
           <Property Name="idAnuncio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="mensaje" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="vigencia" Type="date" Nullable="false" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="idProvincia" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Bitacora">
@@ -43,7 +43,7 @@
           <Property Name="idDepartamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="clave" Type="varchar" MaxLength="5" Nullable="false" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Distritos">
           <Key>
@@ -52,7 +52,7 @@
           <Property Name="idDistrito" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="numero" Type="smallint" Nullable="false" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="idProvincia" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Domicilios">
@@ -63,7 +63,7 @@
           <Property Name="calleNumero" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="colonia" Type="varchar" MaxLength="80" Nullable="false" />
           <Property Name="codigoPostal" Type="varchar" MaxLength="5" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="idMunicipio" Type="int" Nullable="false" />
           <Property Name="entreCalles" Type="varchar" MaxLength="80" />
           <Property Name="referencia" Type="varchar" MaxLength="80" />
@@ -76,7 +76,7 @@
           </Key>
           <Property Name="idEscolaridad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="grado" Type="varchar" MaxLength="45" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="EstadoCivil">
           <Key>
@@ -84,7 +84,7 @@
           </Key>
           <Property Name="idEstadoCivil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="estadoCivil" Type="varchar" MaxLength="45" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="EventoCargo">
           <Key>
@@ -104,9 +104,9 @@
           <Property Name="numResponsables" Type="smallint" Nullable="false" />
           <Property Name="numIntagrantes" Type="smallint" Nullable="false" />
           <Property Name="minIntegrantes" Type="smallint" Nullable="false" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="100" Nullable="false" />
-          <Property Name="esDolar" Type="tinyint" Nullable="false" />
+          <Property Name="esDolar" Type="bit" Nullable="false" />
           <Property Name="importe" Type="money" Nullable="false" />
           <Property Name="descripcion" Type="varchar" MaxLength="200" />
         </EntityType>
@@ -138,40 +138,40 @@
           <Property Name="parentesco2" Type="varchar" MaxLength="30" />
           <Property Name="telefono1" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="telefono2" Type="varchar" MaxLength="20" />
-          <Property Name="email" Type="varchar" MaxLength="50" />
-          <Property Name="sangre" Type="varchar" MaxLength="50" />
-          <Property Name="peso" Type="decimal" Precision="4" Scale="2" />
-          <Property Name="estatura" Type="decimal" Precision="4" Scale="2" />
-          <Property Name="noafilacion" Type="varchar" MaxLength="25" />
-          <Property Name="ss" Type="tinyint" />
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="sangre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="peso" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="estatura" Type="decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="noafilacion" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ss" Type="bit" Nullable="false" />
           <Property Name="ssOtro" Type="varchar" MaxLength="20" />
-          <Property Name="piePlano" Type="varchar" MaxLength="2" />
-          <Property Name="ortopedico" Type="varchar" MaxLength="2" />
-          <Property Name="operacion" Type="varchar" MaxLength="2" />
+          <Property Name="piePlano" Type="bit" Nullable="false" />
+          <Property Name="ortopedico" Type="bit" Nullable="false" />
+          <Property Name="operacion" Type="bit" Nullable="false" />
           <Property Name="operacionObs" Type="varchar" MaxLength="50" />
-          <Property Name="limitacion" Type="varchar" MaxLength="2" />
+          <Property Name="limitacion" Type="bit" Nullable="false" />
           <Property Name="limitacionObs" Type="varchar" MaxLength="50" />
-          <Property Name="transfusion" Type="varchar" MaxLength="2" />
+          <Property Name="transfusion" Type="bit" Nullable="false" />
           <Property Name="transfunsionObs" Type="varchar" MaxLength="50" />
-          <Property Name="alergia" Type="varchar" MaxLength="2" />
+          <Property Name="alergia" Type="bit" Nullable="false" />
           <Property Name="alergiaObs" Type="varchar" MaxLength="50" />
-          <Property Name="cronica" Type="varchar" MaxLength="2" />
+          <Property Name="cronica" Type="bit" Nullable="false" />
           <Property Name="cronicaObs" Type="varchar" MaxLength="50" />
-          <Property Name="tratamiento" Type="varchar" MaxLength="5" />
+          <Property Name="tratamiento" Type="bit" Nullable="false" />
           <Property Name="tratamientoObs" Type="varchar" MaxLength="50" />
-          <Property Name="Oido" Type="varchar" MaxLength="2" />
+          <Property Name="Oido" Type="bit" Nullable="false" />
           <Property Name="OidoObs" Type="varchar" MaxLength="50" />
-          <Property Name="protesis" Type="varchar" MaxLength="2" />
+          <Property Name="protesis" Type="bit" Nullable="false" />
           <Property Name="protesisObs" Type="varchar" MaxLength="50" />
-          <Property Name="dieta" Type="varchar" MaxLength="2" />
+          <Property Name="dieta" Type="bit" Nullable="false" />
           <Property Name="dietaObs" Type="varchar" MaxLength="50" />
-          <Property Name="tabaco" Type="varchar" MaxLength="2" />
+          <Property Name="tabaco" Type="bit" Nullable="false" />
           <Property Name="varcharObs" Type="varchar" MaxLength="50" />
-          <Property Name="vacunacion" Type="varchar" MaxLength="2" />
-          <Property Name="mujer" Type="varchar" MaxLength="2" />
-          <Property Name="natacion" Type="tinyint" />
-          <Property Name="fecha" Type="date" />
-          <Property Name="imagen" Type="varchar" MaxLength="50" />
+          <Property Name="vacunacion" Type="bit" Nullable="false" />
+          <Property Name="mujer" Type="bit" Nullable="false" />
+          <Property Name="natacion" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" Nullable="false" />
+          <Property Name="imagen" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Funciones">
           <Key>
@@ -179,7 +179,7 @@
           </Key>
           <Property Name="idFuncion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="idNivel" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Grupos">
@@ -191,11 +191,11 @@
           <Property Name="fundacion" Type="date" Nullable="false" />
           <Property Name="grupoNum" Type="smallint" Nullable="false" />
           <Property Name="horario" Type="varchar" MaxLength="120" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="idDistrito" Type="int" Nullable="false" />
           <Property Name="idLocalidad" Type="int" Nullable="false" />
           <Property Name="fechaRegistro" Type="date" Nullable="false" />
-          <Property Name="registrado" Type="tinyint" />
+          <Property Name="registrado" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Inscripciones">
           <Key>
@@ -204,7 +204,7 @@
           <Property Name="idInscripcion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="fechaInicio" Type="date" Nullable="false" />
           <Property Name="fechaFin" Type="date" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="idMiembro" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ListaNegra">
@@ -214,7 +214,7 @@
           <Property Name="idListaNegra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="motivo" Type="varchar" MaxLength="80" Nullable="false" />
           <Property Name="responsable" Type="int" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="idMiembro" Type="int" />
         </EntityType>
         <EntityType Name="Localidades">
@@ -224,7 +224,7 @@
           <Property Name="idLocalidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="domicilioCorrespondencia" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="MiembroCargo">
           <Key>
@@ -242,7 +242,7 @@
           <Property Name="idMiembroEvento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idMiembro" Type="int" Nullable="false" />
           <Property Name="idEvento" Type="int" Nullable="false" />
-          <Property Name="pagoPendiente" Type="tinyint" />
+          <Property Name="pagoPendiente" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="MiembroFuncion">
           <Key>
@@ -263,9 +263,7 @@
           <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="paterno" Type="varchar" MaxLength="45" />
           <Property Name="materno" Type="varchar" MaxLength="45" />
-          <Property Name="estatus" Type="tinyint" />
-          <Property Name="baja" Type="tinyint" />
-          <Property Name="idDatoPersonal" Type="int" Nullable="false" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="idSeccion" Type="int" Nullable="false" />
           <Property Name="idGrupo" Type="int" Nullable="false" />
           <Property Name="fotoFileName" Type="varchar" MaxLength="100" />
@@ -288,7 +286,7 @@
           </Key>
           <Property Name="idMovimiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="descripcion" Type="varchar" MaxLength="50" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Municipios">
           <Key>
@@ -296,7 +294,7 @@
           </Key>
           <Property Name="idMunicipio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="idDepartamento" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Perfiles">
@@ -305,7 +303,7 @@
           </Key>
           <Property Name="idPerfil" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Provincias">
           <Key>
@@ -313,7 +311,7 @@
           </Key>
           <Property Name="idProvincia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="45" Nullable="false" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="clave" Type="varchar" MaxLength="3" Nullable="false" />
           <Property Name="idRegion" Type="int" Nullable="false" />
         </EntityType>
@@ -323,7 +321,7 @@
           </Key>
           <Property Name="idReligion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="45" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="Secciones">
           <Key>
@@ -332,9 +330,9 @@
           <Property Name="idSeccion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Descripcion" Type="varchar" MaxLength="80" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="rangoInicio" Type="int" Nullable="false" />
-          <Property Name="rangoFin" Type="tinyint" />
+          <Property Name="rangoFin" Type="int" />
           <Property Name="sexo" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
         <EntityType Name="TotalSeccion">
@@ -354,8 +352,8 @@
           <Property Name="dirigente" Type="int" />
           <Property Name="padreScout" Type="int" />
           <Property Name="idGrupo" Type="int" Nullable="false" />
-          <Property Name="mes" Type="tinyint" />
-          <Property Name="anio" Type="smallint" />
+          <Property Name="mes" Type="int" />
+          <Property Name="anio" Type="int" />
         </EntityType>
         <EntityType Name="Usuarios">
           <Key>
@@ -363,8 +361,8 @@
           </Key>
           <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="pass" Type="varchar" MaxLength="500" Nullable="false" />
-          <Property Name="estatus" Type="tinyint" Nullable="false" />
-          <Property Name="baja" Type="tinyint" />
+          <Property Name="estatus" Type="bit" Nullable="false" />
+          <Property Name="baja" Type="bit" Nullable="false" />
           <Property Name="idMiembro" Type="int" Nullable="false" />
           <Property Name="idPerfil" Type="int" Nullable="false" />
         </EntityType>
@@ -380,7 +378,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bitacora__idMiem__7F2BE32F">
+        <Association Name="FK__Bitacora__idMiem__7E37BEF6">
           <End Role="Miembros" Type="Self.Miembros" Multiplicity="1" />
           <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
           <ReferentialConstraint>
@@ -392,7 +390,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bitacora__idMovi__00200768">
+        <Association Name="FK__Bitacora__idMovi__7F2BE32F">
           <End Role="Movimientos" Type="Self.Movimientos" Multiplicity="1" />
           <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
           <ReferentialConstraint>
@@ -428,7 +426,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EventoCar__idCar__151B244E">
+        <Association Name="FK__EventoCar__idCar__14270015">
           <End Role="Cargos" Type="Self.Cargos" Multiplicity="1" />
           <End Role="EventoCargo" Type="Self.EventoCargo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -440,7 +438,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EventoCar__idEve__14270015">
+        <Association Name="FK__EventoCar__idEve__1332DBDC">
           <End Role="Eventos" Type="Self.Eventos" Multiplicity="1" />
           <End Role="EventoCargo" Type="Self.EventoCargo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -452,7 +450,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EventoSec__idEve__02FC7413">
+        <Association Name="FK__EventoSec__idEve__02084FDA">
           <End Role="Eventos" Type="Self.Eventos" Multiplicity="1" />
           <End Role="EventoSeccion" Type="Self.EventoSeccion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -464,7 +462,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EventoSec__idSec__03F0984C">
+        <Association Name="FK__EventoSec__idSec__02FC7413">
           <End Role="Secciones" Type="Self.Secciones" Multiplicity="1" />
           <End Role="EventoSeccion" Type="Self.EventoSeccion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -476,7 +474,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EventosFu__idEve__71D1E811">
+        <Association Name="FK__EventosFu__idEve__70DDC3D8">
           <End Role="Eventos" Type="Self.Eventos" Multiplicity="1" />
           <End Role="EventosFunciones" Type="Self.EventosFunciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -488,7 +486,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EventosFu__idFun__70DDC3D8">
+        <Association Name="FK__EventosFu__idFun__6FE99F9F">
           <End Role="Funciones" Type="Self.Funciones" Multiplicity="1" />
           <End Role="EventosFunciones" Type="Self.EventosFunciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -536,7 +534,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Inscripci__idMie__76969D2E">
+        <Association Name="FK__Inscripci__idMie__75A278F5">
           <End Role="Miembros" Type="Self.Miembros" Multiplicity="1" />
           <End Role="Inscripciones" Type="Self.Inscripciones" Multiplicity="*" />
           <ReferentialConstraint>
@@ -548,7 +546,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ListaNegr__idMie__0F624AF8">
+        <Association Name="FK__ListaNegr__idMie__0E6E26BF">
           <End Role="Miembros" Type="Self.Miembros" Multiplicity="0..1" />
           <End Role="ListaNegra" Type="Self.ListaNegra" Multiplicity="*" />
           <ReferentialConstraint>
@@ -560,7 +558,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ListaNegr__respo__0E6E26BF">
+        <Association Name="FK__ListaNegr__respo__0D7A0286">
           <End Role="Miembros" Type="Self.Miembros" Multiplicity="0..1" />
           <End Role="ListaNegra" Type="Self.ListaNegra" Multiplicity="*" />
           <ReferentialConstraint>
@@ -572,7 +570,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MiembroCa__idCar__18EBB532">
+        <Association Name="FK__MiembroCa__idCar__17F790F9">
           <End Role="Cargos" Type="Self.Cargos" Multiplicity="1" />
           <End Role="MiembroCargo" Type="Self.MiembroCargo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -584,7 +582,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MiembroCa__idMem__17F790F9">
+        <Association Name="FK__MiembroCa__idMem__17036CC0">
           <End Role="Miembros" Type="Self.Miembros" Multiplicity="1" />
           <End Role="MiembroCargo" Type="Self.MiembroCargo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -596,7 +594,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MiembroEv__idEve__07C12930">
+        <Association Name="FK__MiembroEv__idEve__06CD04F7">
           <End Role="Eventos" Type="Self.Eventos" Multiplicity="1" />
           <End Role="MiembroEvento" Type="Self.MiembroEvento" Multiplicity="*" />
           <ReferentialConstraint>
@@ -608,7 +606,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MiembroEv__idMie__06CD04F7">
+        <Association Name="FK__MiembroEv__idMie__05D8E0BE">
           <End Role="Miembros" Type="Self.Miembros" Multiplicity="1" />
           <End Role="MiembroEvento" Type="Self.MiembroEvento" Multiplicity="*" />
           <ReferentialConstraint>
@@ -620,7 +618,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MiembroFu__idFun__0B91BA14">
+        <Association Name="FK__MiembroFu__idFun__0A9D95DB">
           <End Role="Funciones" Type="Self.Funciones" Multiplicity="1" />
           <End Role="MiembroFuncion" Type="Self.MiembroFuncion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -632,7 +630,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MiembroFu__idMie__0A9D95DB">
+        <Association Name="FK__MiembroFu__idMie__09A971A2">
           <End Role="Miembros" Type="Self.Miembros" Multiplicity="1" />
           <End Role="MiembroFuncion" Type="Self.MiembroFuncion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -740,7 +738,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuarios__idMiem__797309D9">
+        <Association Name="FK__Usuarios__idMiem__787EE5A0">
           <End Role="Miembros" Type="Self.Miembros" Multiplicity="1" />
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
           <ReferentialConstraint>
@@ -752,7 +750,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuarios__idPerf__7A672E12">
+        <Association Name="FK__Usuarios__idPerf__797309D9">
           <End Role="Perfiles" Type="Self.Perfiles" Multiplicity="1" />
           <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="*" />
           <ReferentialConstraint>
@@ -799,11 +797,11 @@
             <End Role="Provincias" EntitySet="Provincias" />
             <End Role="Anuncios" EntitySet="Anuncios" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bitacora__idMiem__7F2BE32F" Association="Self.FK__Bitacora__idMiem__7F2BE32F">
+          <AssociationSet Name="FK__Bitacora__idMiem__7E37BEF6" Association="Self.FK__Bitacora__idMiem__7E37BEF6">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="Bitacora" EntitySet="Bitacora" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bitacora__idMovi__00200768" Association="Self.FK__Bitacora__idMovi__00200768">
+          <AssociationSet Name="FK__Bitacora__idMovi__7F2BE32F" Association="Self.FK__Bitacora__idMovi__7F2BE32F">
             <End Role="Movimientos" EntitySet="Movimientos" />
             <End Role="Bitacora" EntitySet="Bitacora" />
           </AssociationSet>
@@ -815,27 +813,27 @@
             <End Role="Municipios" EntitySet="Municipios" />
             <End Role="Domicilios" EntitySet="Domicilios" />
           </AssociationSet>
-          <AssociationSet Name="FK__EventoCar__idCar__151B244E" Association="Self.FK__EventoCar__idCar__151B244E">
+          <AssociationSet Name="FK__EventoCar__idCar__14270015" Association="Self.FK__EventoCar__idCar__14270015">
             <End Role="Cargos" EntitySet="Cargos" />
             <End Role="EventoCargo" EntitySet="EventoCargo" />
           </AssociationSet>
-          <AssociationSet Name="FK__EventoCar__idEve__14270015" Association="Self.FK__EventoCar__idEve__14270015">
+          <AssociationSet Name="FK__EventoCar__idEve__1332DBDC" Association="Self.FK__EventoCar__idEve__1332DBDC">
             <End Role="Eventos" EntitySet="Eventos" />
             <End Role="EventoCargo" EntitySet="EventoCargo" />
           </AssociationSet>
-          <AssociationSet Name="FK__EventoSec__idEve__02FC7413" Association="Self.FK__EventoSec__idEve__02FC7413">
+          <AssociationSet Name="FK__EventoSec__idEve__02084FDA" Association="Self.FK__EventoSec__idEve__02084FDA">
             <End Role="Eventos" EntitySet="Eventos" />
             <End Role="EventoSeccion" EntitySet="EventoSeccion" />
           </AssociationSet>
-          <AssociationSet Name="FK__EventoSec__idSec__03F0984C" Association="Self.FK__EventoSec__idSec__03F0984C">
+          <AssociationSet Name="FK__EventoSec__idSec__02FC7413" Association="Self.FK__EventoSec__idSec__02FC7413">
             <End Role="Secciones" EntitySet="Secciones" />
             <End Role="EventoSeccion" EntitySet="EventoSeccion" />
           </AssociationSet>
-          <AssociationSet Name="FK__EventosFu__idEve__71D1E811" Association="Self.FK__EventosFu__idEve__71D1E811">
+          <AssociationSet Name="FK__EventosFu__idEve__70DDC3D8" Association="Self.FK__EventosFu__idEve__70DDC3D8">
             <End Role="Eventos" EntitySet="Eventos" />
             <End Role="EventosFunciones" EntitySet="EventosFunciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__EventosFu__idFun__70DDC3D8" Association="Self.FK__EventosFu__idFun__70DDC3D8">
+          <AssociationSet Name="FK__EventosFu__idFun__6FE99F9F" Association="Self.FK__EventosFu__idFun__6FE99F9F">
             <End Role="Funciones" EntitySet="Funciones" />
             <End Role="EventosFunciones" EntitySet="EventosFunciones" />
           </AssociationSet>
@@ -851,39 +849,39 @@
             <End Role="Localidades" EntitySet="Localidades" />
             <End Role="Grupos" EntitySet="Grupos" />
           </AssociationSet>
-          <AssociationSet Name="FK__Inscripci__idMie__76969D2E" Association="Self.FK__Inscripci__idMie__76969D2E">
+          <AssociationSet Name="FK__Inscripci__idMie__75A278F5" Association="Self.FK__Inscripci__idMie__75A278F5">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="Inscripciones" EntitySet="Inscripciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__ListaNegr__idMie__0F624AF8" Association="Self.FK__ListaNegr__idMie__0F624AF8">
+          <AssociationSet Name="FK__ListaNegr__idMie__0E6E26BF" Association="Self.FK__ListaNegr__idMie__0E6E26BF">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="ListaNegra" EntitySet="ListaNegra" />
           </AssociationSet>
-          <AssociationSet Name="FK__ListaNegr__respo__0E6E26BF" Association="Self.FK__ListaNegr__respo__0E6E26BF">
+          <AssociationSet Name="FK__ListaNegr__respo__0D7A0286" Association="Self.FK__ListaNegr__respo__0D7A0286">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="ListaNegra" EntitySet="ListaNegra" />
           </AssociationSet>
-          <AssociationSet Name="FK__MiembroCa__idCar__18EBB532" Association="Self.FK__MiembroCa__idCar__18EBB532">
+          <AssociationSet Name="FK__MiembroCa__idCar__17F790F9" Association="Self.FK__MiembroCa__idCar__17F790F9">
             <End Role="Cargos" EntitySet="Cargos" />
             <End Role="MiembroCargo" EntitySet="MiembroCargo" />
           </AssociationSet>
-          <AssociationSet Name="FK__MiembroCa__idMem__17F790F9" Association="Self.FK__MiembroCa__idMem__17F790F9">
+          <AssociationSet Name="FK__MiembroCa__idMem__17036CC0" Association="Self.FK__MiembroCa__idMem__17036CC0">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="MiembroCargo" EntitySet="MiembroCargo" />
           </AssociationSet>
-          <AssociationSet Name="FK__MiembroEv__idEve__07C12930" Association="Self.FK__MiembroEv__idEve__07C12930">
+          <AssociationSet Name="FK__MiembroEv__idEve__06CD04F7" Association="Self.FK__MiembroEv__idEve__06CD04F7">
             <End Role="Eventos" EntitySet="Eventos" />
             <End Role="MiembroEvento" EntitySet="MiembroEvento" />
           </AssociationSet>
-          <AssociationSet Name="FK__MiembroEv__idMie__06CD04F7" Association="Self.FK__MiembroEv__idMie__06CD04F7">
+          <AssociationSet Name="FK__MiembroEv__idMie__05D8E0BE" Association="Self.FK__MiembroEv__idMie__05D8E0BE">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="MiembroEvento" EntitySet="MiembroEvento" />
           </AssociationSet>
-          <AssociationSet Name="FK__MiembroFu__idFun__0B91BA14" Association="Self.FK__MiembroFu__idFun__0B91BA14">
+          <AssociationSet Name="FK__MiembroFu__idFun__0A9D95DB" Association="Self.FK__MiembroFu__idFun__0A9D95DB">
             <End Role="Funciones" EntitySet="Funciones" />
             <End Role="MiembroFuncion" EntitySet="MiembroFuncion" />
           </AssociationSet>
-          <AssociationSet Name="FK__MiembroFu__idMie__0A9D95DB" Association="Self.FK__MiembroFu__idMie__0A9D95DB">
+          <AssociationSet Name="FK__MiembroFu__idMie__09A971A2" Association="Self.FK__MiembroFu__idMie__09A971A2">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="MiembroFuncion" EntitySet="MiembroFuncion" />
           </AssociationSet>
@@ -919,11 +917,11 @@
             <End Role="Grupos" EntitySet="Grupos" />
             <End Role="TotalSeccion" EntitySet="TotalSeccion" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuarios__idMiem__797309D9" Association="Self.FK__Usuarios__idMiem__797309D9">
+          <AssociationSet Name="FK__Usuarios__idMiem__787EE5A0" Association="Self.FK__Usuarios__idMiem__787EE5A0">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuarios__idPerf__7A672E12" Association="Self.FK__Usuarios__idPerf__7A672E12">
+          <AssociationSet Name="FK__Usuarios__idPerf__797309D9" Association="Self.FK__Usuarios__idPerf__797309D9">
             <End Role="Perfiles" EntitySet="Perfiles" />
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
@@ -940,7 +938,7 @@
           <Property Name="idAnuncio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="mensaje" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="vigencia" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="idProvincia" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Provincia" Relationship="Self.FK__Anuncios__idProv__45F365D3" FromRole="Anuncios" ToRole="Provincias" />
         </EntityType>
@@ -952,8 +950,8 @@
           <Property Name="idMiembro" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="idMovimiento" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Miembro" Relationship="Self.FK__Bitacora__idMiem__7F2BE32F" FromRole="Bitacora" ToRole="Miembros" />
-          <NavigationProperty Name="Movimiento" Relationship="Self.FK__Bitacora__idMovi__00200768" FromRole="Bitacora" ToRole="Movimientos" />
+          <NavigationProperty Name="Miembro" Relationship="Self.FK__Bitacora__idMiem__7E37BEF6" FromRole="Bitacora" ToRole="Miembros" />
+          <NavigationProperty Name="Movimiento" Relationship="Self.FK__Bitacora__idMovi__7F2BE32F" FromRole="Bitacora" ToRole="Movimientos" />
         </EntityType>
         <EntityType Name="Cargo">
           <Key>
@@ -966,8 +964,8 @@
           <Property Name="baja" Type="Int16" />
           <Property Name="idNivel" Type="Int32" Nullable="false" />
           <Property Name="idPerfil" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="EventoCargoes" Relationship="Self.FK__EventoCar__idCar__151B244E" FromRole="Cargos" ToRole="EventoCargo" />
-          <NavigationProperty Name="MiembroCargoes" Relationship="Self.FK__MiembroCa__idCar__18EBB532" FromRole="Cargos" ToRole="MiembroCargo" />
+          <NavigationProperty Name="EventoCargoes" Relationship="Self.FK__EventoCar__idCar__14270015" FromRole="Cargos" ToRole="EventoCargo" />
+          <NavigationProperty Name="MiembroCargoes" Relationship="Self.FK__MiembroCa__idCar__17F790F9" FromRole="Cargos" ToRole="MiembroCargo" />
         </EntityType>
         <EntityType Name="Departamento">
           <Key>
@@ -976,7 +974,7 @@
           <Property Name="idDepartamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="clave" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Municipios" Relationship="Self.FK__Municipio__idDep__3E52440B" FromRole="Departamentos" ToRole="Municipios" />
         </EntityType>
         <EntityType Name="Distrito">
@@ -986,7 +984,7 @@
           <Property Name="idDistrito" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="numero" Type="Int16" Nullable="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="idProvincia" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Provincia" Relationship="Self.FK__Distritos__idPro__48CFD27E" FromRole="Distritos" ToRole="Provincias" />
           <NavigationProperty Name="Grupos" Relationship="Self.FK__Grupos__idDistri__4E88ABD4" FromRole="Distritos" ToRole="Grupos" />
@@ -999,7 +997,7 @@
           <Property Name="calleNumero" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="colonia" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="codigoPostal" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="idMunicipio" Type="Int32" Nullable="false" />
           <Property Name="entreCalles" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Name="referencia" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
@@ -1014,7 +1012,7 @@
           </Key>
           <Property Name="idEscolaridad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="grado" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Miembros" Relationship="Self.FK__Miembros__idEsco__5FB337D6" FromRole="Escolaridad" ToRole="Miembros" />
         </EntityType>
         <EntityType Name="EstadoCivil">
@@ -1023,7 +1021,7 @@
           </Key>
           <Property Name="idEstadoCivil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="estadoCivil1" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Miembros" Relationship="Self.FK__Miembros__idEsta__60A75C0F" FromRole="EstadoCivil" ToRole="Miembros" />
         </EntityType>
         <EntityType Name="EventoCargo">
@@ -1033,8 +1031,8 @@
           <Property Name="idEventoCargo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idEvento" Type="Int32" Nullable="false" />
           <Property Name="idCargo" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Cargo" Relationship="Self.FK__EventoCar__idCar__151B244E" FromRole="EventoCargo" ToRole="Cargos" />
-          <NavigationProperty Name="Evento" Relationship="Self.FK__EventoCar__idEve__14270015" FromRole="EventoCargo" ToRole="Eventos" />
+          <NavigationProperty Name="Cargo" Relationship="Self.FK__EventoCar__idCar__14270015" FromRole="EventoCargo" ToRole="Cargos" />
+          <NavigationProperty Name="Evento" Relationship="Self.FK__EventoCar__idEve__1332DBDC" FromRole="EventoCargo" ToRole="Eventos" />
         </EntityType>
         <EntityType Name="Evento">
           <Key>
@@ -1046,15 +1044,15 @@
           <Property Name="numResponsables" Type="Int16" Nullable="false" />
           <Property Name="numIntagrantes" Type="Int16" Nullable="false" />
           <Property Name="minIntegrantes" Type="Int16" Nullable="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="nombre" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="esDolar" Type="Byte" Nullable="false" />
+          <Property Name="esDolar" Type="Boolean" Nullable="false" />
           <Property Name="importe" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <Property Name="descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="EventoCargoes" Relationship="Self.FK__EventoCar__idEve__14270015" FromRole="Eventos" ToRole="EventoCargo" />
-          <NavigationProperty Name="EventoSeccions" Relationship="Self.FK__EventoSec__idEve__02FC7413" FromRole="Eventos" ToRole="EventoSeccion" />
-          <NavigationProperty Name="EventosFunciones" Relationship="Self.FK__EventosFu__idEve__71D1E811" FromRole="Eventos" ToRole="EventosFunciones" />
-          <NavigationProperty Name="MiembroEventoes" Relationship="Self.FK__MiembroEv__idEve__07C12930" FromRole="Eventos" ToRole="MiembroEvento" />
+          <NavigationProperty Name="EventoCargoes" Relationship="Self.FK__EventoCar__idEve__1332DBDC" FromRole="Eventos" ToRole="EventoCargo" />
+          <NavigationProperty Name="EventoSeccions" Relationship="Self.FK__EventoSec__idEve__02084FDA" FromRole="Eventos" ToRole="EventoSeccion" />
+          <NavigationProperty Name="EventosFunciones" Relationship="Self.FK__EventosFu__idEve__70DDC3D8" FromRole="Eventos" ToRole="EventosFunciones" />
+          <NavigationProperty Name="MiembroEventoes" Relationship="Self.FK__MiembroEv__idEve__06CD04F7" FromRole="Eventos" ToRole="MiembroEvento" />
         </EntityType>
         <EntityType Name="EventoSeccion">
           <Key>
@@ -1063,8 +1061,8 @@
           <Property Name="idEventoSeccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idEvento" Type="Int32" Nullable="false" />
           <Property Name="idSeccion" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Evento" Relationship="Self.FK__EventoSec__idEve__02FC7413" FromRole="EventoSeccion" ToRole="Eventos" />
-          <NavigationProperty Name="Seccione" Relationship="Self.FK__EventoSec__idSec__03F0984C" FromRole="EventoSeccion" ToRole="Secciones" />
+          <NavigationProperty Name="Evento" Relationship="Self.FK__EventoSec__idEve__02084FDA" FromRole="EventoSeccion" ToRole="Eventos" />
+          <NavigationProperty Name="Seccione" Relationship="Self.FK__EventoSec__idSec__02FC7413" FromRole="EventoSeccion" ToRole="Secciones" />
         </EntityType>
         <EntityType Name="EventosFuncione">
           <Key>
@@ -1073,8 +1071,8 @@
           <Property Name="idEventosFunciones" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idFuncion" Type="Int32" Nullable="false" />
           <Property Name="idEvento" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Evento" Relationship="Self.FK__EventosFu__idEve__71D1E811" FromRole="EventosFunciones" ToRole="Eventos" />
-          <NavigationProperty Name="Funcione" Relationship="Self.FK__EventosFu__idFun__70DDC3D8" FromRole="EventosFunciones" ToRole="Funciones" />
+          <NavigationProperty Name="Evento" Relationship="Self.FK__EventosFu__idEve__70DDC3D8" FromRole="EventosFunciones" ToRole="Eventos" />
+          <NavigationProperty Name="Funcione" Relationship="Self.FK__EventosFu__idFun__6FE99F9F" FromRole="EventosFunciones" ToRole="Funciones" />
         </EntityType>
         <EntityType Name="FichasMedica">
           <Key>
@@ -1088,40 +1086,40 @@
           <Property Name="parentesco2" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="telefono1" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="telefono2" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="sangre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="peso" Type="Decimal" Precision="4" Scale="2" />
-          <Property Name="estatura" Type="Decimal" Precision="4" Scale="2" />
-          <Property Name="noafilacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
-          <Property Name="ss" Type="Byte" />
+          <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="sangre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="peso" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="estatura" Type="Decimal" Precision="4" Scale="2" Nullable="false" />
+          <Property Name="noafilacion" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ss" Type="Boolean" Nullable="false" />
           <Property Name="ssOtro" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="piePlano" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="ortopedico" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="operacion" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="piePlano" Type="Boolean" Nullable="false" />
+          <Property Name="ortopedico" Type="Boolean" Nullable="false" />
+          <Property Name="operacion" Type="Boolean" Nullable="false" />
           <Property Name="operacionObs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="limitacion" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="limitacion" Type="Boolean" Nullable="false" />
           <Property Name="limitacionObs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="transfusion" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="transfusion" Type="Boolean" Nullable="false" />
           <Property Name="transfunsionObs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="alergia" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="alergia" Type="Boolean" Nullable="false" />
           <Property Name="alergiaObs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="cronica" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="cronica" Type="Boolean" Nullable="false" />
           <Property Name="cronicaObs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="tratamiento" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="tratamiento" Type="Boolean" Nullable="false" />
           <Property Name="tratamientoObs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Oido" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="Oido" Type="Boolean" Nullable="false" />
           <Property Name="OidoObs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="protesis" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="protesis" Type="Boolean" Nullable="false" />
           <Property Name="protesisObs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="dieta" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="dieta" Type="Boolean" Nullable="false" />
           <Property Name="dietaObs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="tabaco" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="tabaco" Type="Boolean" Nullable="false" />
           <Property Name="varcharObs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="vacunacion" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="mujer" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="natacion" Type="Byte" />
-          <Property Name="fecha" Type="DateTime" Precision="0" />
-          <Property Name="imagen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vacunacion" Type="Boolean" Nullable="false" />
+          <Property Name="mujer" Type="Boolean" Nullable="false" />
+          <Property Name="natacion" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="imagen" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Miembro" Relationship="Self.FK__FichasMed__idMie__6383C8BA" FromRole="FichasMedicas" ToRole="Miembros" />
         </EntityType>
         <EntityType Name="Funcione">
@@ -1130,10 +1128,10 @@
           </Key>
           <Property Name="idFuncion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="idNivel" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="EventosFunciones" Relationship="Self.FK__EventosFu__idFun__70DDC3D8" FromRole="Funciones" ToRole="EventosFunciones" />
-          <NavigationProperty Name="MiembroFuncions" Relationship="Self.FK__MiembroFu__idFun__0B91BA14" FromRole="Funciones" ToRole="MiembroFuncion" />
+          <NavigationProperty Name="EventosFunciones" Relationship="Self.FK__EventosFu__idFun__6FE99F9F" FromRole="Funciones" ToRole="EventosFunciones" />
+          <NavigationProperty Name="MiembroFuncions" Relationship="Self.FK__MiembroFu__idFun__0A9D95DB" FromRole="Funciones" ToRole="MiembroFuncion" />
         </EntityType>
         <EntityType Name="Grupos">
           <Key>
@@ -1144,11 +1142,11 @@
           <Property Name="fundacion" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="grupoNum" Type="Int16" Nullable="false" />
           <Property Name="horario" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="idDistrito" Type="Int32" Nullable="false" />
           <Property Name="idLocalidad" Type="Int32" Nullable="false" />
           <Property Name="fechaRegistro" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="registrado" Type="Byte" />
+          <Property Name="registrado" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Distrito" Relationship="Self.FK__Grupos__idDistri__4E88ABD4" FromRole="Grupos" ToRole="Distritos" />
           <NavigationProperty Name="Localidade" Relationship="Self.FK__Grupos__idLocali__4F7CD00D" FromRole="Grupos" ToRole="Localidades" />
           <NavigationProperty Name="Miembros" Relationship="Self.FK__Miembros__idGrup__5CD6CB2B" FromRole="Grupos" ToRole="Miembros" />
@@ -1161,9 +1159,9 @@
           <Property Name="idInscripcion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fechaInicio" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fechaFin" Type="DateTime" Precision="0" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="idMiembro" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Miembro" Relationship="Self.FK__Inscripci__idMie__76969D2E" FromRole="Inscripciones" ToRole="Miembros" />
+          <NavigationProperty Name="Miembro" Relationship="Self.FK__Inscripci__idMie__75A278F5" FromRole="Inscripciones" ToRole="Miembros" />
         </EntityType>
         <EntityType Name="ListaNegra">
           <Key>
@@ -1172,10 +1170,10 @@
           <Property Name="idListaNegra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="motivo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="responsable" Type="Int32" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="idMiembro" Type="Int32" />
-          <NavigationProperty Name="Miembro" Relationship="Self.FK__ListaNegr__idMie__0F624AF8" FromRole="ListaNegra" ToRole="Miembros" />
-          <NavigationProperty Name="Miembro1" Relationship="Self.FK__ListaNegr__respo__0E6E26BF" FromRole="ListaNegra" ToRole="Miembros" />
+          <NavigationProperty Name="Miembro" Relationship="Self.FK__ListaNegr__idMie__0E6E26BF" FromRole="ListaNegra" ToRole="Miembros" />
+          <NavigationProperty Name="Miembro1" Relationship="Self.FK__ListaNegr__respo__0D7A0286" FromRole="ListaNegra" ToRole="Miembros" />
         </EntityType>
         <EntityType Name="Localidade">
           <Key>
@@ -1184,7 +1182,7 @@
           <Property Name="idLocalidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="domicilioCorrespondencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Grupos" Relationship="Self.FK__Grupos__idLocali__4F7CD00D" FromRole="Localidades" ToRole="Grupos" />
         </EntityType>
         <EntityType Name="MiembroCargo">
@@ -1195,8 +1193,8 @@
           <Property Name="idMembro" Type="Int32" Nullable="false" />
           <Property Name="idCargo" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Nullable="false" Precision="0" />
-          <NavigationProperty Name="Cargo" Relationship="Self.FK__MiembroCa__idCar__18EBB532" FromRole="MiembroCargo" ToRole="Cargos" />
-          <NavigationProperty Name="Miembro" Relationship="Self.FK__MiembroCa__idMem__17F790F9" FromRole="MiembroCargo" ToRole="Miembros" />
+          <NavigationProperty Name="Cargo" Relationship="Self.FK__MiembroCa__idCar__17F790F9" FromRole="MiembroCargo" ToRole="Cargos" />
+          <NavigationProperty Name="Miembro" Relationship="Self.FK__MiembroCa__idMem__17036CC0" FromRole="MiembroCargo" ToRole="Miembros" />
         </EntityType>
         <EntityType Name="MiembroEvento">
           <Key>
@@ -1205,9 +1203,9 @@
           <Property Name="idMiembroEvento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idMiembro" Type="Int32" Nullable="false" />
           <Property Name="idEvento" Type="Int32" Nullable="false" />
-          <Property Name="pagoPendiente" Type="Byte" />
-          <NavigationProperty Name="Evento" Relationship="Self.FK__MiembroEv__idEve__07C12930" FromRole="MiembroEvento" ToRole="Eventos" />
-          <NavigationProperty Name="Miembro" Relationship="Self.FK__MiembroEv__idMie__06CD04F7" FromRole="MiembroEvento" ToRole="Miembros" />
+          <Property Name="pagoPendiente" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Evento" Relationship="Self.FK__MiembroEv__idEve__06CD04F7" FromRole="MiembroEvento" ToRole="Eventos" />
+          <NavigationProperty Name="Miembro" Relationship="Self.FK__MiembroEv__idMie__05D8E0BE" FromRole="MiembroEvento" ToRole="Miembros" />
         </EntityType>
         <EntityType Name="MiembroFuncion">
           <Key>
@@ -1218,8 +1216,8 @@
           <Property Name="idFuncion" Type="Int32" Nullable="false" />
           <Property Name="fechaInicio" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="fechaFin" Type="DateTime" Precision="0" />
-          <NavigationProperty Name="Funcione" Relationship="Self.FK__MiembroFu__idFun__0B91BA14" FromRole="MiembroFuncion" ToRole="Funciones" />
-          <NavigationProperty Name="Miembro" Relationship="Self.FK__MiembroFu__idMie__0A9D95DB" FromRole="MiembroFuncion" ToRole="Miembros" />
+          <NavigationProperty Name="Funcione" Relationship="Self.FK__MiembroFu__idFun__0A9D95DB" FromRole="MiembroFuncion" ToRole="Funciones" />
+          <NavigationProperty Name="Miembro" Relationship="Self.FK__MiembroFu__idMie__09A971A2" FromRole="MiembroFuncion" ToRole="Miembros" />
         </EntityType>
         <EntityType Name="Miembro">
           <Key>
@@ -1230,9 +1228,7 @@
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="paterno" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
           <Property Name="materno" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="estatus" Type="Byte" />
-          <Property Name="baja" Type="Byte" />
-          <Property Name="idDatoPersonal" Type="Int32" Nullable="false" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="idSeccion" Type="Int32" Nullable="false" />
           <Property Name="idGrupo" Type="Int32" Nullable="false" />
           <Property Name="fotoFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
@@ -1248,21 +1244,21 @@
           <Property Name="idReligion" Type="Int32" Nullable="false" />
           <Property Name="idEscolaridad" Type="Int32" Nullable="false" />
           <Property Name="idEstadoCivil" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Bitacoras" Relationship="Self.FK__Bitacora__idMiem__7F2BE32F" FromRole="Miembros" ToRole="Bitacora" />
+          <NavigationProperty Name="Bitacoras" Relationship="Self.FK__Bitacora__idMiem__7E37BEF6" FromRole="Miembros" ToRole="Bitacora" />
           <NavigationProperty Name="Domicilio" Relationship="Self.FK__Miembros__idDomi__5DCAEF64" FromRole="Miembros" ToRole="Domicilios" />
           <NavigationProperty Name="Escolaridad" Relationship="Self.FK__Miembros__idEsco__5FB337D6" FromRole="Miembros" ToRole="Escolaridad" />
           <NavigationProperty Name="EstadoCivil" Relationship="Self.FK__Miembros__idEsta__60A75C0F" FromRole="Miembros" ToRole="EstadoCivil" />
           <NavigationProperty Name="FichasMedicas" Relationship="Self.FK__FichasMed__idMie__6383C8BA" FromRole="Miembros" ToRole="FichasMedicas" />
           <NavigationProperty Name="Grupos" Relationship="Self.FK__Miembros__idGrup__5CD6CB2B" FromRole="Miembros" ToRole="Grupos" />
-          <NavigationProperty Name="Inscripciones" Relationship="Self.FK__Inscripci__idMie__76969D2E" FromRole="Miembros" ToRole="Inscripciones" />
-          <NavigationProperty Name="ListaNegras" Relationship="Self.FK__ListaNegr__idMie__0F624AF8" FromRole="Miembros" ToRole="ListaNegra" />
-          <NavigationProperty Name="ListaNegras1" Relationship="Self.FK__ListaNegr__respo__0E6E26BF" FromRole="Miembros" ToRole="ListaNegra" />
-          <NavigationProperty Name="MiembroCargoes" Relationship="Self.FK__MiembroCa__idMem__17F790F9" FromRole="Miembros" ToRole="MiembroCargo" />
-          <NavigationProperty Name="MiembroEventoes" Relationship="Self.FK__MiembroEv__idMie__06CD04F7" FromRole="Miembros" ToRole="MiembroEvento" />
-          <NavigationProperty Name="MiembroFuncions" Relationship="Self.FK__MiembroFu__idMie__0A9D95DB" FromRole="Miembros" ToRole="MiembroFuncion" />
+          <NavigationProperty Name="Inscripciones" Relationship="Self.FK__Inscripci__idMie__75A278F5" FromRole="Miembros" ToRole="Inscripciones" />
+          <NavigationProperty Name="ListaNegras" Relationship="Self.FK__ListaNegr__idMie__0E6E26BF" FromRole="Miembros" ToRole="ListaNegra" />
+          <NavigationProperty Name="ListaNegras1" Relationship="Self.FK__ListaNegr__respo__0D7A0286" FromRole="Miembros" ToRole="ListaNegra" />
+          <NavigationProperty Name="MiembroCargoes" Relationship="Self.FK__MiembroCa__idMem__17036CC0" FromRole="Miembros" ToRole="MiembroCargo" />
+          <NavigationProperty Name="MiembroEventoes" Relationship="Self.FK__MiembroEv__idMie__05D8E0BE" FromRole="Miembros" ToRole="MiembroEvento" />
+          <NavigationProperty Name="MiembroFuncions" Relationship="Self.FK__MiembroFu__idMie__09A971A2" FromRole="Miembros" ToRole="MiembroFuncion" />
           <NavigationProperty Name="Religion" Relationship="Self.FK__Miembros__idReli__5EBF139D" FromRole="Miembros" ToRole="Religion" />
           <NavigationProperty Name="Seccione" Relationship="Self.FK__Miembros__idSecc__5BE2A6F2" FromRole="Miembros" ToRole="Secciones" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuarios__idMiem__797309D9" FromRole="Miembros" ToRole="Usuarios" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuarios__idMiem__787EE5A0" FromRole="Miembros" ToRole="Usuarios" />
         </EntityType>
         <EntityType Name="Movimiento">
           <Key>
@@ -1270,8 +1266,8 @@
           </Key>
           <Property Name="idMovimiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="baja" Type="Byte" />
-          <NavigationProperty Name="Bitacoras" Relationship="Self.FK__Bitacora__idMovi__00200768" FromRole="Movimientos" ToRole="Bitacora" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Bitacoras" Relationship="Self.FK__Bitacora__idMovi__7F2BE32F" FromRole="Movimientos" ToRole="Bitacora" />
         </EntityType>
         <EntityType Name="Municipio">
           <Key>
@@ -1279,7 +1275,7 @@
           </Key>
           <Property Name="idMunicipio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="idDepartamento" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Departamento" Relationship="Self.FK__Municipio__idDep__3E52440B" FromRole="Municipios" ToRole="Departamentos" />
           <NavigationProperty Name="Domicilios" Relationship="Self.FK__Domicilio__idMun__412EB0B6" FromRole="Municipios" ToRole="Domicilios" />
@@ -1290,8 +1286,8 @@
           </Key>
           <Property Name="idPerfil" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="baja" Type="Byte" />
-          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuarios__idPerf__7A672E12" FromRole="Perfiles" ToRole="Usuarios" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Usuarios" Relationship="Self.FK__Usuarios__idPerf__797309D9" FromRole="Perfiles" ToRole="Usuarios" />
         </EntityType>
         <EntityType Name="Provincia">
           <Key>
@@ -1299,7 +1295,7 @@
           </Key>
           <Property Name="idProvincia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="clave" Type="String" MaxLength="3" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="idRegion" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Anuncios" Relationship="Self.FK__Anuncios__idProv__45F365D3" FromRole="Provincias" ToRole="Anuncios" />
@@ -1311,7 +1307,7 @@
           </Key>
           <Property Name="idReligion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Miembros" Relationship="Self.FK__Miembros__idReli__5EBF139D" FromRole="Religion" ToRole="Miembros" />
         </EntityType>
         <EntityType Name="Seccione">
@@ -1321,11 +1317,11 @@
           <Property Name="idSeccion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Descripcion" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="rangoInicio" Type="Int32" Nullable="false" />
-          <Property Name="rangoFin" Type="Byte" />
+          <Property Name="rangoFin" Type="Int32" />
           <Property Name="sexo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="EventoSeccions" Relationship="Self.FK__EventoSec__idSec__03F0984C" FromRole="Secciones" ToRole="EventoSeccion" />
+          <NavigationProperty Name="EventoSeccions" Relationship="Self.FK__EventoSec__idSec__02FC7413" FromRole="Secciones" ToRole="EventoSeccion" />
           <NavigationProperty Name="Miembros" Relationship="Self.FK__Miembros__idSecc__5BE2A6F2" FromRole="Secciones" ToRole="Miembros" />
         </EntityType>
         <EntityType Name="TotalSeccion">
@@ -1345,8 +1341,8 @@
           <Property Name="dirigente" Type="Int32" />
           <Property Name="padreScout" Type="Int32" />
           <Property Name="idGrupo" Type="Int32" Nullable="false" />
-          <Property Name="mes" Type="Byte" />
-          <Property Name="anio" Type="Int16" />
+          <Property Name="mes" Type="Int32" />
+          <Property Name="anio" Type="Int32" />
           <NavigationProperty Name="Grupos" Relationship="Self.FK__TotalSecc__idGru__52593CB8" FromRole="TotalSeccion" ToRole="Grupos" />
         </EntityType>
         <EntityType Name="Usuario">
@@ -1355,12 +1351,12 @@
           </Key>
           <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="pass" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="estatus" Type="Byte" Nullable="false" />
-          <Property Name="baja" Type="Byte" />
+          <Property Name="estatus" Type="Boolean" Nullable="false" />
+          <Property Name="baja" Type="Boolean" Nullable="false" />
           <Property Name="idMiembro" Type="Int32" Nullable="false" />
           <Property Name="idPerfil" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Miembro" Relationship="Self.FK__Usuarios__idMiem__797309D9" FromRole="Usuarios" ToRole="Miembros" />
-          <NavigationProperty Name="Perfile" Relationship="Self.FK__Usuarios__idPerf__7A672E12" FromRole="Usuarios" ToRole="Perfiles" />
+          <NavigationProperty Name="Miembro" Relationship="Self.FK__Usuarios__idMiem__787EE5A0" FromRole="Usuarios" ToRole="Miembros" />
+          <NavigationProperty Name="Perfile" Relationship="Self.FK__Usuarios__idPerf__797309D9" FromRole="Usuarios" ToRole="Perfiles" />
         </EntityType>
         <Association Name="FK__Anuncios__idProv__45F365D3">
           <End Role="Provincias" Type="Self.Provincia" Multiplicity="1" />
@@ -1374,7 +1370,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bitacora__idMiem__7F2BE32F">
+        <Association Name="FK__Bitacora__idMiem__7E37BEF6">
           <End Role="Miembros" Type="Self.Miembro" Multiplicity="1" />
           <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1386,7 +1382,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Bitacora__idMovi__00200768">
+        <Association Name="FK__Bitacora__idMovi__7F2BE32F">
           <End Role="Movimientos" Type="Self.Movimiento" Multiplicity="1" />
           <End Role="Bitacora" Type="Self.Bitacora" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1398,7 +1394,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EventoCar__idCar__151B244E">
+        <Association Name="FK__EventoCar__idCar__14270015">
           <End Role="Cargos" Type="Self.Cargo" Multiplicity="1" />
           <End Role="EventoCargo" Type="Self.EventoCargo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1410,7 +1406,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MiembroCa__idCar__18EBB532">
+        <Association Name="FK__MiembroCa__idCar__17F790F9">
           <End Role="Cargos" Type="Self.Cargo" Multiplicity="1" />
           <End Role="MiembroCargo" Type="Self.MiembroCargo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1506,7 +1502,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EventoCar__idEve__14270015">
+        <Association Name="FK__EventoCar__idEve__1332DBDC">
           <End Role="Eventos" Type="Self.Evento" Multiplicity="1" />
           <End Role="EventoCargo" Type="Self.EventoCargo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1518,7 +1514,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EventoSec__idEve__02FC7413">
+        <Association Name="FK__EventoSec__idEve__02084FDA">
           <End Role="Eventos" Type="Self.Evento" Multiplicity="1" />
           <End Role="EventoSeccion" Type="Self.EventoSeccion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1530,7 +1526,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EventosFu__idEve__71D1E811">
+        <Association Name="FK__EventosFu__idEve__70DDC3D8">
           <End Role="Eventos" Type="Self.Evento" Multiplicity="1" />
           <End Role="EventosFunciones" Type="Self.EventosFuncione" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1542,7 +1538,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MiembroEv__idEve__07C12930">
+        <Association Name="FK__MiembroEv__idEve__06CD04F7">
           <End Role="Eventos" Type="Self.Evento" Multiplicity="1" />
           <End Role="MiembroEvento" Type="Self.MiembroEvento" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1554,7 +1550,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EventoSec__idSec__03F0984C">
+        <Association Name="FK__EventoSec__idSec__02FC7413">
           <End Role="Secciones" Type="Self.Seccione" Multiplicity="1" />
           <End Role="EventoSeccion" Type="Self.EventoSeccion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1566,7 +1562,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__EventosFu__idFun__70DDC3D8">
+        <Association Name="FK__EventosFu__idFun__6FE99F9F">
           <End Role="Funciones" Type="Self.Funcione" Multiplicity="1" />
           <End Role="EventosFunciones" Type="Self.EventosFuncione" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1590,7 +1586,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MiembroFu__idFun__0B91BA14">
+        <Association Name="FK__MiembroFu__idFun__0A9D95DB">
           <End Role="Funciones" Type="Self.Funcione" Multiplicity="1" />
           <End Role="MiembroFuncion" Type="Self.MiembroFuncion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1638,7 +1634,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Inscripci__idMie__76969D2E">
+        <Association Name="FK__Inscripci__idMie__75A278F5">
           <End Role="Miembros" Type="Self.Miembro" Multiplicity="1" />
           <End Role="Inscripciones" Type="Self.Inscripcione" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1650,7 +1646,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ListaNegr__idMie__0F624AF8">
+        <Association Name="FK__ListaNegr__idMie__0E6E26BF">
           <End Role="Miembros" Type="Self.Miembro" Multiplicity="0..1" />
           <End Role="ListaNegra" Type="Self.ListaNegra" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1662,7 +1658,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ListaNegr__respo__0E6E26BF">
+        <Association Name="FK__ListaNegr__respo__0D7A0286">
           <End Role="Miembros" Type="Self.Miembro" Multiplicity="0..1" />
           <End Role="ListaNegra" Type="Self.ListaNegra" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1674,7 +1670,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MiembroCa__idMem__17F790F9">
+        <Association Name="FK__MiembroCa__idMem__17036CC0">
           <End Role="Miembros" Type="Self.Miembro" Multiplicity="1" />
           <End Role="MiembroCargo" Type="Self.MiembroCargo" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1686,7 +1682,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MiembroEv__idMie__06CD04F7">
+        <Association Name="FK__MiembroEv__idMie__05D8E0BE">
           <End Role="Miembros" Type="Self.Miembro" Multiplicity="1" />
           <End Role="MiembroEvento" Type="Self.MiembroEvento" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1698,7 +1694,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__MiembroFu__idMie__0A9D95DB">
+        <Association Name="FK__MiembroFu__idMie__09A971A2">
           <End Role="Miembros" Type="Self.Miembro" Multiplicity="1" />
           <End Role="MiembroFuncion" Type="Self.MiembroFuncion" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1734,7 +1730,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuarios__idMiem__797309D9">
+        <Association Name="FK__Usuarios__idMiem__787EE5A0">
           <End Role="Miembros" Type="Self.Miembro" Multiplicity="1" />
           <End Role="Usuarios" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1746,7 +1742,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Usuarios__idPerf__7A672E12">
+        <Association Name="FK__Usuarios__idPerf__797309D9">
           <End Role="Perfiles" Type="Self.Perfile" Multiplicity="1" />
           <End Role="Usuarios" Type="Self.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
@@ -1793,19 +1789,19 @@
             <End Role="Provincias" EntitySet="Provincias" />
             <End Role="Anuncios" EntitySet="Anuncios" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bitacora__idMiem__7F2BE32F" Association="Self.FK__Bitacora__idMiem__7F2BE32F">
+          <AssociationSet Name="FK__Bitacora__idMiem__7E37BEF6" Association="Self.FK__Bitacora__idMiem__7E37BEF6">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="Bitacora" EntitySet="Bitacoras" />
           </AssociationSet>
-          <AssociationSet Name="FK__Bitacora__idMovi__00200768" Association="Self.FK__Bitacora__idMovi__00200768">
+          <AssociationSet Name="FK__Bitacora__idMovi__7F2BE32F" Association="Self.FK__Bitacora__idMovi__7F2BE32F">
             <End Role="Movimientos" EntitySet="Movimientos" />
             <End Role="Bitacora" EntitySet="Bitacoras" />
           </AssociationSet>
-          <AssociationSet Name="FK__EventoCar__idCar__151B244E" Association="Self.FK__EventoCar__idCar__151B244E">
+          <AssociationSet Name="FK__EventoCar__idCar__14270015" Association="Self.FK__EventoCar__idCar__14270015">
             <End Role="Cargos" EntitySet="Cargos" />
             <End Role="EventoCargo" EntitySet="EventoCargoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__MiembroCa__idCar__18EBB532" Association="Self.FK__MiembroCa__idCar__18EBB532">
+          <AssociationSet Name="FK__MiembroCa__idCar__17F790F9" Association="Self.FK__MiembroCa__idCar__17F790F9">
             <End Role="Cargos" EntitySet="Cargos" />
             <End Role="MiembroCargo" EntitySet="MiembroCargoes" />
           </AssociationSet>
@@ -1837,27 +1833,27 @@
             <End Role="EstadoCivil" EntitySet="EstadoCivils" />
             <End Role="Miembros" EntitySet="Miembros" />
           </AssociationSet>
-          <AssociationSet Name="FK__EventoCar__idEve__14270015" Association="Self.FK__EventoCar__idEve__14270015">
+          <AssociationSet Name="FK__EventoCar__idEve__1332DBDC" Association="Self.FK__EventoCar__idEve__1332DBDC">
             <End Role="Eventos" EntitySet="Eventos" />
             <End Role="EventoCargo" EntitySet="EventoCargoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__EventoSec__idEve__02FC7413" Association="Self.FK__EventoSec__idEve__02FC7413">
+          <AssociationSet Name="FK__EventoSec__idEve__02084FDA" Association="Self.FK__EventoSec__idEve__02084FDA">
             <End Role="Eventos" EntitySet="Eventos" />
             <End Role="EventoSeccion" EntitySet="EventoSeccions" />
           </AssociationSet>
-          <AssociationSet Name="FK__EventosFu__idEve__71D1E811" Association="Self.FK__EventosFu__idEve__71D1E811">
+          <AssociationSet Name="FK__EventosFu__idEve__70DDC3D8" Association="Self.FK__EventosFu__idEve__70DDC3D8">
             <End Role="Eventos" EntitySet="Eventos" />
             <End Role="EventosFunciones" EntitySet="EventosFunciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__MiembroEv__idEve__07C12930" Association="Self.FK__MiembroEv__idEve__07C12930">
+          <AssociationSet Name="FK__MiembroEv__idEve__06CD04F7" Association="Self.FK__MiembroEv__idEve__06CD04F7">
             <End Role="Eventos" EntitySet="Eventos" />
             <End Role="MiembroEvento" EntitySet="MiembroEventoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__EventoSec__idSec__03F0984C" Association="Self.FK__EventoSec__idSec__03F0984C">
+          <AssociationSet Name="FK__EventoSec__idSec__02FC7413" Association="Self.FK__EventoSec__idSec__02FC7413">
             <End Role="Secciones" EntitySet="Secciones" />
             <End Role="EventoSeccion" EntitySet="EventoSeccions" />
           </AssociationSet>
-          <AssociationSet Name="FK__EventosFu__idFun__70DDC3D8" Association="Self.FK__EventosFu__idFun__70DDC3D8">
+          <AssociationSet Name="FK__EventosFu__idFun__6FE99F9F" Association="Self.FK__EventosFu__idFun__6FE99F9F">
             <End Role="Funciones" EntitySet="Funciones" />
             <End Role="EventosFunciones" EntitySet="EventosFunciones" />
           </AssociationSet>
@@ -1865,7 +1861,7 @@
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="FichasMedicas" EntitySet="FichasMedicas" />
           </AssociationSet>
-          <AssociationSet Name="FK__MiembroFu__idFun__0B91BA14" Association="Self.FK__MiembroFu__idFun__0B91BA14">
+          <AssociationSet Name="FK__MiembroFu__idFun__0A9D95DB" Association="Self.FK__MiembroFu__idFun__0A9D95DB">
             <End Role="Funciones" EntitySet="Funciones" />
             <End Role="MiembroFuncion" EntitySet="MiembroFuncions" />
           </AssociationSet>
@@ -1881,27 +1877,27 @@
             <End Role="Grupos" EntitySet="Grupos" />
             <End Role="TotalSeccion" EntitySet="TotalSeccions" />
           </AssociationSet>
-          <AssociationSet Name="FK__Inscripci__idMie__76969D2E" Association="Self.FK__Inscripci__idMie__76969D2E">
+          <AssociationSet Name="FK__Inscripci__idMie__75A278F5" Association="Self.FK__Inscripci__idMie__75A278F5">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="Inscripciones" EntitySet="Inscripciones" />
           </AssociationSet>
-          <AssociationSet Name="FK__ListaNegr__idMie__0F624AF8" Association="Self.FK__ListaNegr__idMie__0F624AF8">
+          <AssociationSet Name="FK__ListaNegr__idMie__0E6E26BF" Association="Self.FK__ListaNegr__idMie__0E6E26BF">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="ListaNegra" EntitySet="ListaNegras" />
           </AssociationSet>
-          <AssociationSet Name="FK__ListaNegr__respo__0E6E26BF" Association="Self.FK__ListaNegr__respo__0E6E26BF">
+          <AssociationSet Name="FK__ListaNegr__respo__0D7A0286" Association="Self.FK__ListaNegr__respo__0D7A0286">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="ListaNegra" EntitySet="ListaNegras" />
           </AssociationSet>
-          <AssociationSet Name="FK__MiembroCa__idMem__17F790F9" Association="Self.FK__MiembroCa__idMem__17F790F9">
+          <AssociationSet Name="FK__MiembroCa__idMem__17036CC0" Association="Self.FK__MiembroCa__idMem__17036CC0">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="MiembroCargo" EntitySet="MiembroCargoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__MiembroEv__idMie__06CD04F7" Association="Self.FK__MiembroEv__idMie__06CD04F7">
+          <AssociationSet Name="FK__MiembroEv__idMie__05D8E0BE" Association="Self.FK__MiembroEv__idMie__05D8E0BE">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="MiembroEvento" EntitySet="MiembroEventoes" />
           </AssociationSet>
-          <AssociationSet Name="FK__MiembroFu__idMie__0A9D95DB" Association="Self.FK__MiembroFu__idMie__0A9D95DB">
+          <AssociationSet Name="FK__MiembroFu__idMie__09A971A2" Association="Self.FK__MiembroFu__idMie__09A971A2">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="MiembroFuncion" EntitySet="MiembroFuncions" />
           </AssociationSet>
@@ -1913,11 +1909,11 @@
             <End Role="Secciones" EntitySet="Secciones" />
             <End Role="Miembros" EntitySet="Miembros" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuarios__idMiem__797309D9" Association="Self.FK__Usuarios__idMiem__797309D9">
+          <AssociationSet Name="FK__Usuarios__idMiem__787EE5A0" Association="Self.FK__Usuarios__idMiem__787EE5A0">
             <End Role="Miembros" EntitySet="Miembros" />
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
-          <AssociationSet Name="FK__Usuarios__idPerf__7A672E12" Association="Self.FK__Usuarios__idPerf__7A672E12">
+          <AssociationSet Name="FK__Usuarios__idPerf__797309D9" Association="Self.FK__Usuarios__idPerf__797309D9">
             <End Role="Perfiles" EntitySet="Perfiles" />
             <End Role="Usuarios" EntitySet="Usuarios" />
           </AssociationSet>
@@ -2206,9 +2202,7 @@
                 <ScalarProperty Name="nombre" ColumnName="nombre" />
                 <ScalarProperty Name="paterno" ColumnName="paterno" />
                 <ScalarProperty Name="materno" ColumnName="materno" />
-                <ScalarProperty Name="estatus" ColumnName="estatus" />
                 <ScalarProperty Name="baja" ColumnName="baja" />
-                <ScalarProperty Name="idDatoPersonal" ColumnName="idDatoPersonal" />
                 <ScalarProperty Name="idSeccion" ColumnName="idSeccion" />
                 <ScalarProperty Name="idGrupo" ColumnName="idGrupo" />
                 <ScalarProperty Name="fotoFileName" ColumnName="fotoFileName" />

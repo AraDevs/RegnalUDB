@@ -12,28 +12,28 @@ GO
 CREATE TABLE Religion
 (idReligion int identity(1,1) primary key not null,
 nombre varchar(45),
-baja tinyint)
+baja bit not null)
 
 CREATE TABLE EstadoCivil
 (idEstadoCivil int identity(1,1) primary key not null,
 estadoCivil varchar(45),
-baja tinyint)
+baja bit not null)
 
 CREATE TABLE Escolaridad
 (idEscolaridad int identity(1,1) primary key not null,
 grado varchar(45),
-baja tinyint)
+baja bit not null)
 
 CREATE TABLE Departamentos
 (idDepartamento int  identity(1,1) primary key not null,
 nombre varchar(45) not null,
 clave varchar(5) not null,
-baja tinyint)
+baja bit not null)
 
 CREATE TABLE Municipios
 (idMunicipio int identity(1,1) primary key not null,
 nombre varchar(45) not null,
-baja tinyint,
+baja bit not null,
 idDepartamento int not null references Departamentos(idDepartamento))
 
 CREATE TABLE Domicilios
@@ -41,7 +41,7 @@ CREATE TABLE Domicilios
 calleNumero varchar(200) not null,
 colonia varchar(80) not null,
 codigoPostal varchar(5),
-baja tinyint,
+baja bit not null,
 idMunicipio int not null references Municipios(idMunicipio),
 entreCalles varchar(80),
 referencia varchar(80),
@@ -52,7 +52,7 @@ telefono varchar(20) not null)
 CREATE TABLE Provincias
 (idProvincia int identity(1,1) not null primary key,
 nombre varchar(45) not null,
-baja tinyint,
+baja bit not null,
 clave varchar(3) not null,
 idRegion int not null)
 
@@ -60,21 +60,21 @@ CREATE TABLE Anuncios
 (idAnuncio int identity(1,1) not null primary key,
 mensaje varchar(100) not null,
 vigencia date not null,
-baja tinyint,
+baja bit not null,
 idProvincia int not null references Provincias(idProvincia))
 
 CREATE TABLE Distritos
 (idDistrito int identity(1,1) not null primary key,
 nombre varchar(45) not null,
 numero smallint not null,
-baja tinyint,
+baja bit not null,
 idProvincia int not null references Provincias(idProvincia))
 
 CREATE TABLE Localidades
 (idLocalidad int identity(1,1) not null primary key,
 nombre varchar(45) not null,
 domicilioCorrespondencia varchar(50) not null, 
-baja tinyint)
+baja bit not null)
 
 CREATE TABLE Grupos
 (idGrupo int identity(1,1) not null primary key,
@@ -82,11 +82,11 @@ nombre varchar(70) not null,
 fundacion date not null,
 grupoNum smallint not null CHECK (grupoNum > 0),
 horario varchar(120),
-baja tinyint,
+baja bit not null,
 idDistrito int not null references Distritos(idDistrito),
 idLocalidad int not null references Localidades(idLocalidad),
 fechaRegistro date not null,
-registrado tinyint)
+registrado bit not null)
 
 CREATE TABLE TotalSeccion
 (idTotalSeccion int identity(1,1) not null primary key,
@@ -102,16 +102,16 @@ scouter int,
 dirigente int,
 padreScout int,
 idGrupo int not null references Grupos(idGrupo),
-mes tinyint CHECK(mes>=0),
-anio smallint CHECK(anio>=0))
+mes int CHECK(mes>=0),
+anio int CHECK(anio>=0))
 
 CREATE TABLE Secciones
 (idSeccion int identity(1,1) NOT NULL primary key,
 Nombre varchar(50) not null,
 Descripcion varchar(80),
-baja tinyint,
+baja bit not null,
 rangoInicio int not null CHECK (rangoInicio > 0),
-rangoFin tinyint CHECK (rangoFin > 0),
+rangoFin int CHECK (rangoFin > 0),
 sexo char(1) not null)
 
 CREATE TABLE Miembros
@@ -120,9 +120,7 @@ cum varchar(10) UNIQUE,
 nombre varchar(50) not null,
 paterno varchar(45),
 materno varchar(45),
-estatus tinyint,
-baja tinyint,
-idDatoPersonal int not null ,
+baja bit not null,
 idSeccion int not null references Secciones(idSeccion),
 idGrupo int not null references Grupos(idGrupo),
 fotoFileName varchar(100),
@@ -149,40 +147,40 @@ parentesco1 varchar(30) not null,
 parentesco2 varchar(30),
 telefono1 varchar(20) not null,
 telefono2 varchar(20),
-email varchar(50),
-sangre varchar(50),
-peso decimal(4,2), check (peso > 0),
-estatura decimal(4,2), check (estatura > 0),
-noafilacion varchar(25),
-ss tinyint,
+email varchar(50) not null,
+sangre varchar(50) not null,
+peso decimal(4,2) not null check (peso > 0),
+estatura decimal(4,2) not null check (estatura > 0),
+noafilacion varchar(25) not null,
+ss bit not null,
 ssOtro varchar(20),
-piePlano varchar(2),
-ortopedico varchar(2),
-operacion varchar(2),
+piePlano bit not null,
+ortopedico bit not null,
+operacion bit not null,
 operacionObs varchar(50),
-limitacion varchar(2),
+limitacion bit not null,
 limitacionObs varchar(50),
-transfusion varchar(2),
+transfusion bit not null,
 transfunsionObs varchar(50),
-alergia varchar(2),
+alergia bit not null,
 alergiaObs varchar(50),
-cronica varchar(2),
+cronica bit not null,
 cronicaObs varchar(50),
-tratamiento varchar(5),
+tratamiento bit not null,
 tratamientoObs varchar(50),
-Oido varchar(2),
+Oido bit not null,
 OidoObs varchar(50),
-protesis varchar(2),
+protesis bit not null,
 protesisObs varchar(50),
-dieta varchar(2),
+dieta bit not null,
 dietaObs varchar(50),
-tabaco varchar(2),
+tabaco bit not null,
 varcharObs varchar(50),
-vacunacion varchar(2),
-mujer varchar(2),
-natacion tinyint,
-fecha date,
-imagen varchar(50))
+vacunacion bit not null,
+mujer bit not null,
+natacion int not null,
+fecha date not null,
+imagen varchar(50) not null)
 
 CREATE TABLE Eventos
 (idEvento int identity(1,1) NOT NULL primary key,
@@ -191,16 +189,16 @@ fechaFin date,
 numResponsables smallint not null CHECK (numResponsables > 0),
 numIntagrantes smallint not null CHECK (numIntagrantes > 0),
 minIntegrantes smallint not null CHECK (minIntegrantes > 0),
-baja tinyint,
+baja bit not null,
 nombre varchar(100) not null,
-esDolar tinyint not null CHECK (esDolar>0),
+esDolar bit not null,
 importe money not null CHECK (importe > 0),
 descripcion varchar(200))
 
 CREATE TABLE Funciones
 (idFuncion int identity(1,1) not null primary key,
 nombre varchar(45) not null,
-baja tinyint,
+baja bit not null,
 idNivel int not null)
 
 CREATE TABLE EventosFunciones
@@ -211,27 +209,27 @@ idEvento int not null references Eventos(idEvento))
 CREATE TABLE Perfiles
 (idPerfil int identity(1,1) not null primary key,
 nombre varchar(45) not null,
-baja tinyint)
+baja bit not null)
 
 CREATE TABLE Inscripciones
 (idInscripcion int identity(1,1) not null primary key,
 fechaInicio date not null,
 fechaFin date,
-baja tinyint,
+baja bit not null,
 idMiembro int not null references Miembros(idMiembro)) 
 
 CREATE TABLE Usuarios
 (idUsuario int identity(1,1) not null primary key,
 pass varchar(500) not null,
-estatus tinyint not null,
-baja tinyint,
+estatus bit not null,
+baja bit not null,
 idMiembro int not null references Miembros(idMiembro),
 idPerfil int not null references Perfiles(idPerfil))
 
 CREATE TABLE Movimientos
 (idMovimiento int identity(1,1) not null primary key,
 descripcion varchar(50),
-baja tinyint)
+baja bit not null)
 
 CREATE TABLE Bitacora
 (idBitcora int identity(1,1) not null primary key,
@@ -249,7 +247,7 @@ CREATE TABLE MiembroEvento
 (idMiembroEvento int not null identity(1,1) primary key,
 idMiembro int not null references Miembros(idMiembro),
 idEvento int not null references Eventos(idEvento),
-pagoPendiente tinyint)
+pagoPendiente bit not null)
 
 CREATE TABLE MiembroFuncion
 (idMiembroFuncion int not null identity(1,1) primary key,
@@ -263,7 +261,7 @@ CREATE TABLE ListaNegra
 (idListaNegra int identity(1,1) not null primary key,
 motivo varchar(80) not null,
 responsable int foreign key references Miembros(idMiembro),
-baja tinyint,
+baja bit not null,
 idMiembro int foreign key references Miembros(idMiembro))
 
 CREATE TABLE Cargos
