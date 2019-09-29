@@ -16,7 +16,7 @@ namespace RegnalUDB
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new GroupTest());
+            Application.Run(new frmDashboard());
         }
     }
 }
