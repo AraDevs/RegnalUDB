@@ -250,7 +250,6 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,10 +261,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSections.resx">
       <DependentUpon>frmSections.cs</DependentUpon>
-=======
+    </EmbeddedResource>
     <EmbeddedResource Include="GroupTest.resx">
       <DependentUpon>GroupTest.cs</DependentUpon>
->>>>>>> c893f319be29ce4edb547e9a7d566fed804cd232
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
