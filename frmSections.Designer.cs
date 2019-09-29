@@ -494,6 +494,7 @@
             this.txtSearch.Size = new System.Drawing.Size(196, 35);
             this.txtSearch.TabIndex = 71;
             this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // dgvSections
             // 
@@ -544,6 +545,7 @@
             this.dgvSections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSections.Size = new System.Drawing.Size(976, 291);
             this.dgvSections.TabIndex = 70;
+            this.dgvSections.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSections_CellContentClick);
             // 
             // label6
             // 
