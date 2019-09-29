@@ -140,7 +140,7 @@
         b3qXqrvub9irXw+Ly/WcV1wR/1s33Vz9mRQFAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btsStatus.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnStatus.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACEAAAAUCAYAAAADU1RxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFuSURBVEhLzZYtT4MxEMcrkUgc6HFlfAwUQeKGeNoRFB8B
