@@ -42,6 +42,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.txtEndRange = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtStartRange = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.txtName = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.rdbMale = new Bunifu.UI.WinForms.BunifuRadioButton();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -53,21 +56,18 @@
             this.btnSaveModify = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuCustomLabel19 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btsStatus = new Bunifu.ToggleSwitch.BunifuToggleSwitch();
+            this.btnStatus = new Bunifu.ToggleSwitch.BunifuToggleSwitch();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuCards2 = new Bunifu.Framework.UI.BunifuCards();
-            this.dgvGroups = new Bunifu.Framework.UI.BunifuCustomDataGrid();
+            this.txtSearch = new Bunifu.Framework.UI.BunifuMetroTextbox();
+            this.dgvSections = new Bunifu.Framework.UI.BunifuCustomDataGrid();
             this.label6 = new System.Windows.Forms.Label();
-            this.bunifuMetroTextbox1 = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuMetroTextbox2 = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuMetroTextbox3 = new Bunifu.Framework.UI.BunifuMetroTextbox();
-            this.bunifuMetroTextbox4 = new Bunifu.Framework.UI.BunifuMetroTextbox();
             this.bunifuCards1.SuspendLayout();
             this.bunifuCards2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).BeginInit();
             this.SuspendLayout();
             // 
             // bunifuCards1
@@ -76,9 +76,9 @@
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.White;
-            this.bunifuCards1.Controls.Add(this.bunifuMetroTextbox3);
-            this.bunifuCards1.Controls.Add(this.bunifuMetroTextbox2);
-            this.bunifuCards1.Controls.Add(this.bunifuMetroTextbox1);
+            this.bunifuCards1.Controls.Add(this.txtEndRange);
+            this.bunifuCards1.Controls.Add(this.txtStartRange);
+            this.bunifuCards1.Controls.Add(this.txtName);
             this.bunifuCards1.Controls.Add(this.rdbMale);
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel5);
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel6);
@@ -90,7 +90,7 @@
             this.bunifuCards1.Controls.Add(this.btnSaveModify);
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel19);
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel18);
-            this.bunifuCards1.Controls.Add(this.btsStatus);
+            this.bunifuCards1.Controls.Add(this.btnStatus);
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel8);
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel2);
             this.bunifuCards1.Controls.Add(this.bunifuCustomLabel1);
@@ -101,6 +101,63 @@
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(1038, 267);
             this.bunifuCards1.TabIndex = 4;
+            // 
+            // txtEndRange
+            // 
+            this.txtEndRange.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtEndRange.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(140)))), ((int)(((byte)(150)))));
+            this.txtEndRange.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtEndRange.BorderThickness = 1;
+            this.txtEndRange.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtEndRange.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEndRange.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtEndRange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtEndRange.isPassword = false;
+            this.txtEndRange.Location = new System.Drawing.Point(635, 72);
+            this.txtEndRange.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEndRange.MaxLength = 32767;
+            this.txtEndRange.Name = "txtEndRange";
+            this.txtEndRange.Size = new System.Drawing.Size(196, 35);
+            this.txtEndRange.TabIndex = 88;
+            this.txtEndRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtStartRange
+            // 
+            this.txtStartRange.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtStartRange.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(140)))), ((int)(((byte)(150)))));
+            this.txtStartRange.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtStartRange.BorderThickness = 1;
+            this.txtStartRange.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtStartRange.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtStartRange.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtStartRange.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtStartRange.isPassword = false;
+            this.txtStartRange.Location = new System.Drawing.Point(186, 72);
+            this.txtStartRange.Margin = new System.Windows.Forms.Padding(4);
+            this.txtStartRange.MaxLength = 32767;
+            this.txtStartRange.Name = "txtStartRange";
+            this.txtStartRange.Size = new System.Drawing.Size(196, 35);
+            this.txtStartRange.TabIndex = 87;
+            this.txtStartRange.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // txtName
+            // 
+            this.txtName.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtName.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(140)))), ((int)(((byte)(150)))));
+            this.txtName.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtName.BorderThickness = 1;
+            this.txtName.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtName.isPassword = false;
+            this.txtName.Location = new System.Drawing.Point(187, 21);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtName.MaxLength = 32767;
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(196, 35);
+            this.txtName.TabIndex = 86;
+            this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // rdbMale
             // 
@@ -237,6 +294,7 @@
             this.btnNewClean.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnNewClean.TextMarginLeft = 0;
             this.btnNewClean.UseDefaultRadiusAndThickness = true;
+            this.btnNewClean.Click += new System.EventHandler(this.btnNewClean_Click);
             // 
             // btnSaveModify
             // 
@@ -300,6 +358,7 @@
             this.btnSaveModify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSaveModify.TextMarginLeft = 0;
             this.btnSaveModify.UseDefaultRadiusAndThickness = true;
+            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
             // bunifuCustomLabel19
             // 
@@ -321,16 +380,16 @@
             this.bunifuCustomLabel18.TabIndex = 40;
             this.bunifuCustomLabel18.Text = "Activo";
             // 
-            // btsStatus
+            // btnStatus
             // 
-            this.btsStatus.Animation = 5;
-            this.btsStatus.BackColor = System.Drawing.Color.Transparent;
-            this.btsStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btsStatus.BackgroundImage")));
-            this.btsStatus.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btsStatus.Location = new System.Drawing.Point(636, 132);
-            this.btsStatus.Name = "btsStatus";
-            this.btsStatus.Size = new System.Drawing.Size(33, 20);
-            this.btsStatus.TabIndex = 39;
+            this.btnStatus.Animation = 5;
+            this.btnStatus.BackColor = System.Drawing.Color.Transparent;
+            this.btnStatus.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnStatus.BackgroundImage")));
+            this.btnStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnStatus.Location = new System.Drawing.Point(636, 132);
+            this.btnStatus.Name = "btnStatus";
+            this.btnStatus.Size = new System.Drawing.Size(33, 20);
+            this.btnStatus.TabIndex = 39;
             toggleState1.BackColor = System.Drawing.Color.Empty;
             toggleState1.BackColorInner = System.Drawing.Color.Empty;
             toggleState1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
@@ -339,7 +398,7 @@
             toggleState1.BorderRadiusInner = 1;
             toggleState1.BorderThickness = 1;
             toggleState1.BorderThicknessInner = 1;
-            this.btsStatus.ToggleStateDisabled = toggleState1;
+            this.btnStatus.ToggleStateDisabled = toggleState1;
             toggleState2.BackColor = System.Drawing.Color.Empty;
             toggleState2.BackColorInner = System.Drawing.Color.Empty;
             toggleState2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
@@ -348,7 +407,7 @@
             toggleState2.BorderRadiusInner = 1;
             toggleState2.BorderThickness = 1;
             toggleState2.BorderThicknessInner = 1;
-            this.btsStatus.ToggleStateOff = toggleState2;
+            this.btnStatus.ToggleStateOff = toggleState2;
             toggleState3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
             toggleState3.BackColorInner = System.Drawing.Color.White;
             toggleState3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
@@ -357,8 +416,8 @@
             toggleState3.BorderRadiusInner = 15;
             toggleState3.BorderThickness = 1;
             toggleState3.BorderThicknessInner = 1;
-            this.btsStatus.ToggleStateOn = toggleState3;
-            this.btsStatus.Value = true;
+            this.btnStatus.ToggleStateOn = toggleState3;
+            this.btnStatus.Value = true;
             // 
             // bunifuCustomLabel8
             // 
@@ -396,9 +455,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(27, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 21);
+            this.label1.Size = new System.Drawing.Size(83, 21);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Grupos";
+            this.label1.Text = "Secciones";
             // 
             // bunifuCards2
             // 
@@ -406,8 +465,8 @@
             this.bunifuCards2.BorderRadius = 5;
             this.bunifuCards2.BottomSahddow = true;
             this.bunifuCards2.color = System.Drawing.Color.White;
-            this.bunifuCards2.Controls.Add(this.bunifuMetroTextbox4);
-            this.bunifuCards2.Controls.Add(this.dgvGroups);
+            this.bunifuCards2.Controls.Add(this.txtSearch);
+            this.bunifuCards2.Controls.Add(this.dgvSections);
             this.bunifuCards2.Controls.Add(this.label6);
             this.bunifuCards2.LeftSahddow = false;
             this.bunifuCards2.Location = new System.Drawing.Point(31, 333);
@@ -417,20 +476,39 @@
             this.bunifuCards2.Size = new System.Drawing.Size(1038, 381);
             this.bunifuCards2.TabIndex = 10;
             // 
-            // dgvGroups
+            // txtSearch
             // 
-            this.dgvGroups.AllowUserToAddRows = false;
-            this.dgvGroups.AllowUserToDeleteRows = false;
+            this.txtSearch.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtSearch.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(140)))), ((int)(((byte)(150)))));
+            this.txtSearch.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtSearch.BorderThickness = 1;
+            this.txtSearch.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtSearch.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSearch.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.txtSearch.isPassword = false;
+            this.txtSearch.Location = new System.Drawing.Point(211, 17);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.MaxLength = 32767;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(196, 35);
+            this.txtSearch.TabIndex = 71;
+            this.txtSearch.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // dgvSections
+            // 
+            this.dgvSections.AllowUserToAddRows = false;
+            this.dgvSections.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvGroups.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvGroups.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvSections.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvSections.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvGroups.BackgroundColor = System.Drawing.Color.White;
-            this.dgvGroups.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvGroups.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvGroups.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvSections.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSections.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSections.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSections.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvSections.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -438,8 +516,8 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvGroups.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvGroups.ColumnHeadersHeight = 40;
+            this.dgvSections.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvSections.ColumnHeadersHeight = 40;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -447,25 +525,25 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGroups.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvGroups.DoubleBuffered = true;
-            this.dgvGroups.EnableHeadersVisualStyles = false;
-            this.dgvGroups.GridColor = System.Drawing.Color.WhiteSmoke;
-            this.dgvGroups.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.dgvGroups.HeaderForeColor = System.Drawing.Color.White;
-            this.dgvGroups.Location = new System.Drawing.Point(27, 66);
-            this.dgvGroups.Name = "dgvGroups";
-            this.dgvGroups.ReadOnly = true;
-            this.dgvGroups.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvGroups.RowHeadersVisible = false;
-            this.dgvGroups.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dgvGroups.RowTemplate.DividerHeight = 1;
-            this.dgvGroups.RowTemplate.Height = 40;
-            this.dgvGroups.RowTemplate.ReadOnly = true;
-            this.dgvGroups.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvGroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGroups.Size = new System.Drawing.Size(976, 291);
-            this.dgvGroups.TabIndex = 70;
+            this.dgvSections.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvSections.DoubleBuffered = true;
+            this.dgvSections.EnableHeadersVisualStyles = false;
+            this.dgvSections.GridColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvSections.HeaderBgColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.dgvSections.HeaderForeColor = System.Drawing.Color.White;
+            this.dgvSections.Location = new System.Drawing.Point(27, 66);
+            this.dgvSections.Name = "dgvSections";
+            this.dgvSections.ReadOnly = true;
+            this.dgvSections.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvSections.RowHeadersVisible = false;
+            this.dgvSections.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dgvSections.RowTemplate.DividerHeight = 1;
+            this.dgvSections.RowTemplate.Height = 40;
+            this.dgvSections.RowTemplate.ReadOnly = true;
+            this.dgvSections.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSections.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvSections.Size = new System.Drawing.Size(976, 291);
+            this.dgvSections.TabIndex = 70;
             // 
             // label6
             // 
@@ -476,86 +554,6 @@
             this.label6.Size = new System.Drawing.Size(171, 20);
             this.label6.TabIndex = 8;
             this.label6.Text = "Búsqueda de Secciones:";
-            // 
-            // bunifuMetroTextbox1
-            // 
-            this.bunifuMetroTextbox1.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.bunifuMetroTextbox1.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(140)))), ((int)(((byte)(150)))));
-            this.bunifuMetroTextbox1.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.bunifuMetroTextbox1.BorderThickness = 1;
-            this.bunifuMetroTextbox1.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMetroTextbox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMetroTextbox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox1.isPassword = false;
-            this.bunifuMetroTextbox1.Location = new System.Drawing.Point(187, 21);
-            this.bunifuMetroTextbox1.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox1.MaxLength = 32767;
-            this.bunifuMetroTextbox1.Name = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.Size = new System.Drawing.Size(196, 35);
-            this.bunifuMetroTextbox1.TabIndex = 86;
-            this.bunifuMetroTextbox1.Text = "bunifuMetroTextbox1";
-            this.bunifuMetroTextbox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuMetroTextbox2
-            // 
-            this.bunifuMetroTextbox2.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.bunifuMetroTextbox2.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(140)))), ((int)(((byte)(150)))));
-            this.bunifuMetroTextbox2.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.bunifuMetroTextbox2.BorderThickness = 1;
-            this.bunifuMetroTextbox2.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMetroTextbox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox2.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMetroTextbox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox2.isPassword = false;
-            this.bunifuMetroTextbox2.Location = new System.Drawing.Point(186, 72);
-            this.bunifuMetroTextbox2.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox2.MaxLength = 32767;
-            this.bunifuMetroTextbox2.Name = "bunifuMetroTextbox2";
-            this.bunifuMetroTextbox2.Size = new System.Drawing.Size(196, 35);
-            this.bunifuMetroTextbox2.TabIndex = 87;
-            this.bunifuMetroTextbox2.Text = "bunifuMetroTextbox2";
-            this.bunifuMetroTextbox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuMetroTextbox3
-            // 
-            this.bunifuMetroTextbox3.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.bunifuMetroTextbox3.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(140)))), ((int)(((byte)(150)))));
-            this.bunifuMetroTextbox3.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.bunifuMetroTextbox3.BorderThickness = 1;
-            this.bunifuMetroTextbox3.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMetroTextbox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox3.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMetroTextbox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox3.isPassword = false;
-            this.bunifuMetroTextbox3.Location = new System.Drawing.Point(635, 72);
-            this.bunifuMetroTextbox3.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox3.MaxLength = 32767;
-            this.bunifuMetroTextbox3.Name = "bunifuMetroTextbox3";
-            this.bunifuMetroTextbox3.Size = new System.Drawing.Size(196, 35);
-            this.bunifuMetroTextbox3.TabIndex = 88;
-            this.bunifuMetroTextbox3.Text = "bunifuMetroTextbox3";
-            this.bunifuMetroTextbox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuMetroTextbox4
-            // 
-            this.bunifuMetroTextbox4.BorderColorFocused = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.bunifuMetroTextbox4.BorderColorIdle = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(140)))), ((int)(((byte)(150)))));
-            this.bunifuMetroTextbox4.BorderColorMouseHover = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.bunifuMetroTextbox4.BorderThickness = 1;
-            this.bunifuMetroTextbox4.characterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.bunifuMetroTextbox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.bunifuMetroTextbox4.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.bunifuMetroTextbox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.bunifuMetroTextbox4.isPassword = false;
-            this.bunifuMetroTextbox4.Location = new System.Drawing.Point(211, 17);
-            this.bunifuMetroTextbox4.Margin = new System.Windows.Forms.Padding(4);
-            this.bunifuMetroTextbox4.MaxLength = 32767;
-            this.bunifuMetroTextbox4.Name = "bunifuMetroTextbox4";
-            this.bunifuMetroTextbox4.Size = new System.Drawing.Size(196, 35);
-            this.bunifuMetroTextbox4.TabIndex = 71;
-            this.bunifuMetroTextbox4.Text = "bunifuMetroTextbox4";
-            this.bunifuMetroTextbox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // frmSections
             // 
@@ -570,11 +568,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSections";
             this.Text = "frmSections";
+            this.Load += new System.EventHandler(this.frmSections_Load);
             this.bunifuCards1.ResumeLayout(false);
             this.bunifuCards1.PerformLayout();
             this.bunifuCards2.ResumeLayout(false);
             this.bunifuCards2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -587,7 +586,7 @@
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnSaveModify;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel19;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel18;
-        private Bunifu.ToggleSwitch.BunifuToggleSwitch btsStatus;
+        private Bunifu.ToggleSwitch.BunifuToggleSwitch btnStatus;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
@@ -601,10 +600,10 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
         private Bunifu.Framework.UI.BunifuCards bunifuCards2;
         private System.Windows.Forms.Label label6;
-        private Bunifu.Framework.UI.BunifuCustomDataGrid dgvGroups;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox3;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox2;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox1;
-        private Bunifu.Framework.UI.BunifuMetroTextbox bunifuMetroTextbox4;
+        private Bunifu.Framework.UI.BunifuCustomDataGrid dgvSections;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtEndRange;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtStartRange;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtName;
+        private Bunifu.Framework.UI.BunifuMetroTextbox txtSearch;
     }
 }
