@@ -1,4 +1,6 @@
-﻿using RegnalUDB.Models;
+﻿using Bunifu.Framework.UI;
+using Bunifu.UI.WinForms.BunifuTextbox;
+using RegnalUDB.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsControlLibrary1;
 
 namespace RegnalUDB.Utils
 {
@@ -46,7 +49,7 @@ namespace RegnalUDB.Utils
 
         public static bool hasText(Control control)
         {   
-            if(control is TextBox)
+            if(control is BunifuMetroTextbox || control is BunifuCustomTextbox)
                 return control.Text.Trim().Length > 0;
             throw new Exception("Invalid control for isEmpty Method");
         }
@@ -65,7 +68,17 @@ namespace RegnalUDB.Utils
             return false;
         }
 
-
+        public static bool isGreaterThan(Control higher, Control minor)
+        {
+            if(IsNumber(higher) && IsNumber(minor))
+            {
+                return Int32.Parse(higher.Text) > Int32.Parse(minor.Text);
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
 }
