@@ -1,13 +1,15 @@
-﻿using RegnalUDB.Models;
+﻿using Bunifu.Framework.UI;
+using RegnalUDB.Models;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using WindowsFormsControlLibrary1;
 
 namespace RegnalUDB.Utils
 {
     static class FormUtils
     {
-
+        public delegate Boolean Func<in T, out Boolean>(T arg);
         public static List<CmbItem> getDataSourceForCmb<T>(List<T> records,  string valueProperty, string idProperty)
         {
             List<CmbItem> items = new List<CmbItem>();
@@ -33,6 +35,35 @@ namespace RegnalUDB.Utils
 
             for (int i = 0; i < titles.Length; i++)
                 dgv.Columns[columnsToChange[i]].HeaderText = titles[i];
+        }
+
+        public static void clearTextbox(Control[] controls)
+        {
+            foreach(Control c in controls)
+            {
+                if(c is BunifuMetroTextbox || c is BunifuCustomTextbox)
+                {
+                    c.Text = "";
+                }
+            }
+        } 
+
+        public static void deselect(ComboBox[] controls)
+        {
+            foreach (ComboBox c in controls)
+                c.SelectedIndex = -1;
+        }
+
+        public static List<T> filterData<T>(List<T> data, Func<T,bool> func)
+        {
+            List<T> filterData = new List<T>();
+            foreach(T record in data)
+            {
+                if (func(record))
+                    filterData.Add(record);
+            }
+           
+            return filterData;
         }
     }
 }
