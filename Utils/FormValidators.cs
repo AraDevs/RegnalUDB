@@ -21,15 +21,17 @@ namespace RegnalUDB.Utils
         /// </summary>
         /// <param name="validators"></param>
         /// <returns>string</returns>
-        public static string validForm(ToValidate[] validators)
+        public static ControlErrorProvider validForm(ToValidate[] validators)
         {
             string errorMessage = null;
+            Control control = null;
             foreach (ToValidate validator in validators)
             {
                 errorMessage = FormValidators.validControl(validator.Control, validator.ControlValidators, validator.ErrorMessages);
+                control = validator.Control;
                 if (!(errorMessage == null)) break;
             }
-            return errorMessage;
+            return errorMessage == null ? null : new ControlErrorProvider(errorMessage, control);
         }
 
         public static string validControl(Control control, ControlValidator[] validators, string[] errorMessages )
@@ -49,7 +51,7 @@ namespace RegnalUDB.Utils
 
         public static bool hasText(Control control)
         {   
-            if(control is BunifuMetroTextbox || control is BunifuCustomTextbox)
+            if(control is TextBox || control is BunifuMetroTextbox || control is BunifuCustomTextbox)
                 return control.Text.Trim().Length > 0;
             throw new Exception("Invalid control for isEmpty Method");
         }
@@ -61,16 +63,28 @@ namespace RegnalUDB.Utils
             throw new Exception("Invalid control for isSelected Method");
         }
 
-        public static bool IsNumber(Control control)
+        public static bool isNumber(Control control)
         {
             if (FormValidators.hasText(control))
                 return Validators.isNumber(control.Text);
             return false;
         }
 
+        /// <summary>
+        /// The date is valid if is less or equals than now 
+        /// </summary>
+        /// <param name="control"></param>
+        /// <returns></returns>
+        public static bool isValidDate(Control control)
+        {
+            if (control is DateTimePicker || control is BunifuDatepicker)
+                return DateTime.Compare(((BunifuDatepicker)control).Value, DateTime.Now) == -1;
+            throw new Exception("Invalid control for isValidDate Method");
+        }
+
         public static bool isGreaterThan(Control higher, Control minor)
         {
-            if(IsNumber(higher) && IsNumber(minor))
+            if(isNumber(higher) && isNumber(minor))
             {
                 return Int32.Parse(higher.Text) > Int32.Parse(minor.Text);
             }

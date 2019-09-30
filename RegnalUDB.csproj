@@ -234,13 +234,8 @@
     <Compile Include="frmSections.Designer.cs">
       <DependentUpon>frmSections.cs</DependentUpon>
     </Compile>
-    <Compile Include="GroupTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="GroupTest.Designer.cs">
-      <DependentUpon>GroupTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\CmbItem.cs" />
+    <Compile Include="Models\ControlErrorProvider.cs" />
     <Compile Include="Models\Operation.cs" />
     <Compile Include="Models\ToValidate.cs" />
     <Compile Include="Program.cs" />
@@ -262,9 +257,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSections.resx">
       <DependentUpon>frmSections.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="GroupTest.resx">
-      <DependentUpon>GroupTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
