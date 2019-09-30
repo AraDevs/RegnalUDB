@@ -28,5 +28,11 @@ namespace RegnalUDB.Entity_Framework
         public virtual Departamento Departamento { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Domicilio> Domicilios { get; set; }
+
+        override
+        public string ToString()
+        {
+            return nombre;
+        }
     }
 }
