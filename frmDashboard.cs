@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,7 +15,16 @@ namespace RegnalUDB
     {
         public frmDashboard()
         {
+            Thread thread = new Thread(new ThreadStart(StartForm));
+            thread.Start();
+            Thread.Sleep(5000);
             InitializeComponent();
+            thread.Abort();
+        }
+
+        public void StartForm()
+        {
+            Application.Run(new frmScreenSplash());
         }
 
         private void PcbCloseWindow_Click(object sender, EventArgs e)
@@ -62,6 +72,7 @@ namespace RegnalUDB
 
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Normal;
             ShowChildForm(new frmMembers());
         }
 
@@ -73,6 +84,12 @@ namespace RegnalUDB
         private void BunifuFlatButton3_Click(object sender, EventArgs e)
         {
             ShowChildForm(new frmSections());
+        }
+
+        private void PcbInfo_Click(object sender, EventArgs e)
+        {
+            frmCredits credits = new frmCredits();
+            credits.Show();
         }
     }
 }

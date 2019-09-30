@@ -34,6 +34,7 @@
             this.roundedCorners = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.DragControlTop = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.pnlMenuTop = new System.Windows.Forms.Panel();
+            this.pcbInfo = new System.Windows.Forms.PictureBox();
             this.pcbRestoreWindow = new System.Windows.Forms.PictureBox();
             this.pcbCloseWindow = new System.Windows.Forms.PictureBox();
             this.pcbMaximizeWindow = new System.Windows.Forms.PictureBox();
@@ -48,6 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pcbMenuSidebar = new System.Windows.Forms.PictureBox();
             this.pnlMenuTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pcbInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRestoreWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCloseWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMaximizeWindow)).BeginInit();
@@ -81,6 +83,7 @@
             // pnlMenuTop
             // 
             this.pnlMenuTop.BackColor = System.Drawing.Color.White;
+            this.pnlMenuTop.Controls.Add(this.pcbInfo);
             this.pnlMenuTop.Controls.Add(this.pcbRestoreWindow);
             this.pnlMenuTop.Controls.Add(this.pcbCloseWindow);
             this.pnlMenuTop.Controls.Add(this.pcbMaximizeWindow);
@@ -90,6 +93,19 @@
             this.pnlMenuTop.Name = "pnlMenuTop";
             this.pnlMenuTop.Size = new System.Drawing.Size(1100, 80);
             this.pnlMenuTop.TabIndex = 0;
+            // 
+            // pcbInfo
+            // 
+            this.pcbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbInfo.Image = global::RegnalUDB.Properties.Resources.info_40px;
+            this.pcbInfo.Location = new System.Drawing.Point(906, 24);
+            this.pcbInfo.Name = "pcbInfo";
+            this.pcbInfo.Size = new System.Drawing.Size(32, 32);
+            this.pcbInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbInfo.TabIndex = 6;
+            this.pcbInfo.TabStop = false;
+            this.pcbInfo.Click += new System.EventHandler(this.PcbInfo_Click);
             // 
             // pcbRestoreWindow
             // 
@@ -108,6 +124,7 @@
             // pcbCloseWindow
             // 
             this.pcbCloseWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbCloseWindow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbCloseWindow.Image = global::RegnalUDB.Properties.Resources.close_window_40px;
             this.pcbCloseWindow.Location = new System.Drawing.Point(1047, 24);
             this.pcbCloseWindow.Name = "pcbCloseWindow";
@@ -132,6 +149,7 @@
             // pcbMinimizeWindow
             // 
             this.pcbMinimizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbMinimizeWindow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbMinimizeWindow.Image = global::RegnalUDB.Properties.Resources.minimize_window_40px;
             this.pcbMinimizeWindow.Location = new System.Drawing.Point(971, 24);
             this.pcbMinimizeWindow.Name = "pcbMinimizeWindow";
@@ -189,6 +207,7 @@
             this.bunifuFlatButton3.IconZoom = 50D;
             this.bunifuFlatButton3.IsTab = false;
             this.bunifuFlatButton3.Location = new System.Drawing.Point(12, 280);
+            this.bunifuFlatButton3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuFlatButton3.Name = "bunifuFlatButton3";
             this.bunifuFlatButton3.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton3.OnHovercolor = System.Drawing.Color.Transparent;
@@ -226,6 +245,7 @@
             this.bunifuFlatButton2.IconZoom = 50D;
             this.bunifuFlatButton2.IsTab = false;
             this.bunifuFlatButton2.Location = new System.Drawing.Point(12, 215);
+            this.bunifuFlatButton2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuFlatButton2.Name = "bunifuFlatButton2";
             this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.Transparent;
@@ -263,6 +283,7 @@
             this.bunifuFlatButton1.IconZoom = 50D;
             this.bunifuFlatButton1.IsTab = false;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(12, 150);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
             this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.Transparent;
@@ -350,6 +371,7 @@
             this.Text = "frmDashboard";
             this.Load += new System.EventHandler(this.FrmDashboard_Load);
             this.pnlMenuTop.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pcbInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRestoreWindow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCloseWindow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMaximizeWindow)).EndInit();
@@ -380,5 +402,6 @@
         private System.Windows.Forms.PictureBox pcbMinimizeWindow;
         private System.Windows.Forms.PictureBox pcbMaximizeWindow;
         private System.Windows.Forms.Panel pnlMenuTop;
+        private System.Windows.Forms.PictureBox pcbInfo;
     }
 }
