@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Windows.Forms;
 using RegnalUDB.Entity_Framework;
 using RegnalUDB.Models;
 
@@ -40,7 +42,7 @@ namespace RegnalUDB.Controllers
         {
             try
             {
-                List<Grupos> data = EntitySingleton.Context.Grupos.ToList();
+                List<Grupos> data = EntitySingleton.Context.Grupos.Where(g=> g.baja).ToList();
                 return FactoryOperation<Grupos>.getDataOperation(data);
             }
             catch (Exception e)
@@ -55,11 +57,16 @@ namespace RegnalUDB.Controllers
             {
                 Grupos group = EntitySingleton.Context.Grupos.Find(o.idGrupo);
                 EntitySingleton.Context.Entry(group).CurrentValues.SetValues(o);
+
+                group.Localidade = o.Localidade;
+                group.Distrito = o.Distrito;
+
                 EntitySingleton.Context.SaveChanges();
                 return FactoryOperation<Grupos>.getSuccessOperation();
             }
             catch (Exception e)
             {
+                Trace.Write(e.InnerException);
                 return FactoryOperation<Grupos>.getFailOperation(e.Message);
             }
         }

@@ -63,6 +63,7 @@ namespace RegnalUDB
             Operation<Seccione> operation = sectionController.addRecord(tempSec);
             if (operation.State)
             {
+                MessageBox.Show("Seccion agregada con exito");
                 loadTable();
                 cleanForm();
             }
@@ -77,6 +78,7 @@ namespace RegnalUDB
             Operation<Seccione> operation = sectionController.updateRecord(currentSection);
             if (operation.State)
             {
+                MessageBox.Show("Seccion actualizada con exito");
                 loadTable();
                 cleanForm();
             }
@@ -118,9 +120,9 @@ namespace RegnalUDB
                  new string[] { "Ingresa un nombre" }),
                  new ToValidate(txtDescription, new ControlValidator[] { FormValidators.hasText },
                  new string[] { "Ingresa una descripcion" }),
-                 new ToValidate(txtStartRange, new ControlValidator[] { FormValidators.IsNumber },
+                 new ToValidate(txtStartRange, new ControlValidator[] { FormValidators.isNumber },
                  new string[] { "El valor ingresado en rango inicio debe ser un numero" }),
-                 new ToValidate(txtEndRange, new ControlValidator[] { FormValidators.IsNumber },
+                 new ToValidate(txtEndRange, new ControlValidator[] { FormValidators.isNumber },
                  new string[] { "El valor ingresado en rango fin debe ser un numero" })
             };
             return validators;
@@ -133,6 +135,7 @@ namespace RegnalUDB
             rdbMale.Checked = false;
             btnSaveModify.Text = "Guardar";
             selectedSection = null;
+            errorProvider.Clear();
         }
 
         private Control[] textControls()
@@ -148,8 +151,8 @@ namespace RegnalUDB
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            string errorMessage = FormValidators.validForm(getValidators());
-            bool isValid = errorMessage == null;
+            ControlErrorProvider errorProvider = FormValidators.validForm(getValidators());
+            bool isValid = errorProvider == null;
             bool isGreater = FormValidators.isGreaterThan(txtEndRange, txtStartRange);
             if (isValid && isGreater)
             {
@@ -170,7 +173,8 @@ namespace RegnalUDB
             }
             else
             {
-                MessageBox.Show(isGreater?errorMessage:errorMessage+" rango mayor no puede ser inferior a rango menor");
+                this.errorProvider.Clear();
+                this.errorProvider.SetError(!isGreater?txtEndRange:errorProvider.ControlName,!isGreater ? "Este valor debe ser mayor que el de comienzo":errorProvider.ErrorMessage);
             }
         }
 
