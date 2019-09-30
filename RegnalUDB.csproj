@@ -209,6 +209,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCredits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCredits.Designer.cs">
+      <DependentUpon>frmCredits.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,12 @@
     </Compile>
     <Compile Include="frmMembers.Designer.cs">
       <DependentUpon>frmMembers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmScreenSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScreenSplash.Designer.cs">
+      <DependentUpon>frmScreenSplash.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSections.cs">
       <SubType>Form</SubType>
@@ -250,6 +262,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCredits.resx">
+      <DependentUpon>frmCredits.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDashboard.resx">
       <DependentUpon>frmDashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMembers.resx">
       <DependentUpon>frmMembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScreenSplash.resx">
+      <DependentUpon>frmScreenSplash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSections.resx">
       <DependentUpon>frmSections.cs</DependentUpon>
@@ -306,6 +324,12 @@
       <DependentUpon>MainModel.edmx</DependentUpon>
       <LastGenOutput>MainModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\info_40px.png" />
+    <None Include="Resources\close_window_black_40px.png" />
+    <None Include="Resources\udblogo_black.png" />
+    <None Include="Resources\image002.jpg" />
+    <None Include="Resources\image001.jpg" />
+    <None Include="Resources\Logo UDB.png" />
     <None Include="Resources\generic_sorting_40px.png" />
     <None Include="Resources\search_40px.png" />
     <None Include="Resources\map_pin_40px.png" />
