@@ -74,5 +74,11 @@ namespace RegnalUDB.Entity_Framework
         public virtual Seccione Seccione { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Usuario> Usuarios { get; set; }
+
+        override
+        public string ToString()
+        {
+            return nombre + " " + paterno + " " + materno;
+        }
     }
 }

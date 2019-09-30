@@ -51,6 +51,37 @@ namespace RegnalUDB.Controllers
                 return FactoryOperation<Seccione>.getFailOperation(e.Message);
             }
         }
+        public Operation<Seccione> getRecordsByMemberInfo(string gender, int age)
+        {
+            try
+            {
+                //Obtaining the upper age limit of the section in which the member can be assigned by default
+                int? upper = EntitySingleton.Context.Secciones.Where(x => (x.rangoFin >= age && x.rangoInicio <= age) || (x.rangoFin == null && x.rangoInicio <= age)).FirstOrDefault().rangoFin;
+
+                List<Seccione> data;
+
+                //If the upper age limit is null, it is already in the maximum level of sections
+                if (upper == null)
+                {
+                    data = EntitySingleton.Context.Secciones.
+                        Where(x => x.sexo.Equals(gender) && x.rangoFin == null && x.rangoInicio <= age).ToList();
+                }
+                //If the upper age limit is not null, it will return the section(s) in which the member can be
+                //assigned by its age, plus the section corresponding to its next level
+                else
+                {
+                    data = EntitySingleton.Context.Secciones.
+                        Where(x => x.sexo.Equals(gender) &&
+                        ((x.rangoFin >= age && x.rangoInicio <= age) || x.rangoInicio == (upper + 1))).ToList();
+                }
+
+                return FactoryOperation<Seccione>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Seccione>.getFailOperation(e.Message);
+            }
+        }
 
         public Operation<Seccione> updateRecord(Seccione o)
         {

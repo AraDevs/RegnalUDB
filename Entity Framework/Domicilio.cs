@@ -34,5 +34,11 @@ namespace RegnalUDB.Entity_Framework
         public virtual Municipio Municipio { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Miembro> Miembros { get; set; }
+
+        override
+        public string ToString()
+        {
+            return colonia + ", " + entreCalles + ", #" + calleNumero + ", " + Municipio + ", " + Municipio.Departamento;
+        }
     }
 }

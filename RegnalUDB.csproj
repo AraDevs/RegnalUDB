@@ -92,10 +92,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CivilStatusController.cs" />
     <Compile Include="Controllers\Controller.cs" />
+    <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DistricController.cs" />
+    <Compile Include="Controllers\DomicileController.cs" />
     <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\LocalityController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\MunicipalityContraller.cs" />
+    <Compile Include="Controllers\ReligionController.cs" />
     <Compile Include="Controllers\SchoolarshipController.cs" />
     <Compile Include="Controllers\SectionController.cs" />
     <Compile Include="Entity Framework\Anuncio.cs">

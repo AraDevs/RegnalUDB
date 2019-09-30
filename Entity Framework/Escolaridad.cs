@@ -26,5 +26,11 @@ namespace RegnalUDB.Entity_Framework
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Miembro> Miembros { get; set; }
+
+        override
+        public string ToString()
+        {
+            return grado;
+        }
     }
 }
