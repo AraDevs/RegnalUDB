@@ -63,6 +63,7 @@ namespace RegnalUDB
             Operation<Seccione> operation = sectionController.addRecord(tempSec);
             if (operation.State)
             {
+                MessageBox.Show("Seccion agregada con exito");
                 loadTable();
                 cleanForm();
             }
@@ -77,6 +78,7 @@ namespace RegnalUDB
             Operation<Seccione> operation = sectionController.updateRecord(currentSection);
             if (operation.State)
             {
+                MessageBox.Show("Seccion actualizada con exito");
                 loadTable();
                 cleanForm();
             }
@@ -133,6 +135,7 @@ namespace RegnalUDB
             rdbMale.Checked = false;
             btnSaveModify.Text = "Guardar";
             selectedSection = null;
+            errorProvider.Clear();
         }
 
         private Control[] textControls()
@@ -148,8 +151,8 @@ namespace RegnalUDB
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            /*string errorMessage = FormValidators.validForm(getValidators());
-            bool isValid = errorMessage == null;
+            ControlErrorProvider errorProvider = FormValidators.validForm(getValidators());
+            bool isValid = errorProvider == null;
             bool isGreater = FormValidators.isGreaterThan(txtEndRange, txtStartRange);
             if (isValid && isGreater)
             {
@@ -170,8 +173,9 @@ namespace RegnalUDB
             }
             else
             {
-                MessageBox.Show(isGreater?errorMessage:errorMessage+" rango mayor no puede ser inferior a rango menor");
-            }*/
+                this.errorProvider.Clear();
+                this.errorProvider.SetError(!isGreater?txtEndRange:errorProvider.ControlName,!isGreater ? "Este valor debe ser mayor que el de comienzo":errorProvider.ErrorMessage);
+            }
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
