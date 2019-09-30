@@ -118,9 +118,9 @@ namespace RegnalUDB
                  new string[] { "Ingresa un nombre" }),
                  new ToValidate(txtDescription, new ControlValidator[] { FormValidators.hasText },
                  new string[] { "Ingresa una descripcion" }),
-                 new ToValidate(txtStartRange, new ControlValidator[] { FormValidators.IsNumber },
+                 new ToValidate(txtStartRange, new ControlValidator[] { FormValidators.isNumber },
                  new string[] { "El valor ingresado en rango inicio debe ser un numero" }),
-                 new ToValidate(txtEndRange, new ControlValidator[] { FormValidators.IsNumber },
+                 new ToValidate(txtEndRange, new ControlValidator[] { FormValidators.isNumber },
                  new string[] { "El valor ingresado en rango fin debe ser un numero" })
             };
             return validators;
@@ -148,7 +148,7 @@ namespace RegnalUDB
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            string errorMessage = FormValidators.validForm(getValidators());
+            /*string errorMessage = FormValidators.validForm(getValidators());
             bool isValid = errorMessage == null;
             bool isGreater = FormValidators.isGreaterThan(txtEndRange, txtStartRange);
             if (isValid && isGreater)
@@ -171,7 +171,7 @@ namespace RegnalUDB
             else
             {
                 MessageBox.Show(isGreater?errorMessage:errorMessage+" rango mayor no puede ser inferior a rango menor");
-            }
+            }*/
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)

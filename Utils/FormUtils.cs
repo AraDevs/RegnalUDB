@@ -9,7 +9,7 @@ namespace RegnalUDB.Utils
 {
     static class FormUtils
     {
-
+        public delegate Boolean Func<in T, out Boolean>(T arg);
         public static List<CmbItem> getDataSourceForCmb<T>(List<T> records,  string valueProperty, string idProperty)
         {
             List<CmbItem> items = new List<CmbItem>();
@@ -47,5 +47,23 @@ namespace RegnalUDB.Utils
                 }
             }
         } 
+
+        public static void deselect(ComboBox[] controls)
+        {
+            foreach (ComboBox c in controls)
+                c.SelectedIndex = -1;
+        }
+
+        public static List<T> filterData<T>(List<T> data, Func<T,bool> func)
+        {
+            List<T> filterData = new List<T>();
+            foreach(T record in data)
+            {
+                if (func(record))
+                    filterData.Add(record);
+            }
+           
+            return filterData;
+        }
     }
 }
