@@ -27,5 +27,14 @@ namespace RegnalUDB
             };
             return operation;
         }
+
+        public static Operation<T> getSingleValueOperation(object value)
+        {
+            Operation<T> operation = new Operation<T>
+            {
+                Value = value
+            };
+            return operation;
+        }
     }
 }
