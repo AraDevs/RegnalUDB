@@ -33,12 +33,25 @@ namespace RegnalUDB.Controllers
             }
         }
 
+        public Operation<Municipio> getActiveRecords()
+        {
+            try
+            {
+                List<Municipio> data = EntitySingleton.Context.Municipios.Where(x => x.baja).ToList();
+                return FactoryOperation<Municipio>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Municipio>.getFailOperation(e.Message);
+            }
+        }
+
         public Operation<Municipio> getRecordsByDepartment(Departamento department)
         {
             try
             {
                 List<Municipio> data = EntitySingleton.Context.Municipios.
-                    Where(x => x.idDepartamento.Equals(department.idDepartamento)).ToList();
+                    Where(x => x.idDepartamento.Equals(department.idDepartamento) && x.baja).ToList();
                 return FactoryOperation<Municipio>.getDataOperation(data);
             }
             catch (Exception e)

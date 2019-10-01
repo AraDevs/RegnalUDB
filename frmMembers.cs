@@ -55,6 +55,78 @@ namespace RegnalUDB
             InitializeComponent();
         }
 
+        private ToValidate[] getValidators()
+        {
+            ToValidate[] validators =  {
+                 new ToValidate(txtName, new ControlValidator[] { FormValidators.hasText },
+                 new string[] { "Ingresa el nombre del miembro" }),
+
+                 new ToValidate(dtpBirthday, new ControlValidator[] { FormValidators.isValidDate },
+                 new string[] { "La fecha ingresada sobrepasa el día actual" }),
+
+                 new ToValidate(cmbCivilStatus, new ControlValidator[] { FormValidators.isSelected },
+                 new string[] { "Selecciona un estado civil" }),
+
+                 new ToValidate(cmbDepartment, new ControlValidator[] { FormValidators.isSelected },
+                 new string[] { "Selecciona un departamento" }),
+
+                 new ToValidate(cmbGroup, new ControlValidator[] { FormValidators.isSelected },
+                 new string[] { "Selecciona un grupo" }),
+
+                 new ToValidate(cmbMunicipality, new ControlValidator[] { FormValidators.isSelected },
+                 new string[] { "Selecciona un municipio" }),
+
+                 new ToValidate(cmbReligion, new ControlValidator[] { FormValidators.isSelected },
+                 new string[] { "Selecciona una religión" }),
+
+                 new ToValidate(cmbScholarship, new ControlValidator[] { FormValidators.isSelected },
+                 new string[] { "Selecciona una escolaridad" }),
+
+                 new ToValidate(cmbSection, new ControlValidator[] { FormValidators.isSelected },
+                 new string[] { "Selecciona una sección" }),
+
+                 new ToValidate(txtOcupation, new ControlValidator[] { FormValidators.hasText },
+                 new string[] { "Ingrese la ocupación del miembro" }),
+
+                 new ToValidate(txtMobile, new ControlValidator[] { FormValidators.isMobilePhoneOrNull },
+                 new string[] { "El teléfono móvil debe ser una cadena de 8 dígitos que inicie con 6 o 7. Ejemplos: 68901123, 79819912" }),
+
+                 new ToValidate(txtOffice, new ControlValidator[] { FormValidators.isPhoneWithExtensionOrNull },
+                 new string[] { "El teléfono móvil debe ser una cadena de 8 dígitos que inicie con 2, y puede ir acompañada de una extensión de 4 dígitos. Ejemplos: 22329012, 22910014 1457" }),
+
+                 new ToValidate(txtParticular, new ControlValidator[] { FormValidators.isParticularPhone },
+                 new string[] { "El teléfono móvil debe ser una cadena de 8 dígitos que inicie con 2. Ejemplo: 22329012" }),
+
+                 new ToValidate(txtEmail, new ControlValidator[] { FormValidators.isEmail },
+                 new string[] { "El email proporcionado no es válido" }),
+
+                 new ToValidate(pcbPhoto, new ControlValidator[] { FormValidators.hasImageLocation },
+                 new string[] { "Seleccione una foto para el miembro" }),
+
+                 new ToValidate(txtStreetNo, new ControlValidator[] { FormValidators.hasText },
+                 new string[] { "Ingrese el número de casa de la dirección" }),
+
+                 new ToValidate(txtStreet, new ControlValidator[] { FormValidators.hasText },
+                 new string[] { "Ingrese al menos una calle aledaña a la dirección" }),
+
+                 new ToValidate(txtColony, new ControlValidator[] { FormValidators.hasText },
+                 new string[] { "Ingrese la colonia de la dirección" }),
+
+                 new ToValidate(txtReference, new ControlValidator[] { FormValidators.hasText },
+                 new string[] { "Ingrese al menos una referencia para la dirección" }),
+
+                 new ToValidate(txtPostalCode, new ControlValidator[] { FormValidators.isPostalCode },
+                 new string[] { "Ingrese el código postal de la dirección" }),
+
+                 new ToValidate(txtContact, new ControlValidator[] { FormValidators.hasText },
+                 new string[] { "Ingrese el nombre de un contacto para el miembro" }),
+
+                 new ToValidate(txtPhone, new ControlValidator[] { FormValidators.isParticularPhone },
+                 new string[] { "Ingrese un número telefónico de contacto" })
+            };
+            return validators;
+        }
+
         private void loadMunicipalities()
         {
             Operation<Municipio> getMunicipalitiesOperation = 
@@ -103,7 +175,7 @@ namespace RegnalUDB
 
         private void loadCmbs()
         {
-            Operation<Religion> getReligionsOperation = religionController.getRecords();
+            Operation<Religion> getReligionsOperation = religionController.getActiveRecords();
             if (getReligionsOperation.State)
             {
                 religions = getReligionsOperation.Data;
@@ -114,7 +186,7 @@ namespace RegnalUDB
                 MessageBox.Show("Error al cargar la lista de religiones. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            Operation<Escolaridad> getScholarshipsOperation = schoolarshipController.getRecords();
+            Operation<Escolaridad> getScholarshipsOperation = schoolarshipController.getActiveRecords();
             if (getScholarshipsOperation.State)
             {
                 scholarships = getScholarshipsOperation.Data;
@@ -125,7 +197,7 @@ namespace RegnalUDB
                 MessageBox.Show("Error al cargar la lista de escolaridades. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            Operation<EstadoCivil> getCivilStatusesOperation = civilStatusController.getRecords();
+            Operation<EstadoCivil> getCivilStatusesOperation = civilStatusController.getActiveRecords();
             if (getCivilStatusesOperation.State)
             {
                 civilStatuses = getCivilStatusesOperation.Data;
@@ -136,7 +208,7 @@ namespace RegnalUDB
                 MessageBox.Show("Error al cargar la lista de estados civiles. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            Operation<Grupos> getGroupsOperation = groupController.getRecords();
+            Operation<Grupos> getGroupsOperation = groupController.getActiveRecords();
             if (getGroupsOperation.State)
             {
                 groups = getGroupsOperation.Data;
@@ -147,7 +219,7 @@ namespace RegnalUDB
                 MessageBox.Show("Error al cargar la lista de grupos. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            Operation<Departamento> getDepartmentsOperation = departmentController.getRecords();
+            Operation<Departamento> getDepartmentsOperation = departmentController.getActiveRecords();
             if (getDepartmentsOperation.State)
             {
                 departments = getDepartmentsOperation.Data;
@@ -538,32 +610,23 @@ namespace RegnalUDB
                     
         }
 
-        private ToValidate[] getValidators()
-        {
-            ToValidate[] validators =  {
-                 /*new ToValidate(txtName, new ControlValidator[] { FormValidators.hasText },
-                 new string[] { "Ingresa un nombre" }),
-                 new ToValidate(txtDescription, new ControlValidator[] { FormValidators.hasText },
-                 new string[] { "Ingresa una descripcion" }),
-                 new ToValidate(txtStartRange, new ControlValidator[] { FormValidators.IsNumber },
-                 new string[] { "El valor ingresado en rango inicio debe ser un numero" }),
-                 new ToValidate(txtEndRange, new ControlValidator[] { FormValidators.IsNumber },
-                 new string[] { "El valor ingresado en rango fin debe ser un numero" })
-            */};
-            return validators;
-        }
-
         private void FrmMembers_Load(object sender, EventArgs e)
         {
-            loadCmbs();
-            loadTable();
+            try { 
+                loadCmbs();
+                loadTable();
 
-            pnlButtons.BackColor = System.Drawing.Color.Transparent;
-            pnlButtons.BringToFront();
+                pnlButtons.BackColor = System.Drawing.Color.Transparent;
+                pnlButtons.BringToFront();
 
-            //Not the ideal practice, but I don't want to waste time researching 
-            //how to change initialImage in design mode right now
-            pcbPhoto.InitialImage = pcbPhoto.Image;
+                //Not the ideal practice, but I don't want to waste time researching 
+                //how to change initialImage in design mode right now
+                pcbPhoto.InitialImage = pcbPhoto.Image;
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void Label5_Click(object sender, EventArgs e)
@@ -596,54 +659,100 @@ namespace RegnalUDB
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            /*string errorMessage = FormValidators.validForm(getValidators());
-            bool isValid = errorMessage == null;
-            bool isGreater = FormValidators.isGreaterThan(txtEndRange, txtStartRange);
-            if (isValid && isGreater)
-            {*/
-                if (selectedMember == null)
+            try
+            {
+                this.errorProvider.Clear();
+                List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorProvider == null;
+                bool hasLastName = FormValidators.oneHasText(new Control[] { txtPaternal, txtMaternal });
+                if (isValid && hasLastName)
                 {
-                    saveData();
+                    if (selectedMember == null)
+                    {
+                        saveData();
+                    }
+                    else
+                    {
+                        updateData();
+                    }
                 }
                 else
                 {
-                    updateData();
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (!hasLastName)
+                    {
+                        errorProvider.Add(new ControlErrorProvider("Debe proporcionarse al menos un apellido, ya sea paterno o materno", txtPaternal));
+                    }
+                    foreach (ControlErrorProvider error in errorProvider)
+                    {
+                        this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
+                    }
                 }
-            /*}
-            else
+            }
+            catch (Exception ex)
             {
-                MessageBox.Show(isGreater ? errorMessage : errorMessage + " rango mayor no puede ser inferior a rango menor");
-            }*/
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            loadMunicipalities();
+            try { 
+                loadMunicipalities();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void rdbMale_Click(object sender, EventArgs e)
         {
-            loadSections();
+            try {  
+                loadSections();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void rdbFemale_Click(object sender, EventArgs e)
         {
-            loadSections();
+            try { 
+                loadSections();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dtpBirthday_onValueChanged(object sender, EventArgs e)
         {
-            loadSections();
+            try { 
+                loadSections();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnBrowsePhoto_Click(object sender, EventArgs e)
         {
-            OpenFileDialog opf = new OpenFileDialog();
-            opf.Filter = "Choose Image(*.jpg;*.png;)|*.jpg;*.png;";
+            try { 
+                OpenFileDialog opf = new OpenFileDialog();
+                opf.Filter = "Choose Image(*.jpg;*.png;)|*.jpg;*.png;";
 
-            if (opf.ShowDialog() == DialogResult.OK)
+                if (opf.ShowDialog() == DialogResult.OK)
+                {
+                    pcbPhoto.ImageLocation = opf.FileName;
+                }
+            }
+            catch (Exception ex)
             {
-                pcbPhoto.ImageLocation = opf.FileName;
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
@@ -664,15 +773,21 @@ namespace RegnalUDB
 
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
-            {
-                selectedMember = members[index];
-                btnSaveModify.Text = "Modificar";
-                fillSelectedData(selectedMember);
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    selectedMember = members[index];
+                    btnSaveModify.Text = "Modificar";
+                    fillSelectedData(selectedMember);
 
-                txtDomicileDuplicity.Text = "Este miembro ha cambiado de domicilio, pero los demás miembros que comparten el domicilio no";
-                btsDuplicity.Value = false;
+                    txtDomicileDuplicity.Text = "Este miembro ha cambiado de domicilio, pero los demás miembros que comparten el domicilio no";
+                    btsDuplicity.Value = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
@@ -688,64 +803,75 @@ namespace RegnalUDB
 
         private void bunifuToggleSwitch1_OnValuechange(object sender, EventArgs e)
         {
-            //'Save' mode
-            if (selectedMember == null)
-            {
-                if (btsDuplicity.Value)
+            try { 
+                //'Save' mode
+                if (selectedMember == null)
                 {
-                    string partnerCum = "";
-                    if (FormUtils.InputBox("Buscar domicilio", "Ingrese el CUM de la persona con la que comparte domicilio:", ref partnerCum) == DialogResult.OK)
+                    if (btsDuplicity.Value)
                     {
-                        Operation<Miembro> getMemberOperation = memberController.getRecordbyCum(partnerCum);
-                        if (getMemberOperation.State && getMemberOperation.Value != null)
+                        string partnerCum = "";
+                        if (FormUtils.InputBox("Buscar domicilio", "Ingrese el CUM de la persona con la que comparte domicilio:", ref partnerCum) == DialogResult.OK)
                         {
-                            searchedDomicile = ((Miembro)getMemberOperation.Value).Domicilio;
+                            Operation<Miembro> getMemberOperation = memberController.getRecordbyCum(partnerCum);
+                            if (getMemberOperation.State && getMemberOperation.Value != null)
+                            {
+                                searchedDomicile = ((Miembro)getMemberOperation.Value).Domicilio;
 
-                            txtStreetNo.Text = searchedDomicile.calleNumero;
-                            txtStreet.Text = searchedDomicile.entreCalles;
-                            txtColony.Text = searchedDomicile.colonia;
-                            txtReference.Text = searchedDomicile.referencia;
-                            txtPostalCode.Text = searchedDomicile.codigoPostal;
-                            txtContact.Text = searchedDomicile.contacto;
-                            txtPhone.Text = searchedDomicile.telefono;
-                            btsStatusHome.Value = searchedDomicile.baja;
-                            cmbDepartment.SelectedItem = searchedDomicile.Municipio.Departamento;
-                            cmbMunicipality.SelectedItem = searchedDomicile.Municipio;
+                                txtStreetNo.Text = searchedDomicile.calleNumero;
+                                txtStreet.Text = searchedDomicile.entreCalles;
+                                txtColony.Text = searchedDomicile.colonia;
+                                txtReference.Text = searchedDomicile.referencia;
+                                txtPostalCode.Text = searchedDomicile.codigoPostal;
+                                txtContact.Text = searchedDomicile.contacto;
+                                txtPhone.Text = searchedDomicile.telefono;
+                                btsStatusHome.Value = searchedDomicile.baja;
+                                cmbDepartment.SelectedItem = searchedDomicile.Municipio.Departamento;
+                                cmbMunicipality.SelectedItem = searchedDomicile.Municipio;
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontró ningún miembro con el CUM proporcionado.", "MIEMBRO NO ENCONTRADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                btsDuplicity.Value = false;
+                                searchedDomicile = null;
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("No se encontró ningún miembro con el CUM proporcionado.", "MIEMBRO NO ENCONTRADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                             btsDuplicity.Value = false;
                             searchedDomicile = null;
                         }
                     }
+                    else
+                    {
+                        cleanDomiciles();
+                        searchedDomicile = null;
+                    }
                 }
+                //'Update' mode
                 else
                 {
-                    cleanDomiciles();
-                    searchedDomicile = null;
+                    if (btsDuplicity.Value)
+                    {
+                        cleanDomiciles();
+                    }
+                    else
+                    {
+                        txtStreetNo.Text = selectedMember.Domicilio.calleNumero;
+                        txtStreet.Text = selectedMember.Domicilio.entreCalles;
+                        txtColony.Text = selectedMember.Domicilio.colonia;
+                        txtReference.Text = selectedMember.Domicilio.referencia;
+                        txtPostalCode.Text = selectedMember.Domicilio.codigoPostal;
+                        txtContact.Text = selectedMember.Domicilio.contacto;
+                        txtPhone.Text = selectedMember.Domicilio.telefono;
+                        btsStatusHome.Value = selectedMember.Domicilio.baja;
+                        cmbDepartment.SelectedItem = selectedMember.Domicilio.Municipio.Departamento;
+                        cmbMunicipality.SelectedItem = selectedMember.Domicilio.Municipio;
+                    }
                 }
             }
-            //'Update' mode
-            else
+            catch (Exception ex)
             {
-                if (btsDuplicity.Value)
-                {
-                    cleanDomiciles();
-                }
-                else
-                {
-                    txtStreetNo.Text = selectedMember.Domicilio.calleNumero;
-                    txtStreet.Text = selectedMember.Domicilio.entreCalles;
-                    txtColony.Text = selectedMember.Domicilio.colonia;
-                    txtReference.Text = selectedMember.Domicilio.referencia;
-                    txtPostalCode.Text = selectedMember.Domicilio.codigoPostal;
-                    txtContact.Text = selectedMember.Domicilio.contacto;
-                    txtPhone.Text = selectedMember.Domicilio.telefono;
-                    btsStatusHome.Value = selectedMember.Domicilio.baja;
-                    cmbDepartment.SelectedItem = selectedMember.Domicilio.Municipio.Departamento;
-                    cmbMunicipality.SelectedItem = selectedMember.Domicilio.Municipio;
-                }
+                FormUtils.defaultErrorMessage(ex);
             }
         }
     }

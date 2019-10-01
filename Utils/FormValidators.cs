@@ -1,9 +1,11 @@
 ﻿using Bunifu.Framework.UI;
+using Bunifu.UI.WinForms;
 using Bunifu.UI.WinForms.BunifuTextbox;
 using RegnalUDB.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Mail;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -34,6 +36,23 @@ namespace RegnalUDB.Utils
             return errorMessage == null ? null : new ControlErrorProvider(errorMessage, control);
         }
 
+        public static List<ControlErrorProvider> validFormTest(ToValidate[] validators)
+        {
+            List<ControlErrorProvider> errors = new List<ControlErrorProvider>();
+
+            string errorMessage = null;
+            Control control = null;
+            bool hasErrors = false;
+            foreach (ToValidate validator in validators)
+            {
+                errorMessage = FormValidators.validControl(validator.Control, validator.ControlValidators, validator.ErrorMessages);
+                if (errorMessage != null) hasErrors = true;
+                control = validator.Control;
+                errors.Add(new ControlErrorProvider(errorMessage, control));
+            }
+            return !hasErrors ? null : errors;
+        }
+
         public static string validControl(Control control, ControlValidator[] validators, string[] errorMessages )
         {
             if(validators.Length == errorMessages.Length)
@@ -56,6 +75,25 @@ namespace RegnalUDB.Utils
             throw new Exception("Invalid control for isEmpty Method");
         }
 
+        public static bool oneHasText(Control[] controls)
+        {
+            foreach (Control control in controls)
+            {
+                if (control is TextBox || control is BunifuMetroTextbox || control is BunifuCustomTextbox)
+                {
+                    if (control.Text.Trim().Length > 0)
+                    {
+                        return true;
+                    }
+                }
+                else
+                {
+                    throw new Exception("Invalid control for oneHasText Method");
+                }
+            }
+            return false;
+        }
+
         public static bool isSelected(Control control)
         {
             if (control is ComboBox)
@@ -69,6 +107,59 @@ namespace RegnalUDB.Utils
                 return Validators.isNumber(control.Text);
             return false;
         }
+        public static bool isParticularPhone(Control control)
+        {
+            if (FormValidators.hasText(control))
+                return Validators.isParticularPhone(control.Text);
+            return false;
+        }
+        public static bool isPhoneWithExtension(Control control)
+        {
+            if (FormValidators.hasText(control))
+                return Validators.isPhoneWithExtension(control.Text);
+            return false;
+        }
+        public static bool isPhoneWithExtensionOrNull(Control control)
+        {
+            if (FormValidators.hasText(control))
+                return Validators.isPhoneWithExtension(control.Text);
+            return true;
+        }
+        public static bool isMobilePhone(Control control)
+        {
+            if (FormValidators.hasText(control))
+                return Validators.isMobilePhone(control.Text);
+            return false;
+        }
+        public static bool isMobilePhoneOrNull(Control control)
+        {
+            if (FormValidators.hasText(control))
+                return Validators.isMobilePhone(control.Text);
+            return true;
+        }
+        public static bool isPostalCode(Control control)
+        {
+            if (FormValidators.hasText(control))
+                return Validators.isPostalCode(control.Text);
+            return false;
+        }
+        public static bool isEmail(Control control)
+        {
+            if (FormValidators.hasText(control))
+            {
+                try
+                {
+                    MailAddress m = new MailAddress(control.Text);
+
+                    return true;
+                }
+                catch (FormatException)
+                {
+                    return false;
+                }
+            }
+            return false;
+        }
 
         /// <summary>
         /// The date is valid if is less or equals than now 
@@ -80,6 +171,13 @@ namespace RegnalUDB.Utils
             if (control is DateTimePicker || control is BunifuDatepicker)
                 return DateTime.Compare(((BunifuDatepicker)control).Value, DateTime.Now) == -1;
             throw new Exception("Invalid control for isValidDate Method");
+        }
+
+        public static bool hasImageLocation(Control control)
+        {
+            if (control is PictureBox || control is BunifuPictureBox)
+                return ((PictureBox)control).ImageLocation != null;
+            throw new Exception("Invalid control for hasImageLocation Method");
         }
 
         public static bool isGreaterThan(Control higher, Control minor)

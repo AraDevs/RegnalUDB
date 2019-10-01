@@ -33,6 +33,19 @@ namespace RegnalUDB.Controllers
             }
         }
 
+        public Operation<Localidade> getActiveRecords()
+        {
+            try
+            {
+                List<Localidade> data = EntitySingleton.Context.Localidades.Where(x => x.baja).ToList();
+                return FactoryOperation<Localidade>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Localidade>.getFailOperation(e.Message);
+            }
+        }
+
         public Operation<Localidade> updateRecord(Localidade o)
         {
             throw new NotImplementedException();
