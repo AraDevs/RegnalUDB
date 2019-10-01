@@ -33,6 +33,19 @@ namespace RegnalUDB.Controllers
             }
         }
 
+        public Operation<Religion> getActiveRecords()
+        {
+            try
+            {
+                List<Religion> data = EntitySingleton.Context.Religions.Where(x => x.baja).ToList();
+                return FactoryOperation<Religion>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Religion>.getFailOperation(e.Message);
+            }
+        }
+
         public Operation<Religion> updateRecord(Religion o)
         {
             throw new NotImplementedException();

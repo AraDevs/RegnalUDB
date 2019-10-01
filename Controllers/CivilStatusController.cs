@@ -33,6 +33,19 @@ namespace RegnalUDB.Controllers
             }
         }
 
+        public Operation<EstadoCivil> getActiveRecords()
+        {
+            try
+            {
+                List<EstadoCivil> data = EntitySingleton.Context.EstadoCivils.Where(x => x.baja).ToList();
+                return FactoryOperation<EstadoCivil>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<EstadoCivil>.getFailOperation(e.Message);
+            }
+        }
+
         public Operation<EstadoCivil> updateRecord(EstadoCivil o)
         {
             throw new NotImplementedException();

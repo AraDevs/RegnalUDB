@@ -45,5 +45,18 @@ namespace RegnalUDB.Controllers
                 return FactoryOperation<Escolaridad>.getFailOperation(e.Message);
             }
         }
+
+        public Operation<Escolaridad> getActiveRecords()
+        {
+            try
+            {
+                List<Escolaridad> data = EntitySingleton.Context.Escolaridads.Where(x => x.baja).ToList();
+                return FactoryOperation<Escolaridad>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Escolaridad>.getFailOperation(e.Message);
+            }
+        }
     }
 }

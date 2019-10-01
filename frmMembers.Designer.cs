@@ -29,27 +29,27 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.ToggleSwitch.ToggleState toggleState10 = new Bunifu.ToggleSwitch.ToggleState();
-            Bunifu.ToggleSwitch.ToggleState toggleState11 = new Bunifu.ToggleSwitch.ToggleState();
-            Bunifu.ToggleSwitch.ToggleState toggleState12 = new Bunifu.ToggleSwitch.ToggleState();
-            Bunifu.ToggleSwitch.ToggleState toggleState13 = new Bunifu.ToggleSwitch.ToggleState();
-            Bunifu.ToggleSwitch.ToggleState toggleState14 = new Bunifu.ToggleSwitch.ToggleState();
-            Bunifu.ToggleSwitch.ToggleState toggleState15 = new Bunifu.ToggleSwitch.ToggleState();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            BunifuAnimatorNS.Animation animation2 = new BunifuAnimatorNS.Animation();
+            Bunifu.ToggleSwitch.ToggleState toggleState37 = new Bunifu.ToggleSwitch.ToggleState();
+            Bunifu.ToggleSwitch.ToggleState toggleState38 = new Bunifu.ToggleSwitch.ToggleState();
+            Bunifu.ToggleSwitch.ToggleState toggleState39 = new Bunifu.ToggleSwitch.ToggleState();
+            Bunifu.ToggleSwitch.ToggleState toggleState40 = new Bunifu.ToggleSwitch.ToggleState();
+            Bunifu.ToggleSwitch.ToggleState toggleState41 = new Bunifu.ToggleSwitch.ToggleState();
+            Bunifu.ToggleSwitch.ToggleState toggleState42 = new Bunifu.ToggleSwitch.ToggleState();
+            Bunifu.ToggleSwitch.ToggleState toggleState43 = new Bunifu.ToggleSwitch.ToggleState();
+            Bunifu.ToggleSwitch.ToggleState toggleState44 = new Bunifu.ToggleSwitch.ToggleState();
+            Bunifu.ToggleSwitch.ToggleState toggleState45 = new Bunifu.ToggleSwitch.ToggleState();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            BunifuAnimatorNS.Animation animation5 = new BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMembers));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Bunifu.ToggleSwitch.ToggleState toggleState16 = new Bunifu.ToggleSwitch.ToggleState();
-            Bunifu.ToggleSwitch.ToggleState toggleState17 = new Bunifu.ToggleSwitch.ToggleState();
-            Bunifu.ToggleSwitch.ToggleState toggleState18 = new Bunifu.ToggleSwitch.ToggleState();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties18 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties19 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties20 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.cardPersonalInfo = new Bunifu.Framework.UI.BunifuCards();
@@ -103,6 +103,8 @@
             this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.cardDirection = new Bunifu.Framework.UI.BunifuCards();
+            this.txtDomicileDuplicity = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.btsDuplicity = new Bunifu.ToggleSwitch.BunifuToggleSwitch();
             this.cmbDepartment = new Bunifu.UI.WinForms.BunifuDropdown();
             this.bunifuCustomLabel36 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.txtPhone = new Bunifu.Framework.UI.BunifuMetroTextbox();
@@ -136,8 +138,7 @@
             this.pnlButtons = new System.Windows.Forms.Panel();
             this.btnNewClean = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnSaveModify = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.txtDomicileDuplicity = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.btsDuplicity = new Bunifu.ToggleSwitch.BunifuToggleSwitch();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.cardPersonalInfo.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbPhoto)).BeginInit();
@@ -145,6 +146,7 @@
             this.bunifuCards1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             this.pnlButtons.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -763,33 +765,33 @@
             this.btsStatus.Name = "btsStatus";
             this.btsStatus.Size = new System.Drawing.Size(33, 20);
             this.btsStatus.TabIndex = 36;
-            toggleState10.BackColor = System.Drawing.Color.Empty;
-            toggleState10.BackColorInner = System.Drawing.Color.Empty;
-            toggleState10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
-            toggleState10.BorderColorInner = System.Drawing.Color.Empty;
-            toggleState10.BorderRadius = 1;
-            toggleState10.BorderRadiusInner = 1;
-            toggleState10.BorderThickness = 1;
-            toggleState10.BorderThicknessInner = 1;
-            this.btsStatus.ToggleStateDisabled = toggleState10;
-            toggleState11.BackColor = System.Drawing.Color.Empty;
-            toggleState11.BackColorInner = System.Drawing.Color.Empty;
-            toggleState11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
-            toggleState11.BorderColorInner = System.Drawing.Color.Empty;
-            toggleState11.BorderRadius = 1;
-            toggleState11.BorderRadiusInner = 1;
-            toggleState11.BorderThickness = 1;
-            toggleState11.BorderThicknessInner = 1;
-            this.btsStatus.ToggleStateOff = toggleState11;
-            toggleState12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
-            toggleState12.BackColorInner = System.Drawing.Color.White;
-            toggleState12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
-            toggleState12.BorderColorInner = System.Drawing.Color.White;
-            toggleState12.BorderRadius = 17;
-            toggleState12.BorderRadiusInner = 15;
-            toggleState12.BorderThickness = 1;
-            toggleState12.BorderThicknessInner = 1;
-            this.btsStatus.ToggleStateOn = toggleState12;
+            toggleState37.BackColor = System.Drawing.Color.Empty;
+            toggleState37.BackColorInner = System.Drawing.Color.Empty;
+            toggleState37.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
+            toggleState37.BorderColorInner = System.Drawing.Color.Empty;
+            toggleState37.BorderRadius = 1;
+            toggleState37.BorderRadiusInner = 1;
+            toggleState37.BorderThickness = 1;
+            toggleState37.BorderThicknessInner = 1;
+            this.btsStatus.ToggleStateDisabled = toggleState37;
+            toggleState38.BackColor = System.Drawing.Color.Empty;
+            toggleState38.BackColorInner = System.Drawing.Color.Empty;
+            toggleState38.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
+            toggleState38.BorderColorInner = System.Drawing.Color.Empty;
+            toggleState38.BorderRadius = 1;
+            toggleState38.BorderRadiusInner = 1;
+            toggleState38.BorderThickness = 1;
+            toggleState38.BorderThicknessInner = 1;
+            this.btsStatus.ToggleStateOff = toggleState38;
+            toggleState39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
+            toggleState39.BackColorInner = System.Drawing.Color.White;
+            toggleState39.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
+            toggleState39.BorderColorInner = System.Drawing.Color.White;
+            toggleState39.BorderRadius = 17;
+            toggleState39.BorderRadiusInner = 15;
+            toggleState39.BorderThickness = 1;
+            toggleState39.BorderThicknessInner = 1;
+            this.btsStatus.ToggleStateOn = toggleState39;
             this.btsStatus.Value = true;
             // 
             // panel1
@@ -1066,6 +1068,60 @@
             this.cardDirection.Size = new System.Drawing.Size(1029, 466);
             this.cardDirection.TabIndex = 3;
             // 
+            // txtDomicileDuplicity
+            // 
+            this.txtDomicileDuplicity.AutoSize = true;
+            this.bunifuTransition1.SetDecoration(this.txtDomicileDuplicity, BunifuAnimatorNS.DecorationType.None);
+            this.txtDomicileDuplicity.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDomicileDuplicity.Location = new System.Drawing.Point(184, 318);
+            this.txtDomicileDuplicity.Name = "txtDomicileDuplicity";
+            this.txtDomicileDuplicity.Size = new System.Drawing.Size(650, 20);
+            this.txtDomicileDuplicity.TabIndex = 83;
+            this.txtDomicileDuplicity.Text = "La dirección de este miembro ya está en el sistema (Otro miembro ya registrado vi" +
+    "ve con él/ella)";
+            this.txtDomicileDuplicity.Click += new System.EventHandler(this.bunifuCustomLabel37_Click);
+            // 
+            // btsDuplicity
+            // 
+            this.btsDuplicity.Animation = 5;
+            this.btsDuplicity.BackColor = System.Drawing.Color.Transparent;
+            this.btsDuplicity.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btsDuplicity.BackgroundImage")));
+            this.btsDuplicity.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuTransition1.SetDecoration(this.btsDuplicity, BunifuAnimatorNS.DecorationType.None);
+            this.btsDuplicity.Location = new System.Drawing.Point(144, 319);
+            this.btsDuplicity.Name = "btsDuplicity";
+            this.btsDuplicity.Size = new System.Drawing.Size(33, 20);
+            this.btsDuplicity.TabIndex = 82;
+            toggleState40.BackColor = System.Drawing.Color.Empty;
+            toggleState40.BackColorInner = System.Drawing.Color.Empty;
+            toggleState40.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
+            toggleState40.BorderColorInner = System.Drawing.Color.Empty;
+            toggleState40.BorderRadius = 1;
+            toggleState40.BorderRadiusInner = 1;
+            toggleState40.BorderThickness = 1;
+            toggleState40.BorderThicknessInner = 1;
+            this.btsDuplicity.ToggleStateDisabled = toggleState40;
+            toggleState41.BackColor = System.Drawing.Color.Gray;
+            toggleState41.BackColorInner = System.Drawing.Color.White;
+            toggleState41.BorderColor = System.Drawing.Color.Gray;
+            toggleState41.BorderColorInner = System.Drawing.Color.White;
+            toggleState41.BorderRadius = 17;
+            toggleState41.BorderRadiusInner = 15;
+            toggleState41.BorderThickness = 1;
+            toggleState41.BorderThicknessInner = 1;
+            this.btsDuplicity.ToggleStateOff = toggleState41;
+            toggleState42.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
+            toggleState42.BackColorInner = System.Drawing.Color.White;
+            toggleState42.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
+            toggleState42.BorderColorInner = System.Drawing.Color.White;
+            toggleState42.BorderRadius = 17;
+            toggleState42.BorderRadiusInner = 15;
+            toggleState42.BorderThickness = 1;
+            toggleState42.BorderThicknessInner = 1;
+            this.btsDuplicity.ToggleStateOn = toggleState42;
+            this.btsDuplicity.Value = false;
+            this.btsDuplicity.OnValuechange += new System.EventHandler(this.bunifuToggleSwitch1_OnValuechange);
+            // 
             // cmbDepartment
             // 
             this.cmbDepartment.BackColor = System.Drawing.Color.White;
@@ -1286,33 +1342,33 @@
             this.btsStatusHome.Name = "btsStatusHome";
             this.btsStatusHome.Size = new System.Drawing.Size(33, 20);
             this.btsStatusHome.TabIndex = 70;
-            toggleState13.BackColor = System.Drawing.Color.Empty;
-            toggleState13.BackColorInner = System.Drawing.Color.Empty;
-            toggleState13.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
-            toggleState13.BorderColorInner = System.Drawing.Color.Empty;
-            toggleState13.BorderRadius = 1;
-            toggleState13.BorderRadiusInner = 1;
-            toggleState13.BorderThickness = 1;
-            toggleState13.BorderThicknessInner = 1;
-            this.btsStatusHome.ToggleStateDisabled = toggleState13;
-            toggleState14.BackColor = System.Drawing.Color.Empty;
-            toggleState14.BackColorInner = System.Drawing.Color.Empty;
-            toggleState14.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
-            toggleState14.BorderColorInner = System.Drawing.Color.Empty;
-            toggleState14.BorderRadius = 1;
-            toggleState14.BorderRadiusInner = 1;
-            toggleState14.BorderThickness = 1;
-            toggleState14.BorderThicknessInner = 1;
-            this.btsStatusHome.ToggleStateOff = toggleState14;
-            toggleState15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
-            toggleState15.BackColorInner = System.Drawing.Color.White;
-            toggleState15.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
-            toggleState15.BorderColorInner = System.Drawing.Color.White;
-            toggleState15.BorderRadius = 17;
-            toggleState15.BorderRadiusInner = 15;
-            toggleState15.BorderThickness = 1;
-            toggleState15.BorderThicknessInner = 1;
-            this.btsStatusHome.ToggleStateOn = toggleState15;
+            toggleState43.BackColor = System.Drawing.Color.Empty;
+            toggleState43.BackColorInner = System.Drawing.Color.Empty;
+            toggleState43.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
+            toggleState43.BorderColorInner = System.Drawing.Color.Empty;
+            toggleState43.BorderRadius = 1;
+            toggleState43.BorderRadiusInner = 1;
+            toggleState43.BorderThickness = 1;
+            toggleState43.BorderThicknessInner = 1;
+            this.btsStatusHome.ToggleStateDisabled = toggleState43;
+            toggleState44.BackColor = System.Drawing.Color.Empty;
+            toggleState44.BackColorInner = System.Drawing.Color.Empty;
+            toggleState44.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
+            toggleState44.BorderColorInner = System.Drawing.Color.Empty;
+            toggleState44.BorderRadius = 1;
+            toggleState44.BorderRadiusInner = 1;
+            toggleState44.BorderThickness = 1;
+            toggleState44.BorderThicknessInner = 1;
+            this.btsStatusHome.ToggleStateOff = toggleState44;
+            toggleState45.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
+            toggleState45.BackColorInner = System.Drawing.Color.White;
+            toggleState45.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
+            toggleState45.BorderColorInner = System.Drawing.Color.White;
+            toggleState45.BorderRadius = 17;
+            toggleState45.BorderRadiusInner = 15;
+            toggleState45.BorderThickness = 1;
+            toggleState45.BorderThicknessInner = 1;
+            this.btsStatusHome.ToggleStateOn = toggleState45;
             this.btsStatusHome.Value = true;
             // 
             // bunifuCustomLabel32
@@ -1520,8 +1576,8 @@
             // 
             this.dgvMembers.AllowUserToAddRows = false;
             this.dgvMembers.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            this.dgvMembers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.BackColor = System.Drawing.Color.White;
+            this.dgvMembers.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvMembers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -1530,24 +1586,24 @@
             this.dgvMembers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMembers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMembers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMembers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMembers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvMembers.ColumnHeadersHeight = 40;
             this.bunifuTransition1.SetDecoration(this.dgvMembers, BunifuAnimatorNS.DecorationType.None);
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMembers.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(226)))), ((int)(((byte)(244)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMembers.DefaultCellStyle = dataGridViewCellStyle19;
             this.dgvMembers.DoubleBuffered = true;
             this.dgvMembers.EnableHeadersVisualStyles = false;
             this.dgvMembers.GridColor = System.Drawing.Color.WhiteSmoke;
@@ -1558,8 +1614,8 @@
             this.dgvMembers.ReadOnly = true;
             this.dgvMembers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvMembers.RowHeadersVisible = false;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvMembers.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMembers.RowsDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvMembers.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
             this.dgvMembers.RowTemplate.DividerHeight = 1;
             this.dgvMembers.RowTemplate.Height = 40;
@@ -1587,22 +1643,22 @@
             // 
             this.bunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.Leaf;
             this.bunifuTransition1.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 1F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.bunifuTransition1.DefaultAnimation = animation2;
+            animation5.AnimateOnlyDifferences = true;
+            animation5.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.BlindCoeff")));
+            animation5.LeafCoeff = 1F;
+            animation5.MaxTime = 1F;
+            animation5.MinTime = 0F;
+            animation5.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicCoeff")));
+            animation5.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation5.MosaicShift")));
+            animation5.MosaicSize = 0;
+            animation5.Padding = new System.Windows.Forms.Padding(0);
+            animation5.RotateCoeff = 0F;
+            animation5.RotateLimit = 0F;
+            animation5.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.ScaleCoeff")));
+            animation5.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation5.SlideCoeff")));
+            animation5.TimeCoeff = 0F;
+            animation5.TransparencyCoeff = 0F;
+            this.bunifuTransition1.DefaultAnimation = animation5;
             // 
             // bunifuVScrollBar1
             // 
@@ -1669,11 +1725,11 @@
             this.btnNewClean.ColorContrastOnClick = 45;
             this.btnNewClean.ColorContrastOnHover = 45;
             this.btnNewClean.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btnNewClean.CustomizableEdges = borderEdges3;
+            borderEdges9.BottomLeft = true;
+            borderEdges9.BottomRight = true;
+            borderEdges9.TopLeft = true;
+            borderEdges9.TopRight = true;
+            this.btnNewClean.CustomizableEdges = borderEdges9;
             this.bunifuTransition1.SetDecoration(this.btnNewClean, BunifuAnimatorNS.DecorationType.None);
             this.btnNewClean.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnNewClean.DisabledBorderColor = System.Drawing.Color.Empty;
@@ -1695,24 +1751,24 @@
             this.btnNewClean.IndicateFocus = false;
             this.btnNewClean.Location = new System.Drawing.Point(128, 3);
             this.btnNewClean.Name = "btnNewClean";
-            stateProperties5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            stateProperties5.BorderRadius = 4;
-            stateProperties5.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties5.BorderThickness = 1;
-            stateProperties5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            stateProperties5.ForeColor = System.Drawing.Color.White;
-            stateProperties5.IconLeftImage = null;
-            stateProperties5.IconRightImage = null;
-            this.btnNewClean.onHoverState = stateProperties5;
-            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(32)))), ((int)(((byte)(197)))));
-            stateProperties6.BorderRadius = 4;
-            stateProperties6.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties6.BorderThickness = 1;
-            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(32)))), ((int)(((byte)(197)))));
-            stateProperties6.ForeColor = System.Drawing.Color.White;
-            stateProperties6.IconLeftImage = null;
-            stateProperties6.IconRightImage = null;
-            this.btnNewClean.OnPressedState = stateProperties6;
+            stateProperties17.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            stateProperties17.BorderRadius = 4;
+            stateProperties17.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties17.BorderThickness = 1;
+            stateProperties17.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            stateProperties17.ForeColor = System.Drawing.Color.White;
+            stateProperties17.IconLeftImage = null;
+            stateProperties17.IconRightImage = null;
+            this.btnNewClean.onHoverState = stateProperties17;
+            stateProperties18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(32)))), ((int)(((byte)(197)))));
+            stateProperties18.BorderRadius = 4;
+            stateProperties18.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties18.BorderThickness = 1;
+            stateProperties18.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(32)))), ((int)(((byte)(197)))));
+            stateProperties18.ForeColor = System.Drawing.Color.White;
+            stateProperties18.IconLeftImage = null;
+            stateProperties18.IconRightImage = null;
+            this.btnNewClean.OnPressedState = stateProperties18;
             this.btnNewClean.Size = new System.Drawing.Size(120, 45);
             this.btnNewClean.TabIndex = 75;
             this.btnNewClean.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1734,11 +1790,11 @@
             this.btnSaveModify.ColorContrastOnClick = 45;
             this.btnSaveModify.ColorContrastOnHover = 45;
             this.btnSaveModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btnSaveModify.CustomizableEdges = borderEdges4;
+            borderEdges10.BottomLeft = true;
+            borderEdges10.BottomRight = true;
+            borderEdges10.TopLeft = true;
+            borderEdges10.TopRight = true;
+            this.btnSaveModify.CustomizableEdges = borderEdges10;
             this.bunifuTransition1.SetDecoration(this.btnSaveModify, BunifuAnimatorNS.DecorationType.None);
             this.btnSaveModify.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btnSaveModify.DisabledBorderColor = System.Drawing.Color.Empty;
@@ -1760,24 +1816,24 @@
             this.btnSaveModify.IndicateFocus = false;
             this.btnSaveModify.Location = new System.Drawing.Point(2, 3);
             this.btnSaveModify.Name = "btnSaveModify";
-            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            stateProperties7.BorderRadius = 4;
-            stateProperties7.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties7.BorderThickness = 1;
-            stateProperties7.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            stateProperties7.ForeColor = System.Drawing.Color.White;
-            stateProperties7.IconLeftImage = null;
-            stateProperties7.IconRightImage = null;
-            this.btnSaveModify.onHoverState = stateProperties7;
-            stateProperties8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(32)))), ((int)(((byte)(197)))));
-            stateProperties8.BorderRadius = 4;
-            stateProperties8.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties8.BorderThickness = 1;
-            stateProperties8.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(32)))), ((int)(((byte)(197)))));
-            stateProperties8.ForeColor = System.Drawing.Color.White;
-            stateProperties8.IconLeftImage = null;
-            stateProperties8.IconRightImage = null;
-            this.btnSaveModify.OnPressedState = stateProperties8;
+            stateProperties19.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            stateProperties19.BorderRadius = 4;
+            stateProperties19.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties19.BorderThickness = 1;
+            stateProperties19.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            stateProperties19.ForeColor = System.Drawing.Color.White;
+            stateProperties19.IconLeftImage = null;
+            stateProperties19.IconRightImage = null;
+            this.btnSaveModify.onHoverState = stateProperties19;
+            stateProperties20.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(32)))), ((int)(((byte)(197)))));
+            stateProperties20.BorderRadius = 4;
+            stateProperties20.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties20.BorderThickness = 1;
+            stateProperties20.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(32)))), ((int)(((byte)(197)))));
+            stateProperties20.ForeColor = System.Drawing.Color.White;
+            stateProperties20.IconLeftImage = null;
+            stateProperties20.IconRightImage = null;
+            this.btnSaveModify.OnPressedState = stateProperties20;
             this.btnSaveModify.Size = new System.Drawing.Size(120, 45);
             this.btnSaveModify.TabIndex = 74;
             this.btnSaveModify.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1785,59 +1841,10 @@
             this.btnSaveModify.UseDefaultRadiusAndThickness = true;
             this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
-            // txtDomicileDuplicity
+            // errorProvider
             // 
-            this.txtDomicileDuplicity.AutoSize = true;
-            this.bunifuTransition1.SetDecoration(this.txtDomicileDuplicity, BunifuAnimatorNS.DecorationType.None);
-            this.txtDomicileDuplicity.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDomicileDuplicity.Location = new System.Drawing.Point(184, 318);
-            this.txtDomicileDuplicity.Name = "txtDomicileDuplicity";
-            this.txtDomicileDuplicity.Size = new System.Drawing.Size(650, 20);
-            this.txtDomicileDuplicity.TabIndex = 83;
-            this.txtDomicileDuplicity.Text = "La dirección de este miembro ya está en el sistema (Otro miembro ya registrado vi" +
-    "ve con él/ella)";
-            this.txtDomicileDuplicity.Click += new System.EventHandler(this.bunifuCustomLabel37_Click);
-            // 
-            // btsDuplicity
-            // 
-            this.btsDuplicity.Animation = 5;
-            this.btsDuplicity.BackColor = System.Drawing.Color.Transparent;
-            this.btsDuplicity.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btsDuplicity.BackgroundImage")));
-            this.btsDuplicity.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuTransition1.SetDecoration(this.btsDuplicity, BunifuAnimatorNS.DecorationType.None);
-            this.btsDuplicity.Location = new System.Drawing.Point(144, 319);
-            this.btsDuplicity.Name = "btsDuplicity";
-            this.btsDuplicity.Size = new System.Drawing.Size(33, 20);
-            this.btsDuplicity.TabIndex = 82;
-            toggleState16.BackColor = System.Drawing.Color.Empty;
-            toggleState16.BackColorInner = System.Drawing.Color.Empty;
-            toggleState16.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(0)))), ((int)(((byte)(140)))));
-            toggleState16.BorderColorInner = System.Drawing.Color.Empty;
-            toggleState16.BorderRadius = 1;
-            toggleState16.BorderRadiusInner = 1;
-            toggleState16.BorderThickness = 1;
-            toggleState16.BorderThicknessInner = 1;
-            this.btsDuplicity.ToggleStateDisabled = toggleState16;
-            toggleState17.BackColor = System.Drawing.Color.Gray;
-            toggleState17.BackColorInner = System.Drawing.Color.White;
-            toggleState17.BorderColor = System.Drawing.Color.Gray;
-            toggleState17.BorderColorInner = System.Drawing.Color.White;
-            toggleState17.BorderRadius = 17;
-            toggleState17.BorderRadiusInner = 15;
-            toggleState17.BorderThickness = 1;
-            toggleState17.BorderThicknessInner = 1;
-            this.btsDuplicity.ToggleStateOff = toggleState17;
-            toggleState18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
-            toggleState18.BackColorInner = System.Drawing.Color.White;
-            toggleState18.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(45)))), ((int)(((byte)(145)))));
-            toggleState18.BorderColorInner = System.Drawing.Color.White;
-            toggleState18.BorderRadius = 17;
-            toggleState18.BorderRadiusInner = 15;
-            toggleState18.BorderThickness = 1;
-            toggleState18.BorderThicknessInner = 1;
-            this.btsDuplicity.ToggleStateOn = toggleState18;
-            this.btsDuplicity.Value = false;
-            this.btsDuplicity.OnValuechange += new System.EventHandler(this.bunifuToggleSwitch1_OnValuechange);
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // frmMembers
             // 
@@ -1873,6 +1880,7 @@
             this.bunifuCards1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
             this.pnlButtons.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1968,5 +1976,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel lblCum;
         private Bunifu.Framework.UI.BunifuCustomLabel txtDomicileDuplicity;
         private Bunifu.ToggleSwitch.BunifuToggleSwitch btsDuplicity;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

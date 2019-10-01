@@ -56,7 +56,7 @@ namespace RegnalUDB.Controllers
             try
             {
                 //Obtaining the upper age limit of the section in which the member can be assigned by default
-                int? upper = EntitySingleton.Context.Secciones.Where(x => (x.rangoFin >= age && x.rangoInicio <= age) || (x.rangoFin == null && x.rangoInicio <= age)).FirstOrDefault().rangoFin;
+                int? upper = EntitySingleton.Context.Secciones.Where(x => (x.rangoFin >= age && x.rangoInicio <= age) || (x.rangoFin == null && x.rangoInicio <= age) && x.baja).FirstOrDefault().rangoFin;
 
                 List<Seccione> data;
 
@@ -64,7 +64,7 @@ namespace RegnalUDB.Controllers
                 if (upper == null)
                 {
                     data = EntitySingleton.Context.Secciones.
-                        Where(x => x.sexo.Equals(gender) && x.rangoFin == null && x.rangoInicio <= age).ToList();
+                        Where(x => x.sexo.Equals(gender) && x.rangoFin == null && x.rangoInicio <= age && x.baja).ToList();
                 }
                 //If the upper age limit is not null, it will return the section(s) in which the member can be
                 //assigned by its age, plus the section corresponding to its next level
@@ -72,7 +72,7 @@ namespace RegnalUDB.Controllers
                 {
                     data = EntitySingleton.Context.Secciones.
                         Where(x => x.sexo.Equals(gender) &&
-                        ((x.rangoFin >= age && x.rangoInicio <= age) || x.rangoInicio == (upper + 1))).ToList();
+                        ((x.rangoFin >= age && x.rangoInicio <= age) || x.rangoInicio == (upper + 1)) && x.baja).ToList();
                 }
 
                 return FactoryOperation<Seccione>.getDataOperation(data);

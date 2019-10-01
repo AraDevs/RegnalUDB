@@ -33,6 +33,19 @@ namespace RegnalUDB.Controllers
             }
         }
 
+        public Operation<Departamento> getActiveRecords()
+        {
+            try
+            {
+                List<Departamento> data = EntitySingleton.Context.Departamentos.Where(x => x.baja).ToList();
+                return FactoryOperation<Departamento>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Departamento>.getFailOperation(e.Message);
+            }
+        }
+
         public Operation<Departamento> updateRecord(Departamento o)
         {
             throw new NotImplementedException();

@@ -110,5 +110,11 @@ namespace RegnalUDB.Utils
            
             return filterData;
         }
+
+
+        public static DialogResult defaultErrorMessage(Exception ex)
+        {
+            return MessageBox.Show("Ocurrió un error inesperado: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

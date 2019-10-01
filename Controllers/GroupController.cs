@@ -42,7 +42,20 @@ namespace RegnalUDB.Controllers
         {
             try
             {
-                List<Grupos> data = EntitySingleton.Context.Grupos.Where(g=> g.baja).ToList();
+                List<Grupos> data = EntitySingleton.Context.Grupos.ToList();
+                return FactoryOperation<Grupos>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Grupos>.getFailOperation(e.Message);
+            }
+        }
+
+        public Operation<Grupos> getActiveRecords()
+        {
+            try
+            {
+                List<Grupos> data = EntitySingleton.Context.Grupos.Where(g => g.baja).ToList();
                 return FactoryOperation<Grupos>.getDataOperation(data);
             }
             catch (Exception e)
