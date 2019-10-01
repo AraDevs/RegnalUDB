@@ -562,6 +562,7 @@
             // 
             // errorProvider
             // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
             // frmSections

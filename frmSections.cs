@@ -151,9 +151,10 @@ namespace RegnalUDB
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            ControlErrorProvider errorProvider = FormValidators.validForm(getValidators());
+            List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
             bool isValid = errorProvider == null;
-            bool isGreater = FormValidators.isGreaterThan(txtEndRange, txtStartRange);
+            bool hasEndRange = !txtEndRange.Text.Equals("");
+            bool isGreater = hasEndRange? FormValidators.isGreaterThan(txtEndRange, txtStartRange):true;
             if (isValid && isGreater)
             {
                 if(selectedSection == null)
@@ -165,7 +166,10 @@ namespace RegnalUDB
                     selectedSection.Nombre = txtName.Text;
                     selectedSection.Descripcion = txtDescription.Text;
                     selectedSection.rangoInicio = Int32.Parse(txtStartRange.Text);
-                    selectedSection.rangoFin = Int32.Parse(txtEndRange.Text);
+                    if (hasEndRange)
+                    {
+                        selectedSection.rangoFin = Int32.Parse(txtEndRange.Text);
+                    }
                     selectedSection.sexo = rdbFemale.Checked ? "F" : "M";
                     selectedSection.baja = btnStatus.Value;
                     updateData(selectedSection);
@@ -174,7 +178,19 @@ namespace RegnalUDB
             else
             {
                 this.errorProvider.Clear();
-                this.errorProvider.SetError(!isGreater?txtEndRange:errorProvider.ControlName,!isGreater ? "Este valor debe ser mayor que el de comienzo":errorProvider.ErrorMessage);
+                MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (!isGreater)
+                {
+                    this.errorProvider.SetError(txtEndRange, "Este valor debe ser mayor al valor inicial");
+                }
+                else 
+                {
+                    foreach (ControlErrorProvider error in errorProvider)
+                    {
+                        this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
+                    }
+                }
+                
             }
         }
 
