@@ -15,7 +15,9 @@ namespace RegnalUDB
 
         private List<Distrito> districts = new List<Distrito>();
         private List<Localidade> localities = new List<Localidade>();
+
         private List<Grupos> groups = new List<Grupos>();
+        private List<Grupos> filterGroups = new List<Grupos>();
 
         private Grupos selectedGroup = null;
 
@@ -65,7 +67,8 @@ namespace RegnalUDB
             int index = e.RowIndex;
             if (index >= 0)
             {
-                selectedGroup = groups[index];
+                List<Grupos> list = filterGroups.Count == 0 ? groups : filterGroups;
+                selectedGroup = list[index];
                 cmbDistricts.SelectedItem = selectedGroup.Distrito;
                 cmbLocations.SelectedItem = selectedGroup.Localidade;
                 txtGroup.Text = selectedGroup.grupoNum.ToString();
@@ -80,42 +83,52 @@ namespace RegnalUDB
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            ControlErrorProvider errorProvider = FormValidators.validForm(getValidators());
-            bool isNew = selectedGroup == null;
-            bool isValid = errorProvider == null;
-            if (isValid)
+            try
             {
-                Grupos group = new Grupos
-                {
-                    idGrupo = isNew ? 0 : selectedGroup.idGrupo,
-                    nombre = txtName.Text,
-                    fundacion = dtpFundation.Value,
-                    grupoNum = short.Parse(txtGroup.Text),
-                    horario = txtSchedule.Text,
-                    baja = btsStatus.Value,
-                    Distrito = (Distrito)cmbDistricts.SelectedItem,
-                    Localidade = (Localidade)cmbLocations.SelectedItem,
-                    fechaRegistro = isNew ? DateTime.Now : selectedGroup.fechaRegistro,
-                    registrado = true
-                };
-
-                GroupController controller = new GroupController();
-                Operation<Grupos> operation = isNew ? controller.addRecord(group) : controller.updateRecord(group);
-                if (operation.State)
-                {
-                    loadTable(this.getGroups());
-                    clearForm();
-                    MessageBox.Show(isNew ? "Nuevo grupo registrado": "Grupo Modificado");
-                    return;
-                }
-
-                MessageBox.Show(operation.Error);
-            }
-            else
-            {
-
                 this.errorProvider.Clear();
-                this.errorProvider.SetError(errorProvider.ControlName, errorProvider.ErrorMessage);
+                List<ControlErrorProvider> errorsProvider = FormValidators.validFormTest(getValidators());
+                bool isNew = selectedGroup == null;
+                bool isValid = errorsProvider == null;
+
+                if (isValid)
+                {
+                    Grupos group = new Grupos
+                    {
+                        idGrupo = isNew ? 0 : selectedGroup.idGrupo,
+                        nombre = txtName.Text,
+                        fundacion = dtpFundation.Value,
+                        grupoNum = short.Parse(txtGroup.Text),
+                        horario = txtSchedule.Text,
+                        baja = btsStatus.Value,
+                        Distrito = (Distrito)cmbDistricts.SelectedItem,
+                        Localidade = (Localidade)cmbLocations.SelectedItem,
+                        fechaRegistro = isNew ? DateTime.Now : selectedGroup.fechaRegistro,
+                        registrado = true
+                    };
+
+                    GroupController controller = new GroupController();
+                    Operation<Grupos> operation = isNew ? controller.addRecord(group) : controller.updateRecord(group);
+                    if (operation.State)
+                    {
+                        loadTable(this.getGroups());
+                        clearForm();
+                        MessageBox.Show(isNew ? "Nuevo grupo registrado" : "Grupo Modificado");
+                        return;
+                    }
+
+                    MessageBox.Show(operation.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    
+                    foreach (ControlErrorProvider errorProvider in errorsProvider)
+                        this.errorProvider.SetError(errorProvider.ControlName, errorProvider.ErrorMessage);
+                }
+            }
+            catch(Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
@@ -161,6 +174,9 @@ namespace RegnalUDB
             selectedGroup = null;
             errorProvider.Clear();
             btnSaveModify.Text = "Guardar";
+            txtSearch.Text = "";
+            filterGroups = new List<Grupos>();
+
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
@@ -168,7 +184,7 @@ namespace RegnalUDB
             String value = txtSearch.Text.Trim().ToUpper();
             if (value.Trim().Length > 0)
             {
-                List<Grupos> filterGroups = FormUtils.filterData<Grupos>(groups, (g) =>
+                 filterGroups = FormUtils.filterData<Grupos>(groups, (g) =>
                     g.nombre.ToUpper().Contains(value) || g.grupoNum.ToString().Contains(value) ||
                     g.Localidade.nombre.ToUpper().Contains(value) || g.Distrito.nombre.Contains(value) ||
                     g.horario.ToUpper().Contains(value) || g.fundacion.ToString().ToUpper().Contains(value)
@@ -176,6 +192,7 @@ namespace RegnalUDB
                 loadTable(filterGroups);
                 return;
             }
+            filterGroups = new List<Grupos>();
             loadTable(groups);
         }
 
@@ -193,6 +210,7 @@ namespace RegnalUDB
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
+            loadTable(groups);
             clearForm();
         }
     }
