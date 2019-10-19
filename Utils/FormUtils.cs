@@ -1,10 +1,11 @@
-﻿using Bunifu.Framework.UI;
-using RegnalUDB.Models;
+﻿using RegnalUDB.Models;
+using Syncfusion.Windows.Forms.Tools;
+using Syncfusion.WinForms.DataGrid;
+using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using WindowsFormsControlLibrary1;
 
 namespace RegnalUDB.Utils
 {
@@ -38,11 +39,20 @@ namespace RegnalUDB.Utils
                 dgv.Columns[columnsToChange[i]].HeaderText = titles[i];
         }
 
+        public static void changeTitlesForSDgv(string[] titles, int[] columnsToChange, SfDataGrid dgv)
+        {
+            if (!(titles.Length == columnsToChange.Length))
+                throw new Exception("The size of titles and columnsToChange not are equals");
+
+            for (int i = 0; i < titles.Length; i++)
+                dgv.Columns[columnsToChange[i]].HeaderText = titles[i];
+        }
+
         public static void clearTextbox(Control[] controls)
         {
             foreach(Control c in controls)
             {
-                if(c is BunifuMetroTextbox || c is BunifuCustomTextbox)
+                if(c is TextBoxExt || c is IntegerTextBox)
                 {
                     c.Text = "";
                 }

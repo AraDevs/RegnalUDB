@@ -93,6 +93,16 @@ namespace RegnalUDB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap generic_user_icon_windows {
+            get {
+                object obj = ResourceManager.GetObject("generic-user-icon-windows", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap groups_40px {
             get {
                 object obj = ResourceManager.GetObject("groups_40px", resourceCulture);

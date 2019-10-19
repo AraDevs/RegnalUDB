@@ -27,10 +27,10 @@ namespace RegnalUDB
         private void fillSelectedData(Seccione currentSection)
         {
             txtName.Text = currentSection.Nombre;
-            txtDescription.Text = currentSection.Descripcion;
+            txtGroup.Text = currentSection.Descripcion;
             txtStartRange.Text = currentSection.rangoInicio.ToString();
             txtEndRange.Text = currentSection.rangoFin.ToString();
-            btnStatus.Value = currentSection.baja;
+            chbStatus.Checked = currentSection.baja;
             rdbFemale.Checked = currentSection.sexo.ToUpper() == "F";
             rdbMale.Checked = currentSection.sexo.ToUpper() == "M";
         }
@@ -54,9 +54,9 @@ namespace RegnalUDB
             Seccione tempSec = new Seccione
             {
                 Nombre = txtName.Text,
-                Descripcion = txtDescription.Text,
+                Descripcion = txtGroup.Text,
                 sexo = rdbFemale.Checked ? "F" : "M",
-                baja = btnStatus.Value,
+                baja = chbStatus.Checked,
                 rangoInicio = Int32.Parse(txtStartRange.Text),
                 rangoFin = Int32.Parse(txtEndRange.Text)
             };
@@ -118,7 +118,7 @@ namespace RegnalUDB
             ToValidate[] validators =  {
                  new ToValidate(txtName, new ControlValidator[] { FormValidators.hasText },
                  new string[] { "Ingresa un nombre" }),
-                 new ToValidate(txtDescription, new ControlValidator[] { FormValidators.hasText },
+                 new ToValidate(txtGroup, new ControlValidator[] { FormValidators.hasText },
                  new string[] { "Ingresa una descripcion" }),
                  new ToValidate(txtStartRange, new ControlValidator[] { FormValidators.isNumber },
                  new string[] { "El valor ingresado en rango inicio debe ser un numero" }),
@@ -140,7 +140,7 @@ namespace RegnalUDB
 
         private Control[] textControls()
         {
-            Control[] controls = { txtDescription, txtEndRange, txtName, txtStartRange };
+            Control[] controls = { txtGroup, txtEndRange, txtName, txtStartRange };
             return controls;
         }
         
@@ -164,14 +164,14 @@ namespace RegnalUDB
                 else
                 {
                     selectedSection.Nombre = txtName.Text;
-                    selectedSection.Descripcion = txtDescription.Text;
+                    selectedSection.Descripcion = txtGroup.Text;
                     selectedSection.rangoInicio = Int32.Parse(txtStartRange.Text);
                     if (hasEndRange)
                     {
                         selectedSection.rangoFin = Int32.Parse(txtEndRange.Text);
                     }
                     selectedSection.sexo = rdbFemale.Checked ? "F" : "M";
-                    selectedSection.baja = btnStatus.Value;
+                    selectedSection.baja = chbStatus.Checked;
                     updateData(selectedSection);
                 }
             }
