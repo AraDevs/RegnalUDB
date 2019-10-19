@@ -117,41 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnNewClean.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHgAAAAtCAYAAABlJ6+WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEkSURBVHhe7dw9SgNRGEbhr7R0B7oAZUAFi+hesghB0cCI
-        JKUbSGMpZPyZFGJnq42FlaWVVUAQAyojjFy4TZYwJ+eBt5rbHab9QkvieHPSP9u9mZ1sTFrX3aWG5fbV
-        oFy7WMlpI8qt6mDcf5h/vM9bdVtqWB09/Q5703HOG3G6c/35NfvOT9R1zc9fOyiqJueNSL+2WFLTnNfA
-        RAaGMzCcgeEMDGdgOAPDGRjOwHAGhjMwnIHhDAxnYDgDwxkYzsBwBoYzMJyB4QwMZ2A4A8MZGM7AcAaG
-        MzCcgeEMDGdgOAPDGRjOwHAGhjMwnIHhFgKniyzpMos4FgKnm0r35y9N/qaOe67f2tF+/ZjzRpTF7epo
-        b3qXqrvub9irXw+Ly/WcV1wR/1s33Vz9mRQFAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnSaveModify.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAHgAAAAtCAYAAABlJ6+WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEkSURBVHhe7dw9SgNRGEbhr7R0B7oAZUAFi+hesghB0cCI
-        JKUbSGMpZPyZFGJnq42FlaWVVUAQAyojjFy4TZYwJ+eBt5rbHab9QkvieHPSP9u9mZ1sTFrX3aWG5fbV
-        oFy7WMlpI8qt6mDcf5h/vM9bdVtqWB09/Q5703HOG3G6c/35NfvOT9R1zc9fOyiqJueNSL+2WFLTnNfA
-        RAaGMzCcgeEMDGdgOAPDGRjOwHAGhjMwnIHhDAxnYDgDwxkYzsBwBoYzMJyB4QwMZ2A4A8MZGM7AcAaG
-        MzCcgeEMDGdgOAPDGRjOwHAGhjMwnIHhFgKniyzpMos4FgKnm0r35y9N/qaOe67f2tF+/ZjzRpTF7epo
-        b3qXqrvub9irXw+Ly/WcV1wR/1s33Vz9mRQFAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="btnStatus.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACEAAAAUCAYAAAADU1RxAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFuSURBVEhLzZYtT4MxEMcrkUgc6HFlfAwUQeKGeNoRFB8B
-        j+gLZJagSXBYLBI5R4KFJWzhNSDG/5414eW5IJ6sDZf8kuXptXe7tv+rkmyvc7xkVv12Rf6wr8O11WHa
-        Fp5vKA4q7Xb6XbeSQvxtcDZG+xGYSIu2w08NhUdL/sHocJBCNa3XdYuG/JWlMJYXmg+I8YQ/OBSrkhIQ
-        J+YAFbntLZ8spPCzLchdgQbkX/s6xjqB+hDiDIiOuSE/qjpuXeEG7CKJZ9GpAHwDFX6cYn9EhxLwWUQS
-        /kYaLAaFF66EPFiQ/5EElOxeGiiH/+BKXJQUqd+weiIJt48G8yY55Id7ShwoFgt8KKuWX4wtua1aNVk+
-        WUYFp6xgKy7rBNi4kXBDkRxzAZGacMtIKcys3hbyd4bcuzRpnnACRh9tptA/jd8UVsdz3BZ+fIgLtAeH
-        EA8llulGBSSza2EDE9FT/LC5WBvQGiie8ZMxhfhmSn0C/tf6kujMYLcAAAAASUVORK5CYII=
-</value>
-  </data>
   <metadata name="errorProvider.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

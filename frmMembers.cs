@@ -299,7 +299,7 @@ namespace RegnalUDB
             txtOffice.Text = currentMember.oficina;
             txtMobile.Text = currentMember.movil;
             txtEmail.Text = currentMember.email;
-            btsStatus.Value = currentMember.baja;
+            chbStatus.Checked = currentMember.baja;
             pcbPhoto.ImageLocation = currentMember.fotoFileName;
 
             txtStreetNo.Text = currentMember.Domicilio.calleNumero;
@@ -309,7 +309,7 @@ namespace RegnalUDB
             txtPostalCode.Text = currentMember.Domicilio.codigoPostal;
             txtContact.Text = currentMember.Domicilio.contacto;
             txtPhone.Text = currentMember.Domicilio.telefono;
-            btsStatusHome.Value = currentMember.Domicilio.baja;
+            chbStatusHome.Checked  = currentMember.Domicilio.baja;
             cmbDepartment.SelectedItem = currentMember.Domicilio.Municipio.Departamento;
             cmbMunicipality.SelectedItem = currentMember.Domicilio.Municipio;
 
@@ -358,8 +358,8 @@ namespace RegnalUDB
             rdbMale.Checked = false;
             rdbAssociated.Checked = true;
             rdbNoAssociated.Checked = false;
-            btsStatus.Value = true;
-            btsStatusHome.Value = true;
+            chbStatus.Checked = true;
+            chbStatusHome.Checked = true;
             lblCum.Text = "Por asignar";
             dtpBirthday.Value = DateTime.Today;
             loadCmbs();
@@ -368,14 +368,14 @@ namespace RegnalUDB
             selectedMember = null;
             searchedDomicile = null;
 
-            txtDomicileDuplicity.Text = "La dirección de este miembro ya está en el sistema (Otro miembro ya registrado vive con él/ella)";
-            btsDuplicity.Value = false;
+            lblDomicileDuplicity.Text = "La dirección de este miembro ya está en el sistema (Otro miembro ya registrado vive con él/ella)";
+            chbDuplicity.Checked = false;
         }
 
         private void cleanDomiciles()
         {
             FormUtils.clearTextbox(domicileControls());
-            btsStatusHome.Value = true;
+            chbStatusHome.Checked = true;
             loadDomicileCmbs();
         }
 
@@ -405,7 +405,7 @@ namespace RegnalUDB
                     nombre = txtName.Text.Trim(),
                     paterno = txtPaternal.Text.Trim(),
                     materno = txtMaternal.Text.Trim(),
-                    baja = btsStatus.Value,
+                    baja = chbStatus.Checked,
                     idSeccion = ((Seccione)cmbSection.SelectedValue).idSeccion,
                     idGrupo = ((Grupos)cmbGroup.SelectedValue).idGrupo,
                     fotoFileName = fileName,
@@ -447,7 +447,7 @@ namespace RegnalUDB
 
         private void saveData()
         {
-            if (btsDuplicity.Value)
+            if (chbDuplicity.Checked)
             {
                 saveMember(searchedDomicile);
             }
@@ -458,7 +458,7 @@ namespace RegnalUDB
                     calleNumero = txtStreetNo.Text.Trim(),
                     colonia = txtColony.Text.Trim(),
                     codigoPostal = txtPostalCode.Text.Trim(),
-                    baja = btsStatusHome.Value,
+                    baja = chbStatusHome.Checked,
                     idMunicipio = ((Municipio)cmbMunicipality.SelectedValue).idMunicipio,
                     entreCalles = txtStreet.Text.Trim(),
                     referencia = txtReference.Text.Trim(),
@@ -503,7 +503,7 @@ namespace RegnalUDB
             selectedMember.nombre = txtName.Text.Trim();
             selectedMember.paterno = txtPaternal.Text.Trim();
             selectedMember.materno = txtMaternal.Text.Trim();
-            selectedMember.baja = btsStatus.Value;
+            selectedMember.baja = chbStatus.Checked;
             selectedMember.idSeccion = ((Seccione)cmbSection.SelectedValue).idSeccion;
             selectedMember.idGrupo = ((Grupos)cmbGroup.SelectedValue).idGrupo;
             selectedMember.fechaNacimiento = dtpBirthday.Value;
@@ -539,7 +539,7 @@ namespace RegnalUDB
         private void updateData()
         {
 
-            if (btsDuplicity.Value)
+            if (chbDuplicity.Checked)
             {
                 if (MessageBox.Show("Al realizar esta operación, se creará un nuevo registro " +
                     "de domicilio para el miembro a modificar, y todos los demás miembros registrados con" +
@@ -552,7 +552,7 @@ namespace RegnalUDB
                         calleNumero = txtStreetNo.Text.Trim(),
                         colonia = txtColony.Text.Trim(),
                         codigoPostal = txtPostalCode.Text.Trim(),
-                        baja = btsStatusHome.Value,
+                        baja = chbStatusHome.Checked,
                         idMunicipio = ((Municipio)cmbMunicipality.SelectedValue).idMunicipio,
                         entreCalles = txtStreet.Text.Trim(),
                         referencia = txtReference.Text.Trim(),
@@ -592,7 +592,7 @@ namespace RegnalUDB
                     selectedMember.Domicilio.calleNumero = txtStreetNo.Text.Trim();
                     selectedMember.Domicilio.colonia = txtColony.Text.Trim();
                     selectedMember.Domicilio.codigoPostal = txtPostalCode.Text.Trim();
-                    selectedMember.Domicilio.baja = btsStatusHome.Value;
+                    selectedMember.Domicilio.baja = chbStatusHome.Checked;
                     selectedMember.Domicilio.idMunicipio = ((Municipio)cmbMunicipality.SelectedValue).idMunicipio;
                     selectedMember.Domicilio.entreCalles = txtStreet.Text.Trim();
                     selectedMember.Domicilio.referencia = txtReference.Text.Trim();
@@ -612,12 +612,12 @@ namespace RegnalUDB
 
         private void FrmMembers_Load(object sender, EventArgs e)
         {
-            try { 
+            //lblDatosPersonales.ForeColor = System.Drawing.Color.FromArgb(127, 41, 181);
+            try {
                 loadCmbs();
                 loadTable();
-
-                pnlButtons.BackColor = System.Drawing.Color.Transparent;
-                pnlButtons.BringToFront();
+                /*pnlButtons.BackColor = System.Drawing.Color.Transparent;
+                pnlButtons.BringToFront();*/
 
                 //Not the ideal practice, but I don't want to waste time researching 
                 //how to change initialImage in design mode right now
@@ -631,30 +631,37 @@ namespace RegnalUDB
 
         private void Label5_Click(object sender, EventArgs e)
         {
-            bunifuSeparator1.Visible = false;
-            bunifuSeparator1.Left = ((Control)sender).Left;
-            bunifuSeparator1.Width = ((Control)sender).Width;
-            bunifuTransition1.ShowSync(bunifuSeparator1);
+            if (!pnlFormMembers.Controls.Contains(frmPosition.Instance))
+            {
+                pnlFormMembers.Controls.Add(frmPosition.Instance);
+                frmPosition.Instance.Dock = DockStyle.Fill;
+                frmPosition.Instance.BringToFront();
+            }
+            else
+            {
+                frmPosition.Instance.BringToFront();
+            }
         }
 
         private void Label4_Click(object sender, EventArgs e)
         {
-            bunifuSeparator1.Visible = true;
-            bunifuSeparator1.Left = ((Control)sender).Left;
-            bunifuSeparator1.Width = ((Control)sender).Width;
-            bunifuTransition1.ShowSync(bunifuSeparator1);
+            /*lblDatosPersonales.ForeColor = System.Drawing.Color.FromArgb(127,41,181);
+            lblPosition.ForeColor = System.Drawing.Color.FromArgb(110, 117, 125);*/
+            if (this.pnlFormMembers.Controls.Count > 0)
+            {
+                this.pnlFormMembers.Controls.RemoveAt(0);
+            }
+            tabControlMember.Show();
         }
 
         private void Label4_MouseUp(object sender, MouseEventArgs e)
         {
-            pnlButtons.BringToFront();
-            cardPersonalInfo.BringToFront();
+            
         }
 
         private void Label5_MouseUp(object sender, MouseEventArgs e)
         {
-            pnlButtons.BringToFront();
-            cardDirection.BringToFront();
+            
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
@@ -739,23 +746,6 @@ namespace RegnalUDB
             }
         }
 
-        private void btnBrowsePhoto_Click(object sender, EventArgs e)
-        {
-            try { 
-                OpenFileDialog opf = new OpenFileDialog();
-                opf.Filter = "Choose Image(*.jpg;*.png;)|*.jpg;*.png;";
-
-                if (opf.ShowDialog() == DialogResult.OK)
-                {
-                    pcbPhoto.ImageLocation = opf.FileName;
-                }
-            }
-            catch (Exception ex)
-            {
-                FormUtils.defaultErrorMessage(ex);
-            }
-        }
-
         private void btnNewClean_Click(object sender, EventArgs e)
         {
             cleanForm();
@@ -781,8 +771,8 @@ namespace RegnalUDB
                     btnSaveModify.Text = "Modificar";
                     fillSelectedData(selectedMember);
 
-                    txtDomicileDuplicity.Text = "Este miembro ha cambiado de domicilio, pero los demás miembros que comparten el domicilio no";
-                    btsDuplicity.Value = false;
+                    lblDomicileDuplicity.Text = "Este miembro ha cambiado de domicilio, pero los demás miembros que comparten el domicilio no";
+                    chbDuplicity.Checked = false;
                 }
             }
             catch (Exception ex)
@@ -807,7 +797,7 @@ namespace RegnalUDB
                 //'Save' mode
                 if (selectedMember == null)
                 {
-                    if (btsDuplicity.Value)
+                    if (chbDuplicity.Checked)
                     {
                         string partnerCum = "";
                         if (FormUtils.InputBox("Buscar domicilio", "Ingrese el CUM de la persona con la que comparte domicilio:", ref partnerCum) == DialogResult.OK)
@@ -824,20 +814,20 @@ namespace RegnalUDB
                                 txtPostalCode.Text = searchedDomicile.codigoPostal;
                                 txtContact.Text = searchedDomicile.contacto;
                                 txtPhone.Text = searchedDomicile.telefono;
-                                btsStatusHome.Value = searchedDomicile.baja;
+                                chbStatus.Checked = searchedDomicile.baja;
                                 cmbDepartment.SelectedItem = searchedDomicile.Municipio.Departamento;
                                 cmbMunicipality.SelectedItem = searchedDomicile.Municipio;
                             }
                             else
                             {
                                 MessageBox.Show("No se encontró ningún miembro con el CUM proporcionado.", "MIEMBRO NO ENCONTRADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                btsDuplicity.Value = false;
+                                chbDuplicity.Checked = false;
                                 searchedDomicile = null;
                             }
                         }
                         else
                         {
-                            btsDuplicity.Value = false;
+                            chbDuplicity.Checked = false;
                             searchedDomicile = null;
                         }
                     }
@@ -850,7 +840,7 @@ namespace RegnalUDB
                 //'Update' mode
                 else
                 {
-                    if (btsDuplicity.Value)
+                    if (chbDuplicity.Checked)
                     {
                         cleanDomiciles();
                     }
@@ -863,10 +853,28 @@ namespace RegnalUDB
                         txtPostalCode.Text = selectedMember.Domicilio.codigoPostal;
                         txtContact.Text = selectedMember.Domicilio.contacto;
                         txtPhone.Text = selectedMember.Domicilio.telefono;
-                        btsStatusHome.Value = selectedMember.Domicilio.baja;
+                        chbStatusHome.Checked = selectedMember.Domicilio.baja;
                         cmbDepartment.SelectedItem = selectedMember.Domicilio.Municipio.Departamento;
                         cmbMunicipality.SelectedItem = selectedMember.Domicilio.Municipio;
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
+        }
+
+        private void btnBrowsePhoto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog opf = new OpenFileDialog();
+                opf.Filter = "Choose Image(*.jpg;*.png;)|*.jpg;*.png;";
+
+                if (opf.ShowDialog() == DialogResult.OK)
+                {
+                    pcbPhoto.ImageLocation = opf.FileName;
                 }
             }
             catch (Exception ex)

@@ -5,6 +5,8 @@ using RegnalUDB.Controllers;
 using RegnalUDB.Entity_Framework;
 using RegnalUDB.Models;
 using RegnalUDB.Utils;
+using Syncfusion.Windows.Forms;
+using Syncfusion.Windows.Forms.Tools;
 using static RegnalUDB.Utils.FormValidators;
 
 namespace RegnalUDB
@@ -74,7 +76,7 @@ namespace RegnalUDB
                 txtGroup.Text = selectedGroup.grupoNum.ToString();
                 txtName.Text = selectedGroup.nombre;
                 txtSchedule.Text = selectedGroup.horario;
-                btsStatus.Value = selectedGroup.baja;
+                chbStatus.Checked = selectedGroup.baja; 
                 dtpFundation.Value = selectedGroup.fundacion;
 
                 btnSaveModify.Text = "Modificar";
@@ -99,7 +101,7 @@ namespace RegnalUDB
                         fundacion = dtpFundation.Value,
                         grupoNum = short.Parse(txtGroup.Text),
                         horario = txtSchedule.Text,
-                        baja = btsStatus.Value,
+                        baja = chbStatus.Checked,
                         Distrito = (Distrito)cmbDistricts.SelectedItem,
                         Localidade = (Localidade)cmbLocations.SelectedItem,
                         fechaRegistro = isNew ? DateTime.Now : selectedGroup.fechaRegistro,
@@ -168,8 +170,8 @@ namespace RegnalUDB
         private void clearForm()
         {
             FormUtils.clearTextbox(new Control[] { txtName, txtGroup, txtSchedule });
-            FormUtils.deselect(new ComboBox[] { cmbDistricts, cmbLocations });
-            btsStatus.Value = true;
+            //FormUtils.deselect(new ComboBox[] { cmbDistricts, cmbLocations });
+            chbStatus.Checked = true;
             dtpFundation.Value = DateTime.Now;
             selectedGroup = null;
             errorProvider.Clear();
@@ -212,6 +214,12 @@ namespace RegnalUDB
         {
             loadTable(groups);
             clearForm();
+        }
+
+
+        private void applyingTheme()
+        {
+            SkinManager.ApplicationVisualTheme = "VioletTheme";
         }
     }
 }

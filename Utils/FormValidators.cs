@@ -1,7 +1,5 @@
-﻿using Bunifu.Framework.UI;
-using Bunifu.UI.WinForms;
-using Bunifu.UI.WinForms.BunifuTextbox;
-using RegnalUDB.Models;
+﻿using RegnalUDB.Models;
+using Syncfusion.Windows.Forms.Tools;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +8,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WindowsFormsControlLibrary1;
 
 namespace RegnalUDB.Utils
 {
@@ -70,7 +67,7 @@ namespace RegnalUDB.Utils
 
         public static bool hasText(Control control)
         {   
-            if(control is TextBox || control is BunifuMetroTextbox || control is BunifuCustomTextbox)
+            if(control is TextBox || control is TextBoxExt || control is IntegerTextBox)
                 return control.Text.Trim().Length > 0;
             throw new Exception("Invalid control for isEmpty Method");
         }
@@ -79,7 +76,7 @@ namespace RegnalUDB.Utils
         {
             foreach (Control control in controls)
             {
-                if (control is TextBox || control is BunifuMetroTextbox || control is BunifuCustomTextbox)
+                if (control is TextBox || control is TextBoxExt || control is IntegerTextBox)
                 {
                     if (control.Text.Trim().Length > 0)
                     {
@@ -168,14 +165,14 @@ namespace RegnalUDB.Utils
         /// <returns></returns>
         public static bool isValidDate(Control control)
         {
-            if (control is DateTimePicker || control is BunifuDatepicker)
-                return DateTime.Compare(((BunifuDatepicker)control).Value, DateTime.Now) == -1;
+            if (control is DateTimePicker || control is DateTimePickerAdv)
+                return DateTime.Compare(((DateTimePickerAdv)control).Value, DateTime.Now) == -1;
             throw new Exception("Invalid control for isValidDate Method");
         }
 
         public static bool hasImageLocation(Control control)
         {
-            if (control is PictureBox || control is BunifuPictureBox)
+            if (control is PictureBox)
                 return ((PictureBox)control).ImageLocation != null;
             throw new Exception("Invalid control for hasImageLocation Method");
         }

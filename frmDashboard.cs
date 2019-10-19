@@ -17,7 +17,7 @@ namespace RegnalUDB
         {
             Thread thread = new Thread(new ThreadStart(StartForm));
             thread.Start();
-            Thread.Sleep(5000);
+            Thread.Sleep(1000);
             InitializeComponent();
             thread.Abort();
         }
@@ -65,31 +65,31 @@ namespace RegnalUDB
             form.Show();
         }
 
-        private void BunifuFlatButton1_Click(object sender, EventArgs e)
-        {
-            ShowChildForm(new frmMembers());
-        }
-
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
             ShowChildForm(new frmMembers());
         }
 
-        private void BunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-            ShowChildForm(new frmGroups());
-        }
-
-        private void BunifuFlatButton3_Click(object sender, EventArgs e)
-        {
-            ShowChildForm(new frmSections());
-        }
-
         private void PcbInfo_Click(object sender, EventArgs e)
         {
             frmCredits credits = new frmCredits();
             credits.Show();
+        }
+
+        private void btnFormMembers_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmMembers());
+        }
+
+        private void btnFormGroups_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmGroups());
+        }
+
+        private void btnFormSections_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmSections());
         }
     }
 }
