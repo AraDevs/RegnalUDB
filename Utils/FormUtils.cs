@@ -103,9 +103,9 @@ namespace RegnalUDB.Utils
             return dialogResult;
         } 
 
-        public static void deselect(ComboBox[] controls)
+        public static void deselect(ComboBoxAdv[] controls)
         {
-            foreach (ComboBox c in controls)
+            foreach (ComboBoxAdv c in controls)
                 c.SelectedIndex = -1;
         }
 
@@ -126,5 +126,7 @@ namespace RegnalUDB.Utils
         {
             return MessageBox.Show("Ocurrió un error inesperado: " + ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+      
     }
 }

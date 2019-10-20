@@ -58,6 +58,8 @@ namespace RegnalUDB
             {
                 MessageBox.Show(getDistrictOperation.Error);
             }
+
+            chbStatus.Checked = true;
         }
 
         private void frmGroups_Load(object sender, EventArgs e)
@@ -101,7 +103,7 @@ namespace RegnalUDB
                         fundacion = dtpFundation.Value,
                         grupoNum = short.Parse(txtGroup.Text),
                         horario = txtSchedule.Text,
-                        baja = chbStatus.Checked,
+                        baja = isNew ? true : chbStatus.Checked,
                         Distrito = (Distrito)cmbDistricts.SelectedItem,
                         Localidade = (Localidade)cmbLocations.SelectedItem,
                         fechaRegistro = isNew ? DateTime.Now : selectedGroup.fechaRegistro,
@@ -114,7 +116,7 @@ namespace RegnalUDB
                     {
                         loadTable(this.getGroups());
                         clearForm();
-                        MessageBox.Show(isNew ? "Nuevo grupo registrado" : "Grupo Modificado");
+                        MessageBox.Show(isNew ? "Nuevo grupo registrado" : "Grupo modificado");
                         return;
                     }
 
@@ -169,14 +171,13 @@ namespace RegnalUDB
 
         private void clearForm()
         {
-            FormUtils.clearTextbox(new Control[] { txtName, txtGroup, txtSchedule });
-            //FormUtils.deselect(new ComboBox[] { cmbDistricts, cmbLocations });
+            FormUtils.clearTextbox(new Control[] { txtName, txtGroup, txtSchedule, txtSearch });
+            FormUtils.deselect(new ComboBoxAdv[] { cmbDistricts, cmbLocations });
             chbStatus.Checked = true;
             dtpFundation.Value = DateTime.Now;
             selectedGroup = null;
             errorProvider.Clear();
             btnSaveModify.Text = "Guardar";
-            txtSearch.Text = "";
             filterGroups = new List<Grupos>();
 
         }
