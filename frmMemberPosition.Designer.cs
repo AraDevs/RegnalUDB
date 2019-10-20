@@ -33,10 +33,10 @@
             this.autoLabel4 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.cmbPosition = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.lstPositions = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDettach = new System.Windows.Forms.Button();
             this.btnSaveChanges = new System.Windows.Forms.Button();
+            this.sfListView1 = new Syncfusion.WinForms.ListView.SfListView();
             ((System.ComponentModel.ISupportInitialize)(this.cmbPosition)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,14 +109,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // lstPositions
-            // 
-            this.lstPositions.FormattingEnabled = true;
-            this.lstPositions.Location = new System.Drawing.Point(148, 179);
-            this.lstPositions.Name = "lstPositions";
-            this.lstPositions.Size = new System.Drawing.Size(390, 199);
-            this.lstPositions.TabIndex = 164;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -160,15 +152,24 @@
             this.btnSaveChanges.Text = "Guardar cambios";
             this.btnSaveChanges.UseVisualStyleBackColor = true;
             // 
+            // sfListView1
+            // 
+            this.sfListView1.AccessibleName = "ScrollControl";
+            this.sfListView1.Location = new System.Drawing.Point(148, 179);
+            this.sfListView1.Name = "sfListView1";
+            this.sfListView1.Size = new System.Drawing.Size(377, 199);
+            this.sfListView1.TabIndex = 168;
+            this.sfListView1.Text = "sfListView1";
+            // 
             // frmMemberPosition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.sfListView1);
             this.Controls.Add(this.btnSaveChanges);
             this.Controls.Add(this.btnDettach);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lstPositions);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.autoLabel4);
             this.Controls.Add(this.cmbPosition);
@@ -189,9 +190,9 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel4;
         private Syncfusion.Windows.Forms.Tools.ComboBoxAdv cmbPosition;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.ListBox lstPositions;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDettach;
         private System.Windows.Forms.Button btnSaveChanges;
+        private Syncfusion.WinForms.ListView.SfListView sfListView1;
     }
 }
