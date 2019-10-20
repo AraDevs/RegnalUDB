@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using RegnalUDB.Entity_Framework;
 using RegnalUDB.Models;
 
@@ -12,12 +10,30 @@ namespace RegnalUDB.Controllers
     {
         public Operation<Religion> addRecord(Religion o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EntitySingleton.Context.Religions.Add(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Religion>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Religion>.getFailOperation(e.Message);
+            }
         }
 
         public Operation<Religion> deleteRecord(Religion o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EntitySingleton.Context.Religions.Remove(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Religion>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Religion>.getFailOperation(e.Message);
+            }
         }
 
         public Operation<Religion> getRecords()
@@ -48,7 +64,17 @@ namespace RegnalUDB.Controllers
 
         public Operation<Religion> updateRecord(Religion o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Religion religion = EntitySingleton.Context.Religions.Find(o.idReligion);
+                EntitySingleton.Context.Entry(religion).CurrentValues.SetValues(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Religion>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Religion>.getFailOperation(e.Message);
+            }
         }
     }
 }
