@@ -10,26 +10,27 @@ using System.Windows.Forms;
 
 namespace RegnalUDB
 {
-    public partial class frmPosition : UserControl
+    public partial class frmMemberPosition : UserControl
     {
-        private static frmPosition _instance;
-        public static frmPosition Instance
+
+        private static frmMemberPosition _instance;
+        public static frmMemberPosition Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new frmPosition();
+                    _instance = new frmMemberPosition();
                 }
                 return _instance;
             }
         }
-        public frmPosition()
+        public frmMemberPosition()
         {
             InitializeComponent();
         }
 
-        private void btnSaveModify_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
 
         }

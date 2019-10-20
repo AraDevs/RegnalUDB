@@ -46,7 +46,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtTotal.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtTotal.IntegerValue = ((long)(1));
             this.txtTotal.Location = new System.Drawing.Point(632, 95);
             this.txtTotal.MinValue = ((long)(1));
@@ -100,6 +100,7 @@
             this.btnSaveModify.TabIndex = 135;
             this.btnSaveModify.Text = "Guardar";
             this.btnSaveModify.UseVisualStyleBackColor = true;
+            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
             // chbStatus
             // 
@@ -146,7 +147,7 @@
             // txtAcronym
             // 
             this.txtAcronym.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtAcronym.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtAcronym.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtAcronym.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtAcronym.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAcronym.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -175,7 +176,7 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtName.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtName.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));

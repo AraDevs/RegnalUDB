@@ -285,6 +285,12 @@
     <Compile Include="frmLocations.Designer.cs">
       <DependentUpon>frmLocations.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMemberPosition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmMemberPosition.Designer.cs">
+      <DependentUpon>frmMemberPosition.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMembers.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -359,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLocations.resx">
       <DependentUpon>frmLocations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMemberPosition.resx">
+      <DependentUpon>frmMemberPosition.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMembers.resx">
       <DependentUpon>frmMembers.cs</DependentUpon>

@@ -92,10 +92,10 @@ namespace RegnalUDB
                  new string[] { "El teléfono móvil debe ser una cadena de 8 dígitos que inicie con 6 o 7. Ejemplos: 68901123, 79819912" }),
 
                  new ToValidate(txtOffice, new ControlValidator[] { FormValidators.isPhoneWithExtensionOrNull },
-                 new string[] { "El teléfono móvil debe ser una cadena de 8 dígitos que inicie con 2, y puede ir acompañada de una extensión de 4 dígitos. Ejemplos: 22329012, 22910014 1457" }),
+                 new string[] { "El teléfono de oficina debe ser una cadena de 8 dígitos que inicie con 2, y puede ir acompañada de una extensión de 4 dígitos. Ejemplos: 22329012, 22910014 1457" }),
 
                  new ToValidate(txtParticular, new ControlValidator[] { FormValidators.isParticularPhone },
-                 new string[] { "El teléfono móvil debe ser una cadena de 8 dígitos que inicie con 2. Ejemplo: 22329012" }),
+                 new string[] { "El teléfono particular debe ser una cadena de 8 dígitos que inicie con 2. Ejemplo: 22329012" }),
 
                  new ToValidate(txtEmail, new ControlValidator[] { FormValidators.isEmail },
                  new string[] { "El email proporcionado no es válido" }),
@@ -116,13 +116,13 @@ namespace RegnalUDB
                  new string[] { "Ingrese al menos una referencia para la dirección" }),
 
                  new ToValidate(txtPostalCode, new ControlValidator[] { FormValidators.isPostalCode },
-                 new string[] { "Ingrese el código postal de la dirección" }),
+                 new string[] { "El código postal debe constar de cuatro dígitos" }),
 
                  new ToValidate(txtContact, new ControlValidator[] { FormValidators.hasText },
                  new string[] { "Ingrese el nombre de un contacto para el miembro" }),
 
                  new ToValidate(txtPhone, new ControlValidator[] { FormValidators.isParticularPhone },
-                 new string[] { "Ingrese un número telefónico de contacto" })
+                 new string[] { "El teléfono de contacto debe ser una cadena de 8 dígitos que inicie con 2. Ejemplo: 22329012" })
             };
             return validators;
         }
@@ -610,6 +610,20 @@ namespace RegnalUDB
                     
         }
 
+
+        private void refreshSections()
+        {
+            try
+            {
+                loadSections();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
+        }
+
+
         private void FrmMembers_Load(object sender, EventArgs e)
         {
             //lblDatosPersonales.ForeColor = System.Drawing.Color.FromArgb(127, 41, 181);
@@ -631,11 +645,11 @@ namespace RegnalUDB
 
         private void Label5_Click(object sender, EventArgs e)
         {
-            if (!pnlFormMembers.Controls.Contains(frmPosition.Instance))
+            if (!pnlFormMembers.Controls.Contains(frmMemberPosition.Instance))
             {
-                pnlFormMembers.Controls.Add(frmPosition.Instance);
-                frmPosition.Instance.Dock = DockStyle.Fill;
-                frmPosition.Instance.BringToFront();
+                pnlFormMembers.Controls.Add(frmMemberPosition.Instance);
+                frmMemberPosition.Instance.Dock = DockStyle.Fill;
+                frmMemberPosition.Instance.BringToFront();
             }
             else
             {
@@ -664,7 +678,7 @@ namespace RegnalUDB
             
         }
 
-        private void btnSaveModify_Click(object sender, EventArgs e)
+        /*private void btnSaveModify_Click(object sender, EventArgs e)
         {
             try
             {
@@ -700,9 +714,9 @@ namespace RegnalUDB
             {
                 FormUtils.defaultErrorMessage(ex);
             }
-        }
+        }*/
 
-        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+       /* private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
             try { 
                 loadMunicipalities();
@@ -711,9 +725,9 @@ namespace RegnalUDB
             {
                 FormUtils.defaultErrorMessage(ex);
             }
-        }
+        }*/
 
-        private void rdbMale_Click(object sender, EventArgs e)
+        /*private void rdbMale_Click(object sender, EventArgs e)
         {
             try {  
                 loadSections();
@@ -744,9 +758,9 @@ namespace RegnalUDB
             {
                 FormUtils.defaultErrorMessage(ex);
             }
-        }
+        }*/
 
-        private void btnNewClean_Click(object sender, EventArgs e)
+        /*private void btnNewClean_Click(object sender, EventArgs e)
         {
             cleanForm();
         }
@@ -759,9 +773,9 @@ namespace RegnalUDB
         private void dgvMembers_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             
-        }
+        }*/
 
-        private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
+        /*private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try { 
                 int index = e.RowIndex;
@@ -779,9 +793,9 @@ namespace RegnalUDB
             {
                 FormUtils.defaultErrorMessage(ex);
             }
-        }
+        }*/
 
-        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        /*private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
             filterData();
         }
@@ -789,9 +803,9 @@ namespace RegnalUDB
         private void bunifuCustomLabel37_Click(object sender, EventArgs e)
         {
 
-        }
+        }*/
 
-        private void bunifuToggleSwitch1_OnValuechange(object sender, EventArgs e)
+        /*private void bunifuToggleSwitch1_OnValuechange(object sender, EventArgs e)
         {
             try { 
                 //'Save' mode
@@ -863,7 +877,7 @@ namespace RegnalUDB
             {
                 FormUtils.defaultErrorMessage(ex);
             }
-        }
+        }*/
 
         private void btnBrowsePhoto_Click(object sender, EventArgs e)
         {
@@ -875,6 +889,177 @@ namespace RegnalUDB
                 if (opf.ShowDialog() == DialogResult.OK)
                 {
                     pcbPhoto.ImageLocation = opf.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
+        }
+
+        private void btnSaveModify_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.errorProvider.Clear();
+                List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorProvider == null;
+                bool hasLastName = FormValidators.oneHasText(new Control[] { txtPaternal, txtMaternal });
+                if (isValid && hasLastName)
+                {
+                    if (selectedMember == null)
+                    {
+                        saveData();
+                    }
+                    else
+                    {
+                        updateData();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    if (!hasLastName)
+                    {
+                        errorProvider.Add(new ControlErrorProvider("Debe proporcionarse al menos un apellido, ya sea paterno o materno", txtPaternal));
+                    }
+                    foreach (ControlErrorProvider error in errorProvider)
+                    {
+                        this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
+        }
+
+        private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                loadMunicipalities();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
+        }
+
+        private void rdbMale_Click(object sender, EventArgs e)
+        {
+            refreshSections();
+        }
+
+        private void rdbFemale_Click(object sender, EventArgs e)
+        {
+            refreshSections();
+        }
+
+        private void dtpBirthday_ValueChanged(object sender, EventArgs e)
+        {
+            refreshSections();
+        }
+
+        private void btnNewClean_Click(object sender, EventArgs e)
+        {
+            cleanForm();
+        }
+
+        private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    selectedMember = members[index];
+                    btnSaveModify.Text = "Modificar";
+                    fillSelectedData(selectedMember);
+
+                    lblDomicileDuplicity.Text = "Este miembro ha cambiado de domicilio, pero los demás miembros que comparten el domicilio no";
+                    chbDuplicity.Checked = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
+        }
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            filterData();
+        }
+
+        private void chbDuplicity_CheckStateChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //'Save' mode
+                if (selectedMember == null)
+                {
+                    if (chbDuplicity.Checked)
+                    {
+                        string partnerCum = "";
+                        if (FormUtils.InputBox("Buscar domicilio", "Ingrese el CUM de la persona con la que comparte domicilio:", ref partnerCum) == DialogResult.OK)
+                        {
+                            Operation<Miembro> getMemberOperation = memberController.getRecordbyCum(partnerCum);
+                            if (getMemberOperation.State && getMemberOperation.Value != null)
+                            {
+                                searchedDomicile = ((Miembro)getMemberOperation.Value).Domicilio;
+
+                                txtStreetNo.Text = searchedDomicile.calleNumero;
+                                txtStreet.Text = searchedDomicile.entreCalles;
+                                txtColony.Text = searchedDomicile.colonia;
+                                txtReference.Text = searchedDomicile.referencia;
+                                txtPostalCode.Text = searchedDomicile.codigoPostal;
+                                txtContact.Text = searchedDomicile.contacto;
+                                txtPhone.Text = searchedDomicile.telefono;
+                                chbStatus.Checked = searchedDomicile.baja;
+                                cmbDepartment.SelectedItem = searchedDomicile.Municipio.Departamento;
+                                cmbMunicipality.SelectedItem = searchedDomicile.Municipio;
+                            }
+                            else
+                            {
+                                MessageBox.Show("No se encontró ningún miembro con el CUM proporcionado.", "MIEMBRO NO ENCONTRADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                chbDuplicity.Checked = false;
+                                searchedDomicile = null;
+                            }
+                        }
+                        else
+                        {
+                            chbDuplicity.Checked = false;
+                            searchedDomicile = null;
+                        }
+                    }
+                    else
+                    {
+                        cleanDomiciles();
+                        searchedDomicile = null;
+                    }
+                }
+                //'Update' mode
+                else
+                {
+                    if (chbDuplicity.Checked)
+                    {
+                        cleanDomiciles();
+                    }
+                    else
+                    {
+                        txtStreetNo.Text = selectedMember.Domicilio.calleNumero;
+                        txtStreet.Text = selectedMember.Domicilio.entreCalles;
+                        txtColony.Text = selectedMember.Domicilio.colonia;
+                        txtReference.Text = selectedMember.Domicilio.referencia;
+                        txtPostalCode.Text = selectedMember.Domicilio.codigoPostal;
+                        txtContact.Text = selectedMember.Domicilio.contacto;
+                        txtPhone.Text = selectedMember.Domicilio.telefono;
+                        chbStatusHome.Checked = selectedMember.Domicilio.baja;
+                        cmbDepartment.SelectedItem = selectedMember.Domicilio.Municipio.Departamento;
+                        cmbMunicipality.SelectedItem = selectedMember.Domicilio.Municipio;
+                    }
                 }
             }
             catch (Exception ex)
