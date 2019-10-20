@@ -93,8 +93,8 @@ namespace RegnalUDB.Utils
 
         public static bool isSelected(Control control)
         {
-            if (control is ComboBox)
-                return ((ComboBox)control).SelectedIndex >= 0;
+            if (control is ComboBoxAdv)
+                return ((ComboBoxAdv)control).SelectedIndex >= 0;
             throw new Exception("Invalid control for isSelected Method");
         }
 

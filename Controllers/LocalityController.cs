@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,12 +13,30 @@ namespace RegnalUDB.Controllers
     {
         public Operation<Localidade> addRecord(Localidade o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EntitySingleton.Context.Localidades.Add(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Localidade>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Localidade>.getFailOperation(e.Message);
+            }
         }
 
         public Operation<Localidade> deleteRecord(Localidade o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EntitySingleton.Context.Localidades.Remove(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Localidade>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Localidade>.getFailOperation(e.Message);
+            }
         }
 
         public Operation<Localidade> getRecords()
@@ -48,7 +67,18 @@ namespace RegnalUDB.Controllers
 
         public Operation<Localidade> updateRecord(Localidade o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Localidade localidade = EntitySingleton.Context.Localidades.Find(o.idLocalidad);
+                EntitySingleton.Context.Entry(localidade).CurrentValues.SetValues(o);
+
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Localidade>.getSuccessOperation();
+            }
+            catch(Exception e)
+            {                
+                return FactoryOperation<Localidade>.getFailOperation(e.Message);
+            }
         }
     }
 }
