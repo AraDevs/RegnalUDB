@@ -12,7 +12,16 @@ namespace RegnalUDB.Controllers
     {
         public Operation<Municipio> addRecord(Municipio o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EntitySingleton.Context.Municipios.Add(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Municipio>.getSuccessOperation();
+            }
+            catch(Exception e)
+            {
+                return FactoryOperation<Municipio>.getFailOperation(e.Message);
+            }
         }
 
         public Operation<Municipio> deleteRecord(Municipio o)
@@ -62,7 +71,17 @@ namespace RegnalUDB.Controllers
 
         public Operation<Municipio> updateRecord(Municipio o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Municipio municipio = EntitySingleton.Context.Municipios.Find(o.idMunicipio);
+                EntitySingleton.Context.Entry(municipio).CurrentValues.SetValues(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Municipio>.getSuccessOperation();
+            }
+            catch(Exception e)
+            {
+                return FactoryOperation<Municipio>.getFailOperation(e.Message);
+            }
         }
     }
 }

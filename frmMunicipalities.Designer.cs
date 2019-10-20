@@ -28,27 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvMunicipalities = new System.Windows.Forms.DataGridView();
             this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.autoLabel6 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.cmbMunicipalities = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
+            this.cmbDepartments = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.btnNewClean = new System.Windows.Forms.Button();
             this.btnSaveModify = new System.Windows.Forms.Button();
             this.chbStatus = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel8 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.dgvMunicipalities = new System.Windows.Forms.DataGridView();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMunicipalities)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbMunicipalities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDepartments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMunicipalities)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,6 +65,18 @@
             this.panel1.Size = new System.Drawing.Size(1042, 445);
             this.panel1.TabIndex = 19;
             // 
+            // dgvMunicipalities
+            // 
+            this.dgvMunicipalities.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMunicipalities.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMunicipalities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvMunicipalities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMunicipalities.Location = new System.Drawing.Point(16, 69);
+            this.dgvMunicipalities.Name = "dgvMunicipalities";
+            this.dgvMunicipalities.Size = new System.Drawing.Size(1011, 359);
+            this.dgvMunicipalities.TabIndex = 3;
+            this.dgvMunicipalities.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMunicipalities_CellClick);
+            // 
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -73,8 +88,9 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(244, 20);
             this.txtSearch.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TabIndex = 6;
             this.txtSearch.ThemeName = "Office2016White";
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // autoLabel1
             // 
@@ -105,7 +121,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.autoLabel6);
-            this.panel2.Controls.Add(this.cmbMunicipalities);
+            this.panel2.Controls.Add(this.cmbDepartments);
             this.panel2.Controls.Add(this.btnNewClean);
             this.panel2.Controls.Add(this.btnSaveModify);
             this.panel2.Controls.Add(this.chbStatus);
@@ -123,7 +139,7 @@
             this.autoLabel6.DX = -113;
             this.autoLabel6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel6.LabeledControl = this.cmbMunicipalities;
+            this.autoLabel6.LabeledControl = this.cmbDepartments;
             this.autoLabel6.Location = new System.Drawing.Point(518, 29);
             this.autoLabel6.Name = "autoLabel6";
             this.autoLabel6.Size = new System.Drawing.Size(109, 20);
@@ -131,19 +147,19 @@
             this.autoLabel6.Text = "Departamento:";
             this.autoLabel6.ThemeName = "Office2016White";
             // 
-            // cmbMunicipalities
+            // cmbDepartments
             // 
-            this.cmbMunicipalities.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbMunicipalities.BeforeTouchSize = new System.Drawing.Size(220, 21);
-            this.cmbMunicipalities.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.cmbMunicipalities.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbMunicipalities.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.cmbMunicipalities.Location = new System.Drawing.Point(631, 29);
-            this.cmbMunicipalities.Name = "cmbMunicipalities";
-            this.cmbMunicipalities.Size = new System.Drawing.Size(220, 21);
-            this.cmbMunicipalities.Style = Syncfusion.Windows.Forms.VisualStyle.Office2016White;
-            this.cmbMunicipalities.TabIndex = 126;
-            this.cmbMunicipalities.ThemeName = "Office2016White";
+            this.cmbDepartments.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbDepartments.BeforeTouchSize = new System.Drawing.Size(220, 21);
+            this.cmbDepartments.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
+            this.cmbDepartments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDepartments.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.cmbDepartments.Location = new System.Drawing.Point(631, 29);
+            this.cmbDepartments.Name = "cmbDepartments";
+            this.cmbDepartments.Size = new System.Drawing.Size(220, 21);
+            this.cmbDepartments.Style = Syncfusion.Windows.Forms.VisualStyle.Office2016White;
+            this.cmbDepartments.TabIndex = 3;
+            this.cmbDepartments.ThemeName = "Office2016White";
             // 
             // btnNewClean
             // 
@@ -157,9 +173,10 @@
             this.btnNewClean.Location = new System.Drawing.Point(904, 110);
             this.btnNewClean.Name = "btnNewClean";
             this.btnNewClean.Size = new System.Drawing.Size(120, 45);
-            this.btnNewClean.TabIndex = 125;
+            this.btnNewClean.TabIndex = 5;
             this.btnNewClean.Text = "Nuevo";
             this.btnNewClean.UseVisualStyleBackColor = true;
+            this.btnNewClean.Click += new System.EventHandler(this.btnNewClean_Click);
             // 
             // btnSaveModify
             // 
@@ -173,9 +190,10 @@
             this.btnSaveModify.Location = new System.Drawing.Point(778, 110);
             this.btnSaveModify.Name = "btnSaveModify";
             this.btnSaveModify.Size = new System.Drawing.Size(120, 45);
-            this.btnSaveModify.TabIndex = 124;
+            this.btnSaveModify.TabIndex = 4;
             this.btnSaveModify.Text = "Guardar";
             this.btnSaveModify.UseVisualStyleBackColor = true;
+            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
             // chbStatus
             // 
@@ -187,7 +205,7 @@
             this.chbStatus.Location = new System.Drawing.Point(171, 77);
             this.chbStatus.Name = "chbStatus";
             this.chbStatus.Size = new System.Drawing.Size(150, 21);
-            this.chbStatus.TabIndex = 123;
+            this.chbStatus.TabIndex = 2;
             this.chbStatus.Text = "Estado";
             this.chbStatus.ThemeName = "Office2016White";
             // 
@@ -231,16 +249,12 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(220, 20);
             this.txtName.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtName.TabIndex = 110;
+            this.txtName.TabIndex = 1;
             this.txtName.ThemeName = "Office2016White";
             // 
-            // dgvMunicipalities
+            // errorProvider
             // 
-            this.dgvMunicipalities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMunicipalities.Location = new System.Drawing.Point(16, 69);
-            this.dgvMunicipalities.Name = "dgvMunicipalities";
-            this.dgvMunicipalities.Size = new System.Drawing.Size(1011, 359);
-            this.dgvMunicipalities.TabIndex = 3;
+            this.errorProvider.ContainerControl = this;
             // 
             // frmMunicipalities
             // 
@@ -253,15 +267,17 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmMunicipalities";
             this.Text = "frmMunicipalities";
+            this.Load += new System.EventHandler(this.frmMunicipalities_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMunicipalities)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbMunicipalities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDepartments)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMunicipalities)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,7 +290,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel6;
-        private Syncfusion.Windows.Forms.Tools.ComboBoxAdv cmbMunicipalities;
+        private Syncfusion.Windows.Forms.Tools.ComboBoxAdv cmbDepartments;
         private System.Windows.Forms.Button btnNewClean;
         private System.Windows.Forms.Button btnSaveModify;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbStatus;
@@ -282,5 +298,6 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel2;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtName;
         private System.Windows.Forms.DataGridView dgvMunicipalities;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
