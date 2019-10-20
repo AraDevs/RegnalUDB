@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNewClean = new System.Windows.Forms.Button();
@@ -35,20 +36,22 @@
             this.chbStatus = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel8 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel3 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.txtGroup = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtDescription = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvLocations = new System.Windows.Forms.DataGridView();
             this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.dgvLocations = new System.Windows.Forms.DataGridView();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -70,7 +73,7 @@
             this.panel2.Controls.Add(this.chbStatus);
             this.panel2.Controls.Add(this.autoLabel8);
             this.panel2.Controls.Add(this.autoLabel3);
-            this.panel2.Controls.Add(this.txtGroup);
+            this.panel2.Controls.Add(this.txtDescription);
             this.panel2.Controls.Add(this.autoLabel2);
             this.panel2.Controls.Add(this.txtName);
             this.panel2.Location = new System.Drawing.Point(27, 64);
@@ -93,6 +96,7 @@
             this.btnNewClean.TabIndex = 125;
             this.btnNewClean.Text = "Nuevo";
             this.btnNewClean.UseVisualStyleBackColor = true;
+            this.btnNewClean.Click += new System.EventHandler(this.btnNewClean_Click);
             // 
             // btnSaveModify
             // 
@@ -109,6 +113,7 @@
             this.btnSaveModify.TabIndex = 124;
             this.btnSaveModify.Text = "Guardar";
             this.btnSaveModify.UseVisualStyleBackColor = true;
+            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
             // chbStatus
             // 
@@ -145,7 +150,7 @@
             this.autoLabel3.DY = 29;
             this.autoLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel3.LabeledControl = this.txtGroup;
+            this.autoLabel3.LabeledControl = this.txtDescription;
             this.autoLabel3.Location = new System.Drawing.Point(77, 104);
             this.autoLabel3.Name = "autoLabel3";
             this.autoLabel3.Size = new System.Drawing.Size(90, 20);
@@ -153,21 +158,21 @@
             this.autoLabel3.Text = "Descripción:";
             this.autoLabel3.ThemeName = "Office2016White";
             // 
-            // txtGroup
+            // txtDescription
             // 
-            this.txtGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtGroup.BeforeTouchSize = new System.Drawing.Size(244, 20);
-            this.txtGroup.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.txtGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGroup.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.txtGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtGroup.Location = new System.Drawing.Point(171, 75);
-            this.txtGroup.Multiline = true;
-            this.txtGroup.Name = "txtGroup";
-            this.txtGroup.Size = new System.Drawing.Size(220, 78);
-            this.txtGroup.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtGroup.TabIndex = 112;
-            this.txtGroup.ThemeName = "Office2016White";
+            this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtDescription.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtDescription.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtDescription.Location = new System.Drawing.Point(171, 75);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(220, 78);
+            this.txtDescription.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtDescription.TabIndex = 112;
+            this.txtDescription.ThemeName = "Office2016White";
             // 
             // autoLabel2
             // 
@@ -209,6 +214,15 @@
             this.panel1.Size = new System.Drawing.Size(1042, 435);
             this.panel1.TabIndex = 7;
             // 
+            // dgvLocations
+            // 
+            this.dgvLocations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLocations.Location = new System.Drawing.Point(16, 68);
+            this.dgvLocations.Name = "dgvLocations";
+            this.dgvLocations.Size = new System.Drawing.Size(1011, 343);
+            this.dgvLocations.TabIndex = 3;
+            this.dgvLocations.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLocations_CellClick);
+            // 
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -222,6 +236,7 @@
             this.txtSearch.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
             this.txtSearch.TabIndex = 1;
             this.txtSearch.ThemeName = "Office2016White";
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // autoLabel1
             // 
@@ -237,13 +252,10 @@
             this.autoLabel1.Text = "Búsqueda de Localidades:";
             this.autoLabel1.ThemeName = "Office2016White";
             // 
-            // dgvLocations
+            // errorProvider
             // 
-            this.dgvLocations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLocations.Location = new System.Drawing.Point(16, 68);
-            this.dgvLocations.Name = "dgvLocations";
-            this.dgvLocations.Size = new System.Drawing.Size(1011, 343);
-            this.dgvLocations.TabIndex = 3;
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // frmLocations
             // 
@@ -256,15 +268,17 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmLocations";
             this.Text = "frmLocations";
+            this.Load += new System.EventHandler(this.frmLocations_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGroup)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,12 +293,13 @@
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbStatus;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel8;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel3;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtGroup;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtDescription;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel2;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtName;
         private System.Windows.Forms.Panel panel1;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtSearch;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
         private System.Windows.Forms.DataGridView dgvLocations;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
