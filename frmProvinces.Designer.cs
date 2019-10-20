@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNewClean = new System.Windows.Forms.Button();
             this.btnSaveModify = new System.Windows.Forms.Button();
@@ -38,17 +39,19 @@
             this.autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvProvinces = new System.Windows.Forms.DataGridView();
             this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvProvinces = new System.Windows.Forms.DataGridView();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvinces)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -82,6 +85,7 @@
             this.btnNewClean.TabIndex = 125;
             this.btnNewClean.Text = "Nuevo";
             this.btnNewClean.UseVisualStyleBackColor = true;
+            this.btnNewClean.Click += new System.EventHandler(this.btnNewClean_Click);
             // 
             // btnSaveModify
             // 
@@ -98,6 +102,7 @@
             this.btnSaveModify.TabIndex = 124;
             this.btnSaveModify.Text = "Guardar";
             this.btnSaveModify.UseVisualStyleBackColor = true;
+            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
             // chbStatus
             // 
@@ -196,6 +201,15 @@
             this.panel1.Size = new System.Drawing.Size(1042, 445);
             this.panel1.TabIndex = 13;
             // 
+            // dgvProvinces
+            // 
+            this.dgvProvinces.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProvinces.Location = new System.Drawing.Point(16, 79);
+            this.dgvProvinces.Name = "dgvProvinces";
+            this.dgvProvinces.Size = new System.Drawing.Size(1011, 344);
+            this.dgvProvinces.TabIndex = 3;
+            this.dgvProvinces.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProvinces_CellClick);
+            // 
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -209,6 +223,7 @@
             this.txtSearch.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
             this.txtSearch.TabIndex = 1;
             this.txtSearch.ThemeName = "Office2016White";
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // autoLabel1
             // 
@@ -235,13 +250,10 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Provincias";
             // 
-            // dgvProvinces
+            // errorProvider
             // 
-            this.dgvProvinces.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProvinces.Location = new System.Drawing.Point(16, 79);
-            this.dgvProvinces.Name = "dgvProvinces";
-            this.dgvProvinces.Size = new System.Drawing.Size(1011, 344);
-            this.dgvProvinces.TabIndex = 3;
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // frmProvinces
             // 
@@ -254,6 +266,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmProvinces";
             this.Text = "frmProvinces";
+            this.Load += new System.EventHandler(this.frmProvinces_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).EndInit();
@@ -261,8 +274,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProvinces)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,5 +298,6 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvProvinces;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

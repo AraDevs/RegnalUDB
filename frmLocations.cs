@@ -87,51 +87,7 @@ namespace RegnalUDB
             }
         }
 
-        private ToValidate[] getValidators()
-        {
-            ToValidate[] validators =  {
-                 new ToValidate(txtName, new ControlValidator[] { FormValidators.hasText },
-                 new string[] { "Ingresa el nombre de la localidad" }),
-
-             new ToValidate(txtDescription, new ControlValidator[] { FormValidators.hasText },
-                 new string[] { "Ingrese descripción sobre el domicilio de correspondencia" }),
-            };
-            return validators;
-        }
-
-        public List<Localidade> getLocations()
-        {
-            Operation<Localidade> getLocalidadeOperation = localityController.getRecords();
-            if (getLocalidadeOperation.State)
-            {
-                locations = getLocalidadeOperation.Data;
-                return getLocalidadeOperation.Data;
-            }
-            MessageBox.Show("Error al cargas datos de localidades");
-            return new List<Localidade>();
-        }
-
-        private void loadTable(List<Localidade> locations)
-        {
-            dgvLocations.DataSource = null;
-            dgvLocations.DataSource = locations;
-            FormUtils.hideColumnsForDgv(columnsToHideForLocations, dgvLocations);
-            FormUtils.changeTitlesForDgv(titlesforLocations, columnsToChangeForLocation, dgvLocations);
-            dgvLocations.AutoResizeColumns();
-            dgvLocations.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-            return;
-        }
-
-        private void clearForm()
-        {
-            FormUtils.clearTextbox(new Control[] { txtName, txtDescription, txtSearch });
-            chbStatus.Checked = true;
-            errorProvider.Clear();
-            btnSaveModify.Text = "Guardar";
-            selectedLocality = null;
-            filterLocations = new List<Localidade>();
-        }
-
+     
         private void dgvLocations_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
@@ -159,6 +115,51 @@ namespace RegnalUDB
             }
             filterLocations = new List<Localidade>();
             loadTable(locations);
+        }
+
+
+        private ToValidate[] getValidators()
+        {
+            ToValidate[] validators =  {
+                 new ToValidate(txtName, new ControlValidator[] { FormValidators.hasText },
+                 new string[] { "Ingresa el nombre de la localidad" }),
+
+             new ToValidate(txtDescription, new ControlValidator[] { FormValidators.hasText },
+                 new string[] { "Ingrese descripción sobre el domicilio de correspondencia" }),
+            };
+            return validators;
+        }
+
+        public List<Localidade> getLocations()
+        {
+            Operation<Localidade> getLocalidadeOperation = localityController.getRecords();
+            if (getLocalidadeOperation.State)
+            {
+                locations = getLocalidadeOperation.Data;
+                return getLocalidadeOperation.Data;
+            }
+            MessageBox.Show("Error al cargas datos de localidades");
+            return new List<Localidade>();
+        }
+        private void loadTable(List<Localidade> locations)
+        {
+            dgvLocations.DataSource = null;
+            dgvLocations.DataSource = locations;
+            FormUtils.hideColumnsForDgv(columnsToHideForLocations, dgvLocations);
+            FormUtils.changeTitlesForDgv(titlesforLocations, columnsToChangeForLocation, dgvLocations);
+            dgvLocations.AutoResizeColumns();
+            dgvLocations.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            return;
+        }
+
+        private void clearForm()
+        {
+            FormUtils.clearTextbox(new Control[] { txtName, txtDescription, txtSearch });
+            chbStatus.Checked = true;
+            errorProvider.Clear();
+            btnSaveModify.Text = "Guardar";
+            selectedLocality = null;
+            filterLocations = new List<Localidade>();
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
