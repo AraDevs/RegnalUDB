@@ -36,6 +36,9 @@ namespace RegnalUDB
         private static MemberController memberController = new MemberController();
         private List<Miembro> members = new List<Miembro>();
 
+        private static PositionController positionController = new PositionController();
+        private List<Cargo> positions = new List<Cargo>();
+
         private Miembro selectedMember = null;
         private Domicilio searchedDomicile = null;
 
@@ -251,6 +254,20 @@ namespace RegnalUDB
             loadMunicipalities();
         }
 
+        private void loadPositions()
+        {
+            Operation<Cargo> getPositionOperation = positionController.getActiveRecords();
+            if (getPositionOperation.State)
+            {
+                positions = getPositionOperation.Data;
+                frmMemberPosition.Instance.lstPosition.DataSource = positions;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar la lista de cargos. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private Control[] textControls()
         {
             Control[] controls = { txtColony, txtContact, txtEmail, txtMaternal, txtMobile, txtName, txtObservation, txtOcupation, txtOffice, txtParticular, txtPaternal, txtPhone, 
@@ -313,6 +330,15 @@ namespace RegnalUDB
             cmbDepartment.SelectedItem = currentMember.Domicilio.Municipio.Departamento;
             cmbMunicipality.SelectedItem = currentMember.Domicilio.Municipio;
 
+            frmMemberPosition.Instance.lblMember.Text = currentMember.nombre + " " + currentMember.paterno +
+                " " + currentMember.materno + " (CUM: " + currentMember.cum + ")";
+
+            frmMemberPosition.Instance.lstPosition.SelectedItems.Clear();
+
+            foreach (MiembroCargo mc in currentMember.MiembroCargoes) {
+                frmMemberPosition.Instance.lstPosition.SelectedItems.Add(mc.Cargo);
+            }
+
         }
 
         private void filterData()
@@ -370,6 +396,8 @@ namespace RegnalUDB
 
             lblDomicileDuplicity.Text = "La dirección de este miembro ya está en el sistema (Otro miembro ya registrado vive con él/ella)";
             chbDuplicity.Checked = false;
+
+            frmMemberPosition.Instance.clean();
         }
 
         private void cleanDomiciles()
@@ -630,6 +658,7 @@ namespace RegnalUDB
             try {
                 loadCmbs();
                 loadTable();
+                loadPositions();
                 /*pnlButtons.BackColor = System.Drawing.Color.Transparent;
                 pnlButtons.BringToFront();*/
 
@@ -980,6 +1009,8 @@ namespace RegnalUDB
 
                     lblDomicileDuplicity.Text = "Este miembro ha cambiado de domicilio, pero los demás miembros que comparten el domicilio no";
                     chbDuplicity.Checked = false;
+
+                    frmMemberPosition.Instance.SelectedMember = selectedMember;
                 }
             }
             catch (Exception ex)

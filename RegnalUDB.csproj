@@ -126,7 +126,9 @@
     <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\LocalityController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\MemberPositionController.cs" />
     <Compile Include="Controllers\MunicipalityContraller.cs" />
+    <Compile Include="Controllers\PositionController.cs" />
     <Compile Include="Controllers\ProvinceController.cs" />
     <Compile Include="Controllers\ReligionController.cs" />
     <Compile Include="Controllers\SchoolarshipController.cs" />
