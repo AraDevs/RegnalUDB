@@ -306,10 +306,16 @@
       <DependentUpon>frmMunicipalities.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPosition.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmPosition.Designer.cs">
       <DependentUpon>frmPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPositionAAA.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmPositionAAA.Designer.cs">
+      <DependentUpon>frmPositionAAA.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProvinces.cs">
       <SubType>Form</SubType>
@@ -379,6 +385,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPosition.resx">
       <DependentUpon>frmPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPositionAAA.resx">
+      <DependentUpon>frmPositionAAA.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProvinces.resx">
       <DependentUpon>frmProvinces.cs</DependentUpon>

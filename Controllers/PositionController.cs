@@ -12,12 +12,30 @@ namespace RegnalUDB.Controllers
     {
         public Operation<Cargo> addRecord(Cargo o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EntitySingleton.Context.Cargos.Add(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Cargo>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Cargo>.getFailOperation(e.Message);
+            }
         }
 
         public Operation<Cargo> deleteRecord(Cargo o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EntitySingleton.Context.Cargos.Remove(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Cargo>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Cargo>.getFailOperation(e.Message);
+            }
         }
 
         public Operation<Cargo> getRecords()
@@ -48,7 +66,17 @@ namespace RegnalUDB.Controllers
 
         public Operation<Cargo> updateRecord(Cargo o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Cargo position = EntitySingleton.Context.Cargos.Find(o.idCargo);
+                EntitySingleton.Context.Entry(position).CurrentValues.SetValues(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Cargo>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Cargo>.getFailOperation(e.Message);
+            }
         }
     }
 }

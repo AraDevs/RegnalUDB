@@ -10,21 +10,21 @@ using System.Windows.Forms;
 
 namespace RegnalUDB
 {
-    public partial class frmPosition : UserControl
+    public partial class frmPositionAAA : UserControl
     {
-        private static frmPosition _instance;
-        public static frmPosition Instance
+        private static frmPositionAAA _instance;
+        public static frmPositionAAA Instance
         {
             get
             {
                 if (_instance == null)
                 {
-                    _instance = new frmPosition();
+                    _instance = new frmPositionAAA();
                 }
                 return _instance;
             }
         }
-        public frmPosition()
+        public frmPositionAAA()
         {
             InitializeComponent();
         }

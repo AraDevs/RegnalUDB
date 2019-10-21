@@ -682,7 +682,7 @@ namespace RegnalUDB
             }
             else
             {
-                frmPosition.Instance.BringToFront();
+                frmPositionAAA.Instance.BringToFront();
             }
         }
 

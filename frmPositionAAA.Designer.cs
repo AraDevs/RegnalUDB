@@ -1,6 +1,6 @@
 ﻿namespace RegnalUDB
 {
-    partial class frmPosition
+    partial class frmPositionAAA
     {
         /// <summary> 
         /// Required designer variable.
