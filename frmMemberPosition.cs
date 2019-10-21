@@ -107,8 +107,8 @@ namespace RegnalUDB
 
                 if (!operation.State)
                 {
-                    MessageBox.Show("Ocurrió un error inesperado al desasociar al miembro al cargo '" + pos.nombre + "': " + operation.Error,
-                    "ERROR AL INGRESAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ocurrió un error inesperado al desasociar al miembro del cargo '" + pos.nombre + "': " + operation.Error,
+                    "ERROR AL ELIMINAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -117,6 +117,26 @@ namespace RegnalUDB
                     "CARGOS ASOCIADOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             clean();
+        }
+
+        private void lstPosition_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMember_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void autoLabel18_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

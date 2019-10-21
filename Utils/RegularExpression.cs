@@ -17,5 +17,7 @@ namespace RegnalUDB.Utils
         public static readonly string isMobilePhone = "^[67]{1}[0-9]{7}$";
 
         public static readonly string isPostalCode = "^[0-9]{4}$";
+
+        public static readonly string isCurrency = "\\d+(.\\d{1,2})?";
     }
 }

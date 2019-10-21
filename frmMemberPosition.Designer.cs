@@ -44,6 +44,7 @@
             this.lblMember.Size = new System.Drawing.Size(66, 20);
             this.lblMember.TabIndex = 160;
             this.lblMember.Text = "Ninguno";
+            this.lblMember.Click += new System.EventHandler(this.lblMember_Click);
             // 
             // autoLabel18
             // 
@@ -58,6 +59,7 @@
             this.autoLabel18.TabIndex = 159;
             this.autoLabel18.Text = "Miembro seleccionado:";
             this.autoLabel18.ThemeName = "Office2016White";
+            this.autoLabel18.Click += new System.EventHandler(this.autoLabel18_Click);
             // 
             // label1
             // 
@@ -69,6 +71,7 @@
             this.label1.Size = new System.Drawing.Size(126, 20);
             this.label1.TabIndex = 165;
             this.label1.Text = "Cargos asignados";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnSaveChanges
             // 
@@ -98,6 +101,7 @@
             this.lstPosition.Size = new System.Drawing.Size(550, 199);
             this.lstPosition.TabIndex = 168;
             this.lstPosition.Text = "sfListView1";
+            this.lstPosition.Click += new System.EventHandler(this.lstPosition_Click);
             // 
             // frmMemberPosition
             // 

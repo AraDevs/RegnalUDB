@@ -52,7 +52,7 @@ namespace RegnalUDB
                 FormUtils.hideColumnsForDgv(columnsToHide, dgvPositions);
                 return;
             }
-            MessageBox.Show("Error al carga datos de cargos");
+            MessageBox.Show("Error al cargar datos de cargos");
         }
 
         private void saveData()

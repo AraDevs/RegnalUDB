@@ -123,6 +123,9 @@
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DistricController.cs" />
     <Compile Include="Controllers\DomicileController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\EventPositionController.cs" />
+    <Compile Include="Controllers\EventSectionController.cs" />
     <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\LocalityController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
@@ -275,6 +278,24 @@
     <Compile Include="frmDistricts.Designer.cs">
       <DependentUpon>frmDistricts.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEventPosition.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmEventPosition.Designer.cs">
+      <DependentUpon>frmEventPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEvents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEvents.Designer.cs">
+      <DependentUpon>frmEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEventSection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmEventSection.Designer.cs">
+      <DependentUpon>frmEventSection.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGroups.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -367,6 +388,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDistricts.resx">
       <DependentUpon>frmDistricts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEventPosition.resx">
+      <DependentUpon>frmEventPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEvents.resx">
+      <DependentUpon>frmEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEventSection.resx">
+      <DependentUpon>frmEventSection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGroups.resx">
       <DependentUpon>frmGroups.cs</DependentUpon>

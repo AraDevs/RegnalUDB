@@ -26,5 +26,9 @@ namespace RegnalUDB.Utils
         {
             return Regex.Match(value, RegularExpression.isPostalCode).Success;
         }
+        public static bool isCurrency(string value)
+        {
+            return Regex.Match(value, RegularExpression.isCurrency).Success;
+        }
     }
 }

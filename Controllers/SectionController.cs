@@ -51,6 +51,20 @@ namespace RegnalUDB.Controllers
                 return FactoryOperation<Seccione>.getFailOperation(e.Message);
             }
         }
+
+        public Operation<Seccione> getActiveRecords()
+        {
+            try
+            {
+                List<Seccione> data = EntitySingleton.Context.Secciones.Where(x => x.baja).ToList();
+                return FactoryOperation<Seccione>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Seccione>.getFailOperation(e.Message);
+            }
+        }
+
         public Operation<Seccione> getRecordsByMemberInfo(string gender, int age)
         {
             try
