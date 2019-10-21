@@ -120,6 +120,7 @@ namespace RegnalUDB
         private void cleanForm()
         {
             FormUtils.clearTextbox(textControls());
+            btnSaveModify.Text = "Guardar";
             chbStatus.Checked = true;
         }
 
