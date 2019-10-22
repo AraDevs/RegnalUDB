@@ -12,7 +12,16 @@ namespace RegnalUDB.Controllers
     {
         public Operation<Departamento> addRecord(Departamento o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EntitySingleton.Context.Departamentos.Add(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Departamento>.getSuccessOperation();
+            }
+            catch(Exception e)
+            {
+                return FactoryOperation<Departamento>.getFailOperation(e.Message);
+            }
         }
 
         public Operation<Departamento> deleteRecord(Departamento o)
@@ -48,7 +57,17 @@ namespace RegnalUDB.Controllers
 
         public Operation<Departamento> updateRecord(Departamento o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Departamento departamento = EntitySingleton.Context.Departamentos.Find(o.idDepartamento);
+                EntitySingleton.Context.Entry(departamento).CurrentValues.SetValues(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Departamento>.getSuccessOperation();
+            }
+            catch(Exception e)
+            {
+                return FactoryOperation<Departamento>.getFailOperation(e.Message);
+            }
         }
     }
 }

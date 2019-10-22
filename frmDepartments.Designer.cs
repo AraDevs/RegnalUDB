@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNewClean = new System.Windows.Forms.Button();
             this.btnSaveModify = new System.Windows.Forms.Button();
@@ -38,17 +39,19 @@
             this.autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvDepartments = new System.Windows.Forms.DataGridView();
             this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvDepartments = new System.Windows.Forms.DataGridView();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -79,9 +82,10 @@
             this.btnNewClean.Location = new System.Drawing.Point(904, 110);
             this.btnNewClean.Name = "btnNewClean";
             this.btnNewClean.Size = new System.Drawing.Size(120, 45);
-            this.btnNewClean.TabIndex = 125;
+            this.btnNewClean.TabIndex = 5;
             this.btnNewClean.Text = "Nuevo";
             this.btnNewClean.UseVisualStyleBackColor = true;
+            this.btnNewClean.Click += new System.EventHandler(this.btnNewClean_Click);
             // 
             // btnSaveModify
             // 
@@ -95,9 +99,10 @@
             this.btnSaveModify.Location = new System.Drawing.Point(778, 110);
             this.btnSaveModify.Name = "btnSaveModify";
             this.btnSaveModify.Size = new System.Drawing.Size(120, 45);
-            this.btnSaveModify.TabIndex = 124;
+            this.btnSaveModify.TabIndex = 4;
             this.btnSaveModify.Text = "Guardar";
             this.btnSaveModify.UseVisualStyleBackColor = true;
+            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
             // chbStatus
             // 
@@ -109,7 +114,7 @@
             this.chbStatus.Location = new System.Drawing.Point(622, 29);
             this.chbStatus.Name = "chbStatus";
             this.chbStatus.Size = new System.Drawing.Size(150, 21);
-            this.chbStatus.TabIndex = 123;
+            this.chbStatus.TabIndex = 3;
             this.chbStatus.Text = "Estado";
             this.chbStatus.ThemeName = "Office2016White";
             // 
@@ -144,7 +149,7 @@
             // txtKey
             // 
             this.txtKey.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtKey.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtKey.BeforeTouchSize = new System.Drawing.Size(220, 20);
             this.txtKey.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtKey.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKey.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -153,7 +158,7 @@
             this.txtKey.Name = "txtKey";
             this.txtKey.Size = new System.Drawing.Size(220, 20);
             this.txtKey.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtKey.TabIndex = 112;
+            this.txtKey.TabIndex = 2;
             this.txtKey.ThemeName = "Office2016White";
             // 
             // autoLabel2
@@ -173,7 +178,7 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtName.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtName.BeforeTouchSize = new System.Drawing.Size(220, 20);
             this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -182,7 +187,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(220, 20);
             this.txtName.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtName.TabIndex = 110;
+            this.txtName.TabIndex = 1;
             this.txtName.ThemeName = "Office2016White";
             // 
             // panel1
@@ -196,10 +201,27 @@
             this.panel1.Size = new System.Drawing.Size(1042, 445);
             this.panel1.TabIndex = 16;
             // 
+            // dgvDepartments
+            // 
+            this.dgvDepartments.AllowUserToAddRows = false;
+            this.dgvDepartments.AllowUserToDeleteRows = false;
+            this.dgvDepartments.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDepartments.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDepartments.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDepartments.Location = new System.Drawing.Point(15, 79);
+            this.dgvDepartments.Name = "dgvDepartments";
+            this.dgvDepartments.ReadOnly = true;
+            this.dgvDepartments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDepartments.Size = new System.Drawing.Size(1009, 340);
+            this.dgvDepartments.TabIndex = 2;
+            this.dgvDepartments.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartments_CellClick);
+            this.dgvDepartments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartments_CellContentClick);
+            // 
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(220, 20);
             this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -207,8 +229,9 @@
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(244, 20);
             this.txtSearch.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtSearch.TabIndex = 1;
+            this.txtSearch.TabIndex = 6;
             this.txtSearch.ThemeName = "Office2016White";
+            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
             // 
             // autoLabel1
             // 
@@ -235,13 +258,9 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Departamentos";
             // 
-            // dgvDepartments
+            // errorProvider
             // 
-            this.dgvDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDepartments.Location = new System.Drawing.Point(16, 69);
-            this.dgvDepartments.Name = "dgvDepartments";
-            this.dgvDepartments.Size = new System.Drawing.Size(1011, 352);
-            this.dgvDepartments.TabIndex = 3;
+            this.errorProvider.ContainerControl = this;
             // 
             // frmDepartments
             // 
@@ -254,6 +273,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmDepartments";
             this.Text = "frmDepartments";
+            this.Load += new System.EventHandler(this.frmDepartments_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).EndInit();
@@ -261,8 +281,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDepartments)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,6 +304,7 @@
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtSearch;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.DataGridView dgvDepartments;
     }
 }
