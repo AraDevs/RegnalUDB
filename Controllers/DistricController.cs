@@ -11,7 +11,16 @@ namespace RegnalUDB.Controllers
     {
         public Operation<Distrito> addRecord(Distrito o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EntitySingleton.Context.Distritos.Add(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Distrito>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Distrito>.getFailOperation(e.Message);
+            }
         }
 
         public Operation<Distrito> deleteRecord(Distrito o)
@@ -47,7 +56,17 @@ namespace RegnalUDB.Controllers
 
         public Operation<Distrito> updateRecord(Distrito o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Distrito distrito = EntitySingleton.Context.Distritos.Find(o.idDistrito);
+                EntitySingleton.Context.Entry(distrito).CurrentValues.SetValues(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Distrito>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Distrito>.getFailOperation(e.Message);
+            }
         }
     }
 }
