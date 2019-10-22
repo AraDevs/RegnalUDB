@@ -104,6 +104,12 @@ namespace RegnalUDB.Utils
                 return Validators.isNumber(control.Text);
             return false;
         }
+        public static bool isCurrency(Control control)
+        {
+            if (FormValidators.hasText(control))
+                return Validators.isCurrency(control.Text);
+            return false;
+        }
         public static bool isParticularPhone(Control control)
         {
             if (FormValidators.hasText(control))
@@ -182,6 +188,18 @@ namespace RegnalUDB.Utils
             if(isNumber(higher) && isNumber(minor))
             {
                 return Int32.Parse(higher.Text) > Int32.Parse(minor.Text);
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public static bool isGreaterOrEqualThan(Control higher, Control minor)
+        {
+            if (isNumber(higher) && isNumber(minor))
+            {
+                return Int32.Parse(higher.Text) >= Int32.Parse(minor.Text);
             }
             else
             {

@@ -36,6 +36,9 @@ namespace RegnalUDB
         private static MemberController memberController = new MemberController();
         private List<Miembro> members = new List<Miembro>();
 
+        private static PositionController positionController = new PositionController();
+        private List<Cargo> positions = new List<Cargo>();
+
         private Miembro selectedMember = null;
         private Domicilio searchedDomicile = null;
 
@@ -92,10 +95,10 @@ namespace RegnalUDB
                  new string[] { "El teléfono móvil debe ser una cadena de 8 dígitos que inicie con 6 o 7. Ejemplos: 68901123, 79819912" }),
 
                  new ToValidate(txtOffice, new ControlValidator[] { FormValidators.isPhoneWithExtensionOrNull },
-                 new string[] { "El teléfono móvil debe ser una cadena de 8 dígitos que inicie con 2, y puede ir acompañada de una extensión de 4 dígitos. Ejemplos: 22329012, 22910014 1457" }),
+                 new string[] { "El teléfono de oficina debe ser una cadena de 8 dígitos que inicie con 2, y puede ir acompañada de una extensión de 4 dígitos. Ejemplos: 22329012, 22910014 1457" }),
 
                  new ToValidate(txtParticular, new ControlValidator[] { FormValidators.isParticularPhone },
-                 new string[] { "El teléfono móvil debe ser una cadena de 8 dígitos que inicie con 2. Ejemplo: 22329012" }),
+                 new string[] { "El teléfono particular debe ser una cadena de 8 dígitos que inicie con 2. Ejemplo: 22329012" }),
 
                  new ToValidate(txtEmail, new ControlValidator[] { FormValidators.isEmail },
                  new string[] { "El email proporcionado no es válido" }),
@@ -116,13 +119,13 @@ namespace RegnalUDB
                  new string[] { "Ingrese al menos una referencia para la dirección" }),
 
                  new ToValidate(txtPostalCode, new ControlValidator[] { FormValidators.isPostalCode },
-                 new string[] { "Ingrese el código postal de la dirección" }),
+                 new string[] { "El código postal debe constar de cuatro dígitos" }),
 
                  new ToValidate(txtContact, new ControlValidator[] { FormValidators.hasText },
                  new string[] { "Ingrese el nombre de un contacto para el miembro" }),
 
                  new ToValidate(txtPhone, new ControlValidator[] { FormValidators.isParticularPhone },
-                 new string[] { "Ingrese un número telefónico de contacto" })
+                 new string[] { "El teléfono de contacto debe ser una cadena de 8 dígitos que inicie con 2. Ejemplo: 22329012" })
             };
             return validators;
         }
@@ -251,6 +254,20 @@ namespace RegnalUDB
             loadMunicipalities();
         }
 
+        private void loadPositions()
+        {
+            Operation<Cargo> getPositionOperation = positionController.getActiveRecords();
+            if (getPositionOperation.State)
+            {
+                positions = getPositionOperation.Data;
+                frmMemberPosition.Instance.lstPosition.DataSource = positions;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar la lista de cargos. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private Control[] textControls()
         {
             Control[] controls = { txtColony, txtContact, txtEmail, txtMaternal, txtMobile, txtName, txtObservation, txtOcupation, txtOffice, txtParticular, txtPaternal, txtPhone, 
@@ -313,6 +330,15 @@ namespace RegnalUDB
             cmbDepartment.SelectedItem = currentMember.Domicilio.Municipio.Departamento;
             cmbMunicipality.SelectedItem = currentMember.Domicilio.Municipio;
 
+            frmMemberPosition.Instance.lblMember.Text = currentMember.nombre + " " + currentMember.paterno +
+                " " + currentMember.materno + " (CUM: " + currentMember.cum + ")";
+
+            frmMemberPosition.Instance.lstPosition.SelectedItems.Clear();
+
+            foreach (MiembroCargo mc in currentMember.MiembroCargoes) {
+                frmMemberPosition.Instance.lstPosition.SelectedItems.Add(mc.Cargo);
+            }
+
         }
 
         private void filterData()
@@ -370,6 +396,8 @@ namespace RegnalUDB
 
             lblDomicileDuplicity.Text = "La dirección de este miembro ya está en el sistema (Otro miembro ya registrado vive con él/ella)";
             chbDuplicity.Checked = false;
+
+            frmMemberPosition.Instance.clean();
         }
 
         private void cleanDomiciles()
@@ -610,12 +638,27 @@ namespace RegnalUDB
                     
         }
 
+
+        private void refreshSections()
+        {
+            try
+            {
+                loadSections();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
+        }
+
+
         private void FrmMembers_Load(object sender, EventArgs e)
         {
             //lblDatosPersonales.ForeColor = System.Drawing.Color.FromArgb(127, 41, 181);
             try {
                 loadCmbs();
                 loadTable();
+                loadPositions();
                 /*pnlButtons.BackColor = System.Drawing.Color.Transparent;
                 pnlButtons.BringToFront();*/
 
@@ -631,15 +674,15 @@ namespace RegnalUDB
 
         private void Label5_Click(object sender, EventArgs e)
         {
-            if (!pnlFormMembers.Controls.Contains(frmPosition.Instance))
+            if (!pnlFormMembers.Controls.Contains(frmMemberPosition.Instance))
             {
-                pnlFormMembers.Controls.Add(frmPosition.Instance);
-                frmPosition.Instance.Dock = DockStyle.Fill;
-                frmPosition.Instance.BringToFront();
+                pnlFormMembers.Controls.Add(frmMemberPosition.Instance);
+                frmMemberPosition.Instance.Dock = DockStyle.Fill;
+                frmMemberPosition.Instance.BringToFront();
             }
             else
             {
-                frmPosition.Instance.BringToFront();
+                frmMemberPosition.Instance.BringToFront();
             }
         }
 
@@ -662,6 +705,24 @@ namespace RegnalUDB
         private void Label5_MouseUp(object sender, MouseEventArgs e)
         {
             
+        }
+
+        private void btnBrowsePhoto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OpenFileDialog opf = new OpenFileDialog();
+                opf.Filter = "Choose Image(*.jpg;*.png;)|*.jpg;*.png;";
+
+                if (opf.ShowDialog() == DialogResult.OK)
+                {
+                    pcbPhoto.ImageLocation = opf.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
@@ -704,7 +765,8 @@ namespace RegnalUDB
 
         private void cmbDepartment_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try { 
+            try
+            {
                 loadMunicipalities();
             }
             catch (Exception ex)
@@ -715,35 +777,17 @@ namespace RegnalUDB
 
         private void rdbMale_Click(object sender, EventArgs e)
         {
-            try {  
-                loadSections();
-            }
-            catch (Exception ex)
-            {
-                FormUtils.defaultErrorMessage(ex);
-            }
+            refreshSections();
         }
 
         private void rdbFemale_Click(object sender, EventArgs e)
         {
-            try { 
-                loadSections();
-            }
-            catch (Exception ex)
-            {
-                FormUtils.defaultErrorMessage(ex);
-            }
+            refreshSections();
         }
 
-        private void dtpBirthday_onValueChanged(object sender, EventArgs e)
+        private void dtpBirthday_ValueChanged(object sender, EventArgs e)
         {
-            try { 
-                loadSections();
-            }
-            catch (Exception ex)
-            {
-                FormUtils.defaultErrorMessage(ex);
-            }
+            refreshSections();
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
@@ -751,19 +795,10 @@ namespace RegnalUDB
             cleanForm();
         }
 
-        private void dgvMembers_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dgvMembers_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
-
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try { 
+            try
+            {
                 int index = e.RowIndex;
                 if (index >= 0)
                 {
@@ -773,6 +808,8 @@ namespace RegnalUDB
 
                     lblDomicileDuplicity.Text = "Este miembro ha cambiado de domicilio, pero los demás miembros que comparten el domicilio no";
                     chbDuplicity.Checked = false;
+
+                    frmMemberPosition.Instance.SelectedMember = selectedMember;
                 }
             }
             catch (Exception ex)
@@ -786,14 +823,10 @@ namespace RegnalUDB
             filterData();
         }
 
-        private void bunifuCustomLabel37_Click(object sender, EventArgs e)
+        private void chbDuplicity_CheckStateChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void bunifuToggleSwitch1_OnValuechange(object sender, EventArgs e)
-        {
-            try { 
+            try
+            {
                 //'Save' mode
                 if (selectedMember == null)
                 {
@@ -857,24 +890,6 @@ namespace RegnalUDB
                         cmbDepartment.SelectedItem = selectedMember.Domicilio.Municipio.Departamento;
                         cmbMunicipality.SelectedItem = selectedMember.Domicilio.Municipio;
                     }
-                }
-            }
-            catch (Exception ex)
-            {
-                FormUtils.defaultErrorMessage(ex);
-            }
-        }
-
-        private void btnBrowsePhoto_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                OpenFileDialog opf = new OpenFileDialog();
-                opf.Filter = "Choose Image(*.jpg;*.png;)|*.jpg;*.png;";
-
-                if (opf.ShowDialog() == DialogResult.OK)
-                {
-                    pcbPhoto.ImageLocation = opf.FileName;
                 }
             }
             catch (Exception ex)

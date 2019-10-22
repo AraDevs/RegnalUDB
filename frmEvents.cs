@@ -1,0 +1,381 @@
+﻿using RegnalUDB.Controllers;
+using RegnalUDB.Entity_Framework;
+using RegnalUDB.Models;
+using RegnalUDB.Utils;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using static RegnalUDB.Utils.FormValidators;
+
+namespace RegnalUDB
+{
+    public partial class frmEvents : Form
+    {
+        private static EventController eventController = new EventController();
+        private List<Evento> events = new List<Evento>();
+
+        private static PositionController positionController = new PositionController();
+        private List<Cargo> positions = new List<Cargo>();
+
+        private static SectionController sectionController = new SectionController();
+        private List<Seccione> sections = new List<Seccione>();
+
+        private Evento selectedEvent = null;
+
+        // data for custom DataGridView
+        private int[] columnsToChange = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        private int[] columnsToHide = { 11, 12, 13, 14 };
+        private string[] titlesforColumns = { "ID", "Fecha de inicio", "Fecha de fin", "Num. Responsables", "Num. Integrantes", "Min Integrantes", "Activo", "Nombre", "Es Dolar", "Importe", "Descripción"};
+        
+
+        public frmEvents()
+        {
+            InitializeComponent();
+        }
+
+        private void fillSelectedData(Evento currentEvent)
+        {
+            txtName.Text = currentEvent.nombre;
+            txtPrice.Text = currentEvent.importe.ToString();
+            chbDollar.Checked = currentEvent.esDolar;
+            txtDescription.Text = currentEvent.descripcion;
+            dtpStart.Value = currentEvent.fechaInicio;
+            dtpEnd.Value = (DateTime)currentEvent.fechaFin;
+            txtNumber.Text = currentEvent.numIntagrantes.ToString();
+            txtMin.Text = currentEvent.minIntegrantes.ToString();
+            txtResp.Text = currentEvent.numResponsables.ToString();
+            chbStatus.Checked = currentEvent.baja;
+
+            frmEventPosition.Instance.lblEventPosition.Text = currentEvent.nombre;
+
+            frmEventPosition.Instance.lstPosition.SelectedItems.Clear();
+
+            foreach (EventoCargo ec in currentEvent.EventoCargoes)
+            {
+                frmEventPosition.Instance.lstPosition.SelectedItems.Add(ec.Cargo);
+            }
+
+
+
+            frmEventSection.Instance.lblEventSection.Text = currentEvent.nombre;
+
+            frmEventSection.Instance.lstSection.SelectedItems.Clear();
+
+            foreach (EventoSeccion es in currentEvent.EventoSeccions)
+            {
+                frmEventSection.Instance.lstSection.SelectedItems.Add(es.Seccione);
+            }
+        }
+
+        private void loadTable()
+        {
+            Operation<Evento> getEventsOperation = eventController.getRecords();
+            if (getEventsOperation.State)
+            {
+                events = getEventsOperation.Data;
+                dgvEvents.DataSource = events;
+
+                FormUtils.changeTitlesForDgv(titlesforColumns, columnsToChange, dgvEvents);
+                FormUtils.hideColumnsForDgv(columnsToHide, dgvEvents);
+                return;
+            }
+            MessageBox.Show("Error al carga datos de eventos");
+        }
+
+        private void saveData()
+        {
+            Evento temEvent = new Evento
+            {
+                nombre = txtName.Text,
+                importe = Convert.ToDecimal(txtPrice.Text.Trim()),
+                esDolar = chbDollar.Checked,
+                descripcion = txtDescription.Text,
+                fechaInicio = dtpStart.Value,
+                fechaFin = dtpEnd.Value,
+                numIntagrantes = Convert.ToInt16(txtNumber.Text.Trim()),
+                minIntegrantes = Convert.ToInt16(txtMin.Text.Trim()),
+                numResponsables = Convert.ToInt16(txtResp.Text.Trim()),
+                baja = chbStatus.Checked
+            };
+            Operation<Evento> operation = eventController.addRecord(temEvent);
+            if (operation.State)
+            {
+                MessageBox.Show("Evento registrado con éxito",
+                    "OPERACIÓN EXITOSA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadTable();
+                cleanForm();
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error inesperado al registrar el evento: " + operation.Error,
+                    "ERROR AL INGRESAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void updateData(Evento currentEvent)
+        {
+            Operation<Evento> operation = eventController.updateRecord(currentEvent);
+            if (operation.State)
+            {
+                MessageBox.Show("Evento actualizado con éxito",
+                    "OPERACIÓN EXITOSA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                loadTable();
+                cleanForm();
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error inesperado al actualizar el evento: " + operation.Error,
+                    "ERROR AL ACTUALIZAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void filterData()
+        {
+            string value = txtSearch.Text;
+            if (!this.Equals(""))
+            {
+                List<Evento> tempEvents = new List<Evento>();
+                foreach (Evento e in events)
+                {
+                    if (e.nombre.Contains(value) ||
+                        e.descripcion.Contains(value) ||
+                        e.importe.ToString().Contains(value) ||
+                        e.fechaFin.ToString().Contains(value) ||
+                        e.fechaInicio.ToString().Contains(value) ||
+                        e.numIntagrantes.ToString().Contains(value) ||
+                        e.minIntegrantes.ToString().Contains(value) ||
+                        e.numResponsables.ToString().Contains(value))
+                    {
+                        tempEvents.Add(e);
+                    }
+                }
+                dgvEvents.DataSource = tempEvents;
+            }
+            else
+            {
+                loadTable();
+            }
+        }
+
+        private ToValidate[] getValidators()
+        {
+            ToValidate[] validators =  {
+                 new ToValidate(txtName, new ControlValidator[] { FormValidators.hasText },
+                 new string[] { "Ingresa el  nombre del evento" }),
+                 new ToValidate(txtPrice, new ControlValidator[] { FormValidators.isCurrency },
+                 new string[] { "El importe debe ser un valor monetario" }),
+                 new ToValidate(txtDescription, new ControlValidator[] { FormValidators.hasText },
+                 new string[] { "Ingrese la descripción del evento" }),
+                 new ToValidate(txtNumber, new ControlValidator[] { FormValidators.isNumber },
+                 new string[] { "El número de integrantes debe ser un valor numérico" }),
+                 new ToValidate(txtMin, new ControlValidator[] { FormValidators.isNumber },
+                 new string[] { "El mínimo de integrantes debe ser un valor numérico" }),
+                 new ToValidate(txtResp, new ControlValidator[] { FormValidators.isNumber },
+                 new string[] { "El número de responsables debe ser un valor numérico" })
+            };
+            return validators;
+        }
+
+        private void cleanForm()
+        {
+            FormUtils.clearTextbox(textControls());
+            btnSaveModify.Text = "Guardar";
+            chbStatus.Checked = true;
+            chbDollar.Checked = true;
+            dtpEnd.Value = DateTime.Today;
+            dtpStart.Value = DateTime.Today;
+            selectedEvent = null;
+            errorProvider.Clear();
+
+            frmEventPosition.Instance.clean();
+            frmEventSection.Instance.clean();
+        }
+
+        private void loadPositions()
+        {
+            Operation<Cargo> getPositionOperation = positionController.getActiveRecords();
+            if (getPositionOperation.State)
+            {
+                positions = getPositionOperation.Data;
+                frmEventPosition.Instance.lstPosition.DataSource = positions;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar la lista de cargos. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void loadSections()
+        {
+            Operation<Seccione> getSectionsOperation = sectionController.getActiveRecords();
+            if (getSectionsOperation.State)
+            {
+                sections = getSectionsOperation.Data;
+                frmEventSection.Instance.lstSection.DataSource = sections;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar la lista de secciones. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private Control[] textControls()
+        {
+            Control[] controls = { txtName, txtPrice, txtDescription, txtNumber, txtMin, txtResp };
+            return controls;
+        }
+
+        private void frmEvents_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                loadTable();
+                loadPositions();
+                loadSections();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
+        }
+
+        private void btnSaveModify_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.errorProvider.Clear();
+                List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorProvider == null;
+
+                bool dateRangeValid = dtpEnd.Value >= dtpStart.Value;
+                bool minValid = FormValidators.isGreaterOrEqualThan(txtNumber, txtMin);
+                bool resValid = FormValidators.isGreaterOrEqualThan(txtNumber, txtResp);
+
+                if (isValid && dateRangeValid && minValid && resValid)
+                {
+                    if (selectedEvent == null)
+                    {
+                        saveData();
+                    }
+                    else
+                    {
+                        selectedEvent.nombre = txtName.Text;
+                        selectedEvent.importe = Convert.ToDecimal(txtPrice.Text.Trim());
+                        selectedEvent.esDolar = chbDollar.Checked;
+                        selectedEvent.descripcion = txtDescription.Text;
+                        selectedEvent.fechaFin = dtpEnd.Value;
+                        selectedEvent.fechaInicio = dtpStart.Value;
+                        selectedEvent.numIntagrantes = Convert.ToInt16(txtNumber.Text.Trim());
+                        selectedEvent.minIntegrantes = Convert.ToInt16(txtMin.Text.Trim());
+                        selectedEvent.numResponsables = Convert.ToInt16(txtResp.Text.Trim());
+                        selectedEvent.baja = chbStatus.Checked;
+                        updateData(selectedEvent);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    if (errorProvider != null)
+                    {
+                        foreach (ControlErrorProvider error in errorProvider)
+                        {
+                            this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
+                        }
+                    }
+                    if (!dateRangeValid)
+                    {
+                        this.errorProvider.SetError(dtpEnd, "La fecha de finalización debe ser igual o mayor a la de inicio");
+                    }
+                    if (!minValid)
+                    {
+                        this.errorProvider.SetError(txtMin, "El mínimo de integrantes debe ser menor o igual número de integrantes");
+                    }
+                    if (!resValid)
+                    {
+                        this.errorProvider.SetError(txtResp, "El número de responsables debe ser menor o igual número de integrantes");
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
+        }
+
+        private void btnNewClean_Click(object sender, EventArgs e)
+        {
+            cleanForm();
+        }
+
+        private void dgvEvents_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    selectedEvent = events[index];
+                    btnSaveModify.Text = "Modificar";
+                    fillSelectedData(selectedEvent);
+
+                    frmEventPosition.Instance.SelectedEvent = selectedEvent;
+                    frmEventSection.Instance.SelectedEvent = selectedEvent;
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
+        }
+
+        private void txtSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            filterData();
+        }
+
+        private void lblDatosPersonales_Click(object sender, EventArgs e)
+        {
+            if (this.pnlParent.Controls.Count > 0)
+            {
+                this.pnlParent.Controls.RemoveAt(0);
+            }
+            pnlEventData.Show();
+        }
+
+        private void lblPosition_Click(object sender, EventArgs e)
+        {
+            if (!pnlParent.Controls.Contains(frmEventPosition.Instance))
+            {
+                pnlParent.Controls.Add(frmEventPosition.Instance);
+                frmEventPosition.Instance.Dock = DockStyle.Fill;
+                frmEventPosition.Instance.BringToFront();
+            }
+            else
+            {
+                frmEventPosition.Instance.BringToFront();
+            }
+        }
+
+        private void lblSection_Click(object sender, EventArgs e)
+        {
+            if (!pnlParent.Controls.Contains(frmEventSection.Instance))
+            {
+                pnlParent.Controls.Add(frmEventSection.Instance);
+                frmEventSection.Instance.Dock = DockStyle.Fill;
+                frmEventSection.Instance.BringToFront();
+            }
+            else
+            {
+                frmEventSection.Instance.BringToFront();
+            }
+        }
+    }
+}
