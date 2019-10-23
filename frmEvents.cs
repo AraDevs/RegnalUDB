@@ -26,6 +26,9 @@ namespace RegnalUDB
         private static SectionController sectionController = new SectionController();
         private List<Seccione> sections = new List<Seccione>();
 
+        private static FunctionController functionController = new FunctionController();
+        private List<Funcione> functions = new List<Funcione>();
+
         private Evento selectedEvent = null;
 
         // data for custom DataGridView
@@ -70,6 +73,17 @@ namespace RegnalUDB
             foreach (EventoSeccion es in currentEvent.EventoSeccions)
             {
                 frmEventSection.Instance.lstSection.SelectedItems.Add(es.Seccione);
+            }
+
+
+
+            frmEventFunction.Instance.lblEventPosition.Text = currentEvent.nombre;
+
+            frmEventFunction.Instance.lstFunction.SelectedItems.Clear();
+
+            foreach (EventosFuncione ef in currentEvent.EventosFunciones)
+            {
+                frmEventFunction.Instance.lstFunction.SelectedItems.Add(ef.Funcione);
             }
         }
 
@@ -195,6 +209,7 @@ namespace RegnalUDB
 
             frmEventPosition.Instance.clean();
             frmEventSection.Instance.clean();
+            frmEventFunction.Instance.clean();
         }
 
         private void loadPositions()
@@ -225,6 +240,20 @@ namespace RegnalUDB
             }
         }
 
+        private void loadFunctions()
+        {
+            Operation<Funcione> getFunctionsOperation = functionController.getActiveRecords();
+            if (getFunctionsOperation.State)
+            {
+                functions = getFunctionsOperation.Data;
+                frmEventFunction.Instance.lstFunction.DataSource = functions;
+            }
+            else
+            {
+                MessageBox.Show("Error al cargar la lista de funciones. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private Control[] textControls()
         {
             Control[] controls = { txtName, txtPrice, txtDescription, txtNumber, txtMin, txtResp };
@@ -238,6 +267,7 @@ namespace RegnalUDB
                 loadTable();
                 loadPositions();
                 loadSections();
+                loadFunctions();
             }
             catch (Exception ex)
             {
@@ -328,6 +358,7 @@ namespace RegnalUDB
 
                     frmEventPosition.Instance.SelectedEvent = selectedEvent;
                     frmEventSection.Instance.SelectedEvent = selectedEvent;
+                    frmEventFunction.Instance.SelectedEvent = selectedEvent;
                 }
             }
             catch (Exception ex)
@@ -375,6 +406,20 @@ namespace RegnalUDB
             else
             {
                 frmEventSection.Instance.BringToFront();
+            }
+        }
+
+        private void lblFunction_Click(object sender, EventArgs e)
+        {
+            if (!pnlParent.Controls.Contains(frmEventFunction.Instance))
+            {
+                pnlParent.Controls.Add(frmEventFunction.Instance);
+                frmEventFunction.Instance.Dock = DockStyle.Fill;
+                frmEventFunction.Instance.BringToFront();
+            }
+            else
+            {
+                frmEventFunction.Instance.BringToFront();
             }
         }
     }

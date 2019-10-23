@@ -61,6 +61,7 @@
             this.autoLabel30 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlParent = new System.Windows.Forms.Panel();
+            this.lblFunction = new System.Windows.Forms.Label();
             this.pnlEventData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtResp)).BeginInit();
@@ -553,11 +554,24 @@
             this.pnlParent.Size = new System.Drawing.Size(1033, 338);
             this.pnlParent.TabIndex = 118;
             // 
+            // lblFunction
+            // 
+            this.lblFunction.AutoSize = true;
+            this.lblFunction.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblFunction.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFunction.Location = new System.Drawing.Point(515, 70);
+            this.lblFunction.Name = "lblFunction";
+            this.lblFunction.Size = new System.Drawing.Size(147, 20);
+            this.lblFunction.TabIndex = 175;
+            this.lblFunction.Text = "Funciones asociadas";
+            this.lblFunction.Click += new System.EventHandler(this.lblFunction_Click);
+            // 
             // frmEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1117, 720);
+            this.Controls.Add(this.lblFunction);
             this.Controls.Add(this.pnlParent);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblSection);
@@ -625,5 +639,6 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel30;
         private System.Windows.Forms.ErrorProvider errorProvider;
         private System.Windows.Forms.Panel pnlParent;
+        private System.Windows.Forms.Label lblFunction;
     }
 }
