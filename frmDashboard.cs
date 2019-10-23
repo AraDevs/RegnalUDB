@@ -69,6 +69,8 @@ namespace RegnalUDB
         {
             this.WindowState = FormWindowState.Normal;
             ShowChildForm(new frmMembers());
+
+            //this.Size = new Size(1400,800);
         }
 
         private void PcbInfo_Click(object sender, EventArgs e)
@@ -90,6 +92,51 @@ namespace RegnalUDB
         private void btnFormSections_Click(object sender, EventArgs e)
         {
             ShowChildForm(new frmSections());
+        }
+
+        private void btnFormEvents_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmEvents());
+        }
+
+        private void btnFormPositions_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmPosition());
+        }
+
+        private void btnFormDistrictis_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmDistricts());
+        }
+
+        private void btnFormSchoolarship_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnFormDepartments_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmDepartments());
+        }
+
+        private void btnFormMunicipalities_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmMunicipalities());
+        }
+
+        private void btnFormLocations_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmLocations());
+        }
+
+        private void btnFormProvinces_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmProvinces());
+        }
+
+        private void btnFormReligions_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmReligions());
         }
     }
 }

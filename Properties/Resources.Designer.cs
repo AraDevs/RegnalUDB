@@ -83,6 +83,46 @@ namespace RegnalUDB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap collaborator_40px {
+            get {
+                object obj = ResourceManager.GetObject("collaborator_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap conference_40px {
+            get {
+                object obj = ResourceManager.GetObject("conference_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap event_40px {
+            get {
+                object obj = ResourceManager.GetObject("event_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap filled_flag_74_40px {
+            get {
+                object obj = ResourceManager.GetObject("filled_flag-74_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap generic_sorting_40px {
             get {
                 object obj = ResourceManager.GetObject("generic_sorting_40px", resourceCulture);
@@ -106,6 +146,16 @@ namespace RegnalUDB.Properties {
         internal static System.Drawing.Bitmap groups_40px {
             get {
                 object obj = ResourceManager.GetObject("groups_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap holy_bible_40px {
+            get {
+                object obj = ResourceManager.GetObject("holy_bible_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,6 +203,26 @@ namespace RegnalUDB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap layers_40px {
+            get {
+                object obj = ResourceManager.GetObject("layers_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap login_rounded_right_40px {
+            get {
+                object obj = ResourceManager.GetObject("login_rounded_right_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logo_UDB {
             get {
                 object obj = ResourceManager.GetObject("Logo UDB", resourceCulture);
@@ -163,9 +233,39 @@ namespace RegnalUDB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap logout_rounded_left_40px {
+            get {
+                object obj = ResourceManager.GetObject("logout_rounded_left_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap manager_40px {
+            get {
+                object obj = ResourceManager.GetObject("manager_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap map_pin_40px {
             get {
                 object obj = ResourceManager.GetObject("map_pin_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap map_pin_40px1 {
+            get {
+                object obj = ResourceManager.GetObject("map_pin_40px1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,9 +313,29 @@ namespace RegnalUDB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap school_40px {
+            get {
+                object obj = ResourceManager.GetObject("school_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap search_40px {
             get {
                 object obj = ResourceManager.GetObject("search_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap signpost_40px {
+            get {
+                object obj = ResourceManager.GetObject("signpost_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -473,6 +473,18 @@
       <DependentUpon>MainModel.edmx</DependentUpon>
       <LastGenOutput>MainModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\logout_rounded_left_40px.png" />
+    <None Include="Resources\login_rounded_right_40px.png" />
+    <None Include="Resources\manager_40px.png" />
+    <None Include="Resources\holy_bible_40px.png" />
+    <None Include="Resources\map_pin_40px1.png" />
+    <None Include="Resources\signpost_40px.png" />
+    <None Include="Resources\layers_40px.png" />
+    <None Include="Resources\collaborator_40px.png" />
+    <None Include="Resources\filled_flag-74_40px.png" />
+    <None Include="Resources\school_40px.png" />
+    <None Include="Resources\event_40px.png" />
+    <None Include="Resources\conference_40px.png" />
     <None Include="Resources\generic-user-icon-windows.png" />
     <None Include="Resources\info_40px.png" />
     <None Include="Resources\close_window_black_40px.png" />
