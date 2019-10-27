@@ -111,7 +111,7 @@ namespace RegnalUDB
 
         private void btnFormSchoolarship_Click(object sender, EventArgs e)
         {
-            
+            ShowChildForm(new frmScholarship());
         }
 
         private void btnFormDepartments_Click(object sender, EventArgs e)
@@ -137,6 +137,31 @@ namespace RegnalUDB
         private void btnFormReligions_Click(object sender, EventArgs e)
         {
             ShowChildForm(new frmReligions());
+        }
+
+        private void btnFormTypeMovements_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmMovements());
+        }
+
+        private void btnFormUsers_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmUsers());
+        }
+
+        private void btnFormCivilStatus_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmCivilStatus());
+        }
+
+        private void btnFormBlackList_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmBlackList());
+        }
+
+        private void btnFormTypeUsers_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmProfiles());
         }
     }
 }

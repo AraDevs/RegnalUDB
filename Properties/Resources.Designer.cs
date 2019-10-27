@@ -63,6 +63,16 @@ namespace RegnalUDB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bill_40px {
+            get {
+                object obj = ResourceManager.GetObject("bill_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close_window_40px {
             get {
                 object obj = ResourceManager.GetObject("close_window_40px", resourceCulture);
@@ -96,6 +106,16 @@ namespace RegnalUDB.Properties {
         internal static System.Drawing.Bitmap conference_40px {
             get {
                 object obj = ResourceManager.GetObject("conference_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap couple_man_woman_40px {
+            get {
+                object obj = ResourceManager.GetObject("couple_man_woman_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -166,6 +186,16 @@ namespace RegnalUDB.Properties {
         internal static System.Drawing.Bitmap icono {
             get {
                 object obj = ResourceManager.GetObject("icono", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap id_not_verified_40px {
+            get {
+                object obj = ResourceManager.GetObject("id_not_verified_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,6 +333,16 @@ namespace RegnalUDB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap resize_four_directions_40px {
+            get {
+                object obj = ResourceManager.GetObject("resize_four_directions_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap restore_window_40px {
             get {
                 object obj = ResourceManager.GetObject("restore-window-40px", resourceCulture);
@@ -346,6 +386,16 @@ namespace RegnalUDB.Properties {
         internal static System.Drawing.Bitmap udblogo_black {
             get {
                 object obj = ResourceManager.GetObject("udblogo_black", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_40px {
+            get {
+                object obj = ResourceManager.GetObject("user_40px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

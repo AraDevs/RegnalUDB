@@ -28,17 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlContent = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlMenuTop = new System.Windows.Forms.Panel();
             this.pnlMenu = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.pcbInfo = new System.Windows.Forms.PictureBox();
             this.pcbRestoreWindow = new System.Windows.Forms.PictureBox();
             this.pcbCloseWindow = new System.Windows.Forms.PictureBox();
             this.pcbMaximizeWindow = new System.Windows.Forms.PictureBox();
             this.pcbMinimizeWindow = new System.Windows.Forms.PictureBox();
+            this.btnFormTypeUsers = new System.Windows.Forms.Button();
+            this.btnFormBlackList = new System.Windows.Forms.Button();
+            this.btnFormCivilStatus = new System.Windows.Forms.Button();
+            this.btnFormBitacora = new System.Windows.Forms.Button();
+            this.btnFormTypeMovements = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnFormFunctions = new System.Windows.Forms.Button();
             this.btnFormReligions = new System.Windows.Forms.Button();
@@ -68,21 +73,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcbIcono)).BeginInit();
             this.SuspendLayout();
             // 
-            // pnlContent
-            // 
-            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(238)))), ((int)(((byte)(241)))));
-            this.pnlContent.Location = new System.Drawing.Point(294, 80);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1106, 703);
-            this.pnlContent.TabIndex = 1;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(48, 21);
+            this.label1.Location = new System.Drawing.Point(46, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 23);
             this.label1.TabIndex = 1;
@@ -94,7 +91,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(56, 77);
+            this.label2.Location = new System.Drawing.Point(54, 80);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 23);
             this.label2.TabIndex = 2;
@@ -108,6 +105,7 @@
             this.pnlMenuTop.Controls.Add(this.pcbCloseWindow);
             this.pnlMenuTop.Controls.Add(this.pcbMaximizeWindow);
             this.pnlMenuTop.Controls.Add(this.pcbMinimizeWindow);
+            this.pnlMenuTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMenuTop.Location = new System.Drawing.Point(294, 0);
             this.pnlMenuTop.Name = "pnlMenuTop";
             this.pnlMenuTop.Size = new System.Drawing.Size(1106, 80);
@@ -118,6 +116,11 @@
             this.pnlMenu.AutoScroll = true;
             this.pnlMenu.BackgroundColor = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170))))));
             this.pnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pnlMenu.Controls.Add(this.btnFormTypeUsers);
+            this.pnlMenu.Controls.Add(this.btnFormBlackList);
+            this.pnlMenu.Controls.Add(this.btnFormCivilStatus);
+            this.pnlMenu.Controls.Add(this.btnFormBitacora);
+            this.pnlMenu.Controls.Add(this.btnFormTypeMovements);
             this.pnlMenu.Controls.Add(this.button1);
             this.pnlMenu.Controls.Add(this.btnFormFunctions);
             this.pnlMenu.Controls.Add(this.btnFormReligions);
@@ -147,10 +150,18 @@
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(10, 119);
+            this.panel1.Location = new System.Drawing.Point(8, 122);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(265, 1);
             this.panel1.TabIndex = 7;
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(294, 80);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1106, 720);
+            this.pnlContent.TabIndex = 3;
             // 
             // pcbInfo
             // 
@@ -217,6 +228,110 @@
             this.pcbMinimizeWindow.TabStop = false;
             this.pcbMinimizeWindow.Click += new System.EventHandler(this.PcbMinimizeWindow_Click);
             // 
+            // btnFormTypeUsers
+            // 
+            this.btnFormTypeUsers.BackColor = System.Drawing.Color.Transparent;
+            this.btnFormTypeUsers.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFormTypeUsers.FlatAppearance.BorderSize = 0;
+            this.btnFormTypeUsers.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormTypeUsers.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormTypeUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFormTypeUsers.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormTypeUsers.ForeColor = System.Drawing.Color.LightGray;
+            this.btnFormTypeUsers.Image = global::RegnalUDB.Properties.Resources.user_40px;
+            this.btnFormTypeUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormTypeUsers.Location = new System.Drawing.Point(12, 302);
+            this.btnFormTypeUsers.Name = "btnFormTypeUsers";
+            this.btnFormTypeUsers.Size = new System.Drawing.Size(265, 48);
+            this.btnFormTypeUsers.TabIndex = 27;
+            this.btnFormTypeUsers.Text = "              Perfiles";
+            this.btnFormTypeUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormTypeUsers.UseVisualStyleBackColor = false;
+            this.btnFormTypeUsers.Click += new System.EventHandler(this.btnFormTypeUsers_Click);
+            // 
+            // btnFormBlackList
+            // 
+            this.btnFormBlackList.BackColor = System.Drawing.Color.Transparent;
+            this.btnFormBlackList.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFormBlackList.FlatAppearance.BorderSize = 0;
+            this.btnFormBlackList.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormBlackList.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormBlackList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFormBlackList.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormBlackList.ForeColor = System.Drawing.Color.LightGray;
+            this.btnFormBlackList.Image = global::RegnalUDB.Properties.Resources.id_not_verified_40px;
+            this.btnFormBlackList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormBlackList.Location = new System.Drawing.Point(9, 1093);
+            this.btnFormBlackList.Name = "btnFormBlackList";
+            this.btnFormBlackList.Size = new System.Drawing.Size(265, 48);
+            this.btnFormBlackList.TabIndex = 26;
+            this.btnFormBlackList.Text = "              Lista Negra";
+            this.btnFormBlackList.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormBlackList.UseVisualStyleBackColor = false;
+            this.btnFormBlackList.Click += new System.EventHandler(this.btnFormBlackList_Click);
+            // 
+            // btnFormCivilStatus
+            // 
+            this.btnFormCivilStatus.BackColor = System.Drawing.Color.Transparent;
+            this.btnFormCivilStatus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFormCivilStatus.FlatAppearance.BorderSize = 0;
+            this.btnFormCivilStatus.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormCivilStatus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormCivilStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFormCivilStatus.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormCivilStatus.ForeColor = System.Drawing.Color.LightGray;
+            this.btnFormCivilStatus.Image = global::RegnalUDB.Properties.Resources.couple_man_woman_40px;
+            this.btnFormCivilStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormCivilStatus.Location = new System.Drawing.Point(12, 1046);
+            this.btnFormCivilStatus.Name = "btnFormCivilStatus";
+            this.btnFormCivilStatus.Size = new System.Drawing.Size(265, 48);
+            this.btnFormCivilStatus.TabIndex = 25;
+            this.btnFormCivilStatus.Text = "              Estado Civil";
+            this.btnFormCivilStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormCivilStatus.UseVisualStyleBackColor = false;
+            this.btnFormCivilStatus.Click += new System.EventHandler(this.btnFormCivilStatus_Click);
+            // 
+            // btnFormBitacora
+            // 
+            this.btnFormBitacora.BackColor = System.Drawing.Color.Transparent;
+            this.btnFormBitacora.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFormBitacora.FlatAppearance.BorderSize = 0;
+            this.btnFormBitacora.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormBitacora.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormBitacora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFormBitacora.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormBitacora.ForeColor = System.Drawing.Color.LightGray;
+            this.btnFormBitacora.Image = global::RegnalUDB.Properties.Resources.bill_40px;
+            this.btnFormBitacora.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormBitacora.Location = new System.Drawing.Point(12, 995);
+            this.btnFormBitacora.Name = "btnFormBitacora";
+            this.btnFormBitacora.Size = new System.Drawing.Size(265, 48);
+            this.btnFormBitacora.TabIndex = 24;
+            this.btnFormBitacora.Text = "              Bitácora";
+            this.btnFormBitacora.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormBitacora.UseVisualStyleBackColor = false;
+            // 
+            // btnFormTypeMovements
+            // 
+            this.btnFormTypeMovements.BackColor = System.Drawing.Color.Transparent;
+            this.btnFormTypeMovements.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFormTypeMovements.FlatAppearance.BorderSize = 0;
+            this.btnFormTypeMovements.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormTypeMovements.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormTypeMovements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFormTypeMovements.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormTypeMovements.ForeColor = System.Drawing.Color.LightGray;
+            this.btnFormTypeMovements.Image = global::RegnalUDB.Properties.Resources.resize_four_directions_40px;
+            this.btnFormTypeMovements.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormTypeMovements.Location = new System.Drawing.Point(12, 944);
+            this.btnFormTypeMovements.Name = "btnFormTypeMovements";
+            this.btnFormTypeMovements.Size = new System.Drawing.Size(265, 48);
+            this.btnFormTypeMovements.TabIndex = 23;
+            this.btnFormTypeMovements.Text = "              Tipo de Movimientos";
+            this.btnFormTypeMovements.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormTypeMovements.UseVisualStyleBackColor = false;
+            this.btnFormTypeMovements.Click += new System.EventHandler(this.btnFormTypeMovements_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Transparent;
@@ -229,7 +344,7 @@
             this.button1.ForeColor = System.Drawing.Color.LightGray;
             this.button1.Image = global::RegnalUDB.Properties.Resources.logout_rounded_left_40px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(10, 929);
+            this.button1.Location = new System.Drawing.Point(12, 1169);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(265, 48);
             this.button1.TabIndex = 22;
@@ -249,7 +364,7 @@
             this.btnFormFunctions.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormFunctions.Image = global::RegnalUDB.Properties.Resources.manager_40px;
             this.btnFormFunctions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormFunctions.Location = new System.Drawing.Point(10, 840);
+            this.btnFormFunctions.Location = new System.Drawing.Point(12, 893);
             this.btnFormFunctions.Name = "btnFormFunctions";
             this.btnFormFunctions.Size = new System.Drawing.Size(265, 48);
             this.btnFormFunctions.TabIndex = 21;
@@ -269,7 +384,7 @@
             this.btnFormReligions.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormReligions.Image = global::RegnalUDB.Properties.Resources.holy_bible_40px;
             this.btnFormReligions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormReligions.Location = new System.Drawing.Point(10, 789);
+            this.btnFormReligions.Location = new System.Drawing.Point(12, 842);
             this.btnFormReligions.Name = "btnFormReligions";
             this.btnFormReligions.Size = new System.Drawing.Size(265, 48);
             this.btnFormReligions.TabIndex = 20;
@@ -290,7 +405,7 @@
             this.btnFormProvinces.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormProvinces.Image = global::RegnalUDB.Properties.Resources.map_pin_40px1;
             this.btnFormProvinces.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormProvinces.Location = new System.Drawing.Point(10, 735);
+            this.btnFormProvinces.Location = new System.Drawing.Point(12, 788);
             this.btnFormProvinces.Name = "btnFormProvinces";
             this.btnFormProvinces.Size = new System.Drawing.Size(265, 48);
             this.btnFormProvinces.TabIndex = 19;
@@ -311,7 +426,7 @@
             this.btnFormLocations.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormLocations.Image = global::RegnalUDB.Properties.Resources.filled_flag_74_40px;
             this.btnFormLocations.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormLocations.Location = new System.Drawing.Point(10, 627);
+            this.btnFormLocations.Location = new System.Drawing.Point(12, 680);
             this.btnFormLocations.Name = "btnFormLocations";
             this.btnFormLocations.Size = new System.Drawing.Size(265, 48);
             this.btnFormLocations.TabIndex = 18;
@@ -332,7 +447,7 @@
             this.btnFormMunicipalities.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormMunicipalities.Image = global::RegnalUDB.Properties.Resources.signpost_40px;
             this.btnFormMunicipalities.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormMunicipalities.Location = new System.Drawing.Point(10, 573);
+            this.btnFormMunicipalities.Location = new System.Drawing.Point(12, 626);
             this.btnFormMunicipalities.Name = "btnFormMunicipalities";
             this.btnFormMunicipalities.Size = new System.Drawing.Size(265, 48);
             this.btnFormMunicipalities.TabIndex = 17;
@@ -353,7 +468,7 @@
             this.btnFormDepartments.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormDepartments.Image = global::RegnalUDB.Properties.Resources.layers_40px;
             this.btnFormDepartments.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormDepartments.Location = new System.Drawing.Point(10, 465);
+            this.btnFormDepartments.Location = new System.Drawing.Point(12, 518);
             this.btnFormDepartments.Name = "btnFormDepartments";
             this.btnFormDepartments.Size = new System.Drawing.Size(265, 48);
             this.btnFormDepartments.TabIndex = 16;
@@ -374,7 +489,7 @@
             this.btnFormSchoolarship.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormSchoolarship.Image = global::RegnalUDB.Properties.Resources.school_40px;
             this.btnFormSchoolarship.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormSchoolarship.Location = new System.Drawing.Point(10, 411);
+            this.btnFormSchoolarship.Location = new System.Drawing.Point(12, 464);
             this.btnFormSchoolarship.Name = "btnFormSchoolarship";
             this.btnFormSchoolarship.Size = new System.Drawing.Size(265, 48);
             this.btnFormSchoolarship.TabIndex = 15;
@@ -395,7 +510,7 @@
             this.btnFormDistrictis.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormDistrictis.Image = global::RegnalUDB.Properties.Resources.user_group_man_woman_40px;
             this.btnFormDistrictis.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormDistrictis.Location = new System.Drawing.Point(10, 357);
+            this.btnFormDistrictis.Location = new System.Drawing.Point(12, 410);
             this.btnFormDistrictis.Name = "btnFormDistrictis";
             this.btnFormDistrictis.Size = new System.Drawing.Size(265, 48);
             this.btnFormDistrictis.TabIndex = 14;
@@ -416,7 +531,7 @@
             this.btnFormPositions.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormPositions.Image = global::RegnalUDB.Properties.Resources.collaborator_40px;
             this.btnFormPositions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormPositions.Location = new System.Drawing.Point(10, 303);
+            this.btnFormPositions.Location = new System.Drawing.Point(12, 356);
             this.btnFormPositions.Name = "btnFormPositions";
             this.btnFormPositions.Size = new System.Drawing.Size(265, 48);
             this.btnFormPositions.TabIndex = 13;
@@ -437,13 +552,14 @@
             this.btnFormUsers.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormUsers.Image = global::RegnalUDB.Properties.Resources.user_group_man_woman_40px;
             this.btnFormUsers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormUsers.Location = new System.Drawing.Point(10, 249);
+            this.btnFormUsers.Location = new System.Drawing.Point(12, 252);
             this.btnFormUsers.Name = "btnFormUsers";
             this.btnFormUsers.Size = new System.Drawing.Size(265, 48);
             this.btnFormUsers.TabIndex = 12;
             this.btnFormUsers.Text = "              Usuarios";
             this.btnFormUsers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFormUsers.UseVisualStyleBackColor = false;
+            this.btnFormUsers.Click += new System.EventHandler(this.btnFormUsers_Click);
             // 
             // btnFormEvents
             // 
@@ -457,7 +573,7 @@
             this.btnFormEvents.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormEvents.Image = global::RegnalUDB.Properties.Resources.event_40px;
             this.btnFormEvents.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormEvents.Location = new System.Drawing.Point(10, 195);
+            this.btnFormEvents.Location = new System.Drawing.Point(12, 198);
             this.btnFormEvents.Name = "btnFormEvents";
             this.btnFormEvents.Size = new System.Drawing.Size(265, 48);
             this.btnFormEvents.TabIndex = 11;
@@ -478,7 +594,7 @@
             this.btnFormSections.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormSections.Image = global::RegnalUDB.Properties.Resources.generic_sorting_40px;
             this.btnFormSections.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormSections.Location = new System.Drawing.Point(10, 681);
+            this.btnFormSections.Location = new System.Drawing.Point(12, 734);
             this.btnFormSections.Name = "btnFormSections";
             this.btnFormSections.Size = new System.Drawing.Size(265, 48);
             this.btnFormSections.TabIndex = 10;
@@ -499,7 +615,7 @@
             this.btnFormGroups.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormGroups.Image = global::RegnalUDB.Properties.Resources.groups_40px;
             this.btnFormGroups.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormGroups.Location = new System.Drawing.Point(10, 519);
+            this.btnFormGroups.Location = new System.Drawing.Point(12, 572);
             this.btnFormGroups.Name = "btnFormGroups";
             this.btnFormGroups.Size = new System.Drawing.Size(265, 48);
             this.btnFormGroups.TabIndex = 9;
@@ -520,7 +636,7 @@
             this.btnFormMembers.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormMembers.Image = global::RegnalUDB.Properties.Resources.conference_40px;
             this.btnFormMembers.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormMembers.Location = new System.Drawing.Point(10, 141);
+            this.btnFormMembers.Location = new System.Drawing.Point(12, 144);
             this.btnFormMembers.Name = "btnFormMembers";
             this.btnFormMembers.Size = new System.Drawing.Size(265, 48);
             this.btnFormMembers.TabIndex = 8;
@@ -533,7 +649,7 @@
             // 
             this.pcbMenuSidebar.BackColor = System.Drawing.Color.Transparent;
             this.pcbMenuSidebar.Image = global::RegnalUDB.Properties.Resources.menu_32px;
-            this.pcbMenuSidebar.Location = new System.Drawing.Point(16, 16);
+            this.pcbMenuSidebar.Location = new System.Drawing.Point(14, 19);
             this.pcbMenuSidebar.Name = "pcbMenuSidebar";
             this.pcbMenuSidebar.Size = new System.Drawing.Size(32, 32);
             this.pcbMenuSidebar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -544,7 +660,7 @@
             // 
             this.pcbIcono.BackColor = System.Drawing.Color.Transparent;
             this.pcbIcono.Image = global::RegnalUDB.Properties.Resources.icono;
-            this.pcbIcono.Location = new System.Drawing.Point(16, 69);
+            this.pcbIcono.Location = new System.Drawing.Point(14, 72);
             this.pcbIcono.Name = "pcbIcono";
             this.pcbIcono.Size = new System.Drawing.Size(40, 40);
             this.pcbIcono.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -581,7 +697,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.PictureBox pcbMenuSidebar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -609,5 +724,11 @@
         private System.Windows.Forms.Button btnFormReligions;
         private System.Windows.Forms.Button btnFormFunctions;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFormBitacora;
+        private System.Windows.Forms.Button btnFormTypeMovements;
+        private System.Windows.Forms.Panel pnlContent;
+        private System.Windows.Forms.Button btnFormCivilStatus;
+        private System.Windows.Forms.Button btnFormBlackList;
+        private System.Windows.Forms.Button btnFormTypeUsers;
     }
 }
