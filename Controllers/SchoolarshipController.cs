@@ -25,7 +25,17 @@ namespace RegnalUDB.Controllers
 
         public Operation<Escolaridad> updateRecord(Escolaridad o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Escolaridad blackList = EntitySingleton.Context.Escolaridads.Find(o.idEscolaridad);
+                EntitySingleton.Context.Entry(blackList).CurrentValues.SetValues(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<Escolaridad>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Escolaridad>.getFailOperation(e.Message);
+            }
         }
 
         public Operation<Escolaridad> deleteRecord(Escolaridad o)

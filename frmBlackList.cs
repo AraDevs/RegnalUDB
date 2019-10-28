@@ -175,6 +175,7 @@ namespace RegnalUDB
             chbStatus.Checked = true;
             btnSaveModify.Text = "Guardar";
             selectedBan = null;
+            filterBans = new List<ListaNegra>();
             loadTable(bans);
         }
 
@@ -188,10 +189,10 @@ namespace RegnalUDB
             return (data as Miembro).nombre.ToUpper().Contains(cmbResponsable.TextBox.Text.ToUpper());
         }
 
-        private void loadTable(List<ListaNegra> groups)
+        private void loadTable(List<ListaNegra> bans)
         {
             dgvBlackList.DataSource = null;
-            dgvBlackList.DataSource = groups;
+            dgvBlackList.DataSource = bans;
             FormUtils.hideColumnsForDgv(columnsToHideForBlackList, dgvBlackList);
             FormUtils.changeTitlesForDgv(titlesforBlackList, columnsToChangeForBlackList, dgvBlackList);
             dgvBlackList.AutoResizeColumns();
