@@ -134,6 +134,7 @@
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\MemberEventController.cs" />
     <Compile Include="Controllers\MemberPositionController.cs" />
+    <Compile Include="Controllers\MovementController.cs" />
     <Compile Include="Controllers\MunicipalityContraller.cs" />
     <Compile Include="Controllers\PositionController.cs" />
     <Compile Include="Controllers\ProvinceController.cs" />
@@ -258,6 +259,18 @@
     <Compile Include="frmAdvertisements.Designer.cs">
       <DependentUpon>frmAdvertisements.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmBlackList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBlackList.Designer.cs">
+      <DependentUpon>frmBlackList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCivilStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCivilStatus.Designer.cs">
+      <DependentUpon>frmCivilStatus.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCredits.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -342,6 +355,12 @@
     <Compile Include="frmMembers.Designer.cs">
       <DependentUpon>frmMembers.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMovements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMovements.Designer.cs">
+      <DependentUpon>frmMovements.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMunicipalities.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -360,6 +379,12 @@
     <Compile Include="frmPositionAAA.Designer.cs">
       <DependentUpon>frmPositionAAA.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProfiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProfiles.Designer.cs">
+      <DependentUpon>frmProfiles.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProvinces.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,6 +397,12 @@
     <Compile Include="frmReligions.Designer.cs">
       <DependentUpon>frmReligions.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmScholarship.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScholarship.Designer.cs">
+      <DependentUpon>frmScholarship.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmScreenSplash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -383,6 +414,12 @@
     </Compile>
     <Compile Include="frmSections.Designer.cs">
       <DependentUpon>frmSections.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsers.Designer.cs">
+      <DependentUpon>frmUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CmbItem.cs" />
     <Compile Include="Models\ControlErrorProvider.cs" />
@@ -398,6 +435,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAdvertisements.resx">
       <DependentUpon>frmAdvertisements.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBlackList.resx">
+      <DependentUpon>frmBlackList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCivilStatus.resx">
+      <DependentUpon>frmCivilStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCredits.resx">
       <DependentUpon>frmCredits.cs</DependentUpon>
@@ -441,6 +484,9 @@
     <EmbeddedResource Include="frmMembers.resx">
       <DependentUpon>frmMembers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmMovements.resx">
+      <DependentUpon>frmMovements.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMunicipalities.resx">
       <DependentUpon>frmMunicipalities.cs</DependentUpon>
     </EmbeddedResource>
@@ -450,17 +496,26 @@
     <EmbeddedResource Include="frmPositionAAA.resx">
       <DependentUpon>frmPositionAAA.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProfiles.resx">
+      <DependentUpon>frmProfiles.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProvinces.resx">
       <DependentUpon>frmProvinces.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReligions.resx">
       <DependentUpon>frmReligions.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmScholarship.resx">
+      <DependentUpon>frmScholarship.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmScreenSplash.resx">
       <DependentUpon>frmScreenSplash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSections.resx">
       <DependentUpon>frmSections.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsers.resx">
+      <DependentUpon>frmUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -503,6 +558,23 @@
       <DependentUpon>MainModel.edmx</DependentUpon>
       <LastGenOutput>MainModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\user_40px.png" />
+    <None Include="Resources\id_not_verified_40px.png" />
+    <None Include="Resources\couple_man_woman_40px.png" />
+    <None Include="Resources\resize_four_directions_40px.png" />
+    <None Include="Resources\bill_40px.png" />
+    <None Include="Resources\logout_rounded_left_40px.png" />
+    <None Include="Resources\login_rounded_right_40px.png" />
+    <None Include="Resources\manager_40px.png" />
+    <None Include="Resources\holy_bible_40px.png" />
+    <None Include="Resources\map_pin_40px1.png" />
+    <None Include="Resources\signpost_40px.png" />
+    <None Include="Resources\layers_40px.png" />
+    <None Include="Resources\collaborator_40px.png" />
+    <None Include="Resources\filled_flag-74_40px.png" />
+    <None Include="Resources\school_40px.png" />
+    <None Include="Resources\event_40px.png" />
+    <None Include="Resources\conference_40px.png" />
     <None Include="Resources\generic-user-icon-windows.png" />
     <None Include="Resources\info_40px.png" />
     <None Include="Resources\close_window_black_40px.png" />
