@@ -343,6 +343,12 @@
     <Compile Include="frmLocations.Designer.cs">
       <DependentUpon>frmLocations.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMedicalRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmMedicalRecord.Designer.cs">
+      <DependentUpon>frmMedicalRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMemberPosition.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -477,6 +483,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLocations.resx">
       <DependentUpon>frmLocations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMedicalRecord.resx">
+      <DependentUpon>frmMedicalRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMemberPosition.resx">
       <DependentUpon>frmMemberPosition.cs</DependentUpon>
