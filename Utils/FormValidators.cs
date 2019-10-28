@@ -1,5 +1,6 @@
 ﻿using RegnalUDB.Models;
 using Syncfusion.Windows.Forms.Tools;
+using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -95,6 +96,9 @@ namespace RegnalUDB.Utils
         {
             if (control is ComboBoxAdv)
                 return ((ComboBoxAdv)control).SelectedIndex >= 0;
+            else if (control is SfComboBox)
+                return ((SfComboBox)control).SelectedIndex >= 0;
+            
             throw new Exception("Invalid control for isSelected Method");
         }
 

@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbMembers = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.cmbResponsable = new Syncfusion.WinForms.ListView.SfComboBox();
             this.btnNewClean = new System.Windows.Forms.Button();
             this.btnSaveModify = new System.Windows.Forms.Button();
             this.chbStatus = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
@@ -36,22 +39,22 @@
             this.autoLabel6 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel5 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.txtName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtDescription = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvBlackList = new System.Windows.Forms.DataGridView();
             this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbResponsable = new Syncfusion.WinForms.ListView.SfComboBox();
-            this.cmbMembers = new Syncfusion.WinForms.ListView.SfComboBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMembers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbResponsable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBlackList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbResponsable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbMembers)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -66,11 +69,27 @@
             this.panel2.Controls.Add(this.autoLabel6);
             this.panel2.Controls.Add(this.autoLabel5);
             this.panel2.Controls.Add(this.autoLabel2);
-            this.panel2.Controls.Add(this.txtName);
+            this.panel2.Controls.Add(this.txtDescription);
             this.panel2.Location = new System.Drawing.Point(33, 65);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1038, 204);
             this.panel2.TabIndex = 7;
+            // 
+            // cmbMembers
+            // 
+            this.cmbMembers.Location = new System.Drawing.Point(635, 74);
+            this.cmbMembers.Name = "cmbMembers";
+            this.cmbMembers.Size = new System.Drawing.Size(218, 28);
+            this.cmbMembers.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbMembers.TabIndex = 125;
+            // 
+            // cmbResponsable
+            // 
+            this.cmbResponsable.Location = new System.Drawing.Point(635, 22);
+            this.cmbResponsable.Name = "cmbResponsable";
+            this.cmbResponsable.Size = new System.Drawing.Size(218, 28);
+            this.cmbResponsable.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbResponsable.TabIndex = 124;
             // 
             // btnNewClean
             // 
@@ -87,6 +106,7 @@
             this.btnNewClean.TabIndex = 123;
             this.btnNewClean.Text = "Nuevo";
             this.btnNewClean.UseVisualStyleBackColor = true;
+            this.btnNewClean.Click += new System.EventHandler(this.btnNewClean_Click);
             // 
             // btnSaveModify
             // 
@@ -103,6 +123,7 @@
             this.btnSaveModify.TabIndex = 122;
             this.btnSaveModify.Text = "Guardar";
             this.btnSaveModify.UseVisualStyleBackColor = true;
+            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
             // chbStatus
             // 
@@ -169,7 +190,7 @@
             this.autoLabel2.DY = 35;
             this.autoLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel2.LabeledControl = this.txtName;
+            this.autoLabel2.LabeledControl = this.txtDescription;
             this.autoLabel2.Location = new System.Drawing.Point(135, 57);
             this.autoLabel2.Name = "autoLabel2";
             this.autoLabel2.Size = new System.Drawing.Size(59, 20);
@@ -177,21 +198,21 @@
             this.autoLabel2.Text = "Motivo:";
             this.autoLabel2.ThemeName = "Office2016White";
             // 
-            // txtName
+            // txtDescription
             // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtName.BeforeTouchSize = new System.Drawing.Size(220, 91);
-            this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtName.Location = new System.Drawing.Point(198, 22);
-            this.txtName.Multiline = true;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(220, 91);
-            this.txtName.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtName.TabIndex = 108;
-            this.txtName.ThemeName = "Office2016White";
+            this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtDescription.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtDescription.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtDescription.Location = new System.Drawing.Point(198, 22);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(220, 91);
+            this.txtDescription.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtDescription.TabIndex = 108;
+            this.txtDescription.ThemeName = "Office2016White";
             // 
             // panel1
             // 
@@ -211,11 +232,12 @@
             this.dgvBlackList.Name = "dgvBlackList";
             this.dgvBlackList.Size = new System.Drawing.Size(1011, 333);
             this.dgvBlackList.TabIndex = 3;
+            this.dgvBlackList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBlackList_CellClick);
             // 
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(220, 91);
+            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(244, 20);
             this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -225,6 +247,7 @@
             this.txtSearch.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
             this.txtSearch.TabIndex = 1;
             this.txtSearch.ThemeName = "Office2016White";
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // autoLabel1
             // 
@@ -251,21 +274,10 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Lista Negra";
             // 
-            // cmbResponsable
+            // errorProvider
             // 
-            this.cmbResponsable.Location = new System.Drawing.Point(635, 22);
-            this.cmbResponsable.Name = "cmbResponsable";
-            this.cmbResponsable.Size = new System.Drawing.Size(218, 28);
-            this.cmbResponsable.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbResponsable.TabIndex = 124;
-            // 
-            // cmbMembers
-            // 
-            this.cmbMembers.Location = new System.Drawing.Point(635, 74);
-            this.cmbMembers.Name = "cmbMembers";
-            this.cmbMembers.Size = new System.Drawing.Size(218, 28);
-            this.cmbMembers.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.cmbMembers.TabIndex = 125;
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // frmBlackList
             // 
@@ -278,16 +290,18 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBlackList";
             this.Text = "frmBlackList";
+            this.Load += new System.EventHandler(this.frmBlackList_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbMembers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbResponsable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDescription)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBlackList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbResponsable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbMembers)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,7 +317,7 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel6;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel5;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel2;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtName;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtDescription;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvBlackList;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtSearch;
@@ -311,5 +325,6 @@
         private System.Windows.Forms.Label label1;
         private Syncfusion.WinForms.ListView.SfComboBox cmbResponsable;
         private Syncfusion.WinForms.ListView.SfComboBox cmbMembers;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
