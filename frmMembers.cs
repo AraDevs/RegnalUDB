@@ -305,6 +305,7 @@ namespace RegnalUDB
             dtpBirthday.Value = currentMember.fechaNacimiento;
             rdbFemale.Checked = currentMember.sexo.ToUpper() == "F";
             rdbMale.Checked = currentMember.sexo.ToUpper() == "M";
+            loadSections(); //Refreshing sections combobox
             cmbScholarship.SelectedItem = currentMember.Escolaridad;
             cmbReligion.SelectedItem = currentMember.Religion;
             cmbCivilStatus.SelectedItem = currentMember.EstadoCivil;
