@@ -28,24 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnNewClean = new System.Windows.Forms.Button();
             this.btnSaveModify = new System.Windows.Forms.Button();
             this.chbStatus = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel8 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.txtGrade = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtCivilStatus = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvCivilStatus = new System.Windows.Forms.DataGridView();
             this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGrade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCivilStatus)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCivilStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -56,7 +59,7 @@
             this.panel2.Controls.Add(this.chbStatus);
             this.panel2.Controls.Add(this.autoLabel8);
             this.panel2.Controls.Add(this.autoLabel2);
-            this.panel2.Controls.Add(this.txtGrade);
+            this.panel2.Controls.Add(this.txtCivilStatus);
             this.panel2.Location = new System.Drawing.Point(31, 68);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1042, 171);
@@ -77,6 +80,7 @@
             this.btnNewClean.TabIndex = 5;
             this.btnNewClean.Text = "Nuevo";
             this.btnNewClean.UseVisualStyleBackColor = true;
+            this.btnNewClean.Click += new System.EventHandler(this.btnNewClean_Click);
             // 
             // btnSaveModify
             // 
@@ -93,6 +97,7 @@
             this.btnSaveModify.TabIndex = 4;
             this.btnSaveModify.Text = "Guardar";
             this.btnSaveModify.UseVisualStyleBackColor = true;
+            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
             // chbStatus
             // 
@@ -128,7 +133,7 @@
             this.autoLabel2.DX = -90;
             this.autoLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel2.LabeledControl = this.txtGrade;
+            this.autoLabel2.LabeledControl = this.txtCivilStatus;
             this.autoLabel2.Location = new System.Drawing.Point(99, 29);
             this.autoLabel2.Name = "autoLabel2";
             this.autoLabel2.Size = new System.Drawing.Size(86, 20);
@@ -136,20 +141,20 @@
             this.autoLabel2.Text = "Estado Civil";
             this.autoLabel2.ThemeName = "Office2016White";
             // 
-            // txtGrade
+            // txtCivilStatus
             // 
-            this.txtGrade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtGrade.BeforeTouchSize = new System.Drawing.Size(244, 20);
-            this.txtGrade.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.txtGrade.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGrade.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.txtGrade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtGrade.Location = new System.Drawing.Point(189, 29);
-            this.txtGrade.Name = "txtGrade";
-            this.txtGrade.Size = new System.Drawing.Size(220, 20);
-            this.txtGrade.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtGrade.TabIndex = 1;
-            this.txtGrade.ThemeName = "Office2016White";
+            this.txtCivilStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtCivilStatus.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtCivilStatus.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtCivilStatus.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCivilStatus.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtCivilStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtCivilStatus.Location = new System.Drawing.Point(189, 29);
+            this.txtCivilStatus.Name = "txtCivilStatus";
+            this.txtCivilStatus.Size = new System.Drawing.Size(220, 20);
+            this.txtCivilStatus.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtCivilStatus.TabIndex = 1;
+            this.txtCivilStatus.ThemeName = "Office2016White";
             // 
             // panel1
             // 
@@ -176,6 +181,7 @@
             this.dgvCivilStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCivilStatus.Size = new System.Drawing.Size(1009, 340);
             this.dgvCivilStatus.TabIndex = 2;
+            this.dgvCivilStatus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCivilStatus_CellClick);
             // 
             // txtSearch
             // 
@@ -190,6 +196,7 @@
             this.txtSearch.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
             this.txtSearch.TabIndex = 6;
             this.txtSearch.ThemeName = "Office2016White";
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // autoLabel1
             // 
@@ -216,6 +223,11 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Estados Civiles";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmCivilStatus
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -227,14 +239,16 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCivilStatus";
             this.Text = "frmCivilStatus";
+            this.Load += new System.EventHandler(this.frmCivilStatus_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGrade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCivilStatus)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCivilStatus)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,11 +262,12 @@
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbStatus;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel8;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel2;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtGrade;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtCivilStatus;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvCivilStatus;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtSearch;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

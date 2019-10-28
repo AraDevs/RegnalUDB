@@ -12,7 +12,32 @@ namespace RegnalUDB.Controllers
     {
         public Operation<EstadoCivil> addRecord(EstadoCivil o)
         {
-            throw new NotImplementedException();
+            try
+            {
+                EntitySingleton.Context.EstadoCivils.Add(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<EstadoCivil>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<EstadoCivil>.getFailOperation(e.Message);
+            }
+        }
+
+        public Operation<EstadoCivil> updateRecord(EstadoCivil o)
+        {
+
+            try
+            {
+                EstadoCivil civilStatus = EntitySingleton.Context.EstadoCivils.Find(o.idEstadoCivil);
+                EntitySingleton.Context.Entry(civilStatus).CurrentValues.SetValues(o);
+                EntitySingleton.Context.SaveChanges();
+                return FactoryOperation<EstadoCivil>.getSuccessOperation();
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<EstadoCivil>.getFailOperation(e.Message);
+            }
         }
 
         public Operation<EstadoCivil> deleteRecord(EstadoCivil o)
@@ -46,9 +71,6 @@ namespace RegnalUDB.Controllers
             }
         }
 
-        public Operation<EstadoCivil> updateRecord(EstadoCivil o)
-        {
-            throw new NotImplementedException();
-        }
+     
     }
 }
