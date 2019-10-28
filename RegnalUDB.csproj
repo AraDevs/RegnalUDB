@@ -134,6 +134,7 @@
     <Compile Include="Controllers\MovementController.cs" />
     <Compile Include="Controllers\MunicipalityContraller.cs" />
     <Compile Include="Controllers\PositionController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ProvinceController.cs" />
     <Compile Include="Controllers\ReligionController.cs" />
     <Compile Include="Controllers\SchoolarshipController.cs" />
