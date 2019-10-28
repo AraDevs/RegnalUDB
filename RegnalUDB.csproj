@@ -132,6 +132,7 @@
     <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\LocalityController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\MemberEventController.cs" />
     <Compile Include="Controllers\MemberPositionController.cs" />
     <Compile Include="Controllers\MunicipalityContraller.cs" />
     <Compile Include="Controllers\PositionController.cs" />
@@ -287,6 +288,12 @@
     <Compile Include="frmEventFunction.Designer.cs">
       <DependentUpon>frmEventFunction.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEventMember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmEventMember.Designer.cs">
+      <DependentUpon>frmEventMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEventPosition.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -406,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEventFunction.resx">
       <DependentUpon>frmEventFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEventMember.resx">
+      <DependentUpon>frmEventMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEventPosition.resx">
       <DependentUpon>frmEventPosition.cs</DependentUpon>

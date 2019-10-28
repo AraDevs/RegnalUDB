@@ -99,7 +99,7 @@ namespace RegnalUDB
 
 
             MessageBox.Show("Los cambios fueron aplicados con éxito.",
-                    "CARGOS ASOCIADOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    "FUNCIONES ASOCIADAS", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             clean();
         }

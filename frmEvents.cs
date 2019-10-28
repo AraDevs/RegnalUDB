@@ -28,7 +28,7 @@ namespace RegnalUDB
 
         private static FunctionController functionController = new FunctionController();
         private List<Funcione> functions = new List<Funcione>();
-
+        
         private Evento selectedEvent = null;
 
         // data for custom DataGridView
@@ -84,6 +84,21 @@ namespace RegnalUDB
             foreach (EventosFuncione ef in currentEvent.EventosFunciones)
             {
                 frmEventFunction.Instance.lstFunction.SelectedItems.Add(ef.Funcione);
+            }
+
+
+
+            frmEventMember.Instance.lblEventMember1.Text = currentEvent.nombre;
+            frmEventMember.Instance.lblEventMember2.Text = currentEvent.nombre;
+
+            frmEventMember.Instance.lstMember.SelectedItems.Clear();
+
+            foreach (MiembroEvento me in currentEvent.MiembroEventoes)
+            {
+                if (me.Miembro.Grupos == (Grupos)frmEventMember.Instance.cmbGroup.SelectedItem)
+                {
+                    frmEventMember.Instance.lstMember.SelectedItems.Add(me.Miembro);
+                }
             }
         }
 
@@ -210,6 +225,7 @@ namespace RegnalUDB
             frmEventPosition.Instance.clean();
             frmEventSection.Instance.clean();
             frmEventFunction.Instance.clean();
+            frmEventMember.Instance.clean();
         }
 
         private void loadPositions()
@@ -359,6 +375,9 @@ namespace RegnalUDB
                     frmEventPosition.Instance.SelectedEvent = selectedEvent;
                     frmEventSection.Instance.SelectedEvent = selectedEvent;
                     frmEventFunction.Instance.SelectedEvent = selectedEvent;
+                    frmEventMember.Instance.SelectedEvent = selectedEvent;
+                    frmEventMember.Instance.selectGroup();
+                    frmEventMember.Instance.loadTable();
                 }
             }
             catch (Exception ex)
@@ -421,6 +440,22 @@ namespace RegnalUDB
             {
                 frmEventFunction.Instance.BringToFront();
             }
+        }
+
+        private void lblMember_Click(object sender, EventArgs e)
+        {
+            if (!pnlParent.Controls.Contains(frmEventMember.Instance))
+            {
+                pnlParent.Controls.Add(frmEventMember.Instance);
+                frmEventMember.Instance.Dock = DockStyle.Fill;
+                frmEventMember.Instance.BringToFront();
+            }
+            else
+            {
+                frmEventMember.Instance.BringToFront();
+            }
+
+            frmEventMember.Instance.cmbGroup.SelectedIndex = -1;
         }
     }
 }
