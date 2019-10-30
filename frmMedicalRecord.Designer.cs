@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabMedical = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
             this.tabContact = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.autoLabel7 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.textBoxExt1 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtEmail = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel6 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtPhone2 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel5 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -58,61 +59,68 @@
             this.autoLabel8 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.cmbBloodType = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.autoLabel38 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.txtDrug = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel35 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.textBoxExt11 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtCronic = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel36 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv13 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-            this.comboBoxAdv1 = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
+            this.chbCronic = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.cmbSwim = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.autoLabel34 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel33 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv12 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.chbPregnant = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel32 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv11 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.chbVaccine = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel31 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv10 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.chbDrug = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel28 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.textBoxExt9 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtDiet = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel29 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv9 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.chbDiet = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel26 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.textBoxExt8 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtHear = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel27 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv8 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.chbHear = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel24 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.textBoxExt7 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtTreatment = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel25 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv7 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.chbTreatment = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel22 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.textBoxExt6 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtProt = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel23 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv6 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.chbProt = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel20 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.textBoxExt5 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtAllergy = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel21 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv5 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.chbAllergy = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel18 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.textBoxExt4 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtTransfusion = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel19 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv4 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.chbTransfusion = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel16 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.textBoxExt3 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtLimit = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel17 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv3 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.chbLimit = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel15 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.textBoxExt2 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtOperation = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel14 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv2 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.chbOperation = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel13 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.checkBoxAdv1 = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.chbOrtShoe = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.autoLabel12 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.chbFlatfoot = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-            this.tabPageAdv2 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
-            this.autoLabel38 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.textBoxExt10 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.btnSaveRecord = new System.Windows.Forms.Button();
+            this.lblMember = new System.Windows.Forms.Label();
+            this.autoLabel39 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.lblPdf = new System.Windows.Forms.Label();
+            this.autoLabel40 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.btnOpenPdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabMedical)).BeginInit();
             this.tabMedical.SuspendLayout();
             this.tabContact.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhone2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhone1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRelationship2)).BeginInit();
@@ -127,38 +135,39 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbBloodType)).BeginInit();
             this.tabPageAdv1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxAdv1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDrug)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCronic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbCronic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbSwim)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbPregnant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbVaccine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbDrug)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbDiet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbHear)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTreatment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbTreatment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbProt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAllergy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbAllergy)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTransfusion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbTransfusion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLimit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbLimit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOperation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbOperation)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbOrtShoe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbFlatfoot)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // tabMedical
             // 
             this.tabMedical.ActiveTabFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabMedical.ActiveTabForeColor = System.Drawing.Color.Empty;
-            this.tabMedical.BeforeTouchSize = new System.Drawing.Size(1025, 500);
+            this.tabMedical.BeforeTouchSize = new System.Drawing.Size(1025, 404);
             this.tabMedical.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tabMedical.CloseButtonForeColor = System.Drawing.Color.Empty;
             this.tabMedical.CloseButtonHoverForeColor = System.Drawing.Color.Empty;
@@ -167,14 +176,13 @@
             this.tabMedical.Controls.Add(this.tabContact);
             this.tabMedical.Controls.Add(this.tabHome);
             this.tabMedical.Controls.Add(this.tabPageAdv1);
-            this.tabMedical.Controls.Add(this.tabPageAdv2);
             this.tabMedical.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabMedical.InActiveTabForeColor = System.Drawing.Color.Empty;
-            this.tabMedical.Location = new System.Drawing.Point(6, 11);
+            this.tabMedical.Location = new System.Drawing.Point(6, 51);
             this.tabMedical.Name = "tabMedical";
             this.tabMedical.SeparatorColor = System.Drawing.SystemColors.ControlDark;
             this.tabMedical.ShowSeparator = false;
-            this.tabMedical.Size = new System.Drawing.Size(1025, 500);
+            this.tabMedical.Size = new System.Drawing.Size(1025, 404);
             this.tabMedical.TabIndex = 79;
             this.tabMedical.ThemesEnabled = true;
             this.tabMedical.ThemeStyle.PrimitiveButtonStyle.DisabledNextPageImage = null;
@@ -183,7 +191,7 @@
             // 
             this.tabContact.BackColor = System.Drawing.Color.White;
             this.tabContact.Controls.Add(this.autoLabel7);
-            this.tabContact.Controls.Add(this.textBoxExt1);
+            this.tabContact.Controls.Add(this.txtEmail);
             this.tabContact.Controls.Add(this.autoLabel6);
             this.tabContact.Controls.Add(this.txtPhone2);
             this.tabContact.Controls.Add(this.autoLabel5);
@@ -201,7 +209,7 @@
             this.tabContact.Location = new System.Drawing.Point(2, 30);
             this.tabContact.Name = "tabContact";
             this.tabContact.ShowCloseButton = false;
-            this.tabContact.Size = new System.Drawing.Size(1021, 468);
+            this.tabContact.Size = new System.Drawing.Size(1021, 372);
             this.tabContact.TabFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabContact.TabForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.tabContact.TabIndex = 1;
@@ -215,7 +223,7 @@
             this.autoLabel7.DY = 1;
             this.autoLabel7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel7.LabeledControl = this.textBoxExt1;
+            this.autoLabel7.LabeledControl = this.txtEmail;
             this.autoLabel7.Location = new System.Drawing.Point(69, 217);
             this.autoLabel7.Name = "autoLabel7";
             this.autoLabel7.Size = new System.Drawing.Size(135, 20);
@@ -223,20 +231,20 @@
             this.autoLabel7.Text = "Correo electrónico:";
             this.autoLabel7.ThemeName = "Office2016White";
             // 
-            // textBoxExt1
+            // txtEmail
             // 
-            this.textBoxExt1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBoxExt1.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.textBoxExt1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.textBoxExt1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.textBoxExt1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBoxExt1.Location = new System.Drawing.Point(208, 216);
-            this.textBoxExt1.Name = "textBoxExt1";
-            this.textBoxExt1.Size = new System.Drawing.Size(220, 23);
-            this.textBoxExt1.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.textBoxExt1.TabIndex = 126;
-            this.textBoxExt1.ThemeName = "Office2016White";
+            this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtEmail.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtEmail.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtEmail.Location = new System.Drawing.Point(208, 216);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(220, 23);
+            this.txtEmail.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtEmail.TabIndex = 126;
+            this.txtEmail.ThemeName = "Office2016White";
             // 
             // autoLabel6
             // 
@@ -256,7 +264,7 @@
             // txtPhone2
             // 
             this.txtPhone2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPhone2.BeforeTouchSize = new System.Drawing.Size(220, 23);
+            this.txtPhone2.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtPhone2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtPhone2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -286,7 +294,7 @@
             // txtPhone1
             // 
             this.txtPhone1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPhone1.BeforeTouchSize = new System.Drawing.Size(220, 23);
+            this.txtPhone1.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtPhone1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtPhone1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -316,7 +324,7 @@
             // txtRelationship2
             // 
             this.txtRelationship2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtRelationship2.BeforeTouchSize = new System.Drawing.Size(220, 23);
+            this.txtRelationship2.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtRelationship2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtRelationship2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRelationship2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -346,7 +354,7 @@
             // txtRelationship1
             // 
             this.txtRelationship1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtRelationship1.BeforeTouchSize = new System.Drawing.Size(220, 23);
+            this.txtRelationship1.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtRelationship1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtRelationship1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRelationship1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -376,7 +384,7 @@
             // txtContact2
             // 
             this.txtContact2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtContact2.BeforeTouchSize = new System.Drawing.Size(220, 23);
+            this.txtContact2.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtContact2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtContact2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContact2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -406,7 +414,7 @@
             // txtContact1
             // 
             this.txtContact1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtContact1.BeforeTouchSize = new System.Drawing.Size(220, 23);
+            this.txtContact1.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtContact1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtContact1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContact1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -421,6 +429,10 @@
             // tabHome
             // 
             this.tabHome.BackColor = System.Drawing.Color.White;
+            this.tabHome.Controls.Add(this.btnOpenPdf);
+            this.tabHome.Controls.Add(this.lblPdf);
+            this.tabHome.Controls.Add(this.autoLabel40);
+            this.tabHome.Controls.Add(this.btnBrowse);
             this.tabHome.Controls.Add(this.autoLabel30);
             this.tabHome.Controls.Add(this.txtSocial);
             this.tabHome.Controls.Add(this.autoLabel37);
@@ -439,7 +451,7 @@
             this.tabHome.Location = new System.Drawing.Point(2, 30);
             this.tabHome.Name = "tabHome";
             this.tabHome.ShowCloseButton = true;
-            this.tabHome.Size = new System.Drawing.Size(1021, 468);
+            this.tabHome.Size = new System.Drawing.Size(1021, 372);
             this.tabHome.TabFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabHome.TabForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.tabHome.TabIndex = 2;
@@ -449,22 +461,22 @@
             // autoLabel30
             // 
             this.autoLabel30.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.autoLabel30.DX = -98;
+            this.autoLabel30.DX = -118;
             this.autoLabel30.DY = 1;
             this.autoLabel30.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.autoLabel30.LabeledControl = this.txtSocial;
-            this.autoLabel30.Location = new System.Drawing.Point(507, 160);
+            this.autoLabel30.Location = new System.Drawing.Point(487, 160);
             this.autoLabel30.Name = "autoLabel30";
-            this.autoLabel30.Size = new System.Drawing.Size(94, 20);
+            this.autoLabel30.Size = new System.Drawing.Size(114, 20);
             this.autoLabel30.TabIndex = 195;
-            this.autoLabel30.Text = "Observación:";
+            this.autoLabel30.Text = "Observación SS:";
             this.autoLabel30.ThemeName = "Office2016White";
             // 
             // txtSocial
             // 
             this.txtSocial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSocial.BeforeTouchSize = new System.Drawing.Size(220, 23);
+            this.txtSocial.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtSocial.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtSocial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSocial.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -515,7 +527,7 @@
             // txtNum
             // 
             this.txtNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtNum.BeforeTouchSize = new System.Drawing.Size(220, 23);
+            this.txtNum.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtNum.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNum.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -529,13 +541,13 @@
             // 
             // txtHeight
             // 
-            this.txtHeight.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.txtHeight.DoubleValue = 1D;
+            this.txtHeight.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtHeight.DoubleValue = 0D;
             this.txtHeight.Location = new System.Drawing.Point(205, 159);
             this.txtHeight.Name = "txtHeight";
             this.txtHeight.Size = new System.Drawing.Size(220, 23);
             this.txtHeight.TabIndex = 141;
-            this.txtHeight.Text = "1.00";
+            this.txtHeight.Text = "0.00";
             // 
             // autoLabel10
             // 
@@ -554,13 +566,13 @@
             // 
             // txtWeight
             // 
-            this.txtWeight.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.txtWeight.DoubleValue = 1D;
+            this.txtWeight.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtWeight.DoubleValue = 0D;
             this.txtWeight.Location = new System.Drawing.Point(205, 117);
             this.txtWeight.Name = "txtWeight";
             this.txtWeight.Size = new System.Drawing.Size(220, 23);
             this.txtWeight.TabIndex = 139;
-            this.txtWeight.Text = "1.00";
+            this.txtWeight.Text = "0.00";
             // 
             // autoLabel9
             // 
@@ -599,64 +611,74 @@
             this.cmbBloodType.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
             this.cmbBloodType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbBloodType.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.cmbBloodType.Items.AddRange(new object[] {
+            "A+",
+            "A-",
+            "B+",
+            "B-",
+            "O+",
+            "O-",
+            "AB+",
+            "AB-"});
             this.cmbBloodType.Location = new System.Drawing.Point(205, 75);
             this.cmbBloodType.Name = "cmbBloodType";
             this.cmbBloodType.Size = new System.Drawing.Size(220, 23);
             this.cmbBloodType.Style = Syncfusion.Windows.Forms.VisualStyle.Office2016White;
             this.cmbBloodType.TabIndex = 135;
+            this.cmbBloodType.Text = "A+";
             this.cmbBloodType.ThemeName = "Office2016White";
             // 
             // tabPageAdv1
             // 
             this.tabPageAdv1.AutoScroll = true;
             this.tabPageAdv1.Controls.Add(this.autoLabel38);
-            this.tabPageAdv1.Controls.Add(this.textBoxExt10);
+            this.tabPageAdv1.Controls.Add(this.txtDrug);
             this.tabPageAdv1.Controls.Add(this.autoLabel35);
-            this.tabPageAdv1.Controls.Add(this.textBoxExt11);
+            this.tabPageAdv1.Controls.Add(this.txtCronic);
             this.tabPageAdv1.Controls.Add(this.autoLabel36);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv13);
-            this.tabPageAdv1.Controls.Add(this.comboBoxAdv1);
+            this.tabPageAdv1.Controls.Add(this.chbCronic);
+            this.tabPageAdv1.Controls.Add(this.cmbSwim);
             this.tabPageAdv1.Controls.Add(this.autoLabel34);
             this.tabPageAdv1.Controls.Add(this.autoLabel33);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv12);
+            this.tabPageAdv1.Controls.Add(this.chbPregnant);
             this.tabPageAdv1.Controls.Add(this.autoLabel32);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv11);
+            this.tabPageAdv1.Controls.Add(this.chbVaccine);
             this.tabPageAdv1.Controls.Add(this.autoLabel31);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv10);
+            this.tabPageAdv1.Controls.Add(this.chbDrug);
             this.tabPageAdv1.Controls.Add(this.autoLabel28);
-            this.tabPageAdv1.Controls.Add(this.textBoxExt9);
+            this.tabPageAdv1.Controls.Add(this.txtDiet);
             this.tabPageAdv1.Controls.Add(this.autoLabel29);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv9);
+            this.tabPageAdv1.Controls.Add(this.chbDiet);
             this.tabPageAdv1.Controls.Add(this.autoLabel26);
-            this.tabPageAdv1.Controls.Add(this.textBoxExt8);
+            this.tabPageAdv1.Controls.Add(this.txtHear);
             this.tabPageAdv1.Controls.Add(this.autoLabel27);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv8);
+            this.tabPageAdv1.Controls.Add(this.chbHear);
             this.tabPageAdv1.Controls.Add(this.autoLabel24);
-            this.tabPageAdv1.Controls.Add(this.textBoxExt7);
+            this.tabPageAdv1.Controls.Add(this.txtTreatment);
             this.tabPageAdv1.Controls.Add(this.autoLabel25);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv7);
+            this.tabPageAdv1.Controls.Add(this.chbTreatment);
             this.tabPageAdv1.Controls.Add(this.autoLabel22);
-            this.tabPageAdv1.Controls.Add(this.textBoxExt6);
+            this.tabPageAdv1.Controls.Add(this.txtProt);
             this.tabPageAdv1.Controls.Add(this.autoLabel23);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv6);
+            this.tabPageAdv1.Controls.Add(this.chbProt);
             this.tabPageAdv1.Controls.Add(this.autoLabel20);
-            this.tabPageAdv1.Controls.Add(this.textBoxExt5);
+            this.tabPageAdv1.Controls.Add(this.txtAllergy);
             this.tabPageAdv1.Controls.Add(this.autoLabel21);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv5);
+            this.tabPageAdv1.Controls.Add(this.chbAllergy);
             this.tabPageAdv1.Controls.Add(this.autoLabel18);
-            this.tabPageAdv1.Controls.Add(this.textBoxExt4);
+            this.tabPageAdv1.Controls.Add(this.txtTransfusion);
             this.tabPageAdv1.Controls.Add(this.autoLabel19);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv4);
+            this.tabPageAdv1.Controls.Add(this.chbTransfusion);
             this.tabPageAdv1.Controls.Add(this.autoLabel16);
-            this.tabPageAdv1.Controls.Add(this.textBoxExt3);
+            this.tabPageAdv1.Controls.Add(this.txtLimit);
             this.tabPageAdv1.Controls.Add(this.autoLabel17);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv3);
+            this.tabPageAdv1.Controls.Add(this.chbLimit);
             this.tabPageAdv1.Controls.Add(this.autoLabel15);
-            this.tabPageAdv1.Controls.Add(this.textBoxExt2);
+            this.tabPageAdv1.Controls.Add(this.txtOperation);
             this.tabPageAdv1.Controls.Add(this.autoLabel14);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv2);
+            this.tabPageAdv1.Controls.Add(this.chbOperation);
             this.tabPageAdv1.Controls.Add(this.autoLabel13);
-            this.tabPageAdv1.Controls.Add(this.checkBoxAdv1);
+            this.tabPageAdv1.Controls.Add(this.chbOrtShoe);
             this.tabPageAdv1.Controls.Add(this.autoLabel12);
             this.tabPageAdv1.Controls.Add(this.chbFlatfoot);
             this.tabPageAdv1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -665,12 +687,42 @@
             this.tabPageAdv1.Location = new System.Drawing.Point(2, 30);
             this.tabPageAdv1.Name = "tabPageAdv1";
             this.tabPageAdv1.ShowCloseButton = true;
-            this.tabPageAdv1.Size = new System.Drawing.Size(1021, 468);
+            this.tabPageAdv1.Size = new System.Drawing.Size(1021, 372);
             this.tabPageAdv1.TabFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPageAdv1.TabForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.tabPageAdv1.TabIndex = 3;
             this.tabPageAdv1.Text = "Otros";
             this.tabPageAdv1.ThemesEnabled = true;
+            // 
+            // autoLabel38
+            // 
+            this.autoLabel38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.autoLabel38.DX = -98;
+            this.autoLabel38.DY = 1;
+            this.autoLabel38.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.autoLabel38.LabeledControl = this.txtDrug;
+            this.autoLabel38.Location = new System.Drawing.Point(503, 386);
+            this.autoLabel38.Name = "autoLabel38";
+            this.autoLabel38.Size = new System.Drawing.Size(94, 20);
+            this.autoLabel38.TabIndex = 189;
+            this.autoLabel38.Text = "Observación:";
+            this.autoLabel38.ThemeName = "Office2016White";
+            // 
+            // txtDrug
+            // 
+            this.txtDrug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtDrug.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtDrug.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtDrug.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDrug.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtDrug.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtDrug.Location = new System.Drawing.Point(601, 385);
+            this.txtDrug.Name = "txtDrug";
+            this.txtDrug.Size = new System.Drawing.Size(220, 23);
+            this.txtDrug.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtDrug.TabIndex = 188;
+            this.txtDrug.ThemeName = "Office2016White";
             // 
             // autoLabel35
             // 
@@ -679,7 +731,7 @@
             this.autoLabel35.DY = 1;
             this.autoLabel35.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel35.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel35.LabeledControl = this.textBoxExt11;
+            this.autoLabel35.LabeledControl = this.txtCronic;
             this.autoLabel35.Location = new System.Drawing.Point(503, 223);
             this.autoLabel35.Name = "autoLabel35";
             this.autoLabel35.Size = new System.Drawing.Size(94, 20);
@@ -687,20 +739,20 @@
             this.autoLabel35.Text = "Observación:";
             this.autoLabel35.ThemeName = "Office2016White";
             // 
-            // textBoxExt11
+            // txtCronic
             // 
-            this.textBoxExt11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBoxExt11.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.textBoxExt11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.textBoxExt11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt11.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.textBoxExt11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBoxExt11.Location = new System.Drawing.Point(601, 222);
-            this.textBoxExt11.Name = "textBoxExt11";
-            this.textBoxExt11.Size = new System.Drawing.Size(220, 23);
-            this.textBoxExt11.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.textBoxExt11.TabIndex = 186;
-            this.textBoxExt11.ThemeName = "Office2016White";
+            this.txtCronic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtCronic.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtCronic.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtCronic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtCronic.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtCronic.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtCronic.Location = new System.Drawing.Point(601, 222);
+            this.txtCronic.Name = "txtCronic";
+            this.txtCronic.Size = new System.Drawing.Size(220, 23);
+            this.txtCronic.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtCronic.TabIndex = 186;
+            this.txtCronic.ThemeName = "Office2016White";
             // 
             // autoLabel36
             // 
@@ -708,39 +760,39 @@
             this.autoLabel36.DX = -420;
             this.autoLabel36.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel36.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel36.LabeledControl = this.checkBoxAdv13;
+            this.autoLabel36.LabeledControl = this.chbCronic;
             this.autoLabel36.Location = new System.Drawing.Point(19, 223);
             this.autoLabel36.Name = "autoLabel36";
             this.autoLabel36.Size = new System.Drawing.Size(416, 20);
             this.autoLabel36.TabIndex = 185;
             this.autoLabel36.Text = "Padece de alguna enfermedad como diabetes o hipertensión:";
             // 
-            // checkBoxAdv13
+            // chbCronic
             // 
-            this.checkBoxAdv13.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv13.Location = new System.Drawing.Point(439, 223);
-            this.checkBoxAdv13.Name = "checkBoxAdv13";
-            this.checkBoxAdv13.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv13.TabIndex = 184;
+            this.chbCronic.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbCronic.Location = new System.Drawing.Point(439, 223);
+            this.chbCronic.Name = "chbCronic";
+            this.chbCronic.Size = new System.Drawing.Size(51, 21);
+            this.chbCronic.TabIndex = 184;
             // 
-            // comboBoxAdv1
+            // cmbSwim
             // 
-            this.comboBoxAdv1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.comboBoxAdv1.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.comboBoxAdv1.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.comboBoxAdv1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxAdv1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.comboBoxAdv1.Items.AddRange(new object[] {
+            this.cmbSwim.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.cmbSwim.BeforeTouchSize = new System.Drawing.Size(220, 23);
+            this.cmbSwim.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
+            this.cmbSwim.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbSwim.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.cmbSwim.Items.AddRange(new object[] {
             "No sabe nadar",
             "Básico",
             "Avanzado"});
-            this.comboBoxAdv1.Location = new System.Drawing.Point(439, 490);
-            this.comboBoxAdv1.Name = "comboBoxAdv1";
-            this.comboBoxAdv1.Size = new System.Drawing.Size(220, 23);
-            this.comboBoxAdv1.Style = Syncfusion.Windows.Forms.VisualStyle.Office2016White;
-            this.comboBoxAdv1.TabIndex = 183;
-            this.comboBoxAdv1.Text = "No sabe nadar";
-            this.comboBoxAdv1.ThemeName = "Office2016White";
+            this.cmbSwim.Location = new System.Drawing.Point(439, 490);
+            this.cmbSwim.Name = "cmbSwim";
+            this.cmbSwim.Size = new System.Drawing.Size(220, 23);
+            this.cmbSwim.Style = Syncfusion.Windows.Forms.VisualStyle.Office2016White;
+            this.cmbSwim.TabIndex = 183;
+            this.cmbSwim.Text = "No sabe nadar";
+            this.cmbSwim.ThemeName = "Office2016White";
             // 
             // autoLabel34
             // 
@@ -749,7 +801,7 @@
             this.autoLabel34.DY = 1;
             this.autoLabel34.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel34.LabeledControl = this.comboBoxAdv1;
+            this.autoLabel34.LabeledControl = this.cmbSwim;
             this.autoLabel34.Location = new System.Drawing.Point(307, 491);
             this.autoLabel34.Name = "autoLabel34";
             this.autoLabel34.Size = new System.Drawing.Size(128, 20);
@@ -762,20 +814,20 @@
             this.autoLabel33.DX = -340;
             this.autoLabel33.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel33.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel33.LabeledControl = this.checkBoxAdv12;
+            this.autoLabel33.LabeledControl = this.chbPregnant;
             this.autoLabel33.Location = new System.Drawing.Point(99, 450);
             this.autoLabel33.Name = "autoLabel33";
             this.autoLabel33.Size = new System.Drawing.Size(336, 20);
             this.autoLabel33.TabIndex = 181;
             this.autoLabel33.Text = "En caso de ser mujer, ¿se encuentra embarazada?";
             // 
-            // checkBoxAdv12
+            // chbPregnant
             // 
-            this.checkBoxAdv12.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv12.Location = new System.Drawing.Point(439, 450);
-            this.checkBoxAdv12.Name = "checkBoxAdv12";
-            this.checkBoxAdv12.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv12.TabIndex = 180;
+            this.chbPregnant.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbPregnant.Location = new System.Drawing.Point(439, 450);
+            this.chbPregnant.Name = "chbPregnant";
+            this.chbPregnant.Size = new System.Drawing.Size(51, 21);
+            this.chbPregnant.TabIndex = 180;
             // 
             // autoLabel32
             // 
@@ -783,20 +835,20 @@
             this.autoLabel32.DX = -397;
             this.autoLabel32.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel32.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel32.LabeledControl = this.checkBoxAdv11;
+            this.autoLabel32.LabeledControl = this.chbVaccine;
             this.autoLabel32.Location = new System.Drawing.Point(42, 418);
             this.autoLabel32.Name = "autoLabel32";
             this.autoLabel32.Size = new System.Drawing.Size(393, 20);
             this.autoLabel32.TabIndex = 179;
             this.autoLabel32.Text = "Cuenta con el esquema nacional de vacunación completo:";
             // 
-            // checkBoxAdv11
+            // chbVaccine
             // 
-            this.checkBoxAdv11.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv11.Location = new System.Drawing.Point(439, 418);
-            this.checkBoxAdv11.Name = "checkBoxAdv11";
-            this.checkBoxAdv11.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv11.TabIndex = 178;
+            this.chbVaccine.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbVaccine.Location = new System.Drawing.Point(439, 418);
+            this.chbVaccine.Name = "chbVaccine";
+            this.chbVaccine.Size = new System.Drawing.Size(51, 21);
+            this.chbVaccine.TabIndex = 178;
             // 
             // autoLabel31
             // 
@@ -804,20 +856,20 @@
             this.autoLabel31.DX = -214;
             this.autoLabel31.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel31.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel31.LabeledControl = this.checkBoxAdv10;
+            this.autoLabel31.LabeledControl = this.chbDrug;
             this.autoLabel31.Location = new System.Drawing.Point(225, 386);
             this.autoLabel31.Name = "autoLabel31";
             this.autoLabel31.Size = new System.Drawing.Size(210, 20);
             this.autoLabel31.TabIndex = 175;
             this.autoLabel31.Text = "Fuma, toma o consume droga:";
             // 
-            // checkBoxAdv10
+            // chbDrug
             // 
-            this.checkBoxAdv10.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv10.Location = new System.Drawing.Point(439, 386);
-            this.checkBoxAdv10.Name = "checkBoxAdv10";
-            this.checkBoxAdv10.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv10.TabIndex = 174;
+            this.chbDrug.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbDrug.Location = new System.Drawing.Point(439, 386);
+            this.chbDrug.Name = "chbDrug";
+            this.chbDrug.Size = new System.Drawing.Size(51, 21);
+            this.chbDrug.TabIndex = 174;
             // 
             // autoLabel28
             // 
@@ -826,7 +878,7 @@
             this.autoLabel28.DY = 1;
             this.autoLabel28.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel28.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel28.LabeledControl = this.textBoxExt9;
+            this.autoLabel28.LabeledControl = this.txtDiet;
             this.autoLabel28.Location = new System.Drawing.Point(503, 354);
             this.autoLabel28.Name = "autoLabel28";
             this.autoLabel28.Size = new System.Drawing.Size(94, 20);
@@ -834,20 +886,20 @@
             this.autoLabel28.Text = "Observación:";
             this.autoLabel28.ThemeName = "Office2016White";
             // 
-            // textBoxExt9
+            // txtDiet
             // 
-            this.textBoxExt9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBoxExt9.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.textBoxExt9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.textBoxExt9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt9.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.textBoxExt9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBoxExt9.Location = new System.Drawing.Point(601, 353);
-            this.textBoxExt9.Name = "textBoxExt9";
-            this.textBoxExt9.Size = new System.Drawing.Size(220, 23);
-            this.textBoxExt9.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.textBoxExt9.TabIndex = 172;
-            this.textBoxExt9.ThemeName = "Office2016White";
+            this.txtDiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtDiet.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtDiet.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtDiet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDiet.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtDiet.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtDiet.Location = new System.Drawing.Point(601, 353);
+            this.txtDiet.Name = "txtDiet";
+            this.txtDiet.Size = new System.Drawing.Size(220, 23);
+            this.txtDiet.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtDiet.TabIndex = 172;
+            this.txtDiet.ThemeName = "Office2016White";
             // 
             // autoLabel29
             // 
@@ -855,20 +907,20 @@
             this.autoLabel29.DX = -235;
             this.autoLabel29.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel29.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel29.LabeledControl = this.checkBoxAdv9;
+            this.autoLabel29.LabeledControl = this.chbDiet;
             this.autoLabel29.Location = new System.Drawing.Point(204, 354);
             this.autoLabel29.Name = "autoLabel29";
             this.autoLabel29.Size = new System.Drawing.Size(231, 20);
             this.autoLabel29.TabIndex = 171;
             this.autoLabel29.Text = "Cuenta con alguna dieta especial:";
             // 
-            // checkBoxAdv9
+            // chbDiet
             // 
-            this.checkBoxAdv9.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv9.Location = new System.Drawing.Point(439, 354);
-            this.checkBoxAdv9.Name = "checkBoxAdv9";
-            this.checkBoxAdv9.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv9.TabIndex = 170;
+            this.chbDiet.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbDiet.Location = new System.Drawing.Point(439, 354);
+            this.chbDiet.Name = "chbDiet";
+            this.chbDiet.Size = new System.Drawing.Size(51, 21);
+            this.chbDiet.TabIndex = 170;
             // 
             // autoLabel26
             // 
@@ -877,7 +929,7 @@
             this.autoLabel26.DY = 1;
             this.autoLabel26.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel26.LabeledControl = this.textBoxExt8;
+            this.autoLabel26.LabeledControl = this.txtHear;
             this.autoLabel26.Location = new System.Drawing.Point(503, 289);
             this.autoLabel26.Name = "autoLabel26";
             this.autoLabel26.Size = new System.Drawing.Size(94, 20);
@@ -885,20 +937,20 @@
             this.autoLabel26.Text = "Observación:";
             this.autoLabel26.ThemeName = "Office2016White";
             // 
-            // textBoxExt8
+            // txtHear
             // 
-            this.textBoxExt8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBoxExt8.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.textBoxExt8.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.textBoxExt8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt8.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.textBoxExt8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBoxExt8.Location = new System.Drawing.Point(601, 288);
-            this.textBoxExt8.Name = "textBoxExt8";
-            this.textBoxExt8.Size = new System.Drawing.Size(220, 23);
-            this.textBoxExt8.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.textBoxExt8.TabIndex = 168;
-            this.textBoxExt8.ThemeName = "Office2016White";
+            this.txtHear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtHear.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtHear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtHear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtHear.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtHear.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtHear.Location = new System.Drawing.Point(601, 288);
+            this.txtHear.Name = "txtHear";
+            this.txtHear.Size = new System.Drawing.Size(220, 23);
+            this.txtHear.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtHear.TabIndex = 168;
+            this.txtHear.ThemeName = "Office2016White";
             // 
             // autoLabel27
             // 
@@ -906,20 +958,20 @@
             this.autoLabel27.DX = -220;
             this.autoLabel27.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel27.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel27.LabeledControl = this.checkBoxAdv8;
+            this.autoLabel27.LabeledControl = this.chbHear;
             this.autoLabel27.Location = new System.Drawing.Point(219, 289);
             this.autoLabel27.Name = "autoLabel27";
             this.autoLabel27.Size = new System.Drawing.Size(216, 20);
             this.autoLabel27.TabIndex = 167;
             this.autoLabel27.Text = "Tiene problemas para oír o ver:";
             // 
-            // checkBoxAdv8
+            // chbHear
             // 
-            this.checkBoxAdv8.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv8.Location = new System.Drawing.Point(439, 289);
-            this.checkBoxAdv8.Name = "checkBoxAdv8";
-            this.checkBoxAdv8.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv8.TabIndex = 166;
+            this.chbHear.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbHear.Location = new System.Drawing.Point(439, 289);
+            this.chbHear.Name = "chbHear";
+            this.chbHear.Size = new System.Drawing.Size(51, 21);
+            this.chbHear.TabIndex = 166;
             // 
             // autoLabel24
             // 
@@ -928,7 +980,7 @@
             this.autoLabel24.DY = 1;
             this.autoLabel24.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel24.LabeledControl = this.textBoxExt7;
+            this.autoLabel24.LabeledControl = this.txtTreatment;
             this.autoLabel24.Location = new System.Drawing.Point(503, 256);
             this.autoLabel24.Name = "autoLabel24";
             this.autoLabel24.Size = new System.Drawing.Size(94, 20);
@@ -936,20 +988,20 @@
             this.autoLabel24.Text = "Observación:";
             this.autoLabel24.ThemeName = "Office2016White";
             // 
-            // textBoxExt7
+            // txtTreatment
             // 
-            this.textBoxExt7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBoxExt7.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.textBoxExt7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.textBoxExt7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt7.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.textBoxExt7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBoxExt7.Location = new System.Drawing.Point(601, 255);
-            this.textBoxExt7.Name = "textBoxExt7";
-            this.textBoxExt7.Size = new System.Drawing.Size(220, 23);
-            this.textBoxExt7.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.textBoxExt7.TabIndex = 164;
-            this.textBoxExt7.ThemeName = "Office2016White";
+            this.txtTreatment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtTreatment.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtTreatment.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtTreatment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTreatment.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtTreatment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtTreatment.Location = new System.Drawing.Point(601, 255);
+            this.txtTreatment.Name = "txtTreatment";
+            this.txtTreatment.Size = new System.Drawing.Size(220, 23);
+            this.txtTreatment.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtTreatment.TabIndex = 164;
+            this.txtTreatment.ThemeName = "Office2016White";
             // 
             // autoLabel25
             // 
@@ -957,20 +1009,20 @@
             this.autoLabel25.DX = -301;
             this.autoLabel25.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel25.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel25.LabeledControl = this.checkBoxAdv7;
+            this.autoLabel25.LabeledControl = this.chbTreatment;
             this.autoLabel25.Location = new System.Drawing.Point(138, 256);
             this.autoLabel25.Name = "autoLabel25";
             this.autoLabel25.Size = new System.Drawing.Size(297, 20);
             this.autoLabel25.TabIndex = 163;
             this.autoLabel25.Text = "Actualmente esta bajo tratamiento médico:";
             // 
-            // checkBoxAdv7
+            // chbTreatment
             // 
-            this.checkBoxAdv7.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv7.Location = new System.Drawing.Point(439, 256);
-            this.checkBoxAdv7.Name = "checkBoxAdv7";
-            this.checkBoxAdv7.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv7.TabIndex = 162;
+            this.chbTreatment.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbTreatment.Location = new System.Drawing.Point(439, 256);
+            this.chbTreatment.Name = "chbTreatment";
+            this.chbTreatment.Size = new System.Drawing.Size(51, 21);
+            this.chbTreatment.TabIndex = 162;
             // 
             // autoLabel22
             // 
@@ -979,7 +1031,7 @@
             this.autoLabel22.DY = 1;
             this.autoLabel22.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel22.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel22.LabeledControl = this.textBoxExt6;
+            this.autoLabel22.LabeledControl = this.txtProt;
             this.autoLabel22.Location = new System.Drawing.Point(503, 322);
             this.autoLabel22.Name = "autoLabel22";
             this.autoLabel22.Size = new System.Drawing.Size(94, 20);
@@ -987,20 +1039,20 @@
             this.autoLabel22.Text = "Observación:";
             this.autoLabel22.ThemeName = "Office2016White";
             // 
-            // textBoxExt6
+            // txtProt
             // 
-            this.textBoxExt6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBoxExt6.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.textBoxExt6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.textBoxExt6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt6.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.textBoxExt6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBoxExt6.Location = new System.Drawing.Point(601, 321);
-            this.textBoxExt6.Name = "textBoxExt6";
-            this.textBoxExt6.Size = new System.Drawing.Size(220, 23);
-            this.textBoxExt6.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.textBoxExt6.TabIndex = 160;
-            this.textBoxExt6.ThemeName = "Office2016White";
+            this.txtProt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtProt.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtProt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtProt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtProt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtProt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtProt.Location = new System.Drawing.Point(601, 321);
+            this.txtProt.Name = "txtProt";
+            this.txtProt.Size = new System.Drawing.Size(220, 23);
+            this.txtProt.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtProt.TabIndex = 160;
+            this.txtProt.ThemeName = "Office2016White";
             // 
             // autoLabel23
             // 
@@ -1008,20 +1060,20 @@
             this.autoLabel23.DX = -331;
             this.autoLabel23.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel23.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel23.LabeledControl = this.checkBoxAdv6;
+            this.autoLabel23.LabeledControl = this.chbProt;
             this.autoLabel23.Location = new System.Drawing.Point(108, 322);
             this.autoLabel23.Name = "autoLabel23";
             this.autoLabel23.Size = new System.Drawing.Size(327, 20);
             this.autoLabel23.TabIndex = 159;
             this.autoLabel23.Text = "Utiliza algún aparato auditivo, dental o prótesis:";
             // 
-            // checkBoxAdv6
+            // chbProt
             // 
-            this.checkBoxAdv6.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv6.Location = new System.Drawing.Point(439, 322);
-            this.checkBoxAdv6.Name = "checkBoxAdv6";
-            this.checkBoxAdv6.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv6.TabIndex = 158;
+            this.chbProt.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbProt.Location = new System.Drawing.Point(439, 322);
+            this.chbProt.Name = "chbProt";
+            this.chbProt.Size = new System.Drawing.Size(51, 21);
+            this.chbProt.TabIndex = 158;
             // 
             // autoLabel20
             // 
@@ -1030,7 +1082,7 @@
             this.autoLabel20.DY = 1;
             this.autoLabel20.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel20.LabeledControl = this.textBoxExt5;
+            this.autoLabel20.LabeledControl = this.txtAllergy;
             this.autoLabel20.Location = new System.Drawing.Point(503, 190);
             this.autoLabel20.Name = "autoLabel20";
             this.autoLabel20.Size = new System.Drawing.Size(94, 20);
@@ -1038,20 +1090,20 @@
             this.autoLabel20.Text = "Observación:";
             this.autoLabel20.ThemeName = "Office2016White";
             // 
-            // textBoxExt5
+            // txtAllergy
             // 
-            this.textBoxExt5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBoxExt5.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.textBoxExt5.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.textBoxExt5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt5.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.textBoxExt5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBoxExt5.Location = new System.Drawing.Point(601, 189);
-            this.textBoxExt5.Name = "textBoxExt5";
-            this.textBoxExt5.Size = new System.Drawing.Size(220, 23);
-            this.textBoxExt5.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.textBoxExt5.TabIndex = 156;
-            this.textBoxExt5.ThemeName = "Office2016White";
+            this.txtAllergy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtAllergy.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtAllergy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtAllergy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAllergy.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtAllergy.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtAllergy.Location = new System.Drawing.Point(601, 189);
+            this.txtAllergy.Name = "txtAllergy";
+            this.txtAllergy.Size = new System.Drawing.Size(220, 23);
+            this.txtAllergy.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtAllergy.TabIndex = 156;
+            this.txtAllergy.ThemeName = "Office2016White";
             // 
             // autoLabel21
             // 
@@ -1059,20 +1111,20 @@
             this.autoLabel21.DX = -420;
             this.autoLabel21.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel21.LabeledControl = this.checkBoxAdv5;
+            this.autoLabel21.LabeledControl = this.chbAllergy;
             this.autoLabel21.Location = new System.Drawing.Point(19, 190);
             this.autoLabel21.Name = "autoLabel21";
             this.autoLabel21.Size = new System.Drawing.Size(416, 20);
             this.autoLabel21.TabIndex = 155;
             this.autoLabel21.Text = "Tiene alguna alergía o reacción a medicamentos o alimentos:";
             // 
-            // checkBoxAdv5
+            // chbAllergy
             // 
-            this.checkBoxAdv5.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv5.Location = new System.Drawing.Point(439, 190);
-            this.checkBoxAdv5.Name = "checkBoxAdv5";
-            this.checkBoxAdv5.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv5.TabIndex = 154;
+            this.chbAllergy.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbAllergy.Location = new System.Drawing.Point(439, 190);
+            this.chbAllergy.Name = "chbAllergy";
+            this.chbAllergy.Size = new System.Drawing.Size(51, 21);
+            this.chbAllergy.TabIndex = 154;
             // 
             // autoLabel18
             // 
@@ -1081,7 +1133,7 @@
             this.autoLabel18.DY = 1;
             this.autoLabel18.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel18.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel18.LabeledControl = this.textBoxExt4;
+            this.autoLabel18.LabeledControl = this.txtTransfusion;
             this.autoLabel18.Location = new System.Drawing.Point(503, 157);
             this.autoLabel18.Name = "autoLabel18";
             this.autoLabel18.Size = new System.Drawing.Size(94, 20);
@@ -1089,20 +1141,20 @@
             this.autoLabel18.Text = "Observación:";
             this.autoLabel18.ThemeName = "Office2016White";
             // 
-            // textBoxExt4
+            // txtTransfusion
             // 
-            this.textBoxExt4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBoxExt4.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.textBoxExt4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.textBoxExt4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt4.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.textBoxExt4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBoxExt4.Location = new System.Drawing.Point(601, 156);
-            this.textBoxExt4.Name = "textBoxExt4";
-            this.textBoxExt4.Size = new System.Drawing.Size(220, 23);
-            this.textBoxExt4.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.textBoxExt4.TabIndex = 152;
-            this.textBoxExt4.ThemeName = "Office2016White";
+            this.txtTransfusion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtTransfusion.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtTransfusion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtTransfusion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtTransfusion.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtTransfusion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtTransfusion.Location = new System.Drawing.Point(601, 156);
+            this.txtTransfusion.Name = "txtTransfusion";
+            this.txtTransfusion.Size = new System.Drawing.Size(220, 23);
+            this.txtTransfusion.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtTransfusion.TabIndex = 152;
+            this.txtTransfusion.ThemeName = "Office2016White";
             // 
             // autoLabel19
             // 
@@ -1110,20 +1162,20 @@
             this.autoLabel19.DX = -318;
             this.autoLabel19.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel19.LabeledControl = this.checkBoxAdv4;
+            this.autoLabel19.LabeledControl = this.chbTransfusion;
             this.autoLabel19.Location = new System.Drawing.Point(121, 157);
             this.autoLabel19.Name = "autoLabel19";
             this.autoLabel19.Size = new System.Drawing.Size(314, 20);
             this.autoLabel19.TabIndex = 151;
             this.autoLabel19.Text = "Se ha realizado alguna Transfusión Sanguínea:";
             // 
-            // checkBoxAdv4
+            // chbTransfusion
             // 
-            this.checkBoxAdv4.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv4.Location = new System.Drawing.Point(439, 157);
-            this.checkBoxAdv4.Name = "checkBoxAdv4";
-            this.checkBoxAdv4.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv4.TabIndex = 150;
+            this.chbTransfusion.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbTransfusion.Location = new System.Drawing.Point(439, 157);
+            this.chbTransfusion.Name = "chbTransfusion";
+            this.chbTransfusion.Size = new System.Drawing.Size(51, 21);
+            this.chbTransfusion.TabIndex = 150;
             // 
             // autoLabel16
             // 
@@ -1132,7 +1184,7 @@
             this.autoLabel16.DY = 1;
             this.autoLabel16.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel16.LabeledControl = this.textBoxExt3;
+            this.autoLabel16.LabeledControl = this.txtLimit;
             this.autoLabel16.Location = new System.Drawing.Point(503, 124);
             this.autoLabel16.Name = "autoLabel16";
             this.autoLabel16.Size = new System.Drawing.Size(94, 20);
@@ -1140,20 +1192,20 @@
             this.autoLabel16.Text = "Observación:";
             this.autoLabel16.ThemeName = "Office2016White";
             // 
-            // textBoxExt3
+            // txtLimit
             // 
-            this.textBoxExt3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBoxExt3.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.textBoxExt3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.textBoxExt3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt3.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.textBoxExt3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBoxExt3.Location = new System.Drawing.Point(601, 123);
-            this.textBoxExt3.Name = "textBoxExt3";
-            this.textBoxExt3.Size = new System.Drawing.Size(220, 23);
-            this.textBoxExt3.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.textBoxExt3.TabIndex = 148;
-            this.textBoxExt3.ThemeName = "Office2016White";
+            this.txtLimit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtLimit.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtLimit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtLimit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtLimit.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtLimit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtLimit.Location = new System.Drawing.Point(601, 123);
+            this.txtLimit.Name = "txtLimit";
+            this.txtLimit.Size = new System.Drawing.Size(220, 23);
+            this.txtLimit.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtLimit.TabIndex = 148;
+            this.txtLimit.ThemeName = "Office2016White";
             // 
             // autoLabel17
             // 
@@ -1161,20 +1213,20 @@
             this.autoLabel17.DX = -209;
             this.autoLabel17.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel17.LabeledControl = this.checkBoxAdv3;
+            this.autoLabel17.LabeledControl = this.chbLimit;
             this.autoLabel17.Location = new System.Drawing.Point(230, 124);
             this.autoLabel17.Name = "autoLabel17";
             this.autoLabel17.Size = new System.Drawing.Size(205, 20);
             this.autoLabel17.TabIndex = 147;
             this.autoLabel17.Text = "Tiene alguna limitación física:";
             // 
-            // checkBoxAdv3
+            // chbLimit
             // 
-            this.checkBoxAdv3.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv3.Location = new System.Drawing.Point(439, 124);
-            this.checkBoxAdv3.Name = "checkBoxAdv3";
-            this.checkBoxAdv3.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv3.TabIndex = 146;
+            this.chbLimit.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbLimit.Location = new System.Drawing.Point(439, 124);
+            this.chbLimit.Name = "chbLimit";
+            this.chbLimit.Size = new System.Drawing.Size(51, 21);
+            this.chbLimit.TabIndex = 146;
             // 
             // autoLabel15
             // 
@@ -1183,7 +1235,7 @@
             this.autoLabel15.DY = 1;
             this.autoLabel15.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel15.LabeledControl = this.textBoxExt2;
+            this.autoLabel15.LabeledControl = this.txtOperation;
             this.autoLabel15.Location = new System.Drawing.Point(503, 91);
             this.autoLabel15.Name = "autoLabel15";
             this.autoLabel15.Size = new System.Drawing.Size(94, 20);
@@ -1191,20 +1243,20 @@
             this.autoLabel15.Text = "Observación:";
             this.autoLabel15.ThemeName = "Office2016White";
             // 
-            // textBoxExt2
+            // txtOperation
             // 
-            this.textBoxExt2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBoxExt2.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.textBoxExt2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.textBoxExt2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.textBoxExt2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBoxExt2.Location = new System.Drawing.Point(601, 90);
-            this.textBoxExt2.Name = "textBoxExt2";
-            this.textBoxExt2.Size = new System.Drawing.Size(220, 23);
-            this.textBoxExt2.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.textBoxExt2.TabIndex = 144;
-            this.textBoxExt2.ThemeName = "Office2016White";
+            this.txtOperation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtOperation.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtOperation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtOperation.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtOperation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtOperation.Location = new System.Drawing.Point(601, 90);
+            this.txtOperation.Name = "txtOperation";
+            this.txtOperation.Size = new System.Drawing.Size(220, 23);
+            this.txtOperation.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtOperation.TabIndex = 144;
+            this.txtOperation.ThemeName = "Office2016White";
             // 
             // autoLabel14
             // 
@@ -1212,20 +1264,20 @@
             this.autoLabel14.DX = -142;
             this.autoLabel14.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel14.LabeledControl = this.checkBoxAdv2;
+            this.autoLabel14.LabeledControl = this.chbOperation;
             this.autoLabel14.Location = new System.Drawing.Point(297, 91);
             this.autoLabel14.Name = "autoLabel14";
             this.autoLabel14.Size = new System.Drawing.Size(138, 20);
             this.autoLabel14.TabIndex = 5;
             this.autoLabel14.Text = "Operación reciente:";
             // 
-            // checkBoxAdv2
+            // chbOperation
             // 
-            this.checkBoxAdv2.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv2.Location = new System.Drawing.Point(439, 91);
-            this.checkBoxAdv2.Name = "checkBoxAdv2";
-            this.checkBoxAdv2.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv2.TabIndex = 4;
+            this.chbOperation.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbOperation.Location = new System.Drawing.Point(439, 91);
+            this.chbOperation.Name = "chbOperation";
+            this.chbOperation.Size = new System.Drawing.Size(51, 21);
+            this.chbOperation.TabIndex = 4;
             // 
             // autoLabel13
             // 
@@ -1233,20 +1285,20 @@
             this.autoLabel13.DX = -168;
             this.autoLabel13.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel13.LabeledControl = this.checkBoxAdv1;
+            this.autoLabel13.LabeledControl = this.chbOrtShoe;
             this.autoLabel13.Location = new System.Drawing.Point(507, 58);
             this.autoLabel13.Name = "autoLabel13";
             this.autoLabel13.Size = new System.Drawing.Size(164, 20);
             this.autoLabel13.TabIndex = 3;
             this.autoLabel13.Text = "Usa zapato ortopedico:";
             // 
-            // checkBoxAdv1
+            // chbOrtShoe
             // 
-            this.checkBoxAdv1.BeforeTouchSize = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv1.Location = new System.Drawing.Point(675, 58);
-            this.checkBoxAdv1.Name = "checkBoxAdv1";
-            this.checkBoxAdv1.Size = new System.Drawing.Size(51, 21);
-            this.checkBoxAdv1.TabIndex = 2;
+            this.chbOrtShoe.BeforeTouchSize = new System.Drawing.Size(51, 21);
+            this.chbOrtShoe.Location = new System.Drawing.Point(675, 58);
+            this.chbOrtShoe.Name = "chbOrtShoe";
+            this.chbOrtShoe.Size = new System.Drawing.Size(51, 21);
+            this.chbOrtShoe.TabIndex = 2;
             // 
             // autoLabel12
             // 
@@ -1269,55 +1321,117 @@
             this.chbFlatfoot.Size = new System.Drawing.Size(51, 21);
             this.chbFlatfoot.TabIndex = 0;
             // 
-            // tabPageAdv2
+            // btnSaveRecord
             // 
-            this.tabPageAdv2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageAdv2.Image = null;
-            this.tabPageAdv2.ImageSize = new System.Drawing.Size(16, 16);
-            this.tabPageAdv2.Location = new System.Drawing.Point(2, 30);
-            this.tabPageAdv2.Name = "tabPageAdv2";
-            this.tabPageAdv2.ShowCloseButton = true;
-            this.tabPageAdv2.Size = new System.Drawing.Size(1021, 468);
-            this.tabPageAdv2.TabFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageAdv2.TabForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.tabPageAdv2.TabIndex = 4;
-            this.tabPageAdv2.Text = "Ficha Médica (Imagen)";
-            this.tabPageAdv2.ThemesEnabled = true;
+            this.btnSaveRecord.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveRecord.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnSaveRecord.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnSaveRecord.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnSaveRecord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveRecord.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveRecord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnSaveRecord.Location = new System.Drawing.Point(870, 461);
+            this.btnSaveRecord.Name = "btnSaveRecord";
+            this.btnSaveRecord.Size = new System.Drawing.Size(159, 45);
+            this.btnSaveRecord.TabIndex = 129;
+            this.btnSaveRecord.Text = "Guardar cambios";
+            this.btnSaveRecord.UseVisualStyleBackColor = true;
+            this.btnSaveRecord.Click += new System.EventHandler(this.btnSaveRecord_Click);
             // 
-            // autoLabel38
+            // lblMember
             // 
-            this.autoLabel38.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.autoLabel38.DX = -98;
-            this.autoLabel38.DY = 1;
-            this.autoLabel38.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autoLabel38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel38.LabeledControl = this.textBoxExt10;
-            this.autoLabel38.Location = new System.Drawing.Point(503, 386);
-            this.autoLabel38.Name = "autoLabel38";
-            this.autoLabel38.Size = new System.Drawing.Size(94, 20);
-            this.autoLabel38.TabIndex = 189;
-            this.autoLabel38.Text = "Observación:";
-            this.autoLabel38.ThemeName = "Office2016White";
+            this.lblMember.AutoSize = true;
+            this.lblMember.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMember.Location = new System.Drawing.Point(183, 18);
+            this.lblMember.Name = "lblMember";
+            this.lblMember.Size = new System.Drawing.Size(66, 20);
+            this.lblMember.TabIndex = 162;
+            this.lblMember.Text = "Ninguno";
             // 
-            // textBoxExt10
+            // autoLabel39
             // 
-            this.textBoxExt10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.textBoxExt10.BeforeTouchSize = new System.Drawing.Size(220, 23);
-            this.textBoxExt10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.textBoxExt10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxExt10.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.textBoxExt10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.textBoxExt10.Location = new System.Drawing.Point(601, 385);
-            this.textBoxExt10.Name = "textBoxExt10";
-            this.textBoxExt10.Size = new System.Drawing.Size(220, 23);
-            this.textBoxExt10.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.textBoxExt10.TabIndex = 188;
-            this.textBoxExt10.ThemeName = "Office2016White";
+            this.autoLabel39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.autoLabel39.DX = -168;
+            this.autoLabel39.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.autoLabel39.LabeledControl = this.lblMember;
+            this.autoLabel39.Location = new System.Drawing.Point(15, 18);
+            this.autoLabel39.Name = "autoLabel39";
+            this.autoLabel39.Size = new System.Drawing.Size(164, 20);
+            this.autoLabel39.TabIndex = 161;
+            this.autoLabel39.Text = "Miembro seleccionado:";
+            this.autoLabel39.ThemeName = "Office2016White";
+            // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBrowse.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnBrowse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnBrowse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnBrowse.Location = new System.Drawing.Point(62, 283);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(110, 35);
+            this.btnBrowse.TabIndex = 196;
+            this.btnBrowse.Text = "Examinar";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // lblPdf
+            // 
+            this.lblPdf.AutoSize = true;
+            this.lblPdf.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPdf.Location = new System.Drawing.Point(213, 247);
+            this.lblPdf.Name = "lblPdf";
+            this.lblPdf.Size = new System.Drawing.Size(66, 20);
+            this.lblPdf.TabIndex = 198;
+            this.lblPdf.Text = "Ninguno";
+            // 
+            // autoLabel40
+            // 
+            this.autoLabel40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.autoLabel40.DX = -151;
+            this.autoLabel40.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.autoLabel40.LabeledControl = this.lblPdf;
+            this.autoLabel40.Location = new System.Drawing.Point(62, 247);
+            this.autoLabel40.Name = "autoLabel40";
+            this.autoLabel40.Size = new System.Drawing.Size(147, 20);
+            this.autoLabel40.TabIndex = 197;
+            this.autoLabel40.Text = "Archivo PDF adjunto:";
+            this.autoLabel40.ThemeName = "Office2016White";
+            // 
+            // btnOpenPdf
+            // 
+            this.btnOpenPdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpenPdf.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnOpenPdf.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnOpenPdf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnOpenPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenPdf.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenPdf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnOpenPdf.Location = new System.Drawing.Point(434, 283);
+            this.btnOpenPdf.Name = "btnOpenPdf";
+            this.btnOpenPdf.Size = new System.Drawing.Size(143, 35);
+            this.btnOpenPdf.TabIndex = 199;
+            this.btnOpenPdf.Text = "Ver archivo adjunto";
+            this.btnOpenPdf.UseVisualStyleBackColor = true;
+            this.btnOpenPdf.Click += new System.EventHandler(this.btnOpenPdf_Click);
             // 
             // frmMedicalRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblMember);
+            this.Controls.Add(this.autoLabel39);
+            this.Controls.Add(this.btnSaveRecord);
             this.Controls.Add(this.tabMedical);
             this.Name = "frmMedicalRecord";
             this.Size = new System.Drawing.Size(1038, 519);
@@ -1325,7 +1439,7 @@
             this.tabMedical.ResumeLayout(false);
             this.tabContact.ResumeLayout(false);
             this.tabContact.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhone2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhone1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtRelationship2)).EndInit();
@@ -1342,32 +1456,34 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbBloodType)).EndInit();
             this.tabPageAdv1.ResumeLayout(false);
             this.tabPageAdv1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxAdv1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.checkBoxAdv1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDrug)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCronic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbCronic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbSwim)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbPregnant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbVaccine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbDrug)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbDiet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtHear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbHear)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTreatment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbTreatment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtProt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbProt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAllergy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbAllergy)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTransfusion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbTransfusion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtLimit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbLimit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtOperation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbOperation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbOrtShoe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbFlatfoot)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textBoxExt10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1377,7 +1493,6 @@
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabContact;
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabHome;
         private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv1;
-        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv2;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtContact2;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel2;
@@ -1391,7 +1506,7 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel5;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtPhone1;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel7;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt1;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtEmail;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel8;
         private Syncfusion.Windows.Forms.Tools.ComboBoxAdv cmbBloodType;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel9;
@@ -1403,56 +1518,64 @@
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel12;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbFlatfoot;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel13;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv1;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbOrtShoe;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel20;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt5;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtAllergy;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel21;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv5;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbAllergy;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel18;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt4;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtTransfusion;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel19;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv4;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbTransfusion;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel16;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt3;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtLimit;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel17;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv3;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbLimit;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel15;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt2;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtOperation;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel14;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv2;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbOperation;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel28;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt9;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtDiet;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel29;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv9;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbDiet;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel26;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt8;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtHear;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel27;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv8;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbHear;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel24;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt7;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtTreatment;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel25;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv7;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbTreatment;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel22;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt6;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtProt;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel23;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv6;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbProt;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel31;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv10;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbDrug;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel32;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv11;
-        private Syncfusion.Windows.Forms.Tools.ComboBoxAdv comboBoxAdv1;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbVaccine;
+        private Syncfusion.Windows.Forms.Tools.ComboBoxAdv cmbSwim;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel34;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel33;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv12;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbPregnant;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel35;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt11;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtCronic;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel36;
-        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv checkBoxAdv13;
+        private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbCronic;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel30;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtSocial;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel37;
         private Syncfusion.Windows.Forms.Tools.CheckBoxAdv chbSocial;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel38;
-        private Syncfusion.Windows.Forms.Tools.TextBoxExt textBoxExt10;
+        private Syncfusion.Windows.Forms.Tools.TextBoxExt txtDrug;
+        private System.Windows.Forms.Button btnSaveRecord;
+        public System.Windows.Forms.Label lblMember;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel39;
+        private System.Windows.Forms.ErrorProvider errorProvider;
+        public System.Windows.Forms.Label lblPdf;
+        private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel40;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.Button btnOpenPdf;
     }
 }

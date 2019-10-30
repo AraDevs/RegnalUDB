@@ -114,6 +114,20 @@ namespace RegnalUDB.Utils
                 return Validators.isCurrency(control.Text);
             return false;
         }
+        public static bool isPhone(Control control)
+        {
+            if (FormValidators.hasText(control))
+                return Validators.isParticularPhone(control.Text) 
+                    || Validators.isMobilePhone(control.Text);
+            return false;
+        }
+        public static bool isPhoneOrNull(Control control)
+        {
+            if (FormValidators.hasText(control))
+                return Validators.isParticularPhone(control.Text)
+                    || Validators.isMobilePhone(control.Text);
+            return true;
+        }
         public static bool isParticularPhone(Control control)
         {
             if (FormValidators.hasText(control))

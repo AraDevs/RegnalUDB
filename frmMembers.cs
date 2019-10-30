@@ -43,6 +43,7 @@ namespace RegnalUDB
         private Domicilio searchedDomicile = null;
 
         private string imagePath = "C:\\Users\\kevin\\Desktop\\photos\\";
+        public static string pdfPath = "C:\\Users\\kevin\\Desktop\\records\\";
 
 
         // data for custom DataGridView
@@ -339,6 +340,10 @@ namespace RegnalUDB
             foreach (MiembroCargo mc in currentMember.MiembroCargoes) {
                 frmMemberPosition.Instance.lstPosition.SelectedItems.Add(mc.Cargo);
             }
+
+
+            frmMedicalRecord.Instance.SelectedMember = currentMember;
+            frmMedicalRecord.Instance.fillSelectedData();
 
         }
 
@@ -896,6 +901,20 @@ namespace RegnalUDB
             catch (Exception ex)
             {
                 FormUtils.defaultErrorMessage(ex);
+            }
+        }
+
+        private void lblFolder_Click(object sender, EventArgs e)
+        {
+            if (!pnlFormMembers.Controls.Contains(frmMedicalRecord.Instance))
+            {
+                pnlFormMembers.Controls.Add(frmMedicalRecord.Instance);
+                frmMedicalRecord.Instance.Dock = DockStyle.Fill;
+                frmMedicalRecord.Instance.BringToFront();
+            }
+            else
+            {
+                frmMedicalRecord.Instance.BringToFront();
             }
         }
     }
