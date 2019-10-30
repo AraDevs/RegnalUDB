@@ -143,6 +143,7 @@
     <Compile Include="Controllers\ReligionController.cs" />
     <Compile Include="Controllers\SchoolarshipController.cs" />
     <Compile Include="Controllers\SectionController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Entity Framework\Anuncio.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
@@ -435,6 +436,7 @@
     <Compile Include="Models\ToValidate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\EncriptionUtils.cs" />
     <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="Utils\RegularExpression.cs" />
     <Compile Include="Utils\Validators.cs" />

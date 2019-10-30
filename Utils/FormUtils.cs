@@ -5,6 +5,9 @@ using Syncfusion.WinForms.ListView;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Security.Authentication;
+using System.Security.Cryptography;
+using System.Text;
 using System.Windows.Forms;
 
 namespace RegnalUDB.Utils
@@ -60,8 +63,8 @@ namespace RegnalUDB.Utils
         }
 
 
-        //Taken from http://www.csharp-examples.net/inputbox/
-        public static DialogResult InputBox(string title, string promptText, ref string value)
+    //Taken from http://www.csharp-examples.net/inputbox/
+    public static DialogResult InputBox(string title, string promptText, ref string value)
         {
             Form form = new Form();
             Label label = new Label();
