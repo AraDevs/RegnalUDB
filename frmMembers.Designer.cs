@@ -34,8 +34,6 @@
             this.lblPosition = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlFormMembers = new System.Windows.Forms.Panel();
-            this.btnNewClean = new System.Windows.Forms.Button();
-            this.btnSaveModify = new System.Windows.Forms.Button();
             this.tabControlMember = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
             this.tabPersonal = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.btnBrowsePhoto = new System.Windows.Forms.Button();
@@ -105,11 +103,14 @@
             this.txtStreet = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel20 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtStreetNo = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.btnNewClean = new System.Windows.Forms.Button();
+            this.btnSaveModify = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvMembers = new System.Windows.Forms.DataGridView();
             this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel30 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.sfScrollFrame1 = new Syncfusion.WinForms.Controls.SfScrollFrame();
+            this.lblFolder = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.pnlFormMembers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMember)).BeginInit();
@@ -206,40 +207,6 @@
             this.pnlFormMembers.Name = "pnlFormMembers";
             this.pnlFormMembers.Size = new System.Drawing.Size(1038, 519);
             this.pnlFormMembers.TabIndex = 78;
-            // 
-            // btnNewClean
-            // 
-            this.btnNewClean.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNewClean.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnNewClean.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btnNewClean.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btnNewClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewClean.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewClean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnNewClean.Location = new System.Drawing.Point(905, 460);
-            this.btnNewClean.Name = "btnNewClean";
-            this.btnNewClean.Size = new System.Drawing.Size(120, 45);
-            this.btnNewClean.TabIndex = 129;
-            this.btnNewClean.Text = "Nuevo";
-            this.btnNewClean.UseVisualStyleBackColor = true;
-            this.btnNewClean.Click += new System.EventHandler(this.btnNewClean_Click);
-            // 
-            // btnSaveModify
-            // 
-            this.btnSaveModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveModify.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnSaveModify.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btnSaveModify.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btnSaveModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveModify.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveModify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnSaveModify.Location = new System.Drawing.Point(779, 460);
-            this.btnSaveModify.Name = "btnSaveModify";
-            this.btnSaveModify.Size = new System.Drawing.Size(120, 45);
-            this.btnSaveModify.TabIndex = 128;
-            this.btnSaveModify.Text = "Guardar";
-            this.btnSaveModify.UseVisualStyleBackColor = true;
-            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
             // tabControlMember
             // 
@@ -550,7 +517,7 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtEmail.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtEmail.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -580,7 +547,7 @@
             // txtOffice
             // 
             this.txtOffice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtOffice.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtOffice.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtOffice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtOffice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOffice.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -610,7 +577,7 @@
             // txtParticular
             // 
             this.txtParticular.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtParticular.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtParticular.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtParticular.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtParticular.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtParticular.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -640,7 +607,7 @@
             // txtMobile
             // 
             this.txtMobile.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtMobile.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtMobile.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtMobile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtMobile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMobile.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -670,7 +637,7 @@
             // txtOcupation
             // 
             this.txtOcupation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtOcupation.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtOcupation.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtOcupation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtOcupation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOcupation.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -700,7 +667,7 @@
             // txtObservation
             // 
             this.txtObservation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtObservation.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtObservation.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtObservation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtObservation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtObservation.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -867,7 +834,7 @@
             // txtPaternal
             // 
             this.txtPaternal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPaternal.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtPaternal.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtPaternal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtPaternal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPaternal.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -897,7 +864,7 @@
             // txtMaternal
             // 
             this.txtMaternal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtMaternal.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtMaternal.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtMaternal.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtMaternal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMaternal.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -927,7 +894,7 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtName.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtName.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1120,7 +1087,7 @@
             // txtPhone
             // 
             this.txtPhone.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPhone.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtPhone.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtPhone.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1150,7 +1117,7 @@
             // txtContact
             // 
             this.txtContact.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtContact.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtContact.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtContact.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtContact.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContact.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1180,7 +1147,7 @@
             // txtPostalCode
             // 
             this.txtPostalCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPostalCode.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtPostalCode.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtPostalCode.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtPostalCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPostalCode.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1210,7 +1177,7 @@
             // txtReference
             // 
             this.txtReference.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtReference.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtReference.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtReference.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtReference.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtReference.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1240,7 +1207,7 @@
             // txtColony
             // 
             this.txtColony.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtColony.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtColony.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtColony.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtColony.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtColony.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1270,7 +1237,7 @@
             // txtStreet
             // 
             this.txtStreet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtStreet.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtStreet.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtStreet.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtStreet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStreet.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1300,7 +1267,7 @@
             // txtStreetNo
             // 
             this.txtStreetNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtStreetNo.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtStreetNo.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtStreetNo.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtStreetNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtStreetNo.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1311,6 +1278,40 @@
             this.txtStreetNo.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
             this.txtStreetNo.TabIndex = 114;
             this.txtStreetNo.ThemeName = "Office2016White";
+            // 
+            // btnNewClean
+            // 
+            this.btnNewClean.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewClean.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnNewClean.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnNewClean.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnNewClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewClean.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewClean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnNewClean.Location = new System.Drawing.Point(905, 460);
+            this.btnNewClean.Name = "btnNewClean";
+            this.btnNewClean.Size = new System.Drawing.Size(120, 45);
+            this.btnNewClean.TabIndex = 129;
+            this.btnNewClean.Text = "Nuevo";
+            this.btnNewClean.UseVisualStyleBackColor = true;
+            this.btnNewClean.Click += new System.EventHandler(this.btnNewClean_Click);
+            // 
+            // btnSaveModify
+            // 
+            this.btnSaveModify.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveModify.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnSaveModify.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnSaveModify.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnSaveModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveModify.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveModify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnSaveModify.Location = new System.Drawing.Point(779, 460);
+            this.btnSaveModify.Name = "btnSaveModify";
+            this.btnSaveModify.Size = new System.Drawing.Size(120, 45);
+            this.btnSaveModify.TabIndex = 128;
+            this.btnSaveModify.Text = "Guardar";
+            this.btnSaveModify.UseVisualStyleBackColor = true;
+            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
             // panel2
             // 
@@ -1335,7 +1336,7 @@
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(220, 20);
+            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -1366,6 +1367,18 @@
             // 
             this.sfScrollFrame1.Control = this;
             // 
+            // lblFolder
+            // 
+            this.lblFolder.AutoSize = true;
+            this.lblFolder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblFolder.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFolder.Location = new System.Drawing.Point(339, 70);
+            this.lblFolder.Name = "lblFolder";
+            this.lblFolder.Size = new System.Drawing.Size(99, 20);
+            this.lblFolder.TabIndex = 80;
+            this.lblFolder.Text = "Ficha Médica";
+            this.lblFolder.Click += new System.EventHandler(this.lblFolder_Click);
+            // 
             // frmMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1373,6 +1386,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1117, 720);
+            this.Controls.Add(this.lblFolder);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlFormMembers);
             this.Controls.Add(this.lblPosition);
@@ -1520,5 +1534,6 @@
         private System.Windows.Forms.Button btnBrowsePhoto;
         private Syncfusion.WinForms.Controls.SfScrollFrame sfScrollFrame1;
         private System.Windows.Forms.DataGridView dgvMembers;
+        private System.Windows.Forms.Label lblFolder;
     }
 }

@@ -132,6 +132,7 @@
     <Compile Include="Controllers\FunctionController.cs" />
     <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\LocalityController.cs" />
+    <Compile Include="Controllers\MedicalRecordController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\MemberEventController.cs" />
     <Compile Include="Controllers\MemberPositionController.cs" />
