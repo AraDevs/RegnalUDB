@@ -42,6 +42,18 @@ namespace RegnalUDB.Controllers
             }
         }
 
+        public Operation<Perfile> getActiveRecords()
+        {
+            try
+            {
+                List<Perfile> data = EntitySingleton.Context.Perfiles.Where(x => x.baja).ToList();
+                return FactoryOperation<Perfile>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Perfile>.getFailOperation(e.Message);
+            }
+        }
         public Operation<Perfile> updateRecord(Perfile o)
         {
             try
