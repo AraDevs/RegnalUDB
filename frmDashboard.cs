@@ -15,17 +15,17 @@ namespace RegnalUDB
     {
         public frmDashboard()
         {
-            Thread thread = new Thread(new ThreadStart(StartForm));
-            thread.Start();
-            Thread.Sleep(1000);
+            //Thread thread = new Thread(new ThreadStart(StartForm));
+            //thread.Start();
+            //Thread.Sleep(1000);
             InitializeComponent();
-            thread.Abort();
+            //thread.Abort();
         }
 
-        public void StartForm()
-        {
-            Application.Run(new frmScreenSplash());
-        }
+        //public void StartForm()
+        //{
+        //    Application.Run(new frmScreenSplash());
+        //}
 
         private void PcbCloseWindow_Click(object sender, EventArgs e)
         {

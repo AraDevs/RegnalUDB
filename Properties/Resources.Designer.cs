@@ -93,6 +93,16 @@ namespace RegnalUDB.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap close_window_purple {
+            get {
+                object obj = ResourceManager.GetObject("close_window_purple", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap collaborator_40px {
             get {
                 object obj = ResourceManager.GetObject("collaborator_40px", resourceCulture);
