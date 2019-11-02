@@ -111,6 +111,7 @@
             this.autoLabel30 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.sfScrollFrame1 = new Syncfusion.WinForms.Controls.SfScrollFrame();
             this.lblFolder = new System.Windows.Forms.Label();
+            this.lblInscripciones = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.pnlFormMembers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMember)).BeginInit();
@@ -183,7 +184,7 @@
             this.lblPosition.AutoSize = true;
             this.lblPosition.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPosition.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.Location = new System.Drawing.Point(173, 70);
+            this.lblPosition.Location = new System.Drawing.Point(179, 70);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(138, 20);
             this.lblPosition.TabIndex = 7;
@@ -1372,12 +1373,24 @@
             this.lblFolder.AutoSize = true;
             this.lblFolder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblFolder.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFolder.Location = new System.Drawing.Point(339, 70);
+            this.lblFolder.Location = new System.Drawing.Point(343, 70);
             this.lblFolder.Name = "lblFolder";
             this.lblFolder.Size = new System.Drawing.Size(99, 20);
             this.lblFolder.TabIndex = 80;
             this.lblFolder.Text = "Ficha Médica";
             this.lblFolder.Click += new System.EventHandler(this.lblFolder_Click);
+            // 
+            // lblInscripciones
+            // 
+            this.lblInscripciones.AutoSize = true;
+            this.lblInscripciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblInscripciones.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInscripciones.Location = new System.Drawing.Point(468, 70);
+            this.lblInscripciones.Name = "lblInscripciones";
+            this.lblInscripciones.Size = new System.Drawing.Size(97, 20);
+            this.lblInscripciones.TabIndex = 81;
+            this.lblInscripciones.Text = "Inscripciones";
+            this.lblInscripciones.Click += new System.EventHandler(this.lblInscripciones_Click);
             // 
             // frmMembers
             // 
@@ -1385,7 +1398,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1117, 720);
+            this.ClientSize = new System.Drawing.Size(1151, 720);
+            this.Controls.Add(this.lblInscripciones);
             this.Controls.Add(this.lblFolder);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.pnlFormMembers);
@@ -1535,5 +1549,6 @@
         private Syncfusion.WinForms.Controls.SfScrollFrame sfScrollFrame1;
         private System.Windows.Forms.DataGridView dgvMembers;
         private System.Windows.Forms.Label lblFolder;
+        private System.Windows.Forms.Label lblInscripciones;
     }
 }
