@@ -42,7 +42,7 @@ namespace RegnalUDB
         private Miembro selectedMember = null;
         private Domicilio searchedDomicile = null;
 
-        private string imagePath = "C:\\Users\\kevin\\Desktop\\photos\\";
+        private string imagePath = "D:\\Desktop\\photos";
         public static string pdfPath = "C:\\Users\\kevin\\Desktop\\records\\";
 
 
@@ -337,6 +337,8 @@ namespace RegnalUDB
 
             frmMemberPosition.Instance.lstPosition.SelectedItems.Clear();
 
+            
+
             foreach (MiembroCargo mc in currentMember.MiembroCargoes) {
                 frmMemberPosition.Instance.lstPosition.SelectedItems.Add(mc.Cargo);
             }
@@ -345,6 +347,8 @@ namespace RegnalUDB
             frmMedicalRecord.Instance.SelectedMember = currentMember;
             frmMedicalRecord.Instance.fillSelectedData();
 
+            frmInscriptions.Instance.SelectedMember = currentMember;
+            frmInscriptions.Instance.fillSelectedData();
         }
 
         private void filterData()
@@ -680,15 +684,19 @@ namespace RegnalUDB
 
         private void Label5_Click(object sender, EventArgs e)
         {
-            if (!pnlFormMembers.Controls.Contains(frmMemberPosition.Instance))
+            if (this.pnlFormMembers.Controls.Count > 0)
             {
-                pnlFormMembers.Controls.Add(frmMemberPosition.Instance);
-                frmMemberPosition.Instance.Dock = DockStyle.Fill;
-                frmMemberPosition.Instance.BringToFront();
-            }
-            else
-            {
-                frmMemberPosition.Instance.BringToFront();
+                this.pnlFormMembers.Controls.RemoveAt(0);
+                if (!pnlFormMembers.Controls.Contains(frmMemberPosition.Instance))
+                {
+                    pnlFormMembers.Controls.Add(frmMemberPosition.Instance);
+                    frmMemberPosition.Instance.Dock = DockStyle.Fill;
+                    frmMemberPosition.Instance.BringToFront();
+                }
+                else
+                {
+                    frmMemberPosition.Instance.BringToFront();
+                }
             }
         }
 
@@ -906,15 +914,37 @@ namespace RegnalUDB
 
         private void lblFolder_Click(object sender, EventArgs e)
         {
-            if (!pnlFormMembers.Controls.Contains(frmMedicalRecord.Instance))
+            if (this.pnlFormMembers.Controls.Count > 0)
             {
-                pnlFormMembers.Controls.Add(frmMedicalRecord.Instance);
-                frmMedicalRecord.Instance.Dock = DockStyle.Fill;
-                frmMedicalRecord.Instance.BringToFront();
+                this.pnlFormMembers.Controls.RemoveAt(0);
+                if (!pnlFormMembers.Controls.Contains(frmMedicalRecord.Instance))
+                {
+                    pnlFormMembers.Controls.Add(frmMedicalRecord.Instance);
+                    frmMedicalRecord.Instance.Dock = DockStyle.Fill;
+                    frmMedicalRecord.Instance.BringToFront();
+                }
+                else
+                {
+                    frmMedicalRecord.Instance.BringToFront();
+                }
             }
-            else
+        }
+
+        private void lblInscripciones_Click(object sender, EventArgs e)
+        {
+            if (this.pnlFormMembers.Controls.Count > 0)
             {
-                frmMedicalRecord.Instance.BringToFront();
+                this.pnlFormMembers.Controls.RemoveAt(0);
+                if (!pnlFormMembers.Controls.Contains(frmInscriptions.Instance))
+                {
+                    pnlFormMembers.Controls.Add(frmInscriptions.Instance);
+                    frmInscriptions.Instance.Dock = DockStyle.Fill;
+                    frmInscriptions.Instance.BringToFront();
+                }
+                else
+                {
+                    frmInscriptions.Instance.BringToFront();
+                }
             }
         }
     }
