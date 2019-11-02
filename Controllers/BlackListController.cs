@@ -38,6 +38,19 @@ namespace RegnalUDB.Controllers
             }
         }
 
+        public Operation<ListaNegra> getBansByResponsableAndMember(int responsable, int member)
+        {
+            try
+            {
+                List<ListaNegra> data = EntitySingleton.Context.ListaNegras
+                    .Where(ban => ban.idMiembro == member && ban.responsable == responsable && ban.baja).ToList();
+                return FactoryOperation<ListaNegra>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<ListaNegra>.getFailOperation(e.Message);
+            }
+        }
         public Operation<ListaNegra> updateRecord(ListaNegra o)
         {
             try
@@ -52,6 +65,8 @@ namespace RegnalUDB.Controllers
                 return FactoryOperation<ListaNegra>.getFailOperation(e.Message);
             }
         }
+
+
 
         Operation<ListaNegra> Controller<ListaNegra>.deleteRecord(ListaNegra o)
         {

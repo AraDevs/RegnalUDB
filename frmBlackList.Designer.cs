@@ -77,7 +77,7 @@
             // 
             // cmbMembers
             // 
-            this.cmbMembers.Location = new System.Drawing.Point(635, 74);
+            this.cmbMembers.Location = new System.Drawing.Point(624, 22);
             this.cmbMembers.Name = "cmbMembers";
             this.cmbMembers.Size = new System.Drawing.Size(218, 28);
             this.cmbMembers.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -85,7 +85,7 @@
             // 
             // cmbResponsable
             // 
-            this.cmbResponsable.Location = new System.Drawing.Point(635, 22);
+            this.cmbResponsable.Location = new System.Drawing.Point(624, 81);
             this.cmbResponsable.Name = "cmbResponsable";
             this.cmbResponsable.Size = new System.Drawing.Size(218, 28);
             this.cmbResponsable.Style.TokenStyle.CloseButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -161,7 +161,7 @@
             this.autoLabel6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.autoLabel6.LabeledControl = this.cmbMembers;
-            this.autoLabel6.Location = new System.Drawing.Point(558, 78);
+            this.autoLabel6.Location = new System.Drawing.Point(547, 26);
             this.autoLabel6.Name = "autoLabel6";
             this.autoLabel6.Size = new System.Drawing.Size(73, 20);
             this.autoLabel6.TabIndex = 117;
@@ -176,7 +176,7 @@
             this.autoLabel5.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.autoLabel5.LabeledControl = this.cmbResponsable;
-            this.autoLabel5.Location = new System.Drawing.Point(535, 26);
+            this.autoLabel5.Location = new System.Drawing.Point(524, 85);
             this.autoLabel5.Name = "autoLabel5";
             this.autoLabel5.Size = new System.Drawing.Size(96, 20);
             this.autoLabel5.TabIndex = 115;

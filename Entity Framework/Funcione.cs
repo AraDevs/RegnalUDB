@@ -30,5 +30,11 @@ namespace RegnalUDB.Entity_Framework
         public virtual ICollection<EventosFuncione> EventosFunciones { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MiembroFuncion> MiembroFuncions { get; set; }
+
+        override
+        public string ToString()
+        {
+            return nombre;
+        }
     }
 }

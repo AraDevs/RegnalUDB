@@ -35,25 +35,12 @@ namespace RegnalUDB
             InitializeComponent();
             chbStatus.Checked = true;
 
-            Operation<Miembro> memberOperation =  memberController.getRecords();
-            if (!memberOperation.State)
-            {
-                MessageBox.Show("Error al cargar los datos");
-                return;
-            }
-
-            // load data
-            members = memberOperation.Data;
-
-            cmbMembers.DataSource = members;
-            cmbMembers.ValueMember = "idMiembro";
-            cmbResponsable.DataSource = members;
-            cmbResponsable.ValueMember = "idMiembro";
-
             loadTable(getBans());
 
-            // setup filters
+            getUnbannedMembers();
+            loadDataCmb(members);
 
+            // setup filters
             cmbMembers.DropDownListView.View.Filter = filterMembers;
             cmbMembers.DropDownListView.View.RefreshFilter();
             cmbMembers.TextBox.KeyUp += txtCmbMembers_KeyUp;
@@ -86,14 +73,28 @@ namespace RegnalUDB
             {
                 int member = int.Parse(cmbMembers.SelectedValue.ToString());
                 int responsable = int.Parse(cmbResponsable.SelectedValue.ToString());
+                bool saveValue = true;
+                bool isNew = selectedBan == null;
 
-                if(member == responsable)
+                if (!isNew)
+                {
+                    Operation<ListaNegra> existingRecordOperation = blackListController.getBansByResponsableAndMember(responsable, member);
+                    saveValue = existingRecordOperation.Data.Count == 0
+                        || selectedBan.idMiembro == member && selectedBan.responsable == responsable;
+
+                    if (!saveValue)
+                    {
+                        MessageBox.Show("Ya existe un registro activo con los datos que estan ingresando.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                if (member == responsable)
                 {
                     MessageBox.Show("El responsable debe ser diferente del miembro.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                bool isNew = selectedBan == null;
                 ListaNegra ban = new ListaNegra()
                 {
                     idListaNegra = isNew ? 0 : selectedBan.idListaNegra,
@@ -108,6 +109,8 @@ namespace RegnalUDB
                 if (operation.State)
                 {
                     loadTable(getBans());
+                    getUnbannedMembers();
+                    loadDataCmb(members);
                     clearForm();
                     return;
                 }
@@ -120,9 +123,6 @@ namespace RegnalUDB
                     this.errorProvider.SetError(errorProvider.ControlName, errorProvider.ErrorMessage);
             }
 
-
-
-
         }
 
         private void dgvBlackList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -132,6 +132,8 @@ namespace RegnalUDB
             {
                 List<ListaNegra> list = filterBans.Count == 0 ? bans : filterBans;
                 selectedBan = list[index];
+
+                setTemporarilyAllMembers();
 
                 cmbMembers.SelectedValue = selectedBan.Miembro.idMiembro;
                 cmbResponsable.SelectedValue = selectedBan.Miembro1.idMiembro;
@@ -177,6 +179,8 @@ namespace RegnalUDB
             selectedBan = null;
             filterBans = new List<ListaNegra>();
             loadTable(bans);
+            getUnbannedMembers();
+            loadDataCmb(members);
         }
 
         private bool filterMembers(object data)
@@ -191,6 +195,7 @@ namespace RegnalUDB
 
         private void loadTable(List<ListaNegra> bans)
         {
+         
             dgvBlackList.DataSource = null;
             dgvBlackList.DataSource = bans;
             FormUtils.hideColumnsForDgv(columnsToHideForBlackList, dgvBlackList);
@@ -200,7 +205,7 @@ namespace RegnalUDB
             return;
         }
 
-        public List<ListaNegra> getBans()
+        private List<ListaNegra> getBans()
         {
             Operation<ListaNegra> operation = blackListController.getRecords();
             if (operation.State)
@@ -208,8 +213,44 @@ namespace RegnalUDB
                 bans = operation.Data;
                 return operation.Data;
             }
-            MessageBox.Show("Error al cargas datos de grupos");
+            MessageBox.Show("Error al cargas lista negra");
             return new List<ListaNegra>();
+        }
+
+        private void loadDataCmb(List<Miembro> members)
+        {
+         
+            cmbMembers.DataSource = members;
+            cmbMembers.ValueMember = "idMiembro";
+            cmbMembers.DropDownListView.View.RefreshFilter();
+
+            cmbResponsable.DataSource = members;
+            cmbResponsable.ValueMember = "idMiembro";
+            cmbMembers.DropDownListView.View.RefreshFilter();
+
+        }
+        private List<Miembro> getUnbannedMembers()
+        {
+   
+            Operation<Miembro> memberOperation = memberController.getUnbannedMembers();
+            if (!memberOperation.State)
+            {
+                MessageBox.Show("Error al cargar los datos de miembros");
+                return new List<Miembro>();
+            }
+            members = memberOperation.Data;
+            return memberOperation.Data;
+        }
+
+        private void setTemporarilyAllMembers()
+        {
+            Operation<Miembro> memberOperation = memberController.getActiveRecords();
+            if (!memberOperation.State)
+            {
+                MessageBox.Show("Error al cargar los datos de miembros");
+                return;
+            }
+            loadDataCmb(memberOperation.Data);
         }
 
         private ToValidate[] getValidators()

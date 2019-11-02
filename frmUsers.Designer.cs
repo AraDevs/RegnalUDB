@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtCUM = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel4 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -46,6 +47,7 @@
             this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCUM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbProfile)).BeginInit();
@@ -55,6 +57,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -149,6 +152,7 @@
             this.btnNewClean.TabIndex = 123;
             this.btnNewClean.Text = "Nuevo";
             this.btnNewClean.UseVisualStyleBackColor = true;
+            this.btnNewClean.Click += new System.EventHandler(this.btnNewClean_Click);
             // 
             // btnSaveModify
             // 
@@ -165,6 +169,7 @@
             this.btnSaveModify.TabIndex = 122;
             this.btnSaveModify.Text = "Guardar";
             this.btnSaveModify.UseVisualStyleBackColor = true;
+            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
             // chbStatus
             // 
@@ -270,6 +275,7 @@
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.Size = new System.Drawing.Size(1011, 306);
             this.dgvUsers.TabIndex = 3;
+            this.dgvUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsers_CellClick);
             // 
             // txtSearch
             // 
@@ -284,6 +290,7 @@
             this.txtSearch.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
             this.txtSearch.TabIndex = 1;
             this.txtSearch.ThemeName = "Office2016White";
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
             // 
             // autoLabel1
             // 
@@ -310,6 +317,10 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Usuarios";
             // 
+            // errorProvider
+            // 
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -321,6 +332,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUsers";
             this.Text = "frmUsers";
+            this.Load += new System.EventHandler(this.frmUsers_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtCUM)).EndInit();
@@ -332,6 +344,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,5 +370,6 @@
         private Syncfusion.Windows.Forms.Tools.ComboBoxAdv cmbProfile;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtCUM;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel4;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

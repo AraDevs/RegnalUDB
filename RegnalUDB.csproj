@@ -126,19 +126,25 @@
     <Compile Include="Controllers\DistricController.cs" />
     <Compile Include="Controllers\DomicileController.cs" />
     <Compile Include="Controllers\EventController.cs" />
+    <Compile Include="Controllers\EventFunctionController.cs" />
     <Compile Include="Controllers\EventPositionController.cs" />
     <Compile Include="Controllers\EventSectionController.cs" />
+    <Compile Include="Controllers\FunctionController.cs" />
     <Compile Include="Controllers\GroupController.cs" />
     <Compile Include="Controllers\LocalityController.cs" />
+    <Compile Include="Controllers\MedicalRecordController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\MemberEventController.cs" />
     <Compile Include="Controllers\MemberPositionController.cs" />
     <Compile Include="Controllers\MovementController.cs" />
     <Compile Include="Controllers\MunicipalityContraller.cs" />
     <Compile Include="Controllers\PositionController.cs" />
+    <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Controllers\ProvinceController.cs" />
     <Compile Include="Controllers\ReligionController.cs" />
     <Compile Include="Controllers\SchoolarshipController.cs" />
     <Compile Include="Controllers\SectionController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Entity Framework\Anuncio.cs">
       <DependentUpon>MainModel.tt</DependentUpon>
     </Compile>
@@ -293,6 +299,18 @@
     <Compile Include="frmDistricts.Designer.cs">
       <DependentUpon>frmDistricts.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEventFunction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmEventFunction.Designer.cs">
+      <DependentUpon>frmEventFunction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEventMember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmEventMember.Designer.cs">
+      <DependentUpon>frmEventMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmEventPosition.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -311,6 +329,12 @@
     <Compile Include="frmEventSection.Designer.cs">
       <DependentUpon>frmEventSection.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFunctions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFunctions.Designer.cs">
+      <DependentUpon>frmFunctions.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGroups.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -322,6 +346,12 @@
     </Compile>
     <Compile Include="frmLocations.Designer.cs">
       <DependentUpon>frmLocations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMedicalRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmMedicalRecord.Designer.cs">
+      <DependentUpon>frmMedicalRecord.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMemberPosition.cs">
       <SubType>UserControl</SubType>
@@ -407,6 +437,7 @@
     <Compile Include="Models\ToValidate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\EncriptionUtils.cs" />
     <Compile Include="Utils\FormUtils.cs" />
     <Compile Include="Utils\RegularExpression.cs" />
     <Compile Include="Utils\Validators.cs" />
@@ -434,6 +465,12 @@
     <EmbeddedResource Include="frmDistricts.resx">
       <DependentUpon>frmDistricts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmEventFunction.resx">
+      <DependentUpon>frmEventFunction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEventMember.resx">
+      <DependentUpon>frmEventMember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEventPosition.resx">
       <DependentUpon>frmEventPosition.cs</DependentUpon>
     </EmbeddedResource>
@@ -443,11 +480,17 @@
     <EmbeddedResource Include="frmEventSection.resx">
       <DependentUpon>frmEventSection.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmFunctions.resx">
+      <DependentUpon>frmFunctions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGroups.resx">
       <DependentUpon>frmGroups.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLocations.resx">
       <DependentUpon>frmLocations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMedicalRecord.resx">
+      <DependentUpon>frmMedicalRecord.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMemberPosition.resx">
       <DependentUpon>frmMemberPosition.cs</DependentUpon>
@@ -497,7 +540,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>MainModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="App.Config" />
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Entity Framework\MainModel.edmx.diagram">
       <DependentUpon>MainModel.edmx</DependentUpon>
     </None>
