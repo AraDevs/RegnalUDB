@@ -136,6 +136,7 @@
     <Compile Include="Controllers\MedicalRecordController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\MemberEventController.cs" />
+    <Compile Include="Controllers\MemberFunctionController.cs" />
     <Compile Include="Controllers\MemberPositionController.cs" />
     <Compile Include="Controllers\MovementController.cs" />
     <Compile Include="Controllers\MunicipalityContraller.cs" />
@@ -360,6 +361,12 @@
     <Compile Include="frmMedicalRecord.Designer.cs">
       <DependentUpon>frmMedicalRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMemberFunction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmMemberFunction.Designer.cs">
+      <DependentUpon>frmMemberFunction.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMemberPosition.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -501,6 +508,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMedicalRecord.resx">
       <DependentUpon>frmMedicalRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMemberFunction.resx">
+      <DependentUpon>frmMemberFunction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMemberPosition.resx">
       <DependentUpon>frmMemberPosition.cs</DependentUpon>

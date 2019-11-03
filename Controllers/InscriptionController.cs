@@ -31,7 +31,28 @@ namespace RegnalUDB.Controllers
 
         public Operation<Inscripcione> getRecords()
         {
-            throw new NotImplementedException();
+            try
+            {
+                List<Inscripcione> data = EntitySingleton.Context.Inscripciones.ToList();
+                return FactoryOperation<Inscripcione>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Inscripcione>.getFailOperation(e.Message);
+            }
+        }
+
+        public Operation<Inscripcione> getRecordsByMember(Miembro mem)
+        {
+            try
+            {
+                List<Inscripcione> data = EntitySingleton.Context.Inscripciones.Where(x => x.idMiembro == mem.idMiembro).ToList();
+                return FactoryOperation<Inscripcione>.getDataOperation(data);
+            }
+            catch (Exception e)
+            {
+                return FactoryOperation<Inscripcione>.getFailOperation(e.Message);
+            }
         }
 
         public Operation<Inscripcione> updateRecord(Inscripcione o)

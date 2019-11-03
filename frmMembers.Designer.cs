@@ -37,7 +37,9 @@
             this.tabControlMember = new Syncfusion.Windows.Forms.Tools.TabControlAdv();
             this.tabPersonal = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.btnBrowsePhoto = new System.Windows.Forms.Button();
+            this.btnNewClean = new System.Windows.Forms.Button();
             this.autoLabel31 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.btnSaveModify = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.autoLabel19 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.rdbAssociated = new Syncfusion.Windows.Forms.Tools.RadioButtonAdv();
@@ -103,8 +105,6 @@
             this.txtStreet = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel20 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtStreetNo = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.btnNewClean = new System.Windows.Forms.Button();
-            this.btnSaveModify = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgvMembers = new System.Windows.Forms.DataGridView();
             this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
@@ -112,6 +112,9 @@
             this.sfScrollFrame1 = new Syncfusion.WinForms.Controls.SfScrollFrame();
             this.lblFolder = new System.Windows.Forms.Label();
             this.lblInscripciones = new System.Windows.Forms.Label();
+            this.lblFunctions = new System.Windows.Forms.Label();
+            this.missingDataProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.pnlFormMembers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControlMember)).BeginInit();
@@ -154,6 +157,7 @@
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.missingDataProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -184,11 +188,11 @@
             this.lblPosition.AutoSize = true;
             this.lblPosition.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPosition.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.Location = new System.Drawing.Point(179, 70);
+            this.lblPosition.Location = new System.Drawing.Point(451, 70);
             this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(138, 20);
+            this.lblPosition.Size = new System.Drawing.Size(148, 20);
             this.lblPosition.TabIndex = 7;
-            this.lblPosition.Text = "Cargo de Miembro";
+            this.lblPosition.Text = "Cargos del Miembro";
             this.lblPosition.Click += new System.EventHandler(this.Label5_Click);
             this.lblPosition.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Label5_MouseUp);
             // 
@@ -202,8 +206,6 @@
             this.pnlFormMembers.AutoSize = true;
             this.pnlFormMembers.BackColor = System.Drawing.Color.White;
             this.pnlFormMembers.Controls.Add(this.tabControlMember);
-            this.pnlFormMembers.Controls.Add(this.btnNewClean);
-            this.pnlFormMembers.Controls.Add(this.btnSaveModify);
             this.pnlFormMembers.Location = new System.Drawing.Point(32, 106);
             this.pnlFormMembers.Name = "pnlFormMembers";
             this.pnlFormMembers.Size = new System.Drawing.Size(1038, 519);
@@ -213,7 +215,7 @@
             // 
             this.tabControlMember.ActiveTabFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControlMember.ActiveTabForeColor = System.Drawing.Color.Empty;
-            this.tabControlMember.BeforeTouchSize = new System.Drawing.Size(1028, 450);
+            this.tabControlMember.BeforeTouchSize = new System.Drawing.Size(1028, 507);
             this.tabControlMember.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tabControlMember.CloseButtonForeColor = System.Drawing.Color.Empty;
             this.tabControlMember.CloseButtonHoverForeColor = System.Drawing.Color.Empty;
@@ -226,7 +228,7 @@
             this.tabControlMember.Name = "tabControlMember";
             this.tabControlMember.SeparatorColor = System.Drawing.SystemColors.ControlDark;
             this.tabControlMember.ShowSeparator = false;
-            this.tabControlMember.Size = new System.Drawing.Size(1028, 450);
+            this.tabControlMember.Size = new System.Drawing.Size(1028, 507);
             this.tabControlMember.TabIndex = 78;
             this.tabControlMember.ThemesEnabled = true;
             this.tabControlMember.ThemeStyle.PrimitiveButtonStyle.DisabledNextPageImage = null;
@@ -234,7 +236,9 @@
             // tabPersonal
             // 
             this.tabPersonal.Controls.Add(this.btnBrowsePhoto);
+            this.tabPersonal.Controls.Add(this.btnNewClean);
             this.tabPersonal.Controls.Add(this.autoLabel31);
+            this.tabPersonal.Controls.Add(this.btnSaveModify);
             this.tabPersonal.Controls.Add(this.panel1);
             this.tabPersonal.Controls.Add(this.lblCum);
             this.tabPersonal.Controls.Add(this.autoLabel18);
@@ -279,7 +283,7 @@
             this.tabPersonal.Location = new System.Drawing.Point(2, 30);
             this.tabPersonal.Name = "tabPersonal";
             this.tabPersonal.ShowCloseButton = false;
-            this.tabPersonal.Size = new System.Drawing.Size(1024, 418);
+            this.tabPersonal.Size = new System.Drawing.Size(1024, 475);
             this.tabPersonal.TabFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPersonal.TabForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.tabPersonal.TabIndex = 1;
@@ -303,6 +307,23 @@
             this.btnBrowsePhoto.UseVisualStyleBackColor = true;
             this.btnBrowsePhoto.Click += new System.EventHandler(this.btnBrowsePhoto_Click);
             // 
+            // btnNewClean
+            // 
+            this.btnNewClean.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNewClean.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnNewClean.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnNewClean.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnNewClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNewClean.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNewClean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnNewClean.Location = new System.Drawing.Point(887, 416);
+            this.btnNewClean.Name = "btnNewClean";
+            this.btnNewClean.Size = new System.Drawing.Size(120, 45);
+            this.btnNewClean.TabIndex = 129;
+            this.btnNewClean.Text = "Nuevo";
+            this.btnNewClean.UseVisualStyleBackColor = true;
+            this.btnNewClean.Click += new System.EventHandler(this.btnNewClean_Click);
+            // 
             // autoLabel31
             // 
             this.autoLabel31.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -314,6 +335,23 @@
             this.autoLabel31.TabIndex = 161;
             this.autoLabel31.Text = "Foto:";
             this.autoLabel31.ThemeName = "Office2016White";
+            // 
+            // btnSaveModify
+            // 
+            this.btnSaveModify.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSaveModify.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnSaveModify.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnSaveModify.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnSaveModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaveModify.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSaveModify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnSaveModify.Location = new System.Drawing.Point(739, 416);
+            this.btnSaveModify.Name = "btnSaveModify";
+            this.btnSaveModify.Size = new System.Drawing.Size(120, 45);
+            this.btnSaveModify.TabIndex = 128;
+            this.btnSaveModify.Text = "Guardar";
+            this.btnSaveModify.UseVisualStyleBackColor = true;
+            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 
             // panel1
             // 
@@ -948,7 +986,7 @@
             this.tabHome.Location = new System.Drawing.Point(2, 30);
             this.tabHome.Name = "tabHome";
             this.tabHome.ShowCloseButton = true;
-            this.tabHome.Size = new System.Drawing.Size(1024, 418);
+            this.tabHome.Size = new System.Drawing.Size(1024, 475);
             this.tabHome.TabFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabHome.TabForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.tabHome.TabIndex = 2;
@@ -1280,40 +1318,6 @@
             this.txtStreetNo.TabIndex = 114;
             this.txtStreetNo.ThemeName = "Office2016White";
             // 
-            // btnNewClean
-            // 
-            this.btnNewClean.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNewClean.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnNewClean.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btnNewClean.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btnNewClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNewClean.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNewClean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnNewClean.Location = new System.Drawing.Point(905, 460);
-            this.btnNewClean.Name = "btnNewClean";
-            this.btnNewClean.Size = new System.Drawing.Size(120, 45);
-            this.btnNewClean.TabIndex = 129;
-            this.btnNewClean.Text = "Nuevo";
-            this.btnNewClean.UseVisualStyleBackColor = true;
-            this.btnNewClean.Click += new System.EventHandler(this.btnNewClean_Click);
-            // 
-            // btnSaveModify
-            // 
-            this.btnSaveModify.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSaveModify.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnSaveModify.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btnSaveModify.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btnSaveModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSaveModify.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveModify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnSaveModify.Location = new System.Drawing.Point(779, 460);
-            this.btnSaveModify.Name = "btnSaveModify";
-            this.btnSaveModify.Size = new System.Drawing.Size(120, 45);
-            this.btnSaveModify.TabIndex = 128;
-            this.btnSaveModify.Text = "Guardar";
-            this.btnSaveModify.UseVisualStyleBackColor = true;
-            this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
-            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
@@ -1373,7 +1377,7 @@
             this.lblFolder.AutoSize = true;
             this.lblFolder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblFolder.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFolder.Location = new System.Drawing.Point(343, 70);
+            this.lblFolder.Location = new System.Drawing.Point(190, 70);
             this.lblFolder.Name = "lblFolder";
             this.lblFolder.Size = new System.Drawing.Size(99, 20);
             this.lblFolder.TabIndex = 80;
@@ -1385,12 +1389,34 @@
             this.lblInscripciones.AutoSize = true;
             this.lblInscripciones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblInscripciones.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInscripciones.Location = new System.Drawing.Point(468, 70);
+            this.lblInscripciones.Location = new System.Drawing.Point(322, 70);
             this.lblInscripciones.Name = "lblInscripciones";
             this.lblInscripciones.Size = new System.Drawing.Size(97, 20);
             this.lblInscripciones.TabIndex = 81;
             this.lblInscripciones.Text = "Inscripciones";
             this.lblInscripciones.Click += new System.EventHandler(this.lblInscripciones_Click);
+            // 
+            // lblFunctions
+            // 
+            this.lblFunctions.AutoSize = true;
+            this.lblFunctions.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblFunctions.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFunctions.Location = new System.Drawing.Point(641, 70);
+            this.lblFunctions.Name = "lblFunctions";
+            this.lblFunctions.Size = new System.Drawing.Size(170, 20);
+            this.lblFunctions.TabIndex = 82;
+            this.lblFunctions.Text = "Funciones del Miembro";
+            this.lblFunctions.Click += new System.EventHandler(this.lblFunctions_Click);
+            // 
+            // missingDataProvider
+            // 
+            this.missingDataProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.missingDataProvider.ContainerControl = this;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 5000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // frmMembers
             // 
@@ -1398,7 +1424,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1151, 720);
+            this.ClientSize = new System.Drawing.Size(1168, 720);
+            this.Controls.Add(this.lblFunctions);
             this.Controls.Add(this.lblInscripciones);
             this.Controls.Add(this.lblFolder);
             this.Controls.Add(this.panel2);
@@ -1460,6 +1487,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.missingDataProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1550,5 +1578,8 @@
         private System.Windows.Forms.DataGridView dgvMembers;
         private System.Windows.Forms.Label lblFolder;
         private System.Windows.Forms.Label lblInscripciones;
+        private System.Windows.Forms.Label lblFunctions;
+        private System.Windows.Forms.ErrorProvider missingDataProvider;
+        private System.Windows.Forms.Timer timer1;
     }
 }

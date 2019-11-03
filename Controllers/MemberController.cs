@@ -81,11 +81,18 @@ namespace RegnalUDB.Controllers
                     eventPositions.Add(ec.Cargo);
                 }
 
+                List<Funcione> eventFunctions = new List<Funcione>();
+                foreach (EventosFuncione ef in ev.EventosFunciones)
+                {
+                    eventFunctions.Add(ef.Funcione);
+                }
+
                 foreach (Miembro member in unfilteredData)
                 {
                     bool isInGroup = false;
                     bool sectionValid = false;
                     bool positionValid = false;
+                    bool functionValid = false;
                     bool hasNoBlackList = true;
 
                     //Checking if the member is in the selected group
@@ -114,6 +121,18 @@ namespace RegnalUDB.Controllers
                         }
                     }
 
+                    //Checking if one of the member's functions are apllicable for the event
+                    foreach (MiembroFuncion mc in member.MiembroFuncions)
+                    {
+                        if (eventFunctions.Contains(mc.Funcione))
+                        {
+                            if (DateTime.Today >= mc.fechaInicio && DateTime.Today <= mc.fechaFin)
+
+                            functionValid = true;
+                            break;
+                        }
+                    }
+
                     //Checking if the user is banned
                     foreach (ListaNegra ln in member.ListaNegras1)
                     {
@@ -124,7 +143,7 @@ namespace RegnalUDB.Controllers
                     }
 
                     //If all conditions are true, the member is applicable for the event
-                    if (isInGroup && sectionValid && positionValid && hasNoBlackList)
+                    if (isInGroup && sectionValid && positionValid && functionValid && hasNoBlackList)
                     {
                         data.Add(member);
                     }

@@ -343,12 +343,22 @@ namespace RegnalUDB
                 frmMemberPosition.Instance.lstPosition.SelectedItems.Add(mc.Cargo);
             }
 
+            frmMemberPosition.Instance.SelectedMember = selectedMember;
+
 
             frmMedicalRecord.Instance.SelectedMember = currentMember;
             frmMedicalRecord.Instance.fillSelectedData();
 
             frmInscriptions.Instance.SelectedMember = currentMember;
             frmInscriptions.Instance.fillSelectedData();
+
+            frmMemberFunction.Instance.SelectedMember = currentMember;
+            frmMemberFunction.Instance.loadTable();
+            frmMemberFunction.Instance.cleanForm();
+
+            frmInscriptions.Instance.SelectedMember = currentMember;
+            frmInscriptions.Instance.loadTable();
+            frmInscriptions.Instance.cleanForm();
         }
 
         private void filterData()
@@ -389,6 +399,9 @@ namespace RegnalUDB
 
         private void cleanForm()
         {
+            errorProvider.Clear();
+            missingDataProvider.Clear();
+
             FormUtils.clearTextbox(textControls());
             rdbFemale.Checked = true;
             rdbMale.Checked = false;
@@ -408,6 +421,9 @@ namespace RegnalUDB
             chbDuplicity.Checked = false;
 
             frmMemberPosition.Instance.clean();
+            frmMedicalRecord.Instance.cleanForm();
+            frmInscriptions.Instance.clean();
+            frmMemberFunction.Instance.clean();
         }
 
         private void cleanDomiciles()
@@ -415,6 +431,43 @@ namespace RegnalUDB
             FormUtils.clearTextbox(domicileControls());
             chbStatusHome.Checked = true;
             loadDomicileCmbs();
+        }
+
+
+        private void selectLabel(Label label)
+        {
+            lblDatosPersonales.ForeColor = System.Drawing.Color.FromArgb(110, 117, 125);
+            lblFolder.ForeColor = System.Drawing.Color.FromArgb(110, 117, 125);
+            lblInscripciones.ForeColor = System.Drawing.Color.FromArgb(110, 117, 125);
+            lblPosition.ForeColor = System.Drawing.Color.FromArgb(110, 117, 125);
+            lblFunctions.ForeColor = System.Drawing.Color.FromArgb(110, 117, 125);
+
+            label.ForeColor = System.Drawing.Color.FromArgb(127, 41, 181);
+        }
+
+        private void showMissingInfo()
+        {
+            if (selectedMember != null)
+            {
+                missingDataProvider.Clear();
+
+                if (selectedMember.FichasMedicas.Count == 0)
+                {
+                    missingDataProvider.SetError(lblFolder, "El miembro seleccionado aún no tiene registrados sus datos de ficha médica.");
+                }
+                if (selectedMember.Inscripciones.Count == 0)
+                {
+                    missingDataProvider.SetError(lblInscripciones, "El miembro seleccionado aún no tiene registrados sus datos de inscripción.");
+                }
+                if (selectedMember.MiembroCargoes.Count == 0)
+                {
+                    missingDataProvider.SetError(lblPosition, "El miembro seleccionado carece de cargos.");
+                }
+                if (selectedMember.MiembroFuncions.Count == 0)
+                {
+                    missingDataProvider.SetError(lblFunctions, "El miembro seleccionado carece de funciones.");
+                }
+            }
         }
 
         private void saveMember(Domicilio domicile)
@@ -664,7 +717,9 @@ namespace RegnalUDB
 
         private void FrmMembers_Load(object sender, EventArgs e)
         {
-            //lblDatosPersonales.ForeColor = System.Drawing.Color.FromArgb(127, 41, 181);
+            selectLabel(lblDatosPersonales);
+
+            lblDatosPersonales.ForeColor = System.Drawing.Color.FromArgb(127, 41, 181);
             try {
                 loadCmbs();
                 loadTable();
@@ -684,31 +739,30 @@ namespace RegnalUDB
 
         private void Label5_Click(object sender, EventArgs e)
         {
-            if (this.pnlFormMembers.Controls.Count > 0)
+
+            selectLabel(lblPosition);
+            showMissingInfo();
+
+            if (!pnlFormMembers.Controls.Contains(frmMemberPosition.Instance))
             {
-                this.pnlFormMembers.Controls.RemoveAt(0);
-                if (!pnlFormMembers.Controls.Contains(frmMemberPosition.Instance))
-                {
-                    pnlFormMembers.Controls.Add(frmMemberPosition.Instance);
-                    frmMemberPosition.Instance.Dock = DockStyle.Fill;
-                    frmMemberPosition.Instance.BringToFront();
-                }
-                else
-                {
-                    frmMemberPosition.Instance.BringToFront();
-                }
+                pnlFormMembers.Controls.Add(frmMemberPosition.Instance);
+                frmMemberPosition.Instance.Dock = DockStyle.Fill;
+                frmMemberPosition.Instance.BringToFront();
             }
+            else
+            {
+                frmMemberPosition.Instance.BringToFront();
+            }
+
+            label1.Focus();
         }
 
         private void Label4_Click(object sender, EventArgs e)
         {
-            /*lblDatosPersonales.ForeColor = System.Drawing.Color.FromArgb(127,41,181);
-            lblPosition.ForeColor = System.Drawing.Color.FromArgb(110, 117, 125);*/
-            if (this.pnlFormMembers.Controls.Count > 0)
-            {
-                this.pnlFormMembers.Controls.RemoveAt(0);
-            }
-            tabControlMember.Show();
+            selectLabel(lblDatosPersonales);
+            showMissingInfo();
+            tabControlMember.BringToFront();
+            label1.Focus();
         }
 
         private void Label4_MouseUp(object sender, MouseEventArgs e)
@@ -823,7 +877,8 @@ namespace RegnalUDB
                     lblDomicileDuplicity.Text = "Este miembro ha cambiado de domicilio, pero los demás miembros que comparten el domicilio no";
                     chbDuplicity.Checked = false;
 
-                    frmMemberPosition.Instance.SelectedMember = selectedMember;
+                    showMissingInfo();
+
                 }
             }
             catch (Exception ex)
@@ -914,38 +969,68 @@ namespace RegnalUDB
 
         private void lblFolder_Click(object sender, EventArgs e)
         {
-            if (this.pnlFormMembers.Controls.Count > 0)
+
+            selectLabel(lblFolder);
+            showMissingInfo();
+
+            if (!pnlFormMembers.Controls.Contains(frmMedicalRecord.Instance))
             {
-                this.pnlFormMembers.Controls.RemoveAt(0);
-                if (!pnlFormMembers.Controls.Contains(frmMedicalRecord.Instance))
-                {
-                    pnlFormMembers.Controls.Add(frmMedicalRecord.Instance);
-                    frmMedicalRecord.Instance.Dock = DockStyle.Fill;
-                    frmMedicalRecord.Instance.BringToFront();
-                }
-                else
-                {
-                    frmMedicalRecord.Instance.BringToFront();
-                }
+                pnlFormMembers.Controls.Add(frmMedicalRecord.Instance);
+                frmMedicalRecord.Instance.Dock = DockStyle.Fill;
+                frmMedicalRecord.Instance.BringToFront();
             }
+            else
+            {
+                frmMedicalRecord.Instance.BringToFront();
+            }
+
+            label1.Focus();
+            
         }
 
         private void lblInscripciones_Click(object sender, EventArgs e)
         {
-            if (this.pnlFormMembers.Controls.Count > 0)
+
+            selectLabel(lblInscripciones);
+            showMissingInfo();
+
+            if (!pnlFormMembers.Controls.Contains(frmInscriptions.Instance))
             {
-                this.pnlFormMembers.Controls.RemoveAt(0);
-                if (!pnlFormMembers.Controls.Contains(frmInscriptions.Instance))
-                {
-                    pnlFormMembers.Controls.Add(frmInscriptions.Instance);
-                    frmInscriptions.Instance.Dock = DockStyle.Fill;
-                    frmInscriptions.Instance.BringToFront();
-                }
-                else
-                {
-                    frmInscriptions.Instance.BringToFront();
-                }
+                pnlFormMembers.Controls.Add(frmInscriptions.Instance);
+                frmInscriptions.Instance.Dock = DockStyle.Fill;
+                frmInscriptions.Instance.BringToFront();
             }
+            else
+            {
+                frmInscriptions.Instance.BringToFront();
+            }
+
+            label1.Focus();
+        }
+
+        private void lblFunctions_Click(object sender, EventArgs e)
+        {
+
+            selectLabel(lblFunctions);
+            showMissingInfo();
+
+            if (!pnlFormMembers.Controls.Contains(frmMemberFunction.Instance))
+            {
+                pnlFormMembers.Controls.Add(frmMemberFunction.Instance);
+                frmMemberFunction.Instance.Dock = DockStyle.Fill;
+                frmMemberFunction.Instance.BringToFront();
+            }
+            else
+            {
+                frmMemberFunction.Instance.BringToFront();
+            }
+
+            label1.Focus();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
         }
     }
 }
