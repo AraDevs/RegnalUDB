@@ -108,17 +108,18 @@ namespace RegnalUDB
                         blackListController.updateRecord(ban);
                 if (operation.State)
                 {
+
                     loadTable(getBans());
                     getUnbannedMembers();
                     loadDataCmb(members);
                     clearForm();
+                    MessageBox.Show(isNew ? "Miembro agregado a lista negra" : "Registro modificado");
                     return;
                 }
 
             }else
             {
                 MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                 foreach (ControlErrorProvider errorProvider in errorsProvider)
                     this.errorProvider.SetError(errorProvider.ControlName, errorProvider.ErrorMessage);
             }

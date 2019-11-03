@@ -22,17 +22,22 @@ namespace RegnalUDB
         private List<Grupos> filterGroups = new List<Grupos>();
 
         private Grupos selectedGroup = null;
-
+        
         // data for custom DataGridView
         private int[] columnsToHideForGroups = { 6, 7, 12, 13 };
         private int[] columnsToChangeForGroups = { 0, 1, 2, 3, 4, 5, 8, 9, 10, 11 };
         private string[] titlesforGroups = { "ID", "Nombre", "Fecha fundación","Numero de grupo", "Horario",
               "Baja", "Fecha registro", "Registro", "Distrito", "Localidad"  };
+
+        private int[] columnsToHideForSections = {12, 15 };
+        private int[] columnsToChangeForSections = { 0, 1, 2, 3, 4, 5,6,7, 8, 9, 10, 11,13,14 };
+        private string[] titlesForSections = {"Id", "Lobeznas", "Scout femeninos", "Caminante femenino", "Rover femeninos", "Lobatos", "Scouts masculinos",
+         "Caminante Masculino", "Rover masculino", "Scouter", "Dirigente", "Padre scount",  "Mes", "Año"};
         public frmGroups()
         {
             InitializeComponent();
 
-
+              
             DistricController districController = new DistricController();
             LocalityController localityController = new LocalityController();
 
@@ -60,6 +65,8 @@ namespace RegnalUDB
             }
 
             chbStatus.Checked = true;
+            chbRegistration.Checked = true;
+
         }
 
         private void frmGroups_Load(object sender, EventArgs e)
@@ -73,6 +80,15 @@ namespace RegnalUDB
             {
                 List<Grupos> list = filterGroups.Count == 0 ? groups : filterGroups;
                 selectedGroup = list[index];
+                
+                HashSet<TotalSeccion> sections = (HashSet<TotalSeccion>) selectedGroup.TotalSeccions;
+                TotalSeccion[] sectionsData =  new TotalSeccion[sections.Count];
+                sections.CopyTo(sectionsData);
+
+                loadSectionsTable(sectionsData);
+ 
+               
+
                 cmbDistricts.SelectedItem = selectedGroup.Distrito;
                 cmbLocations.SelectedItem = selectedGroup.Localidade;
                 txtGroup.Text = selectedGroup.grupoNum.ToString();
@@ -80,6 +96,8 @@ namespace RegnalUDB
                 txtSchedule.Text = selectedGroup.horario;
                 chbStatus.Checked = selectedGroup.baja; 
                 dtpFundation.Value = selectedGroup.fundacion;
+                chbRegistration.Checked = selectedGroup.registrado;
+                dtpRegistration.Value = selectedGroup.fechaRegistro;
 
                 btnSaveModify.Text = "Modificar";
             }
@@ -106,8 +124,8 @@ namespace RegnalUDB
                         baja = isNew ? true : chbStatus.Checked,
                         Distrito = (Distrito)cmbDistricts.SelectedItem,
                         Localidade = (Localidade)cmbLocations.SelectedItem,
-                        fechaRegistro = isNew ? DateTime.Now : selectedGroup.fechaRegistro,
-                        registrado = true
+                        fechaRegistro = dtpFundation.Value,
+                        registrado = chbRegistration.Checked
                     };
 
                     GroupController controller = new GroupController();
@@ -151,6 +169,9 @@ namespace RegnalUDB
                  new ToValidate(dtpFundation, new ControlValidator[] { FormValidators.isValidDate },
                  new string[] { "La fecha ingresada sobrepasa el día actual" }),
 
+                 new ToValidate(dtpRegistration, new ControlValidator[] { FormValidators.isValidDate },
+                 new string[] { "La fecha ingresada sobrepasa el día actual" }),
+
                  new ToValidate(txtSchedule, new ControlValidator[] { FormValidators.hasText },
                  new string[] { "Ingresa un horario" }),
 
@@ -169,11 +190,22 @@ namespace RegnalUDB
             return;
         }
 
+        private void loadSectionsTable(TotalSeccion[] sections)
+        {
+            dgvSections.DataSource = null;
+            dgvSections.DataSource = sections;
+            FormUtils.hideColumnsForDgv(columnsToHideForSections, dgvSections);
+            FormUtils.changeTitlesForDgv(titlesForSections, columnsToChangeForSections, dgvSections);
+            return;
+        }
+
         private void clearForm()
         {
             FormUtils.clearTextbox(new Control[] { txtName, txtGroup, txtSchedule, txtSearch });
             FormUtils.deselect(new ComboBoxAdv[] { cmbDistricts, cmbLocations });
             chbStatus.Checked = true;
+            chbRegistration.Checked = true;
+            dtpFundation.Value = DateTime.Now;
             dtpFundation.Value = DateTime.Now;
             selectedGroup = null;
             errorProvider.Clear();
@@ -221,6 +253,25 @@ namespace RegnalUDB
         private void applyingTheme()
         {
             SkinManager.ApplicationVisualTheme = "VioletTheme";
+        }
+
+        private void autoLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (e.TabPageIndex == 1 && selectedGroup == null)
+            {
+                e.Cancel = true;
+                MessageBox.Show("Seleccione un grupo");
+            }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
