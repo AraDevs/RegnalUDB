@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.lblPosition = new System.Windows.Forms.Label();
-            this.lblDatosPersonales = new System.Windows.Forms.Label();
+            this.lblDatosEventos = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSection = new System.Windows.Forms.Label();
             this.pnlEventData = new System.Windows.Forms.Panel();
@@ -63,6 +63,7 @@
             this.pnlParent = new System.Windows.Forms.Panel();
             this.lblFunction = new System.Windows.Forms.Label();
             this.lblMember = new System.Windows.Forms.Label();
+            this.missingDataProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.pnlEventData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtResp)).BeginInit();
@@ -79,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.pnlParent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.missingDataProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPosition
@@ -86,6 +88,7 @@
             this.lblPosition.AutoSize = true;
             this.lblPosition.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblPosition.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.lblPosition.Location = new System.Drawing.Point(173, 70);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(126, 20);
@@ -93,22 +96,24 @@
             this.lblPosition.Text = "Cargos asociados";
             this.lblPosition.Click += new System.EventHandler(this.lblPosition_Click);
             // 
-            // lblDatosPersonales
+            // lblDatosEventos
             // 
-            this.lblDatosPersonales.AutoSize = true;
-            this.lblDatosPersonales.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblDatosPersonales.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDatosPersonales.Location = new System.Drawing.Point(29, 70);
-            this.lblDatosPersonales.Name = "lblDatosPersonales";
-            this.lblDatosPersonales.Size = new System.Drawing.Size(124, 20);
-            this.lblDatosPersonales.TabIndex = 9;
-            this.lblDatosPersonales.Text = "Datos del evento";
-            this.lblDatosPersonales.Click += new System.EventHandler(this.lblDatosPersonales_Click);
+            this.lblDatosEventos.AutoSize = true;
+            this.lblDatosEventos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblDatosEventos.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDatosEventos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.lblDatosEventos.Location = new System.Drawing.Point(29, 70);
+            this.lblDatosEventos.Name = "lblDatosEventos";
+            this.lblDatosEventos.Size = new System.Drawing.Size(124, 20);
+            this.lblDatosEventos.TabIndex = 9;
+            this.lblDatosEventos.Text = "Datos del evento";
+            this.lblDatosEventos.Click += new System.EventHandler(this.lblDatosPersonales_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.label1.Location = new System.Drawing.Point(28, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(123, 21);
@@ -120,6 +125,7 @@
             this.lblSection.AutoSize = true;
             this.lblSection.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblSection.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSection.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.lblSection.Location = new System.Drawing.Point(332, 70);
             this.lblSection.Name = "lblSection";
             this.lblSection.Size = new System.Drawing.Size(144, 20);
@@ -207,7 +213,7 @@
             // txtMin
             // 
             this.txtMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtMin.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtMin.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtMin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMin.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -236,7 +242,7 @@
             // txtResp
             // 
             this.txtResp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtResp.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtResp.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtResp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtResp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResp.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -265,7 +271,7 @@
             // txtNumber
             // 
             this.txtNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtNumber.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtNumber.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtNumber.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumber.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -375,7 +381,7 @@
             // txtDescription
             // 
             this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtDescription.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtDescription.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtDescription.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescription.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -452,7 +458,7 @@
             // txtPrice
             // 
             this.txtPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPrice.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtPrice.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtPrice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrice.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -481,7 +487,7 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtName.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtName.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -516,7 +522,7 @@
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -560,6 +566,7 @@
             this.lblFunction.AutoSize = true;
             this.lblFunction.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblFunction.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFunction.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.lblFunction.Location = new System.Drawing.Point(515, 70);
             this.lblFunction.Name = "lblFunction";
             this.lblFunction.Size = new System.Drawing.Size(147, 20);
@@ -572,12 +579,18 @@
             this.lblMember.AutoSize = true;
             this.lblMember.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblMember.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMember.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
             this.lblMember.Location = new System.Drawing.Point(696, 70);
             this.lblMember.Name = "lblMember";
             this.lblMember.Size = new System.Drawing.Size(158, 20);
             this.lblMember.TabIndex = 176;
             this.lblMember.Text = "Registro de miembros";
             this.lblMember.Click += new System.EventHandler(this.lblMember_Click);
+            // 
+            // missingDataProvider
+            // 
+            this.missingDataProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.missingDataProvider.ContainerControl = this;
             // 
             // frmEvents
             // 
@@ -591,7 +604,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblSection);
             this.Controls.Add(this.lblPosition);
-            this.Controls.Add(this.lblDatosPersonales);
+            this.Controls.Add(this.lblDatosEventos);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEvents";
@@ -615,6 +628,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.pnlParent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.missingDataProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -623,7 +637,7 @@
         #endregion
 
         private System.Windows.Forms.Label lblPosition;
-        private System.Windows.Forms.Label lblDatosPersonales;
+        private System.Windows.Forms.Label lblDatosEventos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSection;
         private System.Windows.Forms.Panel pnlEventData;
@@ -656,5 +670,6 @@
         private System.Windows.Forms.Panel pnlParent;
         private System.Windows.Forms.Label lblFunction;
         private System.Windows.Forms.Label lblMember;
+        private System.Windows.Forms.ErrorProvider missingDataProvider;
     }
 }

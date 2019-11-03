@@ -117,6 +117,42 @@ namespace RegnalUDB
             MessageBox.Show("Error al carga datos de eventos");
         }
 
+        private void selectLabel(Label label)
+        {
+            lblDatosEventos.ForeColor = System.Drawing.Color.FromArgb(110, 117, 125);
+            lblPosition.ForeColor = System.Drawing.Color.FromArgb(110, 117, 125);
+            lblSection.ForeColor = System.Drawing.Color.FromArgb(110, 117, 125);
+            lblFunction.ForeColor = System.Drawing.Color.FromArgb(110, 117, 125);
+            lblMember.ForeColor = System.Drawing.Color.FromArgb(110, 117, 125);
+
+            label.ForeColor = System.Drawing.Color.FromArgb(127, 41, 181);
+        }
+
+        private void showMissingInfo()
+        {
+            if (selectedEvent != null)
+            {
+                missingDataProvider.Clear();
+
+                if (selectedEvent.EventoCargoes.Count == 0)
+                {
+                    missingDataProvider.SetError(lblPosition, "El evento seleccionado aún no tiene cargos asociados.");
+                }
+                if (selectedEvent.EventoSeccions.Count == 0)
+                {
+                    missingDataProvider.SetError(lblSection, "El evento seleccionado aún no tiene secciones asociadas.");
+                }
+                if (selectedEvent.EventosFunciones.Count == 0)
+                {
+                    missingDataProvider.SetError(lblFunction, "El evento seleccionado aún no tiene funciones asociadas.");
+                }
+                if (selectedEvent.MiembroEventoes.Count == 0)
+                {
+                    missingDataProvider.SetError(lblMember, "El evento seleccionado aún no tiene miembros registrados.");
+                }
+            }
+        }
+
         private void saveData()
         {
             Evento temEvent = new Evento
@@ -213,6 +249,10 @@ namespace RegnalUDB
 
         private void cleanForm()
         {
+
+            errorProvider.Clear();
+            missingDataProvider.Clear();
+
             FormUtils.clearTextbox(textControls());
             btnSaveModify.Text = "Guardar";
             chbStatus.Checked = true;
@@ -220,7 +260,6 @@ namespace RegnalUDB
             dtpEnd.Value = DateTime.Today;
             dtpStart.Value = DateTime.Today;
             selectedEvent = null;
-            errorProvider.Clear();
 
             frmEventPosition.Instance.clean();
             frmEventSection.Instance.clean();
@@ -378,6 +417,8 @@ namespace RegnalUDB
                     frmEventMember.Instance.SelectedEvent = selectedEvent;
                     frmEventMember.Instance.selectGroup();
                     frmEventMember.Instance.loadTable();
+
+                    showMissingInfo();
                 }
             }
             catch (Exception ex)
@@ -393,15 +434,16 @@ namespace RegnalUDB
 
         private void lblDatosPersonales_Click(object sender, EventArgs e)
         {
-            if (this.pnlParent.Controls.Count > 0)
-            {
-                this.pnlParent.Controls.RemoveAt(0);
-            }
-            pnlEventData.Show();
+            selectLabel(lblDatosEventos);
+            showMissingInfo();
+            pnlEventData.BringToFront();
+            label1.Focus();
         }
 
         private void lblPosition_Click(object sender, EventArgs e)
         {
+            selectLabel(lblPosition);
+            showMissingInfo();
             if (!pnlParent.Controls.Contains(frmEventPosition.Instance))
             {
                 pnlParent.Controls.Add(frmEventPosition.Instance);
@@ -416,6 +458,8 @@ namespace RegnalUDB
 
         private void lblSection_Click(object sender, EventArgs e)
         {
+            selectLabel(lblSection);
+            showMissingInfo();
             if (!pnlParent.Controls.Contains(frmEventSection.Instance))
             {
                 pnlParent.Controls.Add(frmEventSection.Instance);
@@ -430,6 +474,8 @@ namespace RegnalUDB
 
         private void lblFunction_Click(object sender, EventArgs e)
         {
+            selectLabel(lblFunction);
+            showMissingInfo();
             if (!pnlParent.Controls.Contains(frmEventFunction.Instance))
             {
                 pnlParent.Controls.Add(frmEventFunction.Instance);
@@ -444,6 +490,8 @@ namespace RegnalUDB
 
         private void lblMember_Click(object sender, EventArgs e)
         {
+            selectLabel(lblMember);
+            showMissingInfo();
             if (!pnlParent.Controls.Contains(frmEventMember.Instance))
             {
                 pnlParent.Controls.Add(frmEventMember.Instance);

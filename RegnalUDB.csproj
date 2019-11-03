@@ -131,10 +131,12 @@
     <Compile Include="Controllers\EventSectionController.cs" />
     <Compile Include="Controllers\FunctionController.cs" />
     <Compile Include="Controllers\GroupController.cs" />
+    <Compile Include="Controllers\InscriptionController.cs" />
     <Compile Include="Controllers\LocalityController.cs" />
     <Compile Include="Controllers\MedicalRecordController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Controllers\MemberEventController.cs" />
+    <Compile Include="Controllers\MemberFunctionController.cs" />
     <Compile Include="Controllers\MemberPositionController.cs" />
     <Compile Include="Controllers\MovementController.cs" />
     <Compile Include="Controllers\MunicipalityContraller.cs" />
@@ -341,6 +343,12 @@
     <Compile Include="frmGroups.Designer.cs">
       <DependentUpon>frmGroups.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInscriptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmInscriptions.Designer.cs">
+      <DependentUpon>frmInscriptions.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLocations.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +360,12 @@
     </Compile>
     <Compile Include="frmMedicalRecord.Designer.cs">
       <DependentUpon>frmMedicalRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMemberFunction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="frmMemberFunction.Designer.cs">
+      <DependentUpon>frmMemberFunction.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMemberPosition.cs">
       <SubType>UserControl</SubType>
@@ -486,11 +500,17 @@
     <EmbeddedResource Include="frmGroups.resx">
       <DependentUpon>frmGroups.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInscriptions.resx">
+      <DependentUpon>frmInscriptions.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLocations.resx">
       <DependentUpon>frmLocations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMedicalRecord.resx">
       <DependentUpon>frmMedicalRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMemberFunction.resx">
+      <DependentUpon>frmMemberFunction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMemberPosition.resx">
       <DependentUpon>frmMemberPosition.cs</DependentUpon>
