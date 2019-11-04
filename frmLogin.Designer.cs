@@ -100,6 +100,7 @@
             this.btnSaveChanges.TabIndex = 174;
             this.btnSaveChanges.Text = "Iniciar Sesión";
             this.btnSaveChanges.UseVisualStyleBackColor = true;
+            this.btnSaveChanges.Click += new System.EventHandler(this.btnSaveChanges_Click);
             // 
             // pcbCloseWindow
             // 

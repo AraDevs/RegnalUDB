@@ -148,6 +148,7 @@ namespace RegnalUDB
 
         private void cleanForm()
         {
+            selectedUser = null;
             txtCUM.Enabled = true;
             FormUtils.clearTextbox(textControls());
             btnSaveModify.Text = "Guardar";
@@ -190,7 +191,7 @@ namespace RegnalUDB
                     }
                     else
                     {
-                        MessageBox.Show("Ingrese una contraseña para el usuario");
+                        MessageBox.Show(member==null?"El miembro con el cum ingresado no se encontro":"Ingrese una clave para el usuario");
                         txtPassword.Focus();
                     }
                     

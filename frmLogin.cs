@@ -31,5 +31,11 @@ namespace RegnalUDB
         {
             Application.Exit();
         }
+
+        private void btnSaveChanges_Click(object sender, EventArgs e)
+        {
+            new frmDashboard().Show();
+            this.Hide();
+        }
     }
 }
