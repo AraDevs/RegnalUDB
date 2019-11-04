@@ -140,6 +140,7 @@ namespace RegnalUDB
 
             FormUtils.clearTextbox(textControls());
             btnSaveModify.Text = "Guardar";
+            selectedDistrict = null;
             chbStatus.Checked = true;
             errorProvider.Clear();
         }
@@ -159,6 +160,7 @@ namespace RegnalUDB
         {
             loadTable();
             loadcmb();
+            chbStatus.Checked = true;
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)

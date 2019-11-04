@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegnalUDB.Entity_Framework;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace RegnalUDB
 {
     public partial class frmDashboard : Form
     {
+        private Usuario currentUser = new Usuario();
         public frmDashboard()
         {
             //Thread thread = new Thread(new ThreadStart(StartForm));
@@ -21,7 +23,138 @@ namespace RegnalUDB
             InitializeComponent();
             //thread.Abort();
         }
-
+        public frmDashboard(Usuario u)
+        {
+            //Thread thread = new Thread(new ThreadStart(StartForm));
+            //thread.Start();
+            //Thread.Sleep(1000);
+            InitializeComponent();
+            //thread.Abort();
+            currentUser = u;
+            MessageBox.Show("Bienvenido " + u.Miembro.nombre);
+            hideMenuItems(u.Perfile.idPerfil);
+        }
+        private void hideMenuItems(int userProfile)
+        {
+            switch (userProfile)
+            {
+                case 1:
+                    //nada jaja asies es el administrador
+                    break;
+                case 2:
+                    btnFormUsers.Hide();
+                    btnFormSchoolarship.Hide();
+                    btnFormMunicipalities.Hide();
+                    btnFormLocations.Hide();
+                    btnFormSections.Hide();
+                    btnFormProvinces.Hide();
+                    btnFormReligions.Hide();
+                    btnFormCivilStatus.Hide();
+                    btnFormBlackList.Hide();
+                    btnFormBitacora.Hide();
+                    btnFormPositions.Hide();
+                    btnFormTypeMovements.Hide();
+                    btnFormTypeUsers.Hide();
+                    btnFormFunctions.Hide();
+                    btnFormDepartments.Hide();
+                    ShowChildForm(new frmMembers());
+                    break;
+                case 3:
+                    btnFormEvents.Hide();
+                    btnFormUsers.Hide();
+                    btnFormSchoolarship.Hide();
+                    btnFormMunicipalities.Hide();
+                    btnFormLocations.Hide();
+                    btnFormSections.Hide();
+                    btnFormProvinces.Hide();
+                    btnFormReligions.Hide();
+                    btnFormCivilStatus.Hide();
+                    btnFormBlackList.Hide();
+                    btnFormBitacora.Hide();
+                    btnFormPositions.Hide();
+                    btnFormTypeMovements.Hide();
+                    btnFormTypeUsers.Hide();
+                    btnFormFunctions.Hide();
+                    btnFormDepartments.Hide();
+                    ShowChildForm(new frmMembers());
+                    break;
+                case 4:
+                    btnFormSchoolarship.Hide();
+                    btnFormMunicipalities.Hide();
+                    btnFormLocations.Hide();
+                    btnFormSections.Hide();
+                    btnFormProvinces.Hide();
+                    btnFormReligions.Hide();
+                    btnFormCivilStatus.Hide();
+                    btnFormBlackList.Hide();
+                    btnFormBitacora.Hide();
+                    btnFormPositions.Hide();
+                    btnFormTypeMovements.Hide();
+                    btnFormTypeUsers.Hide();
+                    btnFormFunctions.Hide();
+                    btnFormDepartments.Hide();
+                    ShowChildForm(new frmMembers());
+                    break;
+                case 5:
+                    btnFormMembers.Hide();
+                    btnFormEvents.Hide();
+                    btnFormUsers.Hide();
+                    btnFormSchoolarship.Hide();
+                    btnFormMunicipalities.Hide();
+                    btnFormLocations.Hide();
+                    btnFormSections.Hide();
+                    btnFormProvinces.Hide();
+                    btnFormReligions.Hide();
+                    btnFormCivilStatus.Hide();
+                    btnFormBlackList.Hide();
+                    btnFormBitacora.Hide();
+                    btnFormPositions.Hide();
+                    btnFormTypeMovements.Hide();
+                    btnFormTypeUsers.Hide();
+                    btnFormFunctions.Hide();
+                    btnFormDepartments.Hide();
+                    ShowChildForm(new frmDistricts());
+                    break;
+                case 6:
+                    btnFormUsers.Hide();
+                    btnFormSchoolarship.Hide();
+                    btnFormMunicipalities.Hide();
+                    btnFormLocations.Hide();
+                    btnFormSections.Hide();
+                    btnFormProvinces.Hide();
+                    btnFormReligions.Hide();
+                    btnFormCivilStatus.Hide();
+                    btnFormBlackList.Hide();
+                    btnFormBitacora.Hide();
+                    btnFormPositions.Hide();
+                    btnFormTypeMovements.Hide();
+                    btnFormTypeUsers.Hide();
+                    btnFormFunctions.Hide();
+                    btnFormSchoolarship.Hide();
+                    btnFormDepartments.Hide();
+                    ShowChildForm(new frmMembers());
+                    break;
+                case 7:
+                    btnFormUsers.Hide();
+                    btnFormSchoolarship.Hide();
+                    btnFormMunicipalities.Hide();
+                    btnFormLocations.Hide();
+                    btnFormSections.Hide();
+                    btnFormProvinces.Hide();
+                    btnFormReligions.Hide();
+                    btnFormCivilStatus.Hide();
+                    btnFormBlackList.Hide();
+                    btnFormBitacora.Hide();
+                    btnFormPositions.Hide();
+                    btnFormTypeMovements.Hide();
+                    btnFormTypeUsers.Hide();
+                    btnFormFunctions.Hide();
+                    btnFormSchoolarship.Hide();
+                    btnFormDepartments.Hide();
+                    ShowChildForm(new frmMembers());
+                    break;
+            }
+        }
         //public void StartForm()
         //{
         //    Application.Run(new frmScreenSplash());
@@ -68,7 +201,7 @@ namespace RegnalUDB
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            ShowChildForm(new frmMembers());
+            
 
             //this.Size = new Size(1400,800);
         }
@@ -162,6 +295,17 @@ namespace RegnalUDB
         private void btnFormTypeUsers_Click(object sender, EventArgs e)
         {
             ShowChildForm(new frmProfiles());
+        }
+
+        private void pnlMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new frmLogin().Show();
+            this.Hide();
         }
     }
 }

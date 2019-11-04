@@ -31,14 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.pnlMenuTop = new System.Windows.Forms.Panel();
-            this.pnlMenu = new Syncfusion.Windows.Forms.Tools.GradientPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlContent = new System.Windows.Forms.Panel();
             this.pcbInfo = new System.Windows.Forms.PictureBox();
             this.pcbRestoreWindow = new System.Windows.Forms.PictureBox();
             this.pcbCloseWindow = new System.Windows.Forms.PictureBox();
             this.pcbMaximizeWindow = new System.Windows.Forms.PictureBox();
             this.pcbMinimizeWindow = new System.Windows.Forms.PictureBox();
+            this.pnlMenu = new Syncfusion.Windows.Forms.Tools.GradientPanel();
             this.btnFormTypeUsers = new System.Windows.Forms.Button();
             this.btnFormBlackList = new System.Windows.Forms.Button();
             this.btnFormCivilStatus = new System.Windows.Forms.Button();
@@ -59,16 +57,18 @@
             this.btnFormSections = new System.Windows.Forms.Button();
             this.btnFormGroups = new System.Windows.Forms.Button();
             this.btnFormMembers = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pcbMenuSidebar = new System.Windows.Forms.PictureBox();
             this.pcbIcono = new System.Windows.Forms.PictureBox();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.pnlMenuTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pnlMenu)).BeginInit();
-            this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbInfo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRestoreWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCloseWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMaximizeWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizeWindow)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlMenu)).BeginInit();
+            this.pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMenuSidebar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbIcono)).BeginInit();
             this.SuspendLayout();
@@ -108,8 +108,73 @@
             this.pnlMenuTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMenuTop.Location = new System.Drawing.Point(294, 0);
             this.pnlMenuTop.Name = "pnlMenuTop";
-            this.pnlMenuTop.Size = new System.Drawing.Size(1106, 80);
+            this.pnlMenuTop.Size = new System.Drawing.Size(1076, 80);
             this.pnlMenuTop.TabIndex = 0;
+            // 
+            // pcbInfo
+            // 
+            this.pcbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbInfo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbInfo.Image = global::RegnalUDB.Properties.Resources.info_40px;
+            this.pcbInfo.Location = new System.Drawing.Point(882, 24);
+            this.pcbInfo.Name = "pcbInfo";
+            this.pcbInfo.Size = new System.Drawing.Size(32, 32);
+            this.pcbInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbInfo.TabIndex = 6;
+            this.pcbInfo.TabStop = false;
+            this.pcbInfo.Click += new System.EventHandler(this.PcbInfo_Click);
+            // 
+            // pcbRestoreWindow
+            // 
+            this.pcbRestoreWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbRestoreWindow.Enabled = false;
+            this.pcbRestoreWindow.Image = global::RegnalUDB.Properties.Resources.restore_window_40px;
+            this.pcbRestoreWindow.Location = new System.Drawing.Point(985, 24);
+            this.pcbRestoreWindow.Name = "pcbRestoreWindow";
+            this.pcbRestoreWindow.Size = new System.Drawing.Size(32, 32);
+            this.pcbRestoreWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbRestoreWindow.TabIndex = 5;
+            this.pcbRestoreWindow.TabStop = false;
+            this.pcbRestoreWindow.Visible = false;
+            this.pcbRestoreWindow.Click += new System.EventHandler(this.PcbRestoreWindow_Click);
+            // 
+            // pcbCloseWindow
+            // 
+            this.pcbCloseWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbCloseWindow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbCloseWindow.Image = global::RegnalUDB.Properties.Resources.close_window_40px;
+            this.pcbCloseWindow.Location = new System.Drawing.Point(1023, 24);
+            this.pcbCloseWindow.Name = "pcbCloseWindow";
+            this.pcbCloseWindow.Size = new System.Drawing.Size(32, 32);
+            this.pcbCloseWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbCloseWindow.TabIndex = 4;
+            this.pcbCloseWindow.TabStop = false;
+            this.pcbCloseWindow.Click += new System.EventHandler(this.PcbCloseWindow_Click);
+            // 
+            // pcbMaximizeWindow
+            // 
+            this.pcbMaximizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbMaximizeWindow.Image = global::RegnalUDB.Properties.Resources.maximize_window_40px;
+            this.pcbMaximizeWindow.Location = new System.Drawing.Point(985, 24);
+            this.pcbMaximizeWindow.Name = "pcbMaximizeWindow";
+            this.pcbMaximizeWindow.Size = new System.Drawing.Size(32, 32);
+            this.pcbMaximizeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbMaximizeWindow.TabIndex = 3;
+            this.pcbMaximizeWindow.TabStop = false;
+            this.pcbMaximizeWindow.Click += new System.EventHandler(this.PcbMaximizeWindow_Click);
+            // 
+            // pcbMinimizeWindow
+            // 
+            this.pcbMinimizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pcbMinimizeWindow.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pcbMinimizeWindow.Image = global::RegnalUDB.Properties.Resources.minimize_window_40px;
+            this.pcbMinimizeWindow.Location = new System.Drawing.Point(947, 24);
+            this.pcbMinimizeWindow.Name = "pcbMinimizeWindow";
+            this.pcbMinimizeWindow.Size = new System.Drawing.Size(32, 32);
+            this.pcbMinimizeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcbMinimizeWindow.TabIndex = 2;
+            this.pcbMinimizeWindow.TabStop = false;
+            this.pcbMinimizeWindow.Click += new System.EventHandler(this.PcbMinimizeWindow_Click);
             // 
             // pnlMenu
             // 
@@ -145,88 +210,9 @@
             this.pnlMenu.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(294, 800);
+            this.pnlMenu.Size = new System.Drawing.Size(294, 749);
             this.pnlMenu.TabIndex = 2;
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(8, 122);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(265, 1);
-            this.panel1.TabIndex = 7;
-            // 
-            // pnlContent
-            // 
-            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(294, 80);
-            this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1106, 720);
-            this.pnlContent.TabIndex = 3;
-            // 
-            // pcbInfo
-            // 
-            this.pcbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcbInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbInfo.Image = global::RegnalUDB.Properties.Resources.info_40px;
-            this.pcbInfo.Location = new System.Drawing.Point(912, 24);
-            this.pcbInfo.Name = "pcbInfo";
-            this.pcbInfo.Size = new System.Drawing.Size(32, 32);
-            this.pcbInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbInfo.TabIndex = 6;
-            this.pcbInfo.TabStop = false;
-            this.pcbInfo.Click += new System.EventHandler(this.PcbInfo_Click);
-            // 
-            // pcbRestoreWindow
-            // 
-            this.pcbRestoreWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcbRestoreWindow.Enabled = false;
-            this.pcbRestoreWindow.Image = global::RegnalUDB.Properties.Resources.restore_window_40px;
-            this.pcbRestoreWindow.Location = new System.Drawing.Point(1015, 24);
-            this.pcbRestoreWindow.Name = "pcbRestoreWindow";
-            this.pcbRestoreWindow.Size = new System.Drawing.Size(32, 32);
-            this.pcbRestoreWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbRestoreWindow.TabIndex = 5;
-            this.pcbRestoreWindow.TabStop = false;
-            this.pcbRestoreWindow.Visible = false;
-            this.pcbRestoreWindow.Click += new System.EventHandler(this.PcbRestoreWindow_Click);
-            // 
-            // pcbCloseWindow
-            // 
-            this.pcbCloseWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcbCloseWindow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbCloseWindow.Image = global::RegnalUDB.Properties.Resources.close_window_40px;
-            this.pcbCloseWindow.Location = new System.Drawing.Point(1053, 24);
-            this.pcbCloseWindow.Name = "pcbCloseWindow";
-            this.pcbCloseWindow.Size = new System.Drawing.Size(32, 32);
-            this.pcbCloseWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbCloseWindow.TabIndex = 4;
-            this.pcbCloseWindow.TabStop = false;
-            this.pcbCloseWindow.Click += new System.EventHandler(this.PcbCloseWindow_Click);
-            // 
-            // pcbMaximizeWindow
-            // 
-            this.pcbMaximizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcbMaximizeWindow.Image = global::RegnalUDB.Properties.Resources.maximize_window_40px;
-            this.pcbMaximizeWindow.Location = new System.Drawing.Point(1015, 24);
-            this.pcbMaximizeWindow.Name = "pcbMaximizeWindow";
-            this.pcbMaximizeWindow.Size = new System.Drawing.Size(32, 32);
-            this.pcbMaximizeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbMaximizeWindow.TabIndex = 3;
-            this.pcbMaximizeWindow.TabStop = false;
-            this.pcbMaximizeWindow.Click += new System.EventHandler(this.PcbMaximizeWindow_Click);
-            // 
-            // pcbMinimizeWindow
-            // 
-            this.pcbMinimizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pcbMinimizeWindow.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pcbMinimizeWindow.Image = global::RegnalUDB.Properties.Resources.minimize_window_40px;
-            this.pcbMinimizeWindow.Location = new System.Drawing.Point(977, 24);
-            this.pcbMinimizeWindow.Name = "pcbMinimizeWindow";
-            this.pcbMinimizeWindow.Size = new System.Drawing.Size(32, 32);
-            this.pcbMinimizeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbMinimizeWindow.TabIndex = 2;
-            this.pcbMinimizeWindow.TabStop = false;
-            this.pcbMinimizeWindow.Click += new System.EventHandler(this.PcbMinimizeWindow_Click);
+            this.pnlMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMenu_Paint);
             // 
             // btnFormTypeUsers
             // 
@@ -351,6 +337,7 @@
             this.button1.Text = "              Cerrar Sesión";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnFormFunctions
             // 
@@ -645,6 +632,13 @@
             this.btnFormMembers.UseVisualStyleBackColor = false;
             this.btnFormMembers.Click += new System.EventHandler(this.btnFormMembers_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(8, 122);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(265, 1);
+            this.panel1.TabIndex = 7;
+            // 
             // pcbMenuSidebar
             // 
             this.pcbMenuSidebar.BackColor = System.Drawing.Color.Transparent;
@@ -667,11 +661,19 @@
             this.pcbIcono.TabIndex = 0;
             this.pcbIcono.TabStop = false;
             // 
+            // pnlContent
+            // 
+            this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlContent.Location = new System.Drawing.Point(294, 80);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Size = new System.Drawing.Size(1076, 669);
+            this.pnlContent.TabIndex = 3;
+            // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1400, 800);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlMenuTop);
             this.Controls.Add(this.pnlMenu);
@@ -682,14 +684,14 @@
             this.Text = "frmDashboard";
             this.Load += new System.EventHandler(this.FrmDashboard_Load);
             this.pnlMenuTop.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pnlMenu)).EndInit();
-            this.pnlMenu.ResumeLayout(false);
-            this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbInfo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbRestoreWindow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCloseWindow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMaximizeWindow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMinimizeWindow)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pnlMenu)).EndInit();
+            this.pnlMenu.ResumeLayout(false);
+            this.pnlMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbMenuSidebar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbIcono)).EndInit();
             this.ResumeLayout(false);

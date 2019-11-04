@@ -110,6 +110,7 @@ namespace RegnalUDB
         private void cleanForm()
         {
             FormUtils.clearTextbox(textControls());
+            selectedProfile = null;
             btnSaveModify.Text = "Guardar";
             chbStatus.Checked = true;
         }
@@ -127,6 +128,7 @@ namespace RegnalUDB
         private void frmProfiles_Load(object sender, EventArgs e)
         {
             loadTable();
+            chbStatus.Checked = true;
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtUser = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -36,10 +37,12 @@
             this.pcbCloseWindow = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.txtUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCloseWindow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUser
@@ -137,6 +140,11 @@
             this.pictureBox1.TabIndex = 176;
             this.pictureBox1.TabStop = false;
             // 
+            // errorProvider
+            // 
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,6 +168,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPassword)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcbCloseWindow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,5 +184,6 @@
         private System.Windows.Forms.Button btnSaveChanges;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }

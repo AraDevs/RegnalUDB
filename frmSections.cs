@@ -23,6 +23,7 @@ namespace RegnalUDB
         public frmSections()
         {
             InitializeComponent();
+            chbStatus.Checked = true;
         }
         private void fillSelectedData(Seccione currentSection)
         {
@@ -213,6 +214,11 @@ namespace RegnalUDB
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
             filterData();
+        }
+
+        private void btnSaveModify_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

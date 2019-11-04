@@ -120,6 +120,7 @@ namespace RegnalUDB
         private void cleanForm()
         {
             FormUtils.clearTextbox(textControls());
+            selectedReligion = null;
             btnSaveModify.Text = "Guardar";
             chbStatus.Checked = true;
         }
@@ -133,6 +134,7 @@ namespace RegnalUDB
         private void frmReligions_Load(object sender, EventArgs e)
         {
             loadTable();
+            chbStatus.Checked = true;
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
