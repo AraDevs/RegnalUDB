@@ -94,9 +94,6 @@
             // 
             // dgvSections
             // 
-            this.dgvSections.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvSections.BackgroundColor = System.Drawing.Color.White;
-            this.dgvSections.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSections.Location = new System.Drawing.Point(13, 74);
             this.dgvSections.Name = "dgvSections";

@@ -227,9 +227,6 @@
             // 
             // dgvBlackList
             // 
-            this.dgvBlackList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvBlackList.BackgroundColor = System.Drawing.Color.White;
-            this.dgvBlackList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBlackList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBlackList.Location = new System.Drawing.Point(15, 68);
             this.dgvBlackList.Name = "dgvBlackList";
