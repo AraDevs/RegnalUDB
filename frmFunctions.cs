@@ -135,7 +135,14 @@ namespace RegnalUDB
 
         private void frmFunctions_Load(object sender, EventArgs e)
         {
-            loadTable();
+            try
+            {
+                loadTable();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
@@ -175,23 +182,41 @@ namespace RegnalUDB
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            try { 
+                cleanForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvFunctions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    selectedFunction = functions[index];
+                    btnSaveModify.Text = "Modificar";
+                    fillSelectedData(selectedFunction);
+                }
+            }
+            catch (Exception ex)
             {
-                selectedFunction = functions[index];
-                btnSaveModify.Text = "Modificar";
-                fillSelectedData(selectedFunction);
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            filterData();
+            try { 
+                filterData();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
     }
 }

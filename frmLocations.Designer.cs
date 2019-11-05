@@ -221,6 +221,7 @@
             this.dgvLocations.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvLocations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLocations.Location = new System.Drawing.Point(16, 68);
+            this.dgvLocations.MultiSelect = false;
             this.dgvLocations.Name = "dgvLocations";
             this.dgvLocations.Size = new System.Drawing.Size(1011, 343);
             this.dgvLocations.TabIndex = 3;

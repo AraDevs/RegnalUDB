@@ -176,6 +176,7 @@
             this.dgvCivilStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvCivilStatus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCivilStatus.Location = new System.Drawing.Point(15, 79);
+            this.dgvCivilStatus.MultiSelect = false;
             this.dgvCivilStatus.Name = "dgvCivilStatus";
             this.dgvCivilStatus.ReadOnly = true;
             this.dgvCivilStatus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

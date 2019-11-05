@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using RegnalUDB.Entity_Framework;
 using RegnalUDB.Controllers;
 using RegnalUDB.Models;
+using RegnalUDB.Utils;
 
 namespace RegnalUDB
 {
@@ -47,61 +48,67 @@ namespace RegnalUDB
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            if (selectedEvent == null)
-            {
-                MessageBox.Show("Por favor seleccione un evento.", "EVENTO NO SELECCIONADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-
-            List<Funcione> originalList = selectedEvent.EventosFunciones.Select(x => x.Funcione).ToList();
-            List<Funcione> newList = new List<Funcione>();
-
-            foreach (Funcione pos in lstFunction.SelectedItems)
-            {
-                newList.Add(pos);
-            }
-
-
-            List<Funcione> toAdd = newList.Except(originalList).ToList();
-            List<Funcione> toDelete = originalList.Except(newList).ToList();
-
-            foreach (Funcione fun in toAdd)
-            {
-                EventosFuncione tempEf = new EventosFuncione
+            try { 
+                if (selectedEvent == null)
                 {
-                    idEvento = selectedEvent.idEvento,
-                    idFuncion = fun.idFuncion
-                };
-
-                Operation<EventosFuncione> operation = efController.addRecord(tempEf);
-
-                if (!operation.State)
-                {
-                    MessageBox.Show("Ocurrió un error inesperado al asociar al evento a la función '" + fun.nombre + "': " + operation.Error,
-                    "ERROR AL INGRESAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Por favor seleccione un evento.", "EVENTO NO SELECCIONADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 }
 
-            }
 
-            foreach (Funcione fun in toDelete)
-            {
-                EventosFuncione tempEf = selectedEvent.EventosFunciones.Where(x => x.Funcione == fun).FirstOrDefault();
+                List<Funcione> originalList = selectedEvent.EventosFunciones.Select(x => x.Funcione).ToList();
+                List<Funcione> newList = new List<Funcione>();
 
-                Operation<EventosFuncione> operation = efController.deleteRecord(tempEf);
-
-                if (!operation.State)
+                foreach (Funcione pos in lstFunction.SelectedItems)
                 {
-                    MessageBox.Show("Ocurrió un error inesperado al desasociar al evento de la función '" + fun.nombre + "': " + operation.Error,
-                    "ERROR AL ELIMINAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    newList.Add(pos);
                 }
+
+
+                List<Funcione> toAdd = newList.Except(originalList).ToList();
+                List<Funcione> toDelete = originalList.Except(newList).ToList();
+
+                foreach (Funcione fun in toAdd)
+                {
+                    EventosFuncione tempEf = new EventosFuncione
+                    {
+                        idEvento = selectedEvent.idEvento,
+                        idFuncion = fun.idFuncion
+                    };
+
+                    Operation<EventosFuncione> operation = efController.addRecord(tempEf);
+
+                    if (!operation.State)
+                    {
+                        MessageBox.Show("Ocurrió un error inesperado al asociar al evento a la función '" + fun.nombre + "': " + operation.Error,
+                        "ERROR AL INGRESAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                }
+
+                foreach (Funcione fun in toDelete)
+                {
+                    EventosFuncione tempEf = selectedEvent.EventosFunciones.Where(x => x.Funcione == fun).FirstOrDefault();
+
+                    Operation<EventosFuncione> operation = efController.deleteRecord(tempEf);
+
+                    if (!operation.State)
+                    {
+                        MessageBox.Show("Ocurrió un error inesperado al desasociar al evento de la función '" + fun.nombre + "': " + operation.Error,
+                        "ERROR AL ELIMINAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+
+                MessageBox.Show("Los cambios fueron aplicados con éxito.",
+                        "FUNCIONES ASOCIADAS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                clean();
             }
-
-
-            MessageBox.Show("Los cambios fueron aplicados con éxito.",
-                    "FUNCIONES ASOCIADAS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            clean();
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
     }
 }

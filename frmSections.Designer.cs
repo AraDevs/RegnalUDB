@@ -99,6 +99,7 @@
             this.dgvSections.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSections.Location = new System.Drawing.Point(13, 74);
+            this.dgvSections.MultiSelect = false;
             this.dgvSections.Name = "dgvSections";
             this.dgvSections.Size = new System.Drawing.Size(1011, 238);
             this.dgvSections.TabIndex = 2;

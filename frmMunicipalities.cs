@@ -172,56 +172,80 @@ namespace RegnalUDB
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
-            bool isValid = errorProvider == null;
-            if (isValid)
-            {
-                if (selectedMunicipality == null)
+            try { 
+                List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorProvider == null;
+                if (isValid)
                 {
-                    saveData();
+                    if (selectedMunicipality == null)
+                    {
+                        saveData();
+                    }
+                    else
+                    {
+                        selectedMunicipality.nombre = txtName.Text;
+                        selectedMunicipality.Departamento = (Departamento)cmbDepartments.SelectedItem;
+                        selectedMunicipality.baja = chbStatus.Checked;
+                        updateData(selectedMunicipality);
+                    }
                 }
                 else
                 {
-                    selectedMunicipality.nombre = txtName.Text;
-                    selectedMunicipality.Departamento = (Departamento)cmbDepartments.SelectedItem;
-                    selectedMunicipality.baja = chbStatus.Checked;
-                    updateData(selectedMunicipality);
+                    this.errorProvider.Clear();
+                    MessageBox.Show("Algunos datos ingresados son inválidos.\n" +
+                        "Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "Error al ingresar datos",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    foreach (ControlErrorProvider controlErrorProvider in errorProvider)
+                    {
+                        this.errorProvider.SetError(controlErrorProvider.ControlName,
+                            controlErrorProvider.ErrorMessage);
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                this.errorProvider.Clear();
-                MessageBox.Show("Algunos datos ingresados son inválidos.\n" +
-                    "Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "Error al ingresar datos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                foreach (ControlErrorProvider controlErrorProvider in errorProvider)
-                {
-                    this.errorProvider.SetError(controlErrorProvider.ControlName,
-                        controlErrorProvider.ErrorMessage);
-                }
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            try { 
+                cleanForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            filterData();
+            try { 
+                filterData();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvMunicipalities_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
-            {
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
                 
-                selectedMunicipality = municipalities[index];
-                cmbDepartments.SelectedItem = 
-                btnSaveModify.Text = "Modificar";
-                fillSelectedData(selectedMunicipality);
+                    selectedMunicipality = municipalities[index];
+                    cmbDepartments.SelectedItem = 
+                    btnSaveModify.Text = "Modificar";
+                    fillSelectedData(selectedMunicipality);
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
             }
         }
     }

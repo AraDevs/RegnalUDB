@@ -517,6 +517,7 @@
             this.dgvEvents.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEvents.Location = new System.Drawing.Point(22, 59);
+            this.dgvEvents.MultiSelect = false;
             this.dgvEvents.Name = "dgvEvents";
             this.dgvEvents.Size = new System.Drawing.Size(991, 242);
             this.dgvEvents.TabIndex = 8;

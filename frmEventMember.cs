@@ -112,173 +112,215 @@ namespace RegnalUDB
 
         private void frmEventMember_Load(object sender, EventArgs e)
         {
-            Operation<Grupos> getGroupsOperation = groupController.getActiveRecords();
-            if (getGroupsOperation.State)
-            {
-                groups = getGroupsOperation.Data;
-                cmbGroup.DataSource = groups;
+            try { 
+                Operation<Grupos> getGroupsOperation = groupController.getActiveRecords();
+                if (getGroupsOperation.State)
+                {
+                    groups = getGroupsOperation.Data;
+                    cmbGroup.DataSource = groups;
+                }
+                else
+                {
+                    MessageBox.Show("Error al cargar la lista de grupos. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar la lista de grupos. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            if (selectedEvent == null)
-            {
-                MessageBox.Show("Por favor seleccione un evento.", "EVENTO NO SELECCIONADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-            if (cmbGroup.SelectedIndex == -1)
-            {
-                MessageBox.Show("Por favor seleccione un grupo.", "GRUPO NO SELECCIONADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-
-            List<Miembro> allMembers = selectedEvent.MiembroEventoes.Select(x => x.Miembro).ToList();
-            List<Miembro> originalList = new List<Miembro>();
-
-            //Members from groups other than the selected one must not be considered in current operation
-            foreach (Miembro mem in allMembers) 
-            {
-                if (mem.Grupos == (Grupos)cmbGroup.SelectedItem)
+            try { 
+                if (selectedEvent == null)
                 {
-                    originalList.Add(mem);
+                    MessageBox.Show("Por favor seleccione un evento.", "EVENTO NO SELECCIONADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 }
-            }
+
+                if (cmbGroup.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Por favor seleccione un grupo.", "GRUPO NO SELECCIONADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                }
+
+
+                List<Miembro> allMembers = selectedEvent.MiembroEventoes.Select(x => x.Miembro).ToList();
+                List<Miembro> originalList = new List<Miembro>();
+
+                //Members from groups other than the selected one must not be considered in current operation
+                foreach (Miembro mem in allMembers) 
+                {
+                    if (mem.Grupos == (Grupos)cmbGroup.SelectedItem)
+                    {
+                        originalList.Add(mem);
+                    }
+                }
             
 
-            List<Miembro> newList = new List<Miembro>();
+                List<Miembro> newList = new List<Miembro>();
 
-            foreach (Miembro mem in lstMember.SelectedItems)
-            {
-                newList.Add(mem);
-            }
-
-            List<Miembro> toAdd = newList.Except(originalList).ToList();
-            List<Miembro> toDelete = originalList.Except(newList).ToList();
-
-            foreach (Miembro mem in toAdd)
-            {
-                MiembroEvento tempMe = new MiembroEvento
+                foreach (Miembro mem in lstMember.SelectedItems)
                 {
-                    idEvento = selectedEvent.idEvento,
-                    idMiembro = mem.idMiembro,
-                    pagoPendiente = true
-                };
-
-                Operation<MiembroEvento> operation = meController.addRecord(tempMe);
-
-                if (!operation.State)
-                {
-                    MessageBox.Show("Ocurrió un error inesperado al registrar a " + mem.ToString() + " al evento: " + operation.Error,
-                    "ERROR AL INGRESAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    newList.Add(mem);
                 }
 
-            }
+                List<Miembro> toAdd = newList.Except(originalList).ToList();
+                List<Miembro> toDelete = originalList.Except(newList).ToList();
 
-            foreach (Miembro mem in toDelete)
-            {
-                MiembroEvento tempMe = selectedEvent.MiembroEventoes.Where(x => x.Miembro == mem).FirstOrDefault();
-
-                Operation<MiembroEvento> operation = meController.deleteRecord(tempMe);
-
-                if (!operation.State)
+                foreach (Miembro mem in toAdd)
                 {
-                    MessageBox.Show("Ocurrió un error inesperado al desasociar a " + mem.ToString() + " del evento: " + operation.Error,
-                    "ERROR AL ELIMINAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MiembroEvento tempMe = new MiembroEvento
+                    {
+                        idEvento = selectedEvent.idEvento,
+                        idMiembro = mem.idMiembro,
+                        pagoPendiente = true
+                    };
+
+                    Operation<MiembroEvento> operation = meController.addRecord(tempMe);
+
+                    if (!operation.State)
+                    {
+                        MessageBox.Show("Ocurrió un error inesperado al registrar a " + mem.ToString() + " al evento: " + operation.Error,
+                        "ERROR AL INGRESAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                 }
+
+                foreach (Miembro mem in toDelete)
+                {
+                    MiembroEvento tempMe = selectedEvent.MiembroEventoes.Where(x => x.Miembro == mem).FirstOrDefault();
+
+                    Operation<MiembroEvento> operation = meController.deleteRecord(tempMe);
+
+                    if (!operation.State)
+                    {
+                        MessageBox.Show("Ocurrió un error inesperado al desasociar a " + mem.ToString() + " del evento: " + operation.Error,
+                        "ERROR AL ELIMINAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+
+                MessageBox.Show("Los miembros fueron registrados con éxito.",
+                        "MIEMBROS REGISTRADOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                clean();
             }
-
-
-            MessageBox.Show("Los miembros fueron registrados con éxito.",
-                    "MIEMBROS REGISTRADOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            clean();
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void cmbGroup_SelectedIndexChanged(object sender, EventArgs e)
         {
-            selectGroup();
+            try { 
+                selectGroup();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            string value = txtSearch.Text;
-            if (!this.Equals(""))
-            {
-                List<MiembroEvento> tempMe = new List<MiembroEvento>();
-                foreach (MiembroEvento me in memberEvents)
+            try { 
+                string value = txtSearch.Text;
+                if (!this.Equals(""))
                 {
-                    if (me.Miembro.ToString().ToLower().Contains(value))
+                    List<MiembroEvento> tempMe = new List<MiembroEvento>();
+                    foreach (MiembroEvento me in memberEvents)
                     {
-                        tempMe.Add(me);
+                        if (me.Miembro.ToString().ToLower().Contains(value))
+                        {
+                            tempMe.Add(me);
+                        }
                     }
+                    dgvMembers.DataSource = tempMe;
                 }
-                dgvMembers.DataSource = tempMe;
+                else
+                {
+                    loadTable();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                loadTable();
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    selectedMember = memberEvents[index];
+                    lblMember.Text = selectedMember.Miembro.ToString();
+                    chbPayment.Checked = selectedMember.pagoPendiente;
+                }
+            }
+            catch (Exception ex)
             {
-                selectedMember = memberEvents[index];
-                lblMember.Text = selectedMember.Miembro.ToString();
-                chbPayment.Checked = selectedMember.pagoPendiente;
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnModify_Click(object sender, EventArgs e)
         {
-            if (selectedMember == null)
-            {
-                MessageBox.Show("Por favor, seleccione un registro a modificar", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            try { 
+                if (selectedMember == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un registro a modificar", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            selectedMember.pagoPendiente = chbPayment.Checked;
+                selectedMember.pagoPendiente = chbPayment.Checked;
 
-            Operation<MiembroEvento> operation = meController.updateRecord(selectedMember);
-            if (operation.State)
-            {
-                MessageBox.Show("Registro actualizado con éxito", "OPERACIÓN EXITOSA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                loadTable();
-                clean();
+                Operation<MiembroEvento> operation = meController.updateRecord(selectedMember);
+                if (operation.State)
+                {
+                    MessageBox.Show("Registro actualizado con éxito", "OPERACIÓN EXITOSA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadTable();
+                    clean();
+                }
+                else
+                {
+                    MessageBox.Show(operation.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(operation.Error);
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (selectedMember == null)
-            {
-                MessageBox.Show("Por favor, seleccione un registro a eliminar", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
+            try { 
+                if (selectedMember == null)
+                {
+                    MessageBox.Show("Por favor, seleccione un registro a eliminar", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-            Operation<MiembroEvento> operation = meController.deleteRecord(selectedMember);
-            if (operation.State)
-            {
-                MessageBox.Show("Registro eliminado con éxito", "OPERACIÓN EXITOSA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                loadTable();
-                clean();
+                Operation<MiembroEvento> operation = meController.deleteRecord(selectedMember);
+                if (operation.State)
+                {
+                    MessageBox.Show("Registro eliminado con éxito", "OPERACIÓN EXITOSA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    loadTable();
+                    clean();
+                }
+                else
+                {
+                    MessageBox.Show(operation.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show(operation.Error);
+                FormUtils.defaultErrorMessage(ex);
             }
         }
     }

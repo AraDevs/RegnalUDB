@@ -207,6 +207,7 @@
             this.dgvDistricts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDistricts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDistricts.Location = new System.Drawing.Point(16, 79);
+            this.dgvDistricts.MultiSelect = false;
             this.dgvDistricts.Name = "dgvDistricts";
             this.dgvDistricts.Size = new System.Drawing.Size(1011, 335);
             this.dgvDistricts.TabIndex = 3;

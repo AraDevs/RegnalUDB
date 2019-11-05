@@ -176,6 +176,7 @@
             this.dgvFunctions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFunctions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFunctions.Location = new System.Drawing.Point(16, 69);
+            this.dgvFunctions.MultiSelect = false;
             this.dgvFunctions.Name = "dgvFunctions";
             this.dgvFunctions.Size = new System.Drawing.Size(1011, 352);
             this.dgvFunctions.TabIndex = 3;

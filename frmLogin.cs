@@ -31,7 +31,8 @@ namespace RegnalUDB
 
         public void StartForm()
         {
-            Application.Run(new frmScreenSplash());
+                Application.Run(new frmScreenSplash());
+            
         }
 
 
@@ -52,34 +53,40 @@ namespace RegnalUDB
         }
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
-            bool isValid = errorProvider == null;
-            if (isValid)
+            try
             {
-                Usuario currentUser = (Usuario)userController.login(txtUser.Text, txtPassword.Text).Value;
-                //MessageBox.Show(userController.login(txtUser.Text, txtPassword.Text).Error);
-                if(currentUser != null)
+                List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorProvider == null;
+                if (isValid)
                 {
-                    new frmDashboard(currentUser).Show();
-                    this.Hide();
+                    Usuario currentUser = (Usuario)userController.login(txtUser.Text, txtPassword.Text).Value;
+                    //MessageBox.Show(userController.login(txtUser.Text, txtPassword.Text).Error);
+                    if (currentUser != null)
+                    {
+                        new frmDashboard(currentUser).Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Credenciales incorrectas");
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Credenciales incorrectas");
-                }
-                
-            }
-            else
-            {
-                this.errorProvider.Clear();
-                MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.errorProvider.Clear();
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                foreach (ControlErrorProvider error in errorProvider)
-                {
-                    this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
+                    foreach (ControlErrorProvider error in errorProvider)
+                    {
+                        this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
+                    }
                 }
             }
-            
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
     }
 }

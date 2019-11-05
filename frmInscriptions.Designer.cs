@@ -184,6 +184,7 @@
             this.dgvInscriptions.BackgroundColor = System.Drawing.Color.White;
             this.dgvInscriptions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInscriptions.Location = new System.Drawing.Point(68, 296);
+            this.dgvInscriptions.MultiSelect = false;
             this.dgvInscriptions.Name = "dgvInscriptions";
             this.dgvInscriptions.ReadOnly = true;
             this.dgvInscriptions.Size = new System.Drawing.Size(791, 174);

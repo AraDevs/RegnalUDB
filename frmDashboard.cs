@@ -351,5 +351,10 @@ namespace RegnalUDB
             new frmLogin().Show();
             this.Hide();
         }
+
+        private void btnFormFunctions_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmFunctions());
+        }
     }
 }

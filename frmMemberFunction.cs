@@ -136,21 +136,33 @@ namespace RegnalUDB
 
         private void frmMemberFunction_Load(object sender, EventArgs e)
         {
-            Operation<Funcione> getFunctionsOperation = functionController.getActiveRecords();
-            if (getFunctionsOperation.State)
-            {
-                functions = getFunctionsOperation.Data;
-                cmbFunction.DataSource = functions;
+            try { 
+                Operation<Funcione> getFunctionsOperation = functionController.getActiveRecords();
+                if (getFunctionsOperation.State)
+                {
+                    functions = getFunctionsOperation.Data;
+                    cmbFunction.DataSource = functions;
+                }
+                else
+                {
+                    MessageBox.Show("Error al cargar la lista de funciones. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Error al cargar la lista de funciones. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            try { 
+                cleanForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
@@ -212,16 +224,22 @@ namespace RegnalUDB
 
         private void dgvFunctions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    selectedMf = memberFunctions[index];
+
+                    cmbFunction.SelectedItem = selectedMf.Funcione;
+                    dtpStart.Value = selectedMf.fechaInicio;
+                    dtpFinish.Value = (DateTime)selectedMf.fechaFin;
+
+                    btnSaveModify.Text = "Modificar";
+                }
+            }
+            catch (Exception ex)
             {
-                selectedMf = memberFunctions[index];
-
-                cmbFunction.SelectedItem = selectedMf.Funcione;
-                dtpStart.Value = selectedMf.fechaInicio;
-                dtpFinish.Value = (DateTime)selectedMf.fechaFin;
-
-                btnSaveModify.Text = "Modificar";
+                FormUtils.defaultErrorMessage(ex);
             }
         }
     }

@@ -133,60 +133,90 @@ namespace RegnalUDB
 
         private void frmReligions_Load(object sender, EventArgs e)
         {
-            loadTable();
-            chbStatus.Checked = true;
+            try { 
+                loadTable();
+                chbStatus.Checked = true;
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
-            bool isValid = errorProvider == null;
-            if (isValid)
-            {
-                if (selectedReligion == null)
+            try { 
+                List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorProvider == null;
+                if (isValid)
                 {
-                    saveData();
+                    if (selectedReligion == null)
+                    {
+                        saveData();
+                    }
+                    else
+                    {
+                        selectedReligion.nombre = txtName.Text;
+                        selectedReligion.baja = chbStatus.Checked;
+                        updateData(selectedReligion);
+                    }
                 }
                 else
                 {
-                    selectedReligion.nombre = txtName.Text;
-                    selectedReligion.baja = chbStatus.Checked;
-                    updateData(selectedReligion);
-                }
-            }
-            else
-            {
-                this.errorProvider.Clear();
-                MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.errorProvider.Clear();
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                
-               foreach (ControlErrorProvider error in errorProvider)
-               {
-                   this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
-               }
+                   foreach (ControlErrorProvider error in errorProvider)
+                   {
+                       this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
+                   }
                 
 
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            try { 
+                cleanForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvReligions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    selectedReligion = religions[index];
+                    btnSaveModify.Text = "Modificar";
+                    fillSelectedData(selectedReligion);
+                }
+            }
+            catch (Exception ex)
             {
-                selectedReligion = religions[index];
-                btnSaveModify.Text = "Modificar";
-                fillSelectedData(selectedReligion);
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            filterData();
+            try { 
+                filterData();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
     }
 }

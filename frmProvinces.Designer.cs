@@ -208,6 +208,7 @@
             this.dgvProvinces.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProvinces.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProvinces.Location = new System.Drawing.Point(16, 79);
+            this.dgvProvinces.MultiSelect = false;
             this.dgvProvinces.Name = "dgvProvinces";
             this.dgvProvinces.Size = new System.Drawing.Size(1011, 344);
             this.dgvProvinces.TabIndex = 3;

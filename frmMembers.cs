@@ -805,30 +805,41 @@ namespace RegnalUDB
 
         private void Label5_Click(object sender, EventArgs e)
         {
+            try { 
+                selectLabel(lblPosition);
+                showMissingInfo();
 
-            selectLabel(lblPosition);
-            showMissingInfo();
+                if (!pnlFormMembers.Controls.Contains(frmMemberPosition.Instance))
+                {
+                    pnlFormMembers.Controls.Add(frmMemberPosition.Instance);
+                    frmMemberPosition.Instance.Dock = DockStyle.Fill;
+                    frmMemberPosition.Instance.BringToFront();
+                }
+                else
+                {
+                    frmMemberPosition.Instance.BringToFront();
+                }
 
-            if (!pnlFormMembers.Controls.Contains(frmMemberPosition.Instance))
-            {
-                pnlFormMembers.Controls.Add(frmMemberPosition.Instance);
-                frmMemberPosition.Instance.Dock = DockStyle.Fill;
-                frmMemberPosition.Instance.BringToFront();
+                label1.Focus();
             }
-            else
+            catch (Exception ex)
             {
-                frmMemberPosition.Instance.BringToFront();
+                FormUtils.defaultErrorMessage(ex);
             }
-
-            label1.Focus();
         }
 
         private void Label4_Click(object sender, EventArgs e)
         {
-            selectLabel(lblDatosPersonales);
-            showMissingInfo();
-            tabControlMember.BringToFront();
-            label1.Focus();
+            try { 
+                selectLabel(lblDatosPersonales);
+                showMissingInfo();
+                tabControlMember.BringToFront();
+                label1.Focus();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void Label4_MouseUp(object sender, MouseEventArgs e)
@@ -926,7 +937,13 @@ namespace RegnalUDB
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            try { 
+                cleanForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvMembers_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -957,7 +974,13 @@ namespace RegnalUDB
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            filterData();
+            try { 
+                filterData();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void chbDuplicity_CheckStateChanged(object sender, EventArgs e)
@@ -1037,63 +1060,78 @@ namespace RegnalUDB
         
         private void lblFolder_Click(object sender, EventArgs e)
         {
+            try { 
+                selectLabel(lblFolder);
+                showMissingInfo();
 
-            selectLabel(lblFolder);
-            showMissingInfo();
+                if (!pnlFormMembers.Controls.Contains(frmMedicalRecord.Instance))
+                {
+                    pnlFormMembers.Controls.Add(frmMedicalRecord.Instance);
+                    frmMedicalRecord.Instance.Dock = DockStyle.Fill;
+                    frmMedicalRecord.Instance.BringToFront();
+                }
+                else
+                {
+                    frmMedicalRecord.Instance.BringToFront();
+                }
 
-            if (!pnlFormMembers.Controls.Contains(frmMedicalRecord.Instance))
-            {
-                pnlFormMembers.Controls.Add(frmMedicalRecord.Instance);
-                frmMedicalRecord.Instance.Dock = DockStyle.Fill;
-                frmMedicalRecord.Instance.BringToFront();
+                label1.Focus();
             }
-            else
+            catch (Exception ex)
             {
-                frmMedicalRecord.Instance.BringToFront();
+                FormUtils.defaultErrorMessage(ex);
             }
 
-            label1.Focus();
-            
         }
 
         private void lblInscripciones_Click(object sender, EventArgs e)
         {
+            try { 
+                selectLabel(lblInscripciones);
+                showMissingInfo();
 
-            selectLabel(lblInscripciones);
-            showMissingInfo();
+                if (!pnlFormMembers.Controls.Contains(frmInscriptions.Instance))
+                {
+                    pnlFormMembers.Controls.Add(frmInscriptions.Instance);
+                    frmInscriptions.Instance.Dock = DockStyle.Fill;
+                    frmInscriptions.Instance.BringToFront();
+                }
+                else
+                {
+                    frmInscriptions.Instance.BringToFront();
+                }
 
-            if (!pnlFormMembers.Controls.Contains(frmInscriptions.Instance))
-            {
-                pnlFormMembers.Controls.Add(frmInscriptions.Instance);
-                frmInscriptions.Instance.Dock = DockStyle.Fill;
-                frmInscriptions.Instance.BringToFront();
+                label1.Focus();
             }
-            else
+            catch (Exception ex)
             {
-                frmInscriptions.Instance.BringToFront();
+                FormUtils.defaultErrorMessage(ex);
             }
-
-            label1.Focus();
         }
 
         private void lblFunctions_Click(object sender, EventArgs e)
         {
+            try { 
+                selectLabel(lblFunctions);
+                showMissingInfo();
 
-            selectLabel(lblFunctions);
-            showMissingInfo();
+                if (!pnlFormMembers.Controls.Contains(frmMemberFunction.Instance))
+                {
+                    pnlFormMembers.Controls.Add(frmMemberFunction.Instance);
+                    frmMemberFunction.Instance.Dock = DockStyle.Fill;
+                    frmMemberFunction.Instance.BringToFront();
+                }
+                else
+                {
+                    frmMemberFunction.Instance.BringToFront();
+                }
 
-            if (!pnlFormMembers.Controls.Contains(frmMemberFunction.Instance))
-            {
-                pnlFormMembers.Controls.Add(frmMemberFunction.Instance);
-                frmMemberFunction.Instance.Dock = DockStyle.Fill;
-                frmMemberFunction.Instance.BringToFront();
+                label1.Focus();
             }
-            else
+            catch (Exception ex)
             {
-                frmMemberFunction.Instance.BringToFront();
+                FormUtils.defaultErrorMessage(ex);
             }
-
-            label1.Focus();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

@@ -174,6 +174,7 @@
             this.dgvReligions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReligions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReligions.Location = new System.Drawing.Point(16, 72);
+            this.dgvReligions.MultiSelect = false;
             this.dgvReligions.Name = "dgvReligions";
             this.dgvReligions.ReadOnly = true;
             this.dgvReligions.Size = new System.Drawing.Size(1011, 378);

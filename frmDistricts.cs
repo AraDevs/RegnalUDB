@@ -185,64 +185,94 @@ namespace RegnalUDB
 
         private void frmDistricts_Load(object sender, EventArgs e)
         {
-            setReadOnly();
-            loadTable();
-            loadcmb();
-            chbStatus.Checked = true;
+            try { 
+                setReadOnly();
+                loadTable();
+                loadcmb();
+                chbStatus.Checked = true;
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
-            bool isValid = errorProvider == null;
-            if (isValid)
-            {
-                if (selectedDistrict == null)
+            try { 
+                List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorProvider == null;
+                if (isValid)
                 {
-                    saveData();
+                    if (selectedDistrict == null)
+                    {
+                        saveData();
+                    }
+                    else
+                    {
+                        Provincia p = cmbProvincess.SelectedItem as Provincia;
+                        selectedDistrict.nombre = txtName.Text;
+                        selectedDistrict.idProvincia = ((Provincia)cmbProvincess.SelectedItem).idProvincia;
+                        selectedDistrict.baja = chbStatus.Checked;
+                        updateData(selectedDistrict);
+                    }
                 }
                 else
                 {
-                    Provincia p = cmbProvincess.SelectedItem as Provincia;
-                    selectedDistrict.nombre = txtName.Text;
-                    selectedDistrict.idProvincia = ((Provincia)cmbProvincess.SelectedItem).idProvincia;
-                    selectedDistrict.baja = chbStatus.Checked;
-                    updateData(selectedDistrict);
+                    this.errorProvider.Clear();
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    foreach (ControlErrorProvider error in errorProvider)
+                    {
+                        this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
+                    }
+
+
                 }
             }
-            else
+            catch (Exception ex)
             {
-                this.errorProvider.Clear();
-                MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                foreach (ControlErrorProvider error in errorProvider)
-                {
-                    this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
-                }
-
-
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            try { 
+                cleanForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            filterData();
+            try { 
+                filterData();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvDistricts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
-            {
-                selectedDistrict = districts[index];
-                btnSaveModify.Text = "Modificar";
-                fillSelectedData(selectedDistrict);
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    selectedDistrict = districts[index];
+                    btnSaveModify.Text = "Modificar";
+                    fillSelectedData(selectedDistrict);
 
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
             }
         }
     }

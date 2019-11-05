@@ -33,155 +33,200 @@ namespace RegnalUDB
         public frmBlackList()
         {
             InitializeComponent();
-            chbStatus.Checked = true;
-
-            loadTable(getBans());
-
-            getUnbannedMembers();
-            loadDataCmb(members);
-
-            // setup filters
-            cmbMembers.DropDownListView.View.Filter = filterMembers;
-            cmbMembers.DropDownListView.View.RefreshFilter();
-            cmbMembers.TextBox.KeyUp += txtCmbMembers_KeyUp;
-
-            cmbResponsable.DropDownListView.View.Filter = filterResponsables;
-            cmbResponsable.DropDownListView.View.RefreshFilter();
-            cmbResponsable.TextBox.KeyUp += txtCmbResponsable_KeyUp;
-
         }
 
         private void frmBlackList_Load(object sender, EventArgs e)
         {
+            try { 
+                chbStatus.Checked = true;
 
+                loadTable(getBans());
+
+                getUnbannedMembers();
+                loadDataCmb(members);
+
+                // setup filters
+                cmbMembers.DropDownListView.View.Filter = filterMembers;
+                cmbMembers.DropDownListView.View.RefreshFilter();
+                cmbMembers.TextBox.KeyUp += txtCmbMembers_KeyUp;
+
+                cmbResponsable.DropDownListView.View.Filter = filterResponsables;
+                cmbResponsable.DropDownListView.View.RefreshFilter();
+                cmbResponsable.TextBox.KeyUp += txtCmbResponsable_KeyUp;
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
-     
+      
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-           
-            clearForm();
+            try { 
+                clearForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            this.errorProvider.Clear();
-            List<ControlErrorProvider> errorsProvider = FormValidators.validFormTest(getValidators());
-            bool isValid = errorsProvider == null;
-            if (isValid)
-            {
-                int member = int.Parse(cmbMembers.SelectedValue.ToString());
-                int responsable = int.Parse(cmbResponsable.SelectedValue.ToString());
-                bool saveValue = true;
-                bool isNew = selectedBan == null;
-
-                if (!isNew)
+            try { 
+                this.errorProvider.Clear();
+                List<ControlErrorProvider> errorsProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorsProvider == null;
+                if (isValid)
                 {
-                    Operation<ListaNegra> existingRecordOperation = blackListController.getBansByResponsableAndMember(responsable, member);
-                    saveValue = existingRecordOperation.Data.Count == 0
-                        || selectedBan.idMiembro == member && selectedBan.responsable == responsable;
+                    int member = int.Parse(cmbMembers.SelectedValue.ToString());
+                    int responsable = int.Parse(cmbResponsable.SelectedValue.ToString());
+                    bool saveValue = true;
+                    bool isNew = selectedBan == null;
 
-                    if (!saveValue)
+                    if (!isNew)
                     {
-                        MessageBox.Show("Ya existe un registro activo con los datos que estan ingresando.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        Operation<ListaNegra> existingRecordOperation = blackListController.getBansByResponsableAndMember(responsable, member);
+                        saveValue = existingRecordOperation.Data.Count == 0
+                            || selectedBan.idMiembro == member && selectedBan.responsable == responsable;
+
+                        if (!saveValue)
+                        {
+                            MessageBox.Show("Ya existe un registro activo con los datos que estan ingresando.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                    }
+
+                    if (member == responsable)
+                    {
+                        MessageBox.Show("El responsable debe ser diferente del miembro.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
-                }
 
-                if (member == responsable)
+                    ListaNegra ban = new ListaNegra()
+                    {
+                        idListaNegra = isNew ? 0 : selectedBan.idListaNegra,
+                        responsable = responsable,
+                        idMiembro = member ,
+                        motivo = txtDescription.Text,
+                        baja = isNew ? true : chbStatus.Checked
+                    };
+
+                    Operation<ListaNegra> operation = isNew ? blackListController.addRecord(ban) :
+                            blackListController.updateRecord(ban);
+                    if (operation.State)
+                    {
+
+                        loadTable(getBans());
+                        getUnbannedMembers();
+                        loadDataCmb(members);
+                        clearForm();
+                        MessageBox.Show(isNew ? "Miembro agregado a lista negra" : "Registro modificado");
+                        return;
+                    }
+
+                }else
                 {
-                    MessageBox.Show("El responsable debe ser diferente del miembro.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    foreach (ControlErrorProvider errorProvider in errorsProvider)
+                        this.errorProvider.SetError(errorProvider.ControlName, errorProvider.ErrorMessage);
                 }
-
-                ListaNegra ban = new ListaNegra()
-                {
-                    idListaNegra = isNew ? 0 : selectedBan.idListaNegra,
-                    responsable = responsable,
-                    idMiembro = member ,
-                    motivo = txtDescription.Text,
-                    baja = isNew ? true : chbStatus.Checked
-                };
-
-                Operation<ListaNegra> operation = isNew ? blackListController.addRecord(ban) :
-                        blackListController.updateRecord(ban);
-                if (operation.State)
-                {
-
-                    loadTable(getBans());
-                    getUnbannedMembers();
-                    loadDataCmb(members);
-                    clearForm();
-                    MessageBox.Show(isNew ? "Miembro agregado a lista negra" : "Registro modificado");
-                    return;
-                }
-
-            }else
-            {
-                MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                foreach (ControlErrorProvider errorProvider in errorsProvider)
-                    this.errorProvider.SetError(errorProvider.ControlName, errorProvider.ErrorMessage);
             }
-
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvBlackList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    List<ListaNegra> list = filterBans.Count == 0 ? bans : filterBans;
+                    selectedBan = list[index];
+
+                    setTemporarilyAllMembers();
+
+                    cmbMembers.SelectedValue = selectedBan.Miembro.idMiembro;
+                    cmbResponsable.SelectedValue = selectedBan.Miembro1.idMiembro;
+                    chbStatus.Checked = selectedBan.baja;
+                    txtDescription.Text = selectedBan.motivo;
+                    btnSaveModify.Text = "Modificar";
+                }
+            }
+            catch (Exception ex)
             {
-                List<ListaNegra> list = filterBans.Count == 0 ? bans : filterBans;
-                selectedBan = list[index];
-
-                setTemporarilyAllMembers();
-
-                cmbMembers.SelectedValue = selectedBan.Miembro.idMiembro;
-                cmbResponsable.SelectedValue = selectedBan.Miembro1.idMiembro;
-                chbStatus.Checked = selectedBan.baja;
-                txtDescription.Text = selectedBan.motivo;
-                btnSaveModify.Text = "Modificar";
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            String value = txtSearch.Text.Trim().ToUpper();
-            if (value.Trim().Length > 0)
-            {
-                filterBans = FormUtils.filterData<ListaNegra>(bans, (g) =>
-                   g.Miembro.cum.ToUpper().Contains(value) || g.Miembro1.cum.ToString().Contains(value) ||
-                   g.Miembro.ToString().ToUpper().Contains(value) || g.Miembro1.ToString().ToUpper().Contains(value) 
-                );
-                loadTable(filterBans);
-                return;
+            try { 
+                String value = txtSearch.Text.Trim().ToUpper();
+                if (value.Trim().Length > 0)
+                {
+                    filterBans = FormUtils.filterData<ListaNegra>(bans, (g) =>
+                       g.Miembro.cum.ToUpper().Contains(value) || g.Miembro1.cum.ToString().Contains(value) ||
+                       g.Miembro.ToString().ToUpper().Contains(value) || g.Miembro1.ToString().ToUpper().Contains(value) 
+                    );
+                    loadTable(filterBans);
+                    return;
+                }
+                filterBans = new List<ListaNegra>();
+                loadTable(bans);
+
             }
-            filterBans = new List<ListaNegra>();
-            loadTable(bans);
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void txtCmbMembers_KeyUp(object sender, KeyEventArgs e)
         {
-            cmbMembers.DropDownListView.View.Refresh();
+            try { 
+                cmbMembers.DropDownListView.View.Refresh();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void txtCmbResponsable_KeyUp(object sender, KeyEventArgs e)
         {
-            cmbResponsable.DropDownListView.View.Refresh();
+            try { 
+                cmbResponsable.DropDownListView.View.Refresh();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void clearForm()
         {
-            FormUtils.clearTextbox(new Control[] { txtDescription, txtSearch });
-            cmbMembers.SelectedIndex = -1;
-            cmbResponsable.SelectedIndex = -1;
-            chbStatus.Checked = true;
-            btnSaveModify.Text = "Guardar";
-            selectedBan = null;
-            filterBans = new List<ListaNegra>();
-            loadTable(bans);
-            getUnbannedMembers();
-            loadDataCmb(members);
+            try { 
+                FormUtils.clearTextbox(new Control[] { txtDescription, txtSearch });
+                cmbMembers.SelectedIndex = -1;
+                cmbResponsable.SelectedIndex = -1;
+                chbStatus.Checked = true;
+                btnSaveModify.Text = "Guardar";
+                selectedBan = null;
+                filterBans = new List<ListaNegra>();
+                loadTable(bans);
+                getUnbannedMembers();
+                loadDataCmb(members);
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private bool filterMembers(object data)

@@ -29,80 +29,112 @@ namespace RegnalUDB
         public frmCivilStatus()
         {
             InitializeComponent();
-            chbStatus.Checked = true;
-            loadTable(getCivilStatus());
+            
         }
 
         private void frmCivilStatus_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                chbStatus.Checked = true;
+                loadTable(getCivilStatus());
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            String value = txtSearch.Text.Trim().ToUpper();
-            if (value.Trim().Length > 0)
-            {
-                filterCivilStatus = FormUtils.filterData<EstadoCivil>(civilStatus, (g) =>
-                  g.ToString().ToUpper().Contains(value)
-                );
-                loadTable(filterCivilStatus);
-                return;
+            try { 
+                String value = txtSearch.Text.Trim().ToUpper();
+                if (value.Trim().Length > 0)
+                {
+                    filterCivilStatus = FormUtils.filterData<EstadoCivil>(civilStatus, (g) =>
+                      g.ToString().ToUpper().Contains(value)
+                    );
+                    loadTable(filterCivilStatus);
+                    return;
+                }
+                filterCivilStatus = new List<EstadoCivil>();
+                loadTable(civilStatus);
             }
-            filterCivilStatus = new List<EstadoCivil>();
-            loadTable(civilStatus);
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvCivilStatus_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
-            {
-                List<EstadoCivil> list = filterCivilStatus.Count == 0 ? civilStatus : filterCivilStatus;
-                selectedCivilStatus = list[index];
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    List<EstadoCivil> list = filterCivilStatus.Count == 0 ? civilStatus : filterCivilStatus;
+                    selectedCivilStatus = list[index];
 
-                chbStatus.Checked = selectedCivilStatus.baja;
-                txtCivilStatus.Text = selectedCivilStatus.estadoCivil1;
-                btnSaveModify.Text = "Modificar";
+                    chbStatus.Checked = selectedCivilStatus.baja;
+                    txtCivilStatus.Text = selectedCivilStatus.estadoCivil1;
+                    btnSaveModify.Text = "Modificar";
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            clearForm();
+            try { 
+                clearForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            this.errorProvider.Clear();
-            List<ControlErrorProvider> errorsProvider = FormValidators.validFormTest(getValidators());
-            bool isValid = errorsProvider == null;
-            if (isValid)
-            {
-                bool isNew = selectedCivilStatus == null;
-                EstadoCivil civilStatus = new EstadoCivil()
+            try { 
+                this.errorProvider.Clear();
+                List<ControlErrorProvider> errorsProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorsProvider == null;
+                if (isValid)
                 {
-                    idEstadoCivil = isNew ? 0 : selectedCivilStatus.idEstadoCivil,
-                    estadoCivil1 = txtCivilStatus.Text,
-                    baja = isNew ? true : chbStatus.Checked
-                };
+                    bool isNew = selectedCivilStatus == null;
+                    EstadoCivil civilStatus = new EstadoCivil()
+                    {
+                        idEstadoCivil = isNew ? 0 : selectedCivilStatus.idEstadoCivil,
+                        estadoCivil1 = txtCivilStatus.Text,
+                        baja = isNew ? true : chbStatus.Checked
+                    };
 
-                Operation<EstadoCivil> operation = isNew ? civilStatusController.addRecord(civilStatus) :
-                        civilStatusController.updateRecord(civilStatus);
-                if (operation.State)
-                {
-                    loadTable(getCivilStatus());
-                    clearForm();
-                    return;
+                    Operation<EstadoCivil> operation = isNew ? civilStatusController.addRecord(civilStatus) :
+                            civilStatusController.updateRecord(civilStatus);
+                    if (operation.State)
+                    {
+                        loadTable(getCivilStatus());
+                        MessageBox.Show("Operación exitosa");
+                        clearForm();
+                        return;
+                    }
+
                 }
+                else
+                {
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                    foreach (ControlErrorProvider errorProvider in errorsProvider)
+                        this.errorProvider.SetError(errorProvider.ControlName, errorProvider.ErrorMessage);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                foreach (ControlErrorProvider errorProvider in errorsProvider)
-                    this.errorProvider.SetError(errorProvider.ControlName, errorProvider.ErrorMessage);
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 

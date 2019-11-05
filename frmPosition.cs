@@ -149,7 +149,13 @@ namespace RegnalUDB
 
         private void frmPosition_Load(object sender, EventArgs e)
         {
-            loadTable();
+            try { 
+                loadTable();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
@@ -196,18 +202,30 @@ namespace RegnalUDB
 
         private void dgvPositions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    selectedPosition = positions[index];
+                    btnSaveModify.Text = "Modificar";
+                    fillSelectedData(selectedPosition);
+                }
+            }
+            catch (Exception ex)
             {
-                selectedPosition = positions[index];
-                btnSaveModify.Text = "Modificar";
-                fillSelectedData(selectedPosition);
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            filterData();
+            try { 
+                filterData();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
     }
 }

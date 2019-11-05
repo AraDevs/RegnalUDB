@@ -220,6 +220,7 @@
             this.dgvFunctions.BackgroundColor = System.Drawing.Color.White;
             this.dgvFunctions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFunctions.Location = new System.Drawing.Point(79, 299);
+            this.dgvFunctions.MultiSelect = false;
             this.dgvFunctions.Name = "dgvFunctions";
             this.dgvFunctions.ReadOnly = true;
             this.dgvFunctions.Size = new System.Drawing.Size(791, 174);

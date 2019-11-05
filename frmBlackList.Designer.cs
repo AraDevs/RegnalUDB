@@ -232,6 +232,7 @@
             this.dgvBlackList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBlackList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBlackList.Location = new System.Drawing.Point(15, 68);
+            this.dgvBlackList.MultiSelect = false;
             this.dgvBlackList.Name = "dgvBlackList";
             this.dgvBlackList.Size = new System.Drawing.Size(1011, 333);
             this.dgvBlackList.TabIndex = 3;

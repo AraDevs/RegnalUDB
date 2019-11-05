@@ -155,39 +155,52 @@ namespace RegnalUDB
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
-            bool isValid = errorProvider == null;
-            if(isValid)
+            try
             {
-                if(selectedDepartment == null)
+                List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorProvider == null;
+                if (isValid)
                 {
-                    saveData();
+                    if (selectedDepartment == null)
+                    {
+                        saveData();
+                    }
+                    else
+                    {
+                        selectedDepartment.nombre = txtName.Text;
+                        selectedDepartment.clave = txtKey.Text;
+                        selectedDepartment.baja = chbStatus.Checked;
+                        updateData(selectedDepartment);
+                    }
                 }
                 else
                 {
-                    selectedDepartment.nombre = txtName.Text;
-                    selectedDepartment.clave = txtKey.Text;
-                    selectedDepartment.baja = chbStatus.Checked;
-                    updateData(selectedDepartment);
+                    this.errorProvider.Clear();
+                    MessageBox.Show("Algunos datos ingresados son inválidos.\n" +
+                        "Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "Error al ingresar datos",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    foreach (ControlErrorProvider controlErrorProvider in errorProvider)
+                    {
+                        this.errorProvider.SetError(controlErrorProvider.ControlName,
+                            controlErrorProvider.ErrorMessage);
+                    }
                 }
             }
-            else
+            catch (Exception ex)
             {
-                this.errorProvider.Clear();
-                MessageBox.Show("Algunos datos ingresados son inválidos.\n" +
-                    "Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "Error al ingresar datos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                foreach(ControlErrorProvider controlErrorProvider in errorProvider)
-                {
-                    this.errorProvider.SetError(controlErrorProvider.ControlName,
-                        controlErrorProvider.ErrorMessage);
-                }
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            try { 
+                cleanForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvDepartments_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -197,17 +210,29 @@ namespace RegnalUDB
 
         private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
         {
-            filterData();
+            try { 
+                filterData();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvDepartments_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    selectedDepartment = departments[index];
+                    btnSaveModify.Text = "Modificar";
+                    fillSelectedData(selectedDepartment);
+                }
+            }
+            catch (Exception ex)
             {
-                selectedDepartment = departments[index];
-                btnSaveModify.Text = "Modificar";
-                fillSelectedData(selectedDepartment);
+                FormUtils.defaultErrorMessage(ex);
             }
         }
     }

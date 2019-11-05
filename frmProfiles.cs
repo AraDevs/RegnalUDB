@@ -127,66 +127,96 @@ namespace RegnalUDB
 
         private void frmProfiles_Load(object sender, EventArgs e)
         {
-            loadTable();
-            chbStatus.Checked = true;
+            try { 
+                loadTable();
+                chbStatus.Checked = true;
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
-            bool isValid = errorProvider == null;
-            if (isValid)
-            {
-                if (selectedProfile == null)
+            try { 
+                List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorProvider == null;
+                if (isValid)
                 {
-                    MessageBox.Show("Seleccione un registro para modificar");   
-                   // saveData();
+                    if (selectedProfile == null)
+                    {
+                        MessageBox.Show("Seleccione un registro para modificar");   
+                       // saveData();
+                    }
+                    else
+                    {
+                        selectedProfile.nombre = txtName.Text;
+                        selectedProfile.baja = chbStatus.Checked;
+                        updateData(selectedProfile);
+                    }
                 }
                 else
                 {
-                    selectedProfile.nombre = txtName.Text;
-                    selectedProfile.baja = chbStatus.Checked;
-                    updateData(selectedProfile);
+                    this.errorProvider.Clear();
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    foreach (ControlErrorProvider error in errorProvider)
+                    {
+                        this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
+                    }
+
+
                 }
             }
-            else
+            catch (Exception ex)
             {
-                this.errorProvider.Clear();
-                MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                foreach (ControlErrorProvider error in errorProvider)
-                {
-                    this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
-                }
-
-
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            try { 
+                cleanForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvProfiles_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
-            {
-                selectedProfile = profiles[index];
-                if (selectedProfile.nombre.Equals("Administrador"))
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
                 {
-                    MessageBox.Show("El perfil de administrador no puede ser modificado");
-                    return;
+                    selectedProfile = profiles[index];
+                    if (selectedProfile.nombre.Equals("Administrador"))
+                    {
+                        MessageBox.Show("El perfil de administrador no puede ser modificado");
+                        return;
+                    }
+                   // btnSaveModify.Text = "Modificar";
+                    fillSelectedData(selectedProfile);
                 }
-               // btnSaveModify.Text = "Modificar";
-                fillSelectedData(selectedProfile);
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            filterData();
+            try { 
+                filterData();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
     }
 }

@@ -174,6 +174,7 @@
             this.dgvProfiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProfiles.Location = new System.Drawing.Point(15, 68);
+            this.dgvProfiles.MultiSelect = false;
             this.dgvProfiles.Name = "dgvProfiles";
             this.dgvProfiles.Size = new System.Drawing.Size(1011, 407);
             this.dgvProfiles.TabIndex = 3;

@@ -244,6 +244,7 @@
             this.dgvPositions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPositions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPositions.Location = new System.Drawing.Point(16, 69);
+            this.dgvPositions.MultiSelect = false;
             this.dgvPositions.Name = "dgvPositions";
             this.dgvPositions.Size = new System.Drawing.Size(1011, 352);
             this.dgvPositions.TabIndex = 3;

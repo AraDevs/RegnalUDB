@@ -36,21 +36,22 @@ INSERT INTO EstadoCivil(estadoCivil,baja) VALUES
 
 
 INSERT INTO Provincias(nombre,baja,clave,idRegion) VALUES
-					('Scouts Occidente',1,'001',1),
-					('Scouts Centro',1,'002',1),
-					('Scouts Oriente',1,'003',1)
+					('Provincia Occidente',1,'OCC',1),
+					('Provincia San Salvador',1,'SSV',1),
+					('Provincia Central',1,'CNT',1),
+					('Provincia Oriente',1,'ORI',1),
+					('Provincia Paracentral',1,'PRC',1)
 
 INSERT INTO Distritos(nombre,numero,baja,idProvincia) VALUES
-					('Occidente 1',1,1,1),
-					('Occidente 2',2,1,1),
-					('Centro 1',1,2,1),
-					('Centro 2',2,2,1),
-					('Oriente 1',1,3,1),
-					('Oriente 2',2,3,1)
+					('Distrito Santa Ana',1,1,1),
+					('Distrito Ahuachapán',2,1,1),
+					('Distrito Anastacio Aquino',1,2,1),
+					('Distrito Atonal',2,2,1),
+					('Distrito Cordillera del Bálsamo',1,3,1),
+					('Distrito Atilio Mónico',2,3,1)
 
 INSERT INTO Localidades(nombre, domicilioCorrespondencia, baja) VALUES
-					('Casa Scout', 'Avenida Baden Powell, 281, San Salvador',1),
-					('Instituto Técnico Ricaldone', 'Avenida Aguilares, 218, San Salvador', 1)
+					('Casa Scout', 'Avenida Baden Powell, 281, San Salvador',1)
 
 
 SET IDENTITY_INSERT [dbo].[Perfiles] ON 
@@ -343,3 +344,15 @@ INSERT INTO Municipios(nombre, baja, idDepartamento) VALUES (N'Santo Domingo', 1
 INSERT INTO Municipios(nombre, baja, idDepartamento) VALUES (N'Tecoluca', 1, 10)
 INSERT INTO Municipios(nombre, baja, idDepartamento) VALUES (N'Tepetitán', 1, 10)
 INSERT INTO Municipios(nombre, baja, idDepartamento) VALUES (N'Verapaz', 1, 10)
+
+
+
+
+INSERT [dbo].[Grupos] ([nombre], [fundacion], [grupoNum], [horario], [baja], [idDistrito], [idLocalidad], [fechaRegistro], [registrado]) VALUES (N'N/A', CAST(N'1999-01-01' AS Date), 0, N'N/A', 0, 1, 1, CAST(N'1999-01-01' AS Date), 0)
+
+INSERT [dbo].[Domicilios] ([calleNumero], [colonia], [codigoPostal], [baja], [idMunicipio], [entreCalles], [referencia], [contacto], [telefono]) VALUES (N'N/A', N'N/A', N'N/A', 0000, 1, 1, N'N/A', N'N/A', N'N/A', N'N/A')
+
+INSERT [dbo].[Miembros] ([cum], [nombre], [paterno], [materno], [baja], [idSeccion], [idGrupo], [fotoFileName], [fechaNacimiento], [sexo], [particular], [oficina], [movil], [email], [ocupación], [observación], [idDomicilio], [idReligion], [idEscolaridad], [idEstadoCivil]) 
+			     VALUES (N'000001', N'root', N'', N'', 1, 1, 1, N'000001.png', CAST(N'1999-01-01' AS Date), N'm', N'', N'', N'', N'', N'', N'', 1, 1, 1, 1)
+
+INSERT [dbo].[Usuarios] ([pass], [estatus], [baja], [idMiembro], [idPerfil]) VALUES (N'd33861eeb1abd03d7527d67206cc0275', 0, 1, 1, 1)

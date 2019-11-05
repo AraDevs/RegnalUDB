@@ -32,14 +32,21 @@ namespace RegnalUDB
         {
             InitializeComponent();
 
-            loadTable(this.getLocations());
-
-            chbStatus.Checked = true;
+            
         }
 
         private void frmLocations_Load(object sender, EventArgs e)
         {
+            try
+            {
+                loadTable(this.getLocations());
 
+                chbStatus.Checked = true;
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
@@ -90,31 +97,43 @@ namespace RegnalUDB
      
         private void dgvLocations_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    List<Localidade> list = filterLocations.Count == 0 ? locations : filterLocations;
+                    selectedLocality = list[index];
+                    txtName.Text = selectedLocality.nombre;
+                    txtDescription.Text = selectedLocality.domicilioCorrespondencia;
+                    chbStatus.Checked = selectedLocality.baja;
+                    btnSaveModify.Text = "Modificar";
+                }
+            }
+            catch (Exception ex)
             {
-                List<Localidade> list = filterLocations.Count == 0 ? locations : filterLocations;
-                selectedLocality = list[index];
-                txtName.Text = selectedLocality.nombre;
-                txtDescription.Text = selectedLocality.domicilioCorrespondencia;
-                chbStatus.Checked = selectedLocality.baja;
-                btnSaveModify.Text = "Modificar";
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            String value = txtSearch.Text.Trim().ToUpper();
-            if (value.Trim().Length > 0)
-            {
-                filterLocations = FormUtils.filterData<Localidade>(locations, (g) =>
-                   g.nombre.ToUpper().Contains(value) || g.domicilioCorrespondencia.ToString().Contains(value)
-                );
-                loadTable(filterLocations);
-                return;
+            try { 
+                String value = txtSearch.Text.Trim().ToUpper();
+                if (value.Trim().Length > 0)
+                {
+                    filterLocations = FormUtils.filterData<Localidade>(locations, (g) =>
+                       g.nombre.ToUpper().Contains(value) || g.domicilioCorrespondencia.ToString().Contains(value)
+                    );
+                    loadTable(filterLocations);
+                    return;
+                }
+                filterLocations = new List<Localidade>();
+                loadTable(locations);
             }
-            filterLocations = new List<Localidade>();
-            loadTable(locations);
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
 
@@ -164,8 +183,14 @@ namespace RegnalUDB
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            clearForm();
-            loadTable(getLocations());
+            try { 
+                clearForm();
+                loadTable(getLocations());
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
     }
 }

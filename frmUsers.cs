@@ -162,96 +162,126 @@ namespace RegnalUDB
         }
         private void frmUsers_Load(object sender, EventArgs e)
         {
-            loadTable();
-            loadCmb();
+            try { 
+                loadTable();
+                loadCmb();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
-            bool isValid = errorProvider == null;
-            if (isValid)
-            {
-                if (selectedUser == null)
+            try { 
+                List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorProvider == null;
+                if (isValid)
                 {
-                    Miembro member =(Miembro)memberController.getRecordbyCum(txtCUM.Text).Value;
-                    if(member != null & txtPassword.Text.Trim() != "" )
+                    if (selectedUser == null)
                     {
-                        if (txtPassword.Text.Equals(txtConfirmPassword.Text))
+                        Miembro member =(Miembro)memberController.getRecordbyCum(txtCUM.Text).Value;
+                        if(member != null & txtPassword.Text.Trim() != "" )
                         {
-                            saveData(member);
+                            if (txtPassword.Text.Equals(txtConfirmPassword.Text))
+                            {
+                                saveData(member);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Las contraseñas ingresadas no coinciden");
+                                txtConfirmPassword.Clear();
+                                txtConfirmPassword.Focus();
+                            }
+                        
                         }
                         else
                         {
-                            MessageBox.Show("Las contraseñas ingresadas no coinciden");
-                            txtConfirmPassword.Clear();
-                            txtConfirmPassword.Focus();
+                            MessageBox.Show(member==null?"El miembro con el cum ingresado no se encontro":"Ingrese una clave para el usuario");
+                            txtPassword.Focus();
                         }
-                        
+                    
                     }
                     else
                     {
-                        MessageBox.Show(member==null?"El miembro con el cum ingresado no se encontro":"Ingrese una clave para el usuario");
-                        txtPassword.Focus();
+                        selectedUser.Perfile = (Perfile)cmbProfile.SelectedItem;
+                        selectedUser.baja = chbStatus.Checked;
+                        if(txtPassword.Text.Trim() != "")
+                        {
+                            if (txtPassword.Text.Equals(txtConfirmPassword.Text))
+                            {
+                                selectedUser.pass = EncriptionUtils.MD5Hash(txtPassword.Text);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Las contraseñas ingresadas no coinciden");
+                                txtConfirmPassword.Clear();
+                                txtConfirmPassword.Focus();
+                            }
+                        }
+                        updateData(selectedUser);
                     }
-                    
                 }
                 else
                 {
-                    selectedUser.Perfile = (Perfile)cmbProfile.SelectedItem;
-                    selectedUser.baja = chbStatus.Checked;
-                    if(txtPassword.Text.Trim() != "")
+                    this.errorProvider.Clear();
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    foreach (ControlErrorProvider error in errorProvider)
                     {
-                        if (txtPassword.Text.Equals(txtConfirmPassword.Text))
-                        {
-                            selectedUser.pass = EncriptionUtils.MD5Hash(txtPassword.Text);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Las contraseñas ingresadas no coinciden");
-                            txtConfirmPassword.Clear();
-                            txtConfirmPassword.Focus();
-                        }
+                        this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
                     }
-                    updateData(selectedUser);
                 }
             }
-            else
+            catch (Exception ex)
             {
-                this.errorProvider.Clear();
-                MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                foreach (ControlErrorProvider error in errorProvider)
-                {
-                    this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
-                }
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            try { 
+                cleanForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvUsers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
-            {
-                selectedUser = users[index];
-                if(selectedUser.Perfile.idPerfil == 1 && selectedUser.Miembro.nombre=="root")
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
                 {
-                    MessageBox.Show("El administrador principal no puede ser modificado");
-                    return;
+                    selectedUser = users[index];
+                    if(selectedUser.Perfile.idPerfil == 1 && selectedUser.Miembro.nombre=="root")
+                    {
+                        MessageBox.Show("El administrador principal no puede ser modificado");
+                        return;
+                    }
+                    btnSaveModify.Text = "Modificar";
+                    fillSelectedData(selectedUser);
                 }
-                btnSaveModify.Text = "Modificar";
-                fillSelectedData(selectedUser);
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            filterData();
+            try { 
+                filterData();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
     }
 }

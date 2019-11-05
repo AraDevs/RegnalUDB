@@ -176,6 +176,7 @@
             this.dgvScholarships.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvScholarships.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvScholarships.Location = new System.Drawing.Point(15, 79);
+            this.dgvScholarships.MultiSelect = false;
             this.dgvScholarships.Name = "dgvScholarships";
             this.dgvScholarships.ReadOnly = true;
             this.dgvScholarships.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;

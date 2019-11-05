@@ -211,7 +211,13 @@ namespace RegnalUDB
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            try { 
+                cleanForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
@@ -268,16 +274,22 @@ namespace RegnalUDB
 
         private void dgvInscriptions_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    selectedInscription = inscriptions[index];
+
+                    chbStatus.Checked = selectedInscription.baja;
+                    dtpStart.Value = selectedInscription.fechaInicio;
+                    dtpFinish.Value = (DateTime)selectedInscription.fechaFin;
+
+                    btnSaveModify.Text = "Modificar";
+                }
+            }
+            catch (Exception ex)
             {
-                selectedInscription = inscriptions[index];
-
-                chbStatus.Checked = selectedInscription.baja;
-                dtpStart.Value = selectedInscription.fechaInicio;
-                dtpFinish.Value = (DateTime)selectedInscription.fechaFin;
-
-                btnSaveModify.Text = "Modificar";
+                FormUtils.defaultErrorMessage(ex);
             }
         }
     }

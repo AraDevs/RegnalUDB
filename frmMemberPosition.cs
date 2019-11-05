@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using RegnalUDB.Entity_Framework;
 using RegnalUDB.Controllers;
 using RegnalUDB.Models;
+using RegnalUDB.Utils;
 
 namespace RegnalUDB
 {
@@ -53,70 +54,76 @@ namespace RegnalUDB
 
         private void btnSaveChanges_Click(object sender, EventArgs e)
         {
-            if (selectedMember == null)
-            {
-                MessageBox.Show("Por favor seleccione un miembro.", "MIEMBRO NO SELECCIONADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                return;
-            }
-
-
-            List<Cargo> originalList = SelectedMember.MiembroCargoes.Select(x => x.Cargo).ToList();
-            List<Cargo> newList = new List<Cargo>();
-
-            foreach(Cargo pos in lstPosition.SelectedItems)
-            {
-                newList.Add(pos);
-            }
-
-
-            List<Cargo> toAdd = newList.Except(originalList).ToList();
-            List<Cargo> toDelete = originalList.Except(newList).ToList();
-
-            foreach (Cargo pos in toAdd)
-            {
-                if (pos.MiembroCargoes.Count >= pos.total)
+            try { 
+                if (selectedMember == null)
                 {
-                    MessageBox.Show("No se pudo asociar al miembro al cargo '" + pos.nombre + "', porque dicho cargo ya ha alcanzado su máximo de miembros asociados.",
-                    "MÁXIMO DE CARGO ALCANZADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Por favor seleccione un miembro.", "MIEMBRO NO SELECCIONADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
                 }
 
-                else
-                {
-                    MiembroCargo tempMc = new MiembroCargo
-                    {
-                        idMembro = SelectedMember.idMiembro,
-                        idCargo = pos.idCargo,
-                        fecha = System.DateTime.Today
-                    };
 
-                    Operation<MiembroCargo> operation = mcController.addRecord(tempMc);
+                List<Cargo> originalList = SelectedMember.MiembroCargoes.Select(x => x.Cargo).ToList();
+                List<Cargo> newList = new List<Cargo>();
+
+                foreach(Cargo pos in lstPosition.SelectedItems)
+                {
+                    newList.Add(pos);
+                }
+
+
+                List<Cargo> toAdd = newList.Except(originalList).ToList();
+                List<Cargo> toDelete = originalList.Except(newList).ToList();
+
+                foreach (Cargo pos in toAdd)
+                {
+                    if (pos.MiembroCargoes.Count >= pos.total)
+                    {
+                        MessageBox.Show("No se pudo asociar al miembro al cargo '" + pos.nombre + "', porque dicho cargo ya ha alcanzado su máximo de miembros asociados.",
+                        "MÁXIMO DE CARGO ALCANZADO", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+
+                    else
+                    {
+                        MiembroCargo tempMc = new MiembroCargo
+                        {
+                            idMembro = SelectedMember.idMiembro,
+                            idCargo = pos.idCargo,
+                            fecha = System.DateTime.Today
+                        };
+
+                        Operation<MiembroCargo> operation = mcController.addRecord(tempMc);
+
+                        if (!operation.State)
+                        {
+                            MessageBox.Show("Ocurrió un error inesperado al asociar al miembro al cargo '" + pos.nombre + "': " + operation.Error,
+                            "ERROR AL INGRESAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+
+                foreach (Cargo pos in toDelete)
+                {
+                    MiembroCargo tempMc = SelectedMember.MiembroCargoes.Where(x => x.Cargo == pos).FirstOrDefault();
+
+                    Operation<MiembroCargo> operation = mcController.deleteRecord(tempMc);
 
                     if (!operation.State)
                     {
-                        MessageBox.Show("Ocurrió un error inesperado al asociar al miembro al cargo '" + pos.nombre + "': " + operation.Error,
-                        "ERROR AL INGRESAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Ocurrió un error inesperado al desasociar al miembro del cargo '" + pos.nombre + "': " + operation.Error,
+                        "ERROR AL ELIMINAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            }
 
-            foreach (Cargo pos in toDelete)
+
+                MessageBox.Show("Los cambios fueron aplicados con éxito.",
+                        "CARGOS ASOCIADOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                clean();
+            }
+            catch (Exception ex)
             {
-                MiembroCargo tempMc = SelectedMember.MiembroCargoes.Where(x => x.Cargo == pos).FirstOrDefault();
-
-                Operation<MiembroCargo> operation = mcController.deleteRecord(tempMc);
-
-                if (!operation.State)
-                {
-                    MessageBox.Show("Ocurrió un error inesperado al desasociar al miembro del cargo '" + pos.nombre + "': " + operation.Error,
-                    "ERROR AL ELIMINAR DATOS", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                FormUtils.defaultErrorMessage(ex);
             }
-
-
-            MessageBox.Show("Los cambios fueron aplicados con éxito.",
-                    "CARGOS ASOCIADOS", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-            clean();
         }
 
         private void lstPosition_Click(object sender, EventArgs e)

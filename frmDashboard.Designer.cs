@@ -108,7 +108,7 @@
             this.pnlMenuTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMenuTop.Location = new System.Drawing.Point(294, 0);
             this.pnlMenuTop.Name = "pnlMenuTop";
-            this.pnlMenuTop.Size = new System.Drawing.Size(1100, 80);
+            this.pnlMenuTop.Size = new System.Drawing.Size(1076, 80);
             this.pnlMenuTop.TabIndex = 0;
             // 
             // pcbInfo
@@ -116,7 +116,7 @@
             this.pcbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbInfo.Image = global::RegnalUDB.Properties.Resources.info_40px;
-            this.pcbInfo.Location = new System.Drawing.Point(906, 24);
+            this.pcbInfo.Location = new System.Drawing.Point(882, 24);
             this.pcbInfo.Name = "pcbInfo";
             this.pcbInfo.Size = new System.Drawing.Size(32, 32);
             this.pcbInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -129,7 +129,7 @@
             this.pcbRestoreWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbRestoreWindow.Enabled = false;
             this.pcbRestoreWindow.Image = global::RegnalUDB.Properties.Resources.restore_window_40px;
-            this.pcbRestoreWindow.Location = new System.Drawing.Point(1009, 24);
+            this.pcbRestoreWindow.Location = new System.Drawing.Point(985, 24);
             this.pcbRestoreWindow.Name = "pcbRestoreWindow";
             this.pcbRestoreWindow.Size = new System.Drawing.Size(32, 32);
             this.pcbRestoreWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -143,7 +143,7 @@
             this.pcbCloseWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbCloseWindow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbCloseWindow.Image = global::RegnalUDB.Properties.Resources.close_window_40px;
-            this.pcbCloseWindow.Location = new System.Drawing.Point(1047, 24);
+            this.pcbCloseWindow.Location = new System.Drawing.Point(1023, 24);
             this.pcbCloseWindow.Name = "pcbCloseWindow";
             this.pcbCloseWindow.Size = new System.Drawing.Size(32, 32);
             this.pcbCloseWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -155,7 +155,7 @@
             // 
             this.pcbMaximizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbMaximizeWindow.Image = global::RegnalUDB.Properties.Resources.maximize_window_40px;
-            this.pcbMaximizeWindow.Location = new System.Drawing.Point(1009, 24);
+            this.pcbMaximizeWindow.Location = new System.Drawing.Point(985, 24);
             this.pcbMaximizeWindow.Name = "pcbMaximizeWindow";
             this.pcbMaximizeWindow.Size = new System.Drawing.Size(32, 32);
             this.pcbMaximizeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -168,7 +168,7 @@
             this.pcbMinimizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbMinimizeWindow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbMinimizeWindow.Image = global::RegnalUDB.Properties.Resources.minimize_window_40px;
-            this.pcbMinimizeWindow.Location = new System.Drawing.Point(971, 24);
+            this.pcbMinimizeWindow.Location = new System.Drawing.Point(947, 24);
             this.pcbMinimizeWindow.Name = "pcbMinimizeWindow";
             this.pcbMinimizeWindow.Size = new System.Drawing.Size(32, 32);
             this.pcbMinimizeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -210,7 +210,7 @@
             this.pnlMenu.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(294, 800);
+            this.pnlMenu.Size = new System.Drawing.Size(294, 749);
             this.pnlMenu.TabIndex = 2;
             this.pnlMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMenu_Paint);
             // 
@@ -360,6 +360,7 @@
             this.btnFormFunctions.Text = "              Tipo de Funciones";
             this.btnFormFunctions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFormFunctions.UseVisualStyleBackColor = false;
+            this.btnFormFunctions.Click += new System.EventHandler(this.btnFormFunctions_Click);
             // 
             // btnFormReligions
             // 
@@ -668,14 +669,14 @@
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(294, 80);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1100, 720);
+            this.pnlContent.Size = new System.Drawing.Size(1076, 669);
             this.pnlContent.TabIndex = 3;
             // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1394, 800);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlMenuTop);
             this.Controls.Add(this.pnlMenu);

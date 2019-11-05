@@ -30,82 +30,112 @@ namespace RegnalUDB
         public frmScholarship()
         {
             InitializeComponent();
-            chbStatus.Checked = true;
-            loadTable(getScholarship());
         }
 
         private void frmScholarship_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                chbStatus.Checked = true;
+                loadTable(getScholarship());
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            String value = txtSearch.Text.Trim().ToUpper();
-            if (value.Trim().Length > 0)
-            {
-                filterSchoolarships = FormUtils.filterData<Escolaridad>(scholarships, (g) =>
-                  g.grado.ToUpper().Contains(value)
-                );
-                loadTable(filterSchoolarships);
-                return;
+            try { 
+                String value = txtSearch.Text.Trim().ToUpper();
+                if (value.Trim().Length > 0)
+                {
+                    filterSchoolarships = FormUtils.filterData<Escolaridad>(scholarships, (g) =>
+                      g.grado.ToUpper().Contains(value)
+                    );
+                    loadTable(filterSchoolarships);
+                    return;
+                }
+                filterSchoolarships = new List<Escolaridad>();
+                loadTable(scholarships);
             }
-            filterSchoolarships = new List<Escolaridad>();
-            loadTable(scholarships);
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            this.errorProvider.Clear();
-            List<ControlErrorProvider> errorsProvider = FormValidators.validFormTest(getValidators());
-            bool isValid = errorsProvider == null;
-            if (isValid)
-            {
-                bool isNew = selectedScholarship == null;
-                Escolaridad scholarship = new Escolaridad()
+            try { 
+                this.errorProvider.Clear();
+                List<ControlErrorProvider> errorsProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorsProvider == null;
+                if (isValid)
                 {
-                    idEscolaridad = isNew ? 0 : selectedScholarship.idEscolaridad,
-                    grado = txtGrade.Text,
-                    baja = isNew ? true : chbStatus.Checked
-                };
+                    bool isNew = selectedScholarship == null;
+                    Escolaridad scholarship = new Escolaridad()
+                    {
+                        idEscolaridad = isNew ? 0 : selectedScholarship.idEscolaridad,
+                        grado = txtGrade.Text,
+                        baja = isNew ? true : chbStatus.Checked
+                    };
 
-                Operation<Escolaridad> operation = isNew ? scholarshipController.addRecord(scholarship) :
-                        scholarshipController.updateRecord(scholarship);
-                if (operation.State)
-                {
-                    loadTable(getScholarship());
-                    clearForm();
-                    return;
+                    Operation<Escolaridad> operation = isNew ? scholarshipController.addRecord(scholarship) :
+                            scholarshipController.updateRecord(scholarship);
+                    if (operation.State)
+                    {
+                        loadTable(getScholarship());
+                        clearForm();
+                        return;
+                    }
+
                 }
+                else
+                {
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+                    foreach (ControlErrorProvider errorProvider in errorsProvider)
+                        this.errorProvider.SetError(errorProvider.ControlName, errorProvider.ErrorMessage);
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                foreach (ControlErrorProvider errorProvider in errorsProvider)
-                    this.errorProvider.SetError(errorProvider.ControlName, errorProvider.ErrorMessage);
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void dgvScholarships_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
-            {
-                List<Escolaridad> list = filterSchoolarships.Count == 0 ? scholarships : filterSchoolarships;
-                selectedScholarship = list[index];
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    List<Escolaridad> list = filterSchoolarships.Count == 0 ? scholarships : filterSchoolarships;
+                    selectedScholarship = list[index];
 
-                chbStatus.Checked = selectedScholarship.baja;
-                txtGrade.Text = selectedScholarship.grado;
-                btnSaveModify.Text = "Modificar";
+                    chbStatus.Checked = selectedScholarship.baja;
+                    txtGrade.Text = selectedScholarship.grado;
+                    btnSaveModify.Text = "Modificar";
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            clearForm();
+            try { 
+                clearForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void loadTable(List<Escolaridad> scholarships)

@@ -72,6 +72,7 @@
             this.dgvMunicipalities.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMunicipalities.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMunicipalities.Location = new System.Drawing.Point(16, 69);
+            this.dgvMunicipalities.MultiSelect = false;
             this.dgvMunicipalities.Name = "dgvMunicipalities";
             this.dgvMunicipalities.Size = new System.Drawing.Size(1011, 359);
             this.dgvMunicipalities.TabIndex = 3;

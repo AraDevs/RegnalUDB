@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo16 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo17 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo18 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo2 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo3 = new Syncfusion.Windows.Forms.BannerTextInfo();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.skinManager1 = new Syncfusion.Windows.Forms.SkinManager(this.components);
@@ -107,11 +107,11 @@
             // txtSchedule
             // 
             this.txtSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bannerTextInfo16.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            bannerTextInfo16.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
-            bannerTextInfo16.Text = "Ingrese el nombre del grupo";
-            bannerTextInfo16.Visible = true;
-            this.bannerTextProvider1.SetBannerText(this.txtSchedule, bannerTextInfo16);
+            bannerTextInfo1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            bannerTextInfo1.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
+            bannerTextInfo1.Text = "Ingrese el nombre del grupo";
+            bannerTextInfo1.Visible = true;
+            this.bannerTextProvider1.SetBannerText(this.txtSchedule, bannerTextInfo1);
             this.txtSchedule.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtSchedule.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtSchedule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -127,11 +127,11 @@
             // txtGroup
             // 
             this.txtGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bannerTextInfo17.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            bannerTextInfo17.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
-            bannerTextInfo17.Text = "Ingrese el nombre del grupo";
-            bannerTextInfo17.Visible = true;
-            this.bannerTextProvider1.SetBannerText(this.txtGroup, bannerTextInfo17);
+            bannerTextInfo2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            bannerTextInfo2.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
+            bannerTextInfo2.Text = "Ingrese el nombre del grupo";
+            bannerTextInfo2.Visible = true;
+            this.bannerTextProvider1.SetBannerText(this.txtGroup, bannerTextInfo2);
             this.txtGroup.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtGroup.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -147,11 +147,11 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bannerTextInfo18.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            bannerTextInfo18.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
-            bannerTextInfo18.Text = "Ingrese el nombre del grupo";
-            bannerTextInfo18.Visible = true;
-            this.bannerTextProvider1.SetBannerText(this.txtName, bannerTextInfo18);
+            bannerTextInfo3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            bannerTextInfo3.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
+            bannerTextInfo3.Text = "Ingrese el nombre del grupo";
+            bannerTextInfo3.Visible = true;
+            this.bannerTextProvider1.SetBannerText(this.txtName, bannerTextInfo3);
             this.txtName.BeforeTouchSize = new System.Drawing.Size(220, 22);
             this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -205,6 +205,7 @@
             this.dgvGroups.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGroups.Location = new System.Drawing.Point(16, 45);
+            this.dgvGroups.MultiSelect = false;
             this.dgvGroups.Name = "dgvGroups";
             this.dgvGroups.Size = new System.Drawing.Size(1010, 238);
             this.dgvGroups.TabIndex = 3;

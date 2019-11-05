@@ -40,7 +40,7 @@ namespace RegnalUDB
             InitializeComponent();
 
               
-            DistricController districController = new DistricController();
+            /*DistricController districController = new DistricController();
             LocalityController localityController = new LocalityController();
 
             Operation<Distrito> getDistrictOperation = districController.getRecords();
@@ -67,7 +67,7 @@ namespace RegnalUDB
             }
 
             chbStatus.Checked = true;
-            chbRegistration.Checked = true;
+            chbRegistration.Checked = true;*/
 
         }
         public frmGroups(Usuario u)
@@ -97,37 +97,78 @@ namespace RegnalUDB
 
         private void frmGroups_Load(object sender, EventArgs e)
         {
-            setReadOnly();
+            try { 
+                DistricController districController = new DistricController();
+                LocalityController localityController = new LocalityController();
+
+                Operation<Distrito> getDistrictOperation = districController.getRecords();
+                Operation<Localidade> getLocalitiesOperation = localityController.getRecords();
+                bool dataIsRetrieved = getLocalitiesOperation.State && getDistrictOperation.State;
+
+                if (dataIsRetrieved)
+                {
+                    // set data
+                    districts = getDistrictOperation.Data;
+                    localities = getLocalitiesOperation.Data;
+                    // load data
+                    cmbDistricts.DataSource = districts;
+                    cmbLocations.DataSource = localities;
+
+                    loadTable(this.getGroups());
+
+                    cmbDistricts.SelectedIndex = -1;
+                    cmbLocations.SelectedIndex = -1;
+                }
+                else
+                {
+                    MessageBox.Show(getDistrictOperation.Error);
+                }
+
+                chbStatus.Checked = true;
+                chbRegistration.Checked = true;
+
+                setReadOnly();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
 
         private void dgvGroups_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
-            {
-                List<Grupos> list = filterGroups.Count == 0 ? groups : filterGroups;
-                selectedGroup = list[index];
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    List<Grupos> list = filterGroups.Count == 0 ? groups : filterGroups;
+                    selectedGroup = list[index];
                 
-                HashSet<TotalSeccion> sections = (HashSet<TotalSeccion>) selectedGroup.TotalSeccions;
-                TotalSeccion[] sectionsData =  new TotalSeccion[sections.Count];
-                sections.CopyTo(sectionsData);
+                    HashSet<TotalSeccion> sections = (HashSet<TotalSeccion>) selectedGroup.TotalSeccions;
+                    TotalSeccion[] sectionsData =  new TotalSeccion[sections.Count];
+                    sections.CopyTo(sectionsData);
 
-                loadSectionsTable(sectionsData);
+                    loadSectionsTable(sectionsData);
  
                
 
-                cmbDistricts.SelectedItem = selectedGroup.Distrito;
-                cmbLocations.SelectedItem = selectedGroup.Localidade;
-                txtGroup.Text = selectedGroup.grupoNum.ToString();
-                txtName.Text = selectedGroup.nombre;
-                txtSchedule.Text = selectedGroup.horario;
-                chbStatus.Checked = selectedGroup.baja; 
-                dtpFundation.Value = selectedGroup.fundacion;
-                chbRegistration.Checked = selectedGroup.registrado;
-                dtpRegistration.Value = selectedGroup.fechaRegistro;
+                    cmbDistricts.SelectedItem = selectedGroup.Distrito;
+                    cmbLocations.SelectedItem = selectedGroup.Localidade;
+                    txtGroup.Text = selectedGroup.grupoNum.ToString();
+                    txtName.Text = selectedGroup.nombre;
+                    txtSchedule.Text = selectedGroup.horario;
+                    chbStatus.Checked = selectedGroup.baja; 
+                    dtpFundation.Value = selectedGroup.fundacion;
+                    chbRegistration.Checked = selectedGroup.registrado;
+                    dtpRegistration.Value = selectedGroup.fechaRegistro;
 
-                btnSaveModify.Text = "Modificar";
+                    btnSaveModify.Text = "Modificar";
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
@@ -273,8 +314,14 @@ namespace RegnalUDB
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            loadTable(groups);
-            clearForm();
+            try { 
+                loadTable(groups);
+                clearForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
 
@@ -290,10 +337,16 @@ namespace RegnalUDB
 
         private void tabControl1_Selecting(object sender, TabControlCancelEventArgs e)
         {
-            if (e.TabPageIndex == 1 && selectedGroup == null)
+            try { 
+                if (e.TabPageIndex == 1 && selectedGroup == null)
+                {
+                    e.Cancel = true;
+                    MessageBox.Show("Seleccione un grupo");
+                }
+            }
+            catch (Exception ex)
             {
-                e.Cancel = true;
-                MessageBox.Show("Seleccione un grupo");
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 

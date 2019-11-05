@@ -31,14 +31,21 @@ namespace RegnalUDB
 
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            panel3.Left += 2;
-            if (panel3.Left > 420)
+            try
             {
-                panel3.Left = 0;
+                panel3.Left += 2;
+                if (panel3.Left > 420)
+                {
+                    panel3.Left = 0;
+                }
+                if (panel3.Left < 0)
+                {
+                    move = 2;
+                }
             }
-            if (panel3.Left < 0)
+            catch
             {
-                move = 2;
+                MessageBox.Show("Ocurrió un error inesperado. Por favor, reinicie la aplicación.");
             }
         }
     }

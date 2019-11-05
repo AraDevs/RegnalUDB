@@ -152,70 +152,100 @@ namespace RegnalUDB
 
         private void frmAnnouncements_Load(object sender, EventArgs e)
         {
-            loadTable();
-            loadcmb();
+            try { 
+                loadTable();
+                loadcmb();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void btnSaveModify_Click(object sender, EventArgs e)
         {
-            List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
-            bool isValid = errorProvider == null;
-            if (isValid)
-            {
-                if (selectedAdvertisement == null)
+            try { 
+                List<ControlErrorProvider> errorProvider = FormValidators.validFormTest(getValidators());
+                bool isValid = errorProvider == null;
+                if (isValid)
                 {
-                    saveData();
+                    if (selectedAdvertisement == null)
+                    {
+                        saveData();
+                    }
+                    else
+                    {
+                        Provincia p = cmbProvincess.SelectedItem as Provincia;
+                        selectedAdvertisement.mensaje = txtMessage.Text;
+                        selectedAdvertisement.idProvincia = p.idProvincia;
+                        selectedAdvertisement.vigencia = dtpLife.Value;
+                        selectedAdvertisement.baja = chbStatus.Checked;
+                        updateData(selectedAdvertisement);
+                    }
                 }
                 else
                 {
-                    Provincia p = cmbProvincess.SelectedItem as Provincia;
-                    selectedAdvertisement.mensaje = txtMessage.Text;
-                    selectedAdvertisement.idProvincia = p.idProvincia;
-                    selectedAdvertisement.vigencia = dtpLife.Value;
-                    selectedAdvertisement.baja = chbStatus.Checked;
-                    updateData(selectedAdvertisement);
+                    this.errorProvider.Clear();
+                    MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    foreach (ControlErrorProvider error in errorProvider)
+                    {
+                        this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
+                    }
+
+
                 }
             }
-            else
+            catch (Exception ex)
             {
-                this.errorProvider.Clear();
-                MessageBox.Show("Algunos datos proporcionados son inválidos. Pase el puntero sobre los íconos de error para ver los detalles de cada campo.", "ERROR DE VALIDACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                foreach (ControlErrorProvider error in errorProvider)
-                {
-                    this.errorProvider.SetError(error.ControlName, error.ErrorMessage);
-                }
-
-
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            try { 
+                cleanForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            filterData();
+            try { 
+                filterData();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvAdvertisements_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
-            {
-                selectedAdvertisement = advertisements[index];
-                btnSaveModify.Text = "Modificar";
-                if (!(selectedAdvertisement.vigencia < DateTime.Today))
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
                 {
-                    fillSelectedData(selectedAdvertisement);
-                }
-                else
-                {
-                    MessageBox.Show("No puede modificar anuncios ya vencidos, por favor cree uno nuevo");
-                }
+                    selectedAdvertisement = advertisements[index];
+                    btnSaveModify.Text = "Modificar";
+                    if (!(selectedAdvertisement.vigencia < DateTime.Today))
+                    {
+                        fillSelectedData(selectedAdvertisement);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No puede modificar anuncios ya vencidos, por favor cree uno nuevo");
+                    }
                 
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
             }
         }
     }

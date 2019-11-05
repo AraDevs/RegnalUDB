@@ -429,7 +429,13 @@ namespace RegnalUDB
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            cleanForm();
+            try { 
+                cleanForm();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvEvents_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -461,81 +467,117 @@ namespace RegnalUDB
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            filterData();
+            try { 
+                filterData();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void lblDatosPersonales_Click(object sender, EventArgs e)
         {
-            selectLabel(lblDatosEventos);
-            showMissingInfo();
-            pnlEventData.BringToFront();
-            label1.Focus();
+            try { 
+                selectLabel(lblDatosEventos);
+                showMissingInfo();
+                pnlEventData.BringToFront();
+                label1.Focus();
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void lblPosition_Click(object sender, EventArgs e)
         {
-            selectLabel(lblPosition);
-            showMissingInfo();
-            if (!pnlParent.Controls.Contains(frmEventPosition.Instance))
-            {
-                pnlParent.Controls.Add(frmEventPosition.Instance);
-                frmEventPosition.Instance.Dock = DockStyle.Fill;
-                frmEventPosition.Instance.BringToFront();
+            try { 
+                selectLabel(lblPosition);
+                showMissingInfo();
+                if (!pnlParent.Controls.Contains(frmEventPosition.Instance))
+                {
+                    pnlParent.Controls.Add(frmEventPosition.Instance);
+                    frmEventPosition.Instance.Dock = DockStyle.Fill;
+                    frmEventPosition.Instance.BringToFront();
+                }
+                else
+                {
+                    frmEventPosition.Instance.BringToFront();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                frmEventPosition.Instance.BringToFront();
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void lblSection_Click(object sender, EventArgs e)
         {
-            selectLabel(lblSection);
-            showMissingInfo();
-            if (!pnlParent.Controls.Contains(frmEventSection.Instance))
-            {
-                pnlParent.Controls.Add(frmEventSection.Instance);
-                frmEventSection.Instance.Dock = DockStyle.Fill;
-                frmEventSection.Instance.BringToFront();
+            try { 
+                selectLabel(lblSection);
+                showMissingInfo();
+                if (!pnlParent.Controls.Contains(frmEventSection.Instance))
+                {
+                    pnlParent.Controls.Add(frmEventSection.Instance);
+                    frmEventSection.Instance.Dock = DockStyle.Fill;
+                    frmEventSection.Instance.BringToFront();
+                }
+                else
+                {
+                    frmEventSection.Instance.BringToFront();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                frmEventSection.Instance.BringToFront();
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void lblFunction_Click(object sender, EventArgs e)
         {
-            selectLabel(lblFunction);
-            showMissingInfo();
-            if (!pnlParent.Controls.Contains(frmEventFunction.Instance))
-            {
-                pnlParent.Controls.Add(frmEventFunction.Instance);
-                frmEventFunction.Instance.Dock = DockStyle.Fill;
-                frmEventFunction.Instance.BringToFront();
+            try { 
+                selectLabel(lblFunction);
+                showMissingInfo();
+                if (!pnlParent.Controls.Contains(frmEventFunction.Instance))
+                {
+                    pnlParent.Controls.Add(frmEventFunction.Instance);
+                    frmEventFunction.Instance.Dock = DockStyle.Fill;
+                    frmEventFunction.Instance.BringToFront();
+                }
+                else
+                {
+                    frmEventFunction.Instance.BringToFront();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                frmEventFunction.Instance.BringToFront();
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
         private void lblMember_Click(object sender, EventArgs e)
         {
-            selectLabel(lblMember);
-            showMissingInfo();
-            if (!pnlParent.Controls.Contains(frmEventMember.Instance))
-            {
-                pnlParent.Controls.Add(frmEventMember.Instance);
-                frmEventMember.Instance.Dock = DockStyle.Fill;
-                frmEventMember.Instance.BringToFront();
-            }
-            else
-            {
-                frmEventMember.Instance.BringToFront();
-            }
+            try { 
+                selectLabel(lblMember);
+                showMissingInfo();
+                if (!pnlParent.Controls.Contains(frmEventMember.Instance))
+                {
+                    pnlParent.Controls.Add(frmEventMember.Instance);
+                    frmEventMember.Instance.Dock = DockStyle.Fill;
+                    frmEventMember.Instance.BringToFront();
+                }
+                else
+                {
+                    frmEventMember.Instance.BringToFront();
+                }
 
-            frmEventMember.Instance.cmbGroup.SelectedIndex = -1;
+                frmEventMember.Instance.cmbGroup.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
     }
 }

@@ -40,35 +40,55 @@ namespace RegnalUDB
 
         private void frmProvinces_Load(object sender, EventArgs e)
         {
+            try {
+                loadTable(this.getProvinces());
 
+                chbStatus.Checked = true;
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void txtSearch_KeyUp(object sender, KeyEventArgs e)
         {
-            String value = txtSearch.Text.Trim().ToUpper();
-            if (value.Trim().Length > 0)
-            {
-                filterProvinces = FormUtils.filterData<Provincia>(provinces, (g) =>
-                   g.nombre.ToUpper().Contains(value) || g.clave.ToString().Contains(value)
-                );
-                loadTable(filterProvinces);
-                return;
+            try { 
+                String value = txtSearch.Text.Trim().ToUpper();
+                if (value.Trim().Length > 0)
+                {
+                    filterProvinces = FormUtils.filterData<Provincia>(provinces, (g) =>
+                       g.nombre.ToUpper().Contains(value) || g.clave.ToString().Contains(value)
+                    );
+                    loadTable(filterProvinces);
+                    return;
+                }
+                filterProvinces = new List<Provincia>();
+                loadTable(provinces);
             }
-            filterProvinces = new List<Provincia>();
-            loadTable(provinces);
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private void dgvProvinces_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            int index = e.RowIndex;
-            if (index >= 0)
+            try { 
+                int index = e.RowIndex;
+                if (index >= 0)
+                {
+                    List<Provincia> list = filterProvinces.Count == 0 ? provinces : filterProvinces;
+                    selectedProvince = list[index];
+                    txtName.Text = selectedProvince.nombre;
+                    txtKey.Text = selectedProvince.clave;
+                    chbStatus.Checked = selectedProvince.baja;
+                    btnSaveModify.Text = "Modificar";
+                }
+            }
+            catch (Exception ex)
             {
-                List<Provincia> list = filterProvinces.Count == 0 ? provinces : filterProvinces;
-                selectedProvince = list[index];
-                txtName.Text = selectedProvince.nombre;
-                txtKey.Text = selectedProvince.clave;
-                chbStatus.Checked = selectedProvince.baja;
-                btnSaveModify.Text = "Modificar";
+                FormUtils.defaultErrorMessage(ex);
             }
         }
 
@@ -119,8 +139,14 @@ namespace RegnalUDB
 
         private void btnNewClean_Click(object sender, EventArgs e)
         {
-            clearForm();
-            loadTable(getProvinces());
+            try { 
+                clearForm();
+                loadTable(getProvinces());
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
         }
 
         private ToValidate[] getValidators()

@@ -254,6 +254,7 @@
             this.dgvAdvertisements.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvAdvertisements.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAdvertisements.Location = new System.Drawing.Point(16, 77);
+            this.dgvAdvertisements.MultiSelect = false;
             this.dgvAdvertisements.Name = "dgvAdvertisements";
             this.dgvAdvertisements.Size = new System.Drawing.Size(1011, 341);
             this.dgvAdvertisements.TabIndex = 3;
