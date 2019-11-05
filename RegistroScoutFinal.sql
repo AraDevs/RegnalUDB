@@ -226,7 +226,7 @@ baja bit not null,
 idMiembro int not null references Miembros(idMiembro),
 idPerfil int not null references Perfiles(idPerfil))
 
-CREATE TABLE Movimientos
+/*CREATE TABLE Movimientos
 (idMovimiento int identity(1,1) not null primary key,
 descripcion varchar(50),
 baja bit not null)
@@ -235,7 +235,7 @@ CREATE TABLE Bitacora
 (idBitcora int identity(1,1) not null primary key,
 idMiembro int not null references Miembros(idMiembro),
 fecha date not null,
-idMovimiento int not null references Movimientos(idMovimiento))
+idMovimiento int not null references Movimientos(idMovimiento))*/
 
 CREATE TABLE EventoSeccion
 (idEventoSeccion int not null identity(1,1) primary key,

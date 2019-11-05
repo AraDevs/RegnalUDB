@@ -35,7 +35,6 @@ INSERT INTO EstadoCivil(estadoCivil,baja) VALUES
 					('Viudo',1)
 
 
--- Comienzan inserts cuyos datos me he inventado
 INSERT INTO Provincias(nombre,baja,clave,idRegion) VALUES
 					('Scouts Occidente',1,'001',1),
 					('Scouts Centro',1,'002',1),
@@ -52,7 +51,19 @@ INSERT INTO Distritos(nombre,numero,baja,idProvincia) VALUES
 INSERT INTO Localidades(nombre, domicilioCorrespondencia, baja) VALUES
 					('Casa Scout', 'Avenida Baden Powell, 281, San Salvador',1),
 					('Instituto Técnico Ricaldone', 'Avenida Aguilares, 218, San Salvador', 1)
--- Terminan inserts cuyos datos me he inventado
+
+
+SET IDENTITY_INSERT [dbo].[Perfiles] ON 
+INSERT [dbo].[Perfiles] ([idPerfil], [nombre], [baja]) VALUES (1, N'Administrador', 1)
+INSERT [dbo].[Perfiles] ([idPerfil], [nombre], [baja]) VALUES (2, N'Direccion nacional', 1)
+INSERT [dbo].[Perfiles] ([idPerfil], [nombre], [baja]) VALUES (3, N'Consulta nacional', 1)
+INSERT [dbo].[Perfiles] ([idPerfil], [nombre], [baja]) VALUES (4, N'Presidente de provincia', 1)
+INSERT [dbo].[Perfiles] ([idPerfil], [nombre], [baja]) VALUES (5, N'Provincia consulta', 1)
+INSERT [dbo].[Perfiles] ([idPerfil], [nombre], [baja]) VALUES (6, N'Jefe de grupo', 1)
+INSERT [dbo].[Perfiles] ([idPerfil], [nombre], [baja]) VALUES (7, N'Consulta grupo', 1)
+SET IDENTITY_INSERT [dbo].[Perfiles] OFF
+SET IDENTITY_INSERT [dbo].[Usuarios] ON 
+
 
 INSERT INTO Departamentos(nombre, clave, baja) VALUES (N'Ahuachapán', N'SV-AH', 1)
 INSERT INTO Departamentos(nombre, clave, baja) VALUES (N'Santa Ana', N'SV-SA', 1)
