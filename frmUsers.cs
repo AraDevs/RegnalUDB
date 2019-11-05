@@ -239,6 +239,11 @@ namespace RegnalUDB
             if (index >= 0)
             {
                 selectedUser = users[index];
+                if(selectedUser.Perfile.idPerfil == 1 && selectedUser.Miembro.nombre=="root")
+                {
+                    MessageBox.Show("El administrador principal no puede ser modificado");
+                    return;
+                }
                 btnSaveModify.Text = "Modificar";
                 fillSelectedData(selectedUser);
             }

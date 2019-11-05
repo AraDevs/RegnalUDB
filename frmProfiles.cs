@@ -111,7 +111,7 @@ namespace RegnalUDB
         {
             FormUtils.clearTextbox(textControls());
             selectedProfile = null;
-            btnSaveModify.Text = "Guardar";
+            //btnSaveModify.Text = "Guardar";
             chbStatus.Checked = true;
         }
 
@@ -139,7 +139,8 @@ namespace RegnalUDB
             {
                 if (selectedProfile == null)
                 {
-                    saveData();
+                    MessageBox.Show("Seleccione un registro para modificar");   
+                   // saveData();
                 }
                 else
                 {
@@ -173,7 +174,12 @@ namespace RegnalUDB
             if (index >= 0)
             {
                 selectedProfile = profiles[index];
-                btnSaveModify.Text = "Modificar";
+                if (selectedProfile.nombre.Equals("Administrador"))
+                {
+                    MessageBox.Show("El perfil de administrador no puede ser modificado");
+                    return;
+                }
+               // btnSaveModify.Text = "Modificar";
                 fillSelectedData(selectedProfile);
             }
         }

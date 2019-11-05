@@ -124,7 +124,7 @@
             this.btnSaveModify.Name = "btnSaveModify";
             this.btnSaveModify.Size = new System.Drawing.Size(120, 45);
             this.btnSaveModify.TabIndex = 122;
-            this.btnSaveModify.Text = "Guardar";
+            this.btnSaveModify.Text = "Modificar";
             this.btnSaveModify.UseVisualStyleBackColor = true;
             this.btnSaveModify.Click += new System.EventHandler(this.btnSaveModify_Click);
             // 

@@ -296,6 +296,7 @@
             this.btnFormBitacora.Text = "              Bitácora";
             this.btnFormBitacora.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFormBitacora.UseVisualStyleBackColor = false;
+            this.btnFormBitacora.Visible = false;
             // 
             // btnFormTypeMovements
             // 
@@ -316,6 +317,7 @@
             this.btnFormTypeMovements.Text = "              Tipo de Movimientos";
             this.btnFormTypeMovements.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFormTypeMovements.UseVisualStyleBackColor = false;
+            this.btnFormTypeMovements.Visible = false;
             this.btnFormTypeMovements.Click += new System.EventHandler(this.btnFormTypeMovements_Click);
             // 
             // button1
