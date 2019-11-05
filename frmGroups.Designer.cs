@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo4 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo5 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo6 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo1 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo2 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo3 = new Syncfusion.Windows.Forms.BannerTextInfo();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.skinManager1 = new Syncfusion.Windows.Forms.SkinManager(this.components);
@@ -104,40 +104,65 @@
             this.skinManager1.Controls = this;
             this.skinManager1.VisualTheme = Syncfusion.Windows.Forms.VisualTheme.Office2016White;
             // 
-            // tabControl1
+            // txtSchedule
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.sectionsPage);
-            this.tabControl1.Location = new System.Drawing.Point(12, 61);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1092, 647);
-            this.tabControl1.TabIndex = 5;
-            this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
+            this.txtSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bannerTextInfo1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            bannerTextInfo1.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
+            bannerTextInfo1.Text = "Ingrese el nombre del grupo";
+            bannerTextInfo1.Visible = true;
+            this.bannerTextProvider1.SetBannerText(this.txtSchedule, bannerTextInfo1);
+            this.txtSchedule.BeforeTouchSize = new System.Drawing.Size(244, 22);
+            this.txtSchedule.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtSchedule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSchedule.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtSchedule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtSchedule.Location = new System.Drawing.Point(633, 66);
+            this.txtSchedule.Name = "txtSchedule";
+            this.txtSchedule.Size = new System.Drawing.Size(220, 22);
+            this.txtSchedule.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtSchedule.TabIndex = 112;
+            this.txtSchedule.ThemeName = "Office2016White";
             // 
-            // tabPage1
+            // txtGroup
             // 
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1084, 621);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Registro de grupo";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.txtGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bannerTextInfo2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            bannerTextInfo2.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
+            bannerTextInfo2.Text = "Ingrese el nombre del grupo";
+            bannerTextInfo2.Visible = true;
+            this.bannerTextProvider1.SetBannerText(this.txtGroup, bannerTextInfo2);
+            this.txtGroup.BeforeTouchSize = new System.Drawing.Size(244, 22);
+            this.txtGroup.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtGroup.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtGroup.Location = new System.Drawing.Point(198, 66);
+            this.txtGroup.Name = "txtGroup";
+            this.txtGroup.Size = new System.Drawing.Size(220, 22);
+            this.txtGroup.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtGroup.TabIndex = 110;
+            this.txtGroup.ThemeName = "Office2016White";
             // 
-            // sectionsPage
+            // txtName
             // 
-            this.sectionsPage.Controls.Add(this.dgvSections);
-            this.sectionsPage.Location = new System.Drawing.Point(4, 22);
-            this.sectionsPage.Name = "sectionsPage";
-            this.sectionsPage.Padding = new System.Windows.Forms.Padding(3);
-            this.sectionsPage.Size = new System.Drawing.Size(1084, 621);
-            this.sectionsPage.TabIndex = 1;
-            this.sectionsPage.Text = "Secciones adjuntas al grupo";
-            this.sectionsPage.ToolTipText = "Seleccione un grupo";
-            this.sectionsPage.UseVisualStyleBackColor = true;
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bannerTextInfo3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            bannerTextInfo3.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
+            bannerTextInfo3.Text = "Ingrese el nombre del grupo";
+            bannerTextInfo3.Visible = true;
+            this.bannerTextProvider1.SetBannerText(this.txtName, bannerTextInfo3);
+            this.txtName.BeforeTouchSize = new System.Drawing.Size(244, 22);
+            this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtName.Location = new System.Drawing.Point(198, 22);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(220, 22);
+            this.txtName.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtName.TabIndex = 108;
+            this.txtName.ThemeName = "Office2016White";
             // 
             // panel2
             // 
@@ -449,6 +474,9 @@
             // 
             // dgvGroups
             // 
+            this.dgvGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGroups.BackgroundColor = System.Drawing.Color.White;
+            this.dgvGroups.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvGroups.Location = new System.Drawing.Point(9, 45);
             this.dgvGroups.Name = "dgvGroups";

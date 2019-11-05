@@ -159,7 +159,7 @@
             this.pnlEventData.Controls.Add(this.txtName);
             this.pnlEventData.Location = new System.Drawing.Point(0, 0);
             this.pnlEventData.Name = "pnlEventData";
-            this.pnlEventData.Size = new System.Drawing.Size(989, 338);
+            this.pnlEventData.Size = new System.Drawing.Size(1033, 338);
             this.pnlEventData.TabIndex = 116;
             // 
             // btnNewClean
@@ -512,6 +512,9 @@
             // 
             // dgvEvents
             // 
+            this.dgvEvents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEvents.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEvents.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEvents.Location = new System.Drawing.Point(22, 59);
             this.dgvEvents.Name = "dgvEvents";
