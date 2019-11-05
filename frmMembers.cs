@@ -44,8 +44,8 @@ namespace RegnalUDB
 
         Usuario currentUser = new Usuario();
 
-        private string imagePath = "D:\\Desktop\\photos";
-        public static string pdfPath = "C:\\Users\\kevin\\Desktop\\records\\";
+        private string imagePath = Application.StartupPath + "\\photos\\";
+        public static string pdfPath = Application.StartupPath + "\\records\\";
 
 
         // data for custom DataGridView
@@ -379,7 +379,7 @@ namespace RegnalUDB
             txtMobile.Text = currentMember.movil;
             txtEmail.Text = currentMember.email;
             chbStatus.Checked = currentMember.baja;
-            pcbPhoto.ImageLocation = currentMember.fotoFileName;
+            pcbPhoto.ImageLocation = imagePath + currentMember.fotoFileName;
 
             txtStreetNo.Text = currentMember.Domicilio.calleNumero;
             txtStreet.Text = currentMember.Domicilio.entreCalles;
@@ -564,7 +564,7 @@ namespace RegnalUDB
                     baja = chbStatus.Checked,
                     idSeccion = ((Seccione)cmbSection.SelectedValue).idSeccion,
                     idGrupo = ((Grupos)cmbGroup.SelectedValue).idGrupo,
-                    fotoFileName = fileName,
+                    fotoFileName = cum + ".png",
                     fechaNacimiento = dtpBirthday.Value,
                     sexo = rdbMale.Checked ? "m" : "f",
                     particular = txtParticular.Text.Trim(),
@@ -649,7 +649,7 @@ namespace RegnalUDB
         {
             try
             {
-                System.IO.File.Copy(pcbPhoto.ImageLocation, selectedMember.fotoFileName, true);
+                System.IO.File.Copy(pcbPhoto.ImageLocation, imagePath + selectedMember.fotoFileName, true);
             }
             catch
             {
