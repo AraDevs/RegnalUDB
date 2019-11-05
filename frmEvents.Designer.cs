@@ -159,7 +159,7 @@
             this.pnlEventData.Controls.Add(this.txtName);
             this.pnlEventData.Location = new System.Drawing.Point(0, 0);
             this.pnlEventData.Name = "pnlEventData";
-            this.pnlEventData.Size = new System.Drawing.Size(989, 338);
+            this.pnlEventData.Size = new System.Drawing.Size(1033, 338);
             this.pnlEventData.TabIndex = 116;
             // 
             // btnNewClean
@@ -171,7 +171,7 @@
             this.btnNewClean.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNewClean.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNewClean.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnNewClean.Location = new System.Drawing.Point(767, 266);
+            this.btnNewClean.Location = new System.Drawing.Point(892, 265);
             this.btnNewClean.Name = "btnNewClean";
             this.btnNewClean.Size = new System.Drawing.Size(120, 45);
             this.btnNewClean.TabIndex = 174;
@@ -188,7 +188,7 @@
             this.btnSaveModify.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveModify.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveModify.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnSaveModify.Location = new System.Drawing.Point(641, 266);
+            this.btnSaveModify.Location = new System.Drawing.Point(766, 265);
             this.btnSaveModify.Name = "btnSaveModify";
             this.btnSaveModify.Size = new System.Drawing.Size(120, 45);
             this.btnSaveModify.TabIndex = 173;
@@ -213,7 +213,7 @@
             // txtMin
             // 
             this.txtMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtMin.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtMin.BeforeTouchSize = new System.Drawing.Size(244, 20);
             this.txtMin.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMin.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -242,7 +242,7 @@
             // txtResp
             // 
             this.txtResp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtResp.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtResp.BeforeTouchSize = new System.Drawing.Size(244, 20);
             this.txtResp.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtResp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResp.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -271,7 +271,7 @@
             // txtNumber
             // 
             this.txtNumber.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtNumber.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtNumber.BeforeTouchSize = new System.Drawing.Size(244, 20);
             this.txtNumber.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNumber.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -381,7 +381,7 @@
             // txtDescription
             // 
             this.txtDescription.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtDescription.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtDescription.BeforeTouchSize = new System.Drawing.Size(244, 20);
             this.txtDescription.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescription.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -458,7 +458,7 @@
             // txtPrice
             // 
             this.txtPrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPrice.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtPrice.BeforeTouchSize = new System.Drawing.Size(244, 20);
             this.txtPrice.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtPrice.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrice.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -487,7 +487,7 @@
             // txtName
             // 
             this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtName.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtName.BeforeTouchSize = new System.Drawing.Size(244, 20);
             this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -512,6 +512,9 @@
             // 
             // dgvEvents
             // 
+            this.dgvEvents.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvEvents.BackgroundColor = System.Drawing.Color.White;
+            this.dgvEvents.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEvents.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEvents.Location = new System.Drawing.Point(22, 59);
             this.dgvEvents.Name = "dgvEvents";
@@ -522,7 +525,7 @@
             // txtSearch
             // 
             this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(244, 20);
             this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
@@ -597,7 +600,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1117, 720);
+            this.ClientSize = new System.Drawing.Size(1100, 720);
             this.Controls.Add(this.lblMember);
             this.Controls.Add(this.lblFunction);
             this.Controls.Add(this.pnlParent);

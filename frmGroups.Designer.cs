@@ -29,17 +29,26 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo4 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo5 = new Syncfusion.Windows.Forms.BannerTextInfo();
-            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo6 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo16 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo17 = new Syncfusion.Windows.Forms.BannerTextInfo();
+            Syncfusion.Windows.Forms.BannerTextInfo bannerTextInfo18 = new Syncfusion.Windows.Forms.BannerTextInfo();
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.skinManager1 = new Syncfusion.Windows.Forms.SkinManager(this.components);
             this.bannerTextProvider1 = new Syncfusion.Windows.Forms.BannerTextProvider(this.components);
+            this.txtSchedule = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtGroup = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.txtName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.sectionsPage = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvGroups = new System.Windows.Forms.DataGridView();
+            this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.chbRegistration = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
+            this.dtpRegistration = new Syncfusion.Windows.Forms.Tools.DateTimePickerAdv();
+            this.autoLabel9 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.btnNewClean = new System.Windows.Forms.Button();
             this.btnSaveModify = new System.Windows.Forms.Button();
             this.chbStatus = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
@@ -51,44 +60,35 @@
             this.autoLabel5 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.cmbDistricts = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
             this.autoLabel4 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.txtSchedule = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel3 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.txtGroup = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.txtName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.sectionsPage = new System.Windows.Forms.TabPage();
             this.dgvSections = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvGroups = new System.Windows.Forms.DataGridView();
-            this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.autoLabel9 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.dtpRegistration = new Syncfusion.Windows.Forms.Tools.DateTimePickerAdv();
-            this.chbRegistration = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSchedule)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGroup)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.sectionsPage.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chbRegistration)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpRegistration)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpFundation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLocations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbDistricts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSchedule)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGroup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
+            this.sectionsPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpRegistration)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chbRegistration)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 25);
+            this.label1.Location = new System.Drawing.Point(18, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 21);
             this.label1.TabIndex = 1;
@@ -104,6 +104,66 @@
             this.skinManager1.Controls = this;
             this.skinManager1.VisualTheme = Syncfusion.Windows.Forms.VisualTheme.Office2016White;
             // 
+            // txtSchedule
+            // 
+            this.txtSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bannerTextInfo16.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            bannerTextInfo16.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
+            bannerTextInfo16.Text = "Ingrese el nombre del grupo";
+            bannerTextInfo16.Visible = true;
+            this.bannerTextProvider1.SetBannerText(this.txtSchedule, bannerTextInfo16);
+            this.txtSchedule.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtSchedule.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtSchedule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSchedule.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtSchedule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtSchedule.Location = new System.Drawing.Point(633, 113);
+            this.txtSchedule.Name = "txtSchedule";
+            this.txtSchedule.Size = new System.Drawing.Size(220, 22);
+            this.txtSchedule.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtSchedule.TabIndex = 112;
+            this.txtSchedule.ThemeName = "Office2016White";
+            // 
+            // txtGroup
+            // 
+            this.txtGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bannerTextInfo17.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            bannerTextInfo17.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
+            bannerTextInfo17.Text = "Ingrese el nombre del grupo";
+            bannerTextInfo17.Visible = true;
+            this.bannerTextProvider1.SetBannerText(this.txtGroup, bannerTextInfo17);
+            this.txtGroup.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtGroup.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtGroup.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtGroup.Location = new System.Drawing.Point(198, 66);
+            this.txtGroup.Name = "txtGroup";
+            this.txtGroup.Size = new System.Drawing.Size(220, 22);
+            this.txtGroup.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtGroup.TabIndex = 110;
+            this.txtGroup.ThemeName = "Office2016White";
+            // 
+            // txtName
+            // 
+            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            bannerTextInfo18.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            bannerTextInfo18.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
+            bannerTextInfo18.Text = "Ingrese el nombre del grupo";
+            bannerTextInfo18.Visible = true;
+            this.bannerTextProvider1.SetBannerText(this.txtName, bannerTextInfo18);
+            this.txtName.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtName.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtName.Location = new System.Drawing.Point(198, 22);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(220, 22);
+            this.txtName.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtName.TabIndex = 108;
+            this.txtName.ThemeName = "Office2016White";
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -111,7 +171,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 61);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1092, 647);
+            this.tabControl1.Size = new System.Drawing.Size(1076, 647);
             this.tabControl1.TabIndex = 5;
             this.tabControl1.Selecting += new System.Windows.Forms.TabControlCancelEventHandler(this.tabControl1_Selecting);
             // 
@@ -122,22 +182,63 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1084, 621);
+            this.tabPage1.Size = new System.Drawing.Size(1068, 621);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Registro de grupo";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // sectionsPage
+            // panel1
             // 
-            this.sectionsPage.Controls.Add(this.dgvSections);
-            this.sectionsPage.Location = new System.Drawing.Point(4, 22);
-            this.sectionsPage.Name = "sectionsPage";
-            this.sectionsPage.Padding = new System.Windows.Forms.Padding(3);
-            this.sectionsPage.Size = new System.Drawing.Size(1084, 621);
-            this.sectionsPage.TabIndex = 1;
-            this.sectionsPage.Text = "Secciones adjuntas al grupo";
-            this.sectionsPage.ToolTipText = "Seleccione un grupo";
-            this.sectionsPage.UseVisualStyleBackColor = true;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.dgvGroups);
+            this.panel1.Controls.Add(this.txtSearch);
+            this.panel1.Controls.Add(this.autoLabel1);
+            this.panel1.Location = new System.Drawing.Point(6, 315);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1043, 290);
+            this.panel1.TabIndex = 7;
+            // 
+            // dgvGroups
+            // 
+            this.dgvGroups.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGroups.BackgroundColor = System.Drawing.Color.White;
+            this.dgvGroups.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGroups.Location = new System.Drawing.Point(16, 45);
+            this.dgvGroups.Name = "dgvGroups";
+            this.dgvGroups.Size = new System.Drawing.Size(1010, 238);
+            this.dgvGroups.TabIndex = 3;
+            this.dgvGroups.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroups_CellClick);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtSearch.Location = new System.Drawing.Point(174, 17);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(244, 22);
+            this.txtSearch.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.ThemeName = "Office2016White";
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            // 
+            // autoLabel1
+            // 
+            this.autoLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.autoLabel1.DX = -158;
+            this.autoLabel1.DY = 1;
+            this.autoLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.autoLabel1.LabeledControl = this.txtSearch;
+            this.autoLabel1.Location = new System.Drawing.Point(16, 18);
+            this.autoLabel1.Name = "autoLabel1";
+            this.autoLabel1.Size = new System.Drawing.Size(154, 20);
+            this.autoLabel1.TabIndex = 0;
+            this.autoLabel1.Text = "Búsqueda de Grupos:";
+            this.autoLabel1.ThemeName = "Office2016White";
             // 
             // panel2
             // 
@@ -163,9 +264,62 @@
             this.panel2.Controls.Add(this.txtName);
             this.panel2.Location = new System.Drawing.Point(6, 16);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1069, 284);
+            this.panel2.Size = new System.Drawing.Size(1043, 284);
             this.panel2.TabIndex = 6;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // chbRegistration
+            // 
+            this.chbRegistration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.chbRegistration.BeforeTouchSize = new System.Drawing.Size(220, 21);
+            this.chbRegistration.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.chbRegistration.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbRegistration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.chbRegistration.HotBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.chbRegistration.Location = new System.Drawing.Point(198, 154);
+            this.chbRegistration.Name = "chbRegistration";
+            this.chbRegistration.Size = new System.Drawing.Size(220, 21);
+            this.chbRegistration.TabIndex = 127;
+            this.chbRegistration.Text = "Registrado";
+            this.chbRegistration.ThemeName = "Office2016White";
+            // 
+            // dtpRegistration
+            // 
+            this.dtpRegistration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtpRegistration.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
+            this.dtpRegistration.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.dtpRegistration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.dtpRegistration.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtpRegistration.CalendarSize = new System.Drawing.Size(189, 176);
+            this.dtpRegistration.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dtpRegistration.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.dtpRegistration.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.dtpRegistration.Culture = new System.Globalization.CultureInfo("es-SV");
+            this.dtpRegistration.DropDownImage = null;
+            this.dtpRegistration.DropDownNormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dtpRegistration.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpRegistration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.dtpRegistration.Location = new System.Drawing.Point(633, 68);
+            this.dtpRegistration.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
+            this.dtpRegistration.MinValue = new System.DateTime(((long)(0)));
+            this.dtpRegistration.Name = "dtpRegistration";
+            this.dtpRegistration.ShowCheckBox = false;
+            this.dtpRegistration.Size = new System.Drawing.Size(220, 20);
+            this.dtpRegistration.Style = Syncfusion.Windows.Forms.VisualStyle.Office2016White;
+            this.dtpRegistration.TabIndex = 125;
+            this.dtpRegistration.Value = new System.DateTime(2019, 10, 16, 19, 47, 40, 775);
+            // 
+            // autoLabel9
+            // 
+            this.autoLabel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.autoLabel9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.autoLabel9.Location = new System.Drawing.Point(486, 68);
+            this.autoLabel9.Name = "autoLabel9";
+            this.autoLabel9.Size = new System.Drawing.Size(126, 20);
+            this.autoLabel9.TabIndex = 124;
+            this.autoLabel9.Text = "Fecha de registro:";
+            this.autoLabel9.ThemeName = "Office2016White";
             // 
             // btnNewClean
             // 
@@ -340,210 +494,63 @@
             this.autoLabel4.Text = "Horario:";
             this.autoLabel4.ThemeName = "Office2016White";
             // 
-            // txtSchedule
-            // 
-            this.txtSchedule.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bannerTextInfo4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            bannerTextInfo4.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
-            bannerTextInfo4.Text = "Ingrese el nombre del grupo";
-            bannerTextInfo4.Visible = true;
-            this.bannerTextProvider1.SetBannerText(this.txtSchedule, bannerTextInfo4);
-            this.txtSchedule.BeforeTouchSize = new System.Drawing.Size(220, 22);
-            this.txtSchedule.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.txtSchedule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSchedule.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.txtSchedule.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtSchedule.Location = new System.Drawing.Point(633, 113);
-            this.txtSchedule.Name = "txtSchedule";
-            this.txtSchedule.Size = new System.Drawing.Size(220, 22);
-            this.txtSchedule.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtSchedule.TabIndex = 112;
-            this.txtSchedule.ThemeName = "Office2016White";
-            // 
             // autoLabel3
             // 
             this.autoLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.autoLabel3.DX = -136;
+            this.autoLabel3.DY = 1;
             this.autoLabel3.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.autoLabel3.LabeledControl = this.txtGroup;
-            this.autoLabel3.Location = new System.Drawing.Point(62, 66);
+            this.autoLabel3.Location = new System.Drawing.Point(62, 67);
             this.autoLabel3.Name = "autoLabel3";
             this.autoLabel3.Size = new System.Drawing.Size(132, 20);
             this.autoLabel3.TabIndex = 111;
             this.autoLabel3.Text = "Número de Grupo:";
             this.autoLabel3.ThemeName = "Office2016White";
             // 
-            // txtGroup
-            // 
-            this.txtGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bannerTextInfo5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            bannerTextInfo5.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
-            bannerTextInfo5.Text = "Ingrese el nombre del grupo";
-            bannerTextInfo5.Visible = true;
-            this.bannerTextProvider1.SetBannerText(this.txtGroup, bannerTextInfo5);
-            this.txtGroup.BeforeTouchSize = new System.Drawing.Size(220, 22);
-            this.txtGroup.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.txtGroup.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtGroup.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.txtGroup.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtGroup.Location = new System.Drawing.Point(198, 66);
-            this.txtGroup.Name = "txtGroup";
-            this.txtGroup.Size = new System.Drawing.Size(220, 22);
-            this.txtGroup.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtGroup.TabIndex = 110;
-            this.txtGroup.ThemeName = "Office2016White";
-            // 
             // autoLabel2
             // 
             this.autoLabel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.autoLabel2.DX = -71;
+            this.autoLabel2.DY = 1;
             this.autoLabel2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.autoLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.autoLabel2.LabeledControl = this.txtName;
-            this.autoLabel2.Location = new System.Drawing.Point(127, 22);
+            this.autoLabel2.Location = new System.Drawing.Point(127, 23);
             this.autoLabel2.Name = "autoLabel2";
             this.autoLabel2.Size = new System.Drawing.Size(67, 20);
             this.autoLabel2.TabIndex = 109;
             this.autoLabel2.Text = "Nombre:";
             this.autoLabel2.ThemeName = "Office2016White";
             // 
-            // txtName
+            // sectionsPage
             // 
-            this.txtName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            bannerTextInfo6.Color = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            bannerTextInfo6.Mode = Syncfusion.Windows.Forms.BannerTextMode.EditMode;
-            bannerTextInfo6.Text = "Ingrese el nombre del grupo";
-            bannerTextInfo6.Visible = true;
-            this.bannerTextProvider1.SetBannerText(this.txtName, bannerTextInfo6);
-            this.txtName.BeforeTouchSize = new System.Drawing.Size(220, 22);
-            this.txtName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtName.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.txtName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtName.Location = new System.Drawing.Point(198, 22);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(220, 22);
-            this.txtName.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtName.TabIndex = 108;
-            this.txtName.ThemeName = "Office2016White";
+            this.sectionsPage.Controls.Add(this.dgvSections);
+            this.sectionsPage.Location = new System.Drawing.Point(4, 22);
+            this.sectionsPage.Name = "sectionsPage";
+            this.sectionsPage.Padding = new System.Windows.Forms.Padding(3);
+            this.sectionsPage.Size = new System.Drawing.Size(1068, 621);
+            this.sectionsPage.TabIndex = 1;
+            this.sectionsPage.Text = "Secciones adjuntas al grupo";
+            this.sectionsPage.ToolTipText = "Seleccione un grupo";
+            this.sectionsPage.UseVisualStyleBackColor = true;
             // 
             // dgvSections
             // 
+            this.dgvSections.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSections.BackgroundColor = System.Drawing.Color.White;
             this.dgvSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSections.Location = new System.Drawing.Point(15, 41);
             this.dgvSections.Name = "dgvSections";
-            this.dgvSections.Size = new System.Drawing.Size(1063, 357);
+            this.dgvSections.Size = new System.Drawing.Size(1035, 357);
             this.dgvSections.TabIndex = 6;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.dgvGroups);
-            this.panel1.Controls.Add(this.txtSearch);
-            this.panel1.Controls.Add(this.autoLabel1);
-            this.panel1.Location = new System.Drawing.Point(6, 315);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1069, 290);
-            this.panel1.TabIndex = 7;
-            // 
-            // dgvGroups
-            // 
-            this.dgvGroups.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGroups.Location = new System.Drawing.Point(9, 45);
-            this.dgvGroups.Name = "dgvGroups";
-            this.dgvGroups.Size = new System.Drawing.Size(1017, 238);
-            this.dgvGroups.TabIndex = 3;
-            this.dgvGroups.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGroups_CellClick);
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(220, 22);
-            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtSearch.Location = new System.Drawing.Point(174, 17);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(244, 22);
-            this.txtSearch.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.ThemeName = "Office2016White";
-            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
-            // 
-            // autoLabel1
-            // 
-            this.autoLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.autoLabel1.DX = -158;
-            this.autoLabel1.DY = 1;
-            this.autoLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autoLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel1.LabeledControl = this.txtSearch;
-            this.autoLabel1.Location = new System.Drawing.Point(16, 18);
-            this.autoLabel1.Name = "autoLabel1";
-            this.autoLabel1.Size = new System.Drawing.Size(154, 20);
-            this.autoLabel1.TabIndex = 0;
-            this.autoLabel1.Text = "Búsqueda de Grupos:";
-            this.autoLabel1.ThemeName = "Office2016White";
-            // 
-            // autoLabel9
-            // 
-            this.autoLabel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.autoLabel9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autoLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel9.Location = new System.Drawing.Point(486, 68);
-            this.autoLabel9.Name = "autoLabel9";
-            this.autoLabel9.Size = new System.Drawing.Size(126, 20);
-            this.autoLabel9.TabIndex = 124;
-            this.autoLabel9.Text = "Fecha de registro:";
-            this.autoLabel9.ThemeName = "Office2016White";
-            // 
-            // dtpRegistration
-            // 
-            this.dtpRegistration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dtpRegistration.Border3DStyle = System.Windows.Forms.Border3DStyle.Flat;
-            this.dtpRegistration.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.dtpRegistration.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.dtpRegistration.CalendarMonthBackground = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dtpRegistration.CalendarSize = new System.Drawing.Size(189, 176);
-            this.dtpRegistration.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dtpRegistration.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.dtpRegistration.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.dtpRegistration.Culture = new System.Globalization.CultureInfo("es-SV");
-            this.dtpRegistration.DropDownImage = null;
-            this.dtpRegistration.DropDownNormalColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dtpRegistration.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpRegistration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.dtpRegistration.Location = new System.Drawing.Point(633, 68);
-            this.dtpRegistration.MetroColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(165)))), ((int)(((byte)(220)))));
-            this.dtpRegistration.MinValue = new System.DateTime(((long)(0)));
-            this.dtpRegistration.Name = "dtpRegistration";
-            this.dtpRegistration.ShowCheckBox = false;
-            this.dtpRegistration.Size = new System.Drawing.Size(220, 20);
-            this.dtpRegistration.Style = Syncfusion.Windows.Forms.VisualStyle.Office2016White;
-            this.dtpRegistration.TabIndex = 125;
-            this.dtpRegistration.Value = new System.DateTime(2019, 10, 16, 19, 47, 40, 775);
-            // 
-            // chbRegistration
-            // 
-            this.chbRegistration.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.chbRegistration.BeforeTouchSize = new System.Drawing.Size(220, 21);
-            this.chbRegistration.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.chbRegistration.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbRegistration.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.chbRegistration.HotBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.chbRegistration.Location = new System.Drawing.Point(198, 154);
-            this.chbRegistration.Name = "chbRegistration";
-            this.chbRegistration.Size = new System.Drawing.Size(220, 21);
-            this.chbRegistration.TabIndex = 127;
-            this.chbRegistration.Text = "Registrado";
-            this.chbRegistration.ThemeName = "Office2016White";
             // 
             // frmGroups
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 761);
+            this.ClientSize = new System.Drawing.Size(1100, 720);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -553,25 +560,25 @@
             this.Text = "frmGroups";
             this.Load += new System.EventHandler(this.frmGroups_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.sectionsPage.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpFundation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbLocations)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbDistricts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSchedule)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).EndInit();
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtpRegistration)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chbRegistration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpRegistration)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtpFundation)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbLocations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbDistricts)).EndInit();
+            this.sectionsPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

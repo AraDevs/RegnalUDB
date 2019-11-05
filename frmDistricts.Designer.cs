@@ -202,6 +202,9 @@
             // 
             // dgvDistricts
             // 
+            this.dgvDistricts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDistricts.BackgroundColor = System.Drawing.Color.White;
+            this.dgvDistricts.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvDistricts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDistricts.Location = new System.Drawing.Point(16, 79);
             this.dgvDistricts.Name = "dgvDistricts";

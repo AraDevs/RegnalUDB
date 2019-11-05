@@ -1324,13 +1324,16 @@
             this.panel2.Controls.Add(this.dgvMembers);
             this.panel2.Controls.Add(this.txtSearch);
             this.panel2.Controls.Add(this.autoLabel30);
-            this.panel2.Location = new System.Drawing.Point(33, 641);
+            this.panel2.Location = new System.Drawing.Point(32, 646);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1034, 324);
+            this.panel2.Size = new System.Drawing.Size(1034, 323);
             this.panel2.TabIndex = 79;
             // 
             // dgvMembers
             // 
+            this.dgvMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvMembers.BackgroundColor = System.Drawing.Color.White;
+            this.dgvMembers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMembers.Location = new System.Drawing.Point(22, 59);
             this.dgvMembers.Name = "dgvMembers";
@@ -1424,7 +1427,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1168, 720);
+            this.ClientSize = new System.Drawing.Size(1100, 720);
             this.Controls.Add(this.lblFunctions);
             this.Controls.Add(this.lblInscripciones);
             this.Controls.Add(this.lblFolder);

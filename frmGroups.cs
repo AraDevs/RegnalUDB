@@ -213,8 +213,8 @@ namespace RegnalUDB
         {
             dgvGroups.DataSource = null;
             dgvGroups.DataSource = groups;
-            FormUtils.hideColumnsForDgv(columnsToHideForGroups, dgvGroups);
-            FormUtils.changeTitlesForDgv(titlesforGroups, columnsToChangeForGroups, dgvGroups);
+            /*FormUtils.hideColumnsForDgv(columnsToHideForGroups, dgvGroups);
+            FormUtils.changeTitlesForDgv(titlesforGroups, columnsToChangeForGroups, dgvGroups);*/
             return;
         }
 

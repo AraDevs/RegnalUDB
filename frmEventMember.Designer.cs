@@ -38,6 +38,11 @@
             this.lblEventMember1 = new System.Windows.Forms.Label();
             this.autoLabel18 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.autoLabel4 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
+            this.autoLabel3 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.chbPayment = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.dgvMembers = new System.Windows.Forms.DataGridView();
@@ -45,18 +50,13 @@
             this.autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.lblEventMember2 = new System.Windows.Forms.Label();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.chbPayment = new Syncfusion.Windows.Forms.Tools.CheckBoxAdv();
-            this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.autoLabel3 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.lblCount = new System.Windows.Forms.Label();
-            this.autoLabel4 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cmbGroup)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chbPayment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbPayment)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -118,6 +118,7 @@
             // lstMember
             // 
             this.lstMember.AccessibleName = "ScrollControl";
+            this.lstMember.BackColor = System.Drawing.Color.White;
             this.lstMember.CheckBoxSelectionMode = Syncfusion.WinForms.ListView.Enums.CheckBoxSelectionMode.SynchronizeSelection;
             this.lstMember.Location = new System.Drawing.Point(84, 123);
             this.lstMember.Name = "lstMember";
@@ -200,6 +201,74 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Miembros registrados";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // lblCount
+            // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCount.Location = new System.Drawing.Point(909, 20);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(17, 20);
+            this.lblCount.TabIndex = 193;
+            this.lblCount.Text = "0";
+            // 
+            // autoLabel4
+            // 
+            this.autoLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.autoLabel4.DX = -305;
+            this.autoLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.autoLabel4.LabeledControl = this.lblCount;
+            this.autoLabel4.Location = new System.Drawing.Point(604, 20);
+            this.autoLabel4.Name = "autoLabel4";
+            this.autoLabel4.Size = new System.Drawing.Size(301, 20);
+            this.autoLabel4.TabIndex = 192;
+            this.autoLabel4.Text = "Número de miembros inscritos en el evento:";
+            this.autoLabel4.ThemeName = "Office2016White";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(244, 20);
+            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.txtSearch.Location = new System.Drawing.Point(696, 103);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(244, 20);
+            this.txtSearch.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
+            this.txtSearch.TabIndex = 191;
+            this.txtSearch.ThemeName = "Office2016White";
+            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
+            // 
+            // autoLabel3
+            // 
+            this.autoLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.autoLabel3.DX = -178;
+            this.autoLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.autoLabel3.LabeledControl = this.txtSearch;
+            this.autoLabel3.Location = new System.Drawing.Point(518, 103);
+            this.autoLabel3.Name = "autoLabel3";
+            this.autoLabel3.Size = new System.Drawing.Size(174, 20);
+            this.autoLabel3.TabIndex = 190;
+            this.autoLabel3.Text = "Búsqueda de Miembros:";
+            this.autoLabel3.ThemeName = "Office2016White";
+            // 
+            // chbPayment
+            // 
+            this.chbPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.chbPayment.BeforeTouchSize = new System.Drawing.Size(230, 21);
+            this.chbPayment.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
+            this.chbPayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
+            this.chbPayment.HotBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.chbPayment.Location = new System.Drawing.Point(74, 122);
+            this.chbPayment.Name = "chbPayment";
+            this.chbPayment.Size = new System.Drawing.Size(230, 21);
+            this.chbPayment.TabIndex = 189;
+            this.chbPayment.Text = "El miembro tiene pago pendiente";
+            this.chbPayment.ThemeName = "Office2016White";
             // 
             // btnDelete
             // 
@@ -294,74 +363,6 @@
             this.autoLabel1.Text = "Evento seleccionado:";
             this.autoLabel1.ThemeName = "Office2016White";
             // 
-            // chbPayment
-            // 
-            this.chbPayment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.chbPayment.BeforeTouchSize = new System.Drawing.Size(230, 21);
-            this.chbPayment.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(197)))), ((int)(((byte)(197)))), ((int)(((byte)(197)))));
-            this.chbPayment.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbPayment.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(43)))), ((int)(((byte)(43)))));
-            this.chbPayment.HotBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.chbPayment.Location = new System.Drawing.Point(74, 122);
-            this.chbPayment.Name = "chbPayment";
-            this.chbPayment.Size = new System.Drawing.Size(230, 21);
-            this.chbPayment.TabIndex = 189;
-            this.chbPayment.Text = "El miembro tiene pago pendiente";
-            this.chbPayment.ThemeName = "Office2016White";
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSearch.BeforeTouchSize = new System.Drawing.Size(244, 20);
-            this.txtSearch.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.txtSearch.Location = new System.Drawing.Point(696, 103);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(244, 20);
-            this.txtSearch.Style = Syncfusion.Windows.Forms.Tools.TextBoxExt.theme.Office2016White;
-            this.txtSearch.TabIndex = 191;
-            this.txtSearch.ThemeName = "Office2016White";
-            this.txtSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSearch_KeyUp);
-            // 
-            // autoLabel3
-            // 
-            this.autoLabel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.autoLabel3.DX = -178;
-            this.autoLabel3.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autoLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel3.LabeledControl = this.txtSearch;
-            this.autoLabel3.Location = new System.Drawing.Point(518, 103);
-            this.autoLabel3.Name = "autoLabel3";
-            this.autoLabel3.Size = new System.Drawing.Size(174, 20);
-            this.autoLabel3.TabIndex = 190;
-            this.autoLabel3.Text = "Búsqueda de Miembros:";
-            this.autoLabel3.ThemeName = "Office2016White";
-            // 
-            // lblCount
-            // 
-            this.lblCount.AutoSize = true;
-            this.lblCount.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCount.Location = new System.Drawing.Point(909, 20);
-            this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(17, 20);
-            this.lblCount.TabIndex = 193;
-            this.lblCount.Text = "0";
-            // 
-            // autoLabel4
-            // 
-            this.autoLabel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.autoLabel4.DX = -305;
-            this.autoLabel4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autoLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel4.LabeledControl = this.lblCount;
-            this.autoLabel4.Location = new System.Drawing.Point(604, 20);
-            this.autoLabel4.Name = "autoLabel4";
-            this.autoLabel4.Size = new System.Drawing.Size(301, 20);
-            this.autoLabel4.TabIndex = 192;
-            this.autoLabel4.Text = "Número de miembros inscritos en el evento:";
-            this.autoLabel4.ThemeName = "Office2016White";
-            // 
             // frmEventMember
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -377,9 +378,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.cmbGroup)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chbPayment)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chbPayment)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).EndInit();
             this.ResumeLayout(false);
 
         }
