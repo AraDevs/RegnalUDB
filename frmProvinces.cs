@@ -152,8 +152,8 @@ namespace RegnalUDB
             dgvProvinces.DataSource = locations;
             FormUtils.hideColumnsForDgv(columnsToHideForProvinces, dgvProvinces);
             FormUtils.changeTitlesForDgv(titlesforProvinces, columnsToChangeForProvinces, dgvProvinces);
-            dgvProvinces.AutoResizeColumns();
-            dgvProvinces.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            /*dgvProvinces.AutoResizeColumns();
+            dgvProvinces.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;*/
             return;
         }
 

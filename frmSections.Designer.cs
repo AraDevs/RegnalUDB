@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvSections = new System.Windows.Forms.DataGridView();
             this.txtSearch = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel1 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -50,9 +51,9 @@
             this.txtGroup = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtName = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.dgvSections = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chbStatus)).BeginInit();
@@ -62,7 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtStartRange)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,6 +91,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1038, 339);
             this.panel1.TabIndex = 5;
+            // 
+            // dgvSections
+            // 
+            this.dgvSections.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvSections.BackgroundColor = System.Drawing.Color.White;
+            this.dgvSections.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSections.Location = new System.Drawing.Point(13, 74);
+            this.dgvSections.Name = "dgvSections";
+            this.dgvSections.Size = new System.Drawing.Size(1011, 238);
+            this.dgvSections.TabIndex = 2;
             // 
             // txtSearch
             // 
@@ -360,14 +371,6 @@
             this.txtName.TabIndex = 110;
             this.txtName.ThemeName = "Office2016White";
             // 
-            // dgvSections
-            // 
-            this.dgvSections.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSections.Location = new System.Drawing.Point(13, 74);
-            this.dgvSections.Name = "dgvSections";
-            this.dgvSections.Size = new System.Drawing.Size(1011, 238);
-            this.dgvSections.TabIndex = 2;
-            // 
             // frmSections
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -385,6 +388,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -395,7 +399,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtStartRange)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSections)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

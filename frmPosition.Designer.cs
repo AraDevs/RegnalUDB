@@ -239,6 +239,9 @@
             // 
             // dgvPositions
             // 
+            this.dgvPositions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPositions.BackgroundColor = System.Drawing.Color.White;
+            this.dgvPositions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPositions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPositions.Location = new System.Drawing.Point(16, 69);
             this.dgvPositions.Name = "dgvPositions";

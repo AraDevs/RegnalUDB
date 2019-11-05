@@ -195,8 +195,8 @@ namespace RegnalUDB
             dgvBlackList.DataSource = bans;
             FormUtils.hideColumnsForDgv(columnsToHideForBlackList, dgvBlackList);
             FormUtils.changeTitlesForDgv(titlesforBlackList, columnsToChangeForBlackList, dgvBlackList);
-            dgvBlackList.AutoResizeColumns();
-            dgvBlackList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            /*dgvBlackList.AutoResizeColumns();
+            dgvBlackList.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;*/
             return;
         }
 
