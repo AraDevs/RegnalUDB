@@ -57,6 +57,13 @@ namespace RegnalUDB
                     btnFormTypeUsers.Hide();
                     btnFormFunctions.Hide();
                     btnFormDepartments.Hide();
+
+                    btnFormMembers.Location = new Point(12, 144);
+                    btnFormEvents.Location = new Point(12, 198);
+                    btnFormDistrictis.Location = new Point(12, 252);
+                    btnFormGroups.Location = new Point(12, 306);
+
+                    button1.Location = new Point(12, 734);
                     ShowChildForm(new frmMembers(currentUser));
                     break;
                 case 3:
@@ -76,6 +83,12 @@ namespace RegnalUDB
                     btnFormTypeUsers.Hide();
                     btnFormFunctions.Hide();
                     btnFormDepartments.Hide();
+
+                    btnFormMembers.Location = new Point(12, 144);
+                    btnFormDistrictis.Location = new Point(12, 198);
+                    btnFormGroups.Location = new Point(12, 252);
+
+                    button1.Location = new Point(12, 734);
                     ShowChildForm(new frmMembers(currentUser));
                     break;
                 case 4:
@@ -93,6 +106,15 @@ namespace RegnalUDB
                     btnFormTypeUsers.Hide();
                     btnFormFunctions.Hide();
                     btnFormDepartments.Hide();
+
+                    btnFormMembers.Location = new Point(12, 144);
+                    btnFormEvents.Location = new Point(12, 198);
+                    btnFormUsers.Location = new Point(12, 252);
+                    btnFormDistrictis.Location = new Point(12, 306);
+                    btnFormGroups.Location = new Point(12, 360);
+
+                    button1.Location = new Point(12, 734);
+
                     ShowChildForm(new frmMembers(currentUser));
                     break;
                 case 5:
@@ -113,6 +135,12 @@ namespace RegnalUDB
                     btnFormTypeUsers.Hide();
                     btnFormFunctions.Hide();
                     btnFormDepartments.Hide();
+
+                    btnFormDistrictis.Location = new Point(12, 144);
+                    btnFormGroups.Location = new Point(12, 198);
+
+                    button1.Location = new Point(12, 734);
+
                     ShowChildForm(new frmDistricts(currentUser));
                     break;
                 case 6:
@@ -132,6 +160,14 @@ namespace RegnalUDB
                     btnFormFunctions.Hide();
                     btnFormSchoolarship.Hide();
                     btnFormDepartments.Hide();
+
+                    btnFormMembers.Location = new Point(12, 144);
+                    btnFormEvents.Location = new Point(12, 198);
+                    btnFormDistrictis.Location = new Point(12, 252);
+                    btnFormGroups.Location = new Point(12, 306);
+
+                    button1.Location = new Point(12, 734);
+
                     ShowChildForm(new frmMembers(currentUser));
                     break;
                 case 7:
@@ -151,6 +187,14 @@ namespace RegnalUDB
                     btnFormFunctions.Hide();
                     btnFormSchoolarship.Hide();
                     btnFormDepartments.Hide();
+
+                    btnFormMembers.Location = new Point(12, 144);
+                    btnFormEvents.Location = new Point(12, 198);
+                    btnFormDistrictis.Location = new Point(12, 252);
+                    btnFormGroups.Location = new Point(12, 306);
+
+                    button1.Location = new Point(12, 734);
+
                     ShowChildForm(new frmMembers(currentUser));
                     break;
             }

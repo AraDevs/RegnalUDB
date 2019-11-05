@@ -169,6 +169,9 @@
             // 
             // dgvProfiles
             // 
+            this.dgvProfiles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvProfiles.BackgroundColor = System.Drawing.Color.White;
+            this.dgvProfiles.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvProfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProfiles.Location = new System.Drawing.Point(15, 68);
             this.dgvProfiles.Name = "dgvProfiles";

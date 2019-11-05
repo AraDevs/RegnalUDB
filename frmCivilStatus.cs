@@ -112,8 +112,8 @@ namespace RegnalUDB
             dgvCivilStatus.DataSource = civilStatus;
             FormUtils.hideColumnsForDgv(columnsToHideForCivilStatus, dgvCivilStatus);
             FormUtils.changeTitlesForDgv(titlesforCivilStatus, columnsToChangeForCivilStatus, dgvCivilStatus);
-            dgvCivilStatus.AutoResizeColumns();
-            dgvCivilStatus.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            /*dgvCivilStatus.AutoResizeColumns();
+            dgvCivilStatus.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;*/
             return;
         }
 
