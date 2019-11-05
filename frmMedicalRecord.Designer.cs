@@ -45,7 +45,11 @@
             this.txtContact2 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel2 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtContact1 = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
-            this.tabHome = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.tabData = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.btnOpenPdf = new System.Windows.Forms.Button();
+            this.lblPdf = new System.Windows.Forms.Label();
+            this.autoLabel40 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
+            this.btnBrowse = new System.Windows.Forms.Button();
             this.autoLabel30 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtSocial = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel37 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -58,7 +62,7 @@
             this.autoLabel9 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.autoLabel8 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.cmbBloodType = new Syncfusion.Windows.Forms.Tools.ComboBoxAdv();
-            this.tabPageAdv1 = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
+            this.tabOther = new Syncfusion.Windows.Forms.Tools.TabPageAdv();
             this.autoLabel38 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.txtDrug = new Syncfusion.Windows.Forms.Tools.TextBoxExt();
             this.autoLabel35 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
@@ -113,10 +117,6 @@
             this.lblMember = new System.Windows.Forms.Label();
             this.autoLabel39 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnBrowse = new System.Windows.Forms.Button();
-            this.lblPdf = new System.Windows.Forms.Label();
-            this.autoLabel40 = new Syncfusion.Windows.Forms.Tools.AutoLabel();
-            this.btnOpenPdf = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabMedical)).BeginInit();
             this.tabMedical.SuspendLayout();
             this.tabContact.SuspendLayout();
@@ -127,14 +127,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRelationship1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContact2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContact1)).BeginInit();
-            this.tabHome.SuspendLayout();
+            this.tabData.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSocial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbSocial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWeight)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbBloodType)).BeginInit();
-            this.tabPageAdv1.SuspendLayout();
+            this.tabOther.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDrug)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCronic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbCronic)).BeginInit();
@@ -174,8 +174,8 @@
             this.tabMedical.CloseButtonPressedForeColor = System.Drawing.Color.Empty;
             this.tabMedical.CloseTabOnMiddleClick = false;
             this.tabMedical.Controls.Add(this.tabContact);
-            this.tabMedical.Controls.Add(this.tabHome);
-            this.tabMedical.Controls.Add(this.tabPageAdv1);
+            this.tabMedical.Controls.Add(this.tabData);
+            this.tabMedical.Controls.Add(this.tabOther);
             this.tabMedical.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabMedical.InActiveTabForeColor = System.Drawing.Color.Empty;
             this.tabMedical.Location = new System.Drawing.Point(6, 51);
@@ -234,7 +234,7 @@
             // txtEmail
             // 
             this.txtEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtEmail.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtEmail.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtEmail.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -264,7 +264,7 @@
             // txtPhone2
             // 
             this.txtPhone2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPhone2.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtPhone2.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtPhone2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtPhone2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -294,7 +294,7 @@
             // txtPhone1
             // 
             this.txtPhone1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPhone1.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtPhone1.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtPhone1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtPhone1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -324,7 +324,7 @@
             // txtRelationship2
             // 
             this.txtRelationship2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtRelationship2.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtRelationship2.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtRelationship2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtRelationship2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRelationship2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -354,7 +354,7 @@
             // txtRelationship1
             // 
             this.txtRelationship1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtRelationship1.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtRelationship1.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtRelationship1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtRelationship1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtRelationship1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -384,7 +384,7 @@
             // txtContact2
             // 
             this.txtContact2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtContact2.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtContact2.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtContact2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtContact2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContact2.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -414,7 +414,7 @@
             // txtContact1
             // 
             this.txtContact1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtContact1.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtContact1.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtContact1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtContact1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContact1.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -426,37 +426,95 @@
             this.txtContact1.TabIndex = 114;
             this.txtContact1.ThemeName = "Office2016White";
             // 
-            // tabHome
+            // tabData
             // 
-            this.tabHome.BackColor = System.Drawing.Color.White;
-            this.tabHome.Controls.Add(this.btnOpenPdf);
-            this.tabHome.Controls.Add(this.lblPdf);
-            this.tabHome.Controls.Add(this.autoLabel40);
-            this.tabHome.Controls.Add(this.btnBrowse);
-            this.tabHome.Controls.Add(this.autoLabel30);
-            this.tabHome.Controls.Add(this.txtSocial);
-            this.tabHome.Controls.Add(this.autoLabel37);
-            this.tabHome.Controls.Add(this.chbSocial);
-            this.tabHome.Controls.Add(this.autoLabel11);
-            this.tabHome.Controls.Add(this.txtNum);
-            this.tabHome.Controls.Add(this.txtHeight);
-            this.tabHome.Controls.Add(this.autoLabel10);
-            this.tabHome.Controls.Add(this.txtWeight);
-            this.tabHome.Controls.Add(this.autoLabel9);
-            this.tabHome.Controls.Add(this.autoLabel8);
-            this.tabHome.Controls.Add(this.cmbBloodType);
-            this.tabHome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabHome.Image = null;
-            this.tabHome.ImageSize = new System.Drawing.Size(16, 16);
-            this.tabHome.Location = new System.Drawing.Point(2, 30);
-            this.tabHome.Name = "tabHome";
-            this.tabHome.ShowCloseButton = true;
-            this.tabHome.Size = new System.Drawing.Size(1021, 372);
-            this.tabHome.TabFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabHome.TabForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.tabHome.TabIndex = 2;
-            this.tabHome.Text = "Datos Médicos Generales";
-            this.tabHome.ThemesEnabled = false;
+            this.tabData.BackColor = System.Drawing.Color.White;
+            this.tabData.Controls.Add(this.btnOpenPdf);
+            this.tabData.Controls.Add(this.lblPdf);
+            this.tabData.Controls.Add(this.autoLabel40);
+            this.tabData.Controls.Add(this.btnBrowse);
+            this.tabData.Controls.Add(this.autoLabel30);
+            this.tabData.Controls.Add(this.txtSocial);
+            this.tabData.Controls.Add(this.autoLabel37);
+            this.tabData.Controls.Add(this.chbSocial);
+            this.tabData.Controls.Add(this.autoLabel11);
+            this.tabData.Controls.Add(this.txtNum);
+            this.tabData.Controls.Add(this.txtHeight);
+            this.tabData.Controls.Add(this.autoLabel10);
+            this.tabData.Controls.Add(this.txtWeight);
+            this.tabData.Controls.Add(this.autoLabel9);
+            this.tabData.Controls.Add(this.autoLabel8);
+            this.tabData.Controls.Add(this.cmbBloodType);
+            this.tabData.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabData.Image = null;
+            this.tabData.ImageSize = new System.Drawing.Size(16, 16);
+            this.tabData.Location = new System.Drawing.Point(2, 30);
+            this.tabData.Name = "tabData";
+            this.tabData.ShowCloseButton = true;
+            this.tabData.Size = new System.Drawing.Size(1021, 372);
+            this.tabData.TabFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabData.TabForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.tabData.TabIndex = 2;
+            this.tabData.Text = "Datos Médicos Generales";
+            this.tabData.ThemesEnabled = false;
+            // 
+            // btnOpenPdf
+            // 
+            this.btnOpenPdf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOpenPdf.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnOpenPdf.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnOpenPdf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnOpenPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOpenPdf.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOpenPdf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnOpenPdf.Location = new System.Drawing.Point(434, 283);
+            this.btnOpenPdf.Name = "btnOpenPdf";
+            this.btnOpenPdf.Size = new System.Drawing.Size(143, 35);
+            this.btnOpenPdf.TabIndex = 199;
+            this.btnOpenPdf.Text = "Ver archivo adjunto";
+            this.btnOpenPdf.UseVisualStyleBackColor = true;
+            this.btnOpenPdf.Click += new System.EventHandler(this.btnOpenPdf_Click);
+            // 
+            // lblPdf
+            // 
+            this.lblPdf.AutoSize = true;
+            this.lblPdf.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPdf.Location = new System.Drawing.Point(213, 247);
+            this.lblPdf.Name = "lblPdf";
+            this.lblPdf.Size = new System.Drawing.Size(66, 20);
+            this.lblPdf.TabIndex = 198;
+            this.lblPdf.Text = "Ninguno";
+            // 
+            // autoLabel40
+            // 
+            this.autoLabel40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.autoLabel40.DX = -151;
+            this.autoLabel40.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.autoLabel40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
+            this.autoLabel40.LabeledControl = this.lblPdf;
+            this.autoLabel40.Location = new System.Drawing.Point(62, 247);
+            this.autoLabel40.Name = "autoLabel40";
+            this.autoLabel40.Size = new System.Drawing.Size(147, 20);
+            this.autoLabel40.TabIndex = 197;
+            this.autoLabel40.Text = "Archivo PDF adjunto:";
+            this.autoLabel40.ThemeName = "Office2016White";
+            // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBrowse.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnBrowse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnBrowse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
+            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBrowse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
+            this.btnBrowse.Location = new System.Drawing.Point(62, 283);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(110, 35);
+            this.btnBrowse.TabIndex = 196;
+            this.btnBrowse.Text = "Examinar";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // autoLabel30
             // 
@@ -476,7 +534,7 @@
             // txtSocial
             // 
             this.txtSocial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtSocial.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtSocial.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtSocial.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtSocial.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSocial.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -527,7 +585,7 @@
             // txtNum
             // 
             this.txtNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtNum.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtNum.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtNum.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtNum.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNum.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -541,7 +599,7 @@
             // 
             // txtHeight
             // 
-            this.txtHeight.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtHeight.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtHeight.DoubleValue = 0D;
             this.txtHeight.Location = new System.Drawing.Point(205, 159);
             this.txtHeight.Name = "txtHeight";
@@ -566,7 +624,7 @@
             // 
             // txtWeight
             // 
-            this.txtWeight.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtWeight.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtWeight.DoubleValue = 0D;
             this.txtWeight.Location = new System.Drawing.Point(205, 117);
             this.txtWeight.Name = "txtWeight";
@@ -628,71 +686,71 @@
             this.cmbBloodType.Text = "A+";
             this.cmbBloodType.ThemeName = "Office2016White";
             // 
-            // tabPageAdv1
+            // tabOther
             // 
-            this.tabPageAdv1.AutoScroll = true;
-            this.tabPageAdv1.Controls.Add(this.autoLabel38);
-            this.tabPageAdv1.Controls.Add(this.txtDrug);
-            this.tabPageAdv1.Controls.Add(this.autoLabel35);
-            this.tabPageAdv1.Controls.Add(this.txtCronic);
-            this.tabPageAdv1.Controls.Add(this.autoLabel36);
-            this.tabPageAdv1.Controls.Add(this.chbCronic);
-            this.tabPageAdv1.Controls.Add(this.cmbSwim);
-            this.tabPageAdv1.Controls.Add(this.autoLabel34);
-            this.tabPageAdv1.Controls.Add(this.autoLabel33);
-            this.tabPageAdv1.Controls.Add(this.chbPregnant);
-            this.tabPageAdv1.Controls.Add(this.autoLabel32);
-            this.tabPageAdv1.Controls.Add(this.chbVaccine);
-            this.tabPageAdv1.Controls.Add(this.autoLabel31);
-            this.tabPageAdv1.Controls.Add(this.chbDrug);
-            this.tabPageAdv1.Controls.Add(this.autoLabel28);
-            this.tabPageAdv1.Controls.Add(this.txtDiet);
-            this.tabPageAdv1.Controls.Add(this.autoLabel29);
-            this.tabPageAdv1.Controls.Add(this.chbDiet);
-            this.tabPageAdv1.Controls.Add(this.autoLabel26);
-            this.tabPageAdv1.Controls.Add(this.txtHear);
-            this.tabPageAdv1.Controls.Add(this.autoLabel27);
-            this.tabPageAdv1.Controls.Add(this.chbHear);
-            this.tabPageAdv1.Controls.Add(this.autoLabel24);
-            this.tabPageAdv1.Controls.Add(this.txtTreatment);
-            this.tabPageAdv1.Controls.Add(this.autoLabel25);
-            this.tabPageAdv1.Controls.Add(this.chbTreatment);
-            this.tabPageAdv1.Controls.Add(this.autoLabel22);
-            this.tabPageAdv1.Controls.Add(this.txtProt);
-            this.tabPageAdv1.Controls.Add(this.autoLabel23);
-            this.tabPageAdv1.Controls.Add(this.chbProt);
-            this.tabPageAdv1.Controls.Add(this.autoLabel20);
-            this.tabPageAdv1.Controls.Add(this.txtAllergy);
-            this.tabPageAdv1.Controls.Add(this.autoLabel21);
-            this.tabPageAdv1.Controls.Add(this.chbAllergy);
-            this.tabPageAdv1.Controls.Add(this.autoLabel18);
-            this.tabPageAdv1.Controls.Add(this.txtTransfusion);
-            this.tabPageAdv1.Controls.Add(this.autoLabel19);
-            this.tabPageAdv1.Controls.Add(this.chbTransfusion);
-            this.tabPageAdv1.Controls.Add(this.autoLabel16);
-            this.tabPageAdv1.Controls.Add(this.txtLimit);
-            this.tabPageAdv1.Controls.Add(this.autoLabel17);
-            this.tabPageAdv1.Controls.Add(this.chbLimit);
-            this.tabPageAdv1.Controls.Add(this.autoLabel15);
-            this.tabPageAdv1.Controls.Add(this.txtOperation);
-            this.tabPageAdv1.Controls.Add(this.autoLabel14);
-            this.tabPageAdv1.Controls.Add(this.chbOperation);
-            this.tabPageAdv1.Controls.Add(this.autoLabel13);
-            this.tabPageAdv1.Controls.Add(this.chbOrtShoe);
-            this.tabPageAdv1.Controls.Add(this.autoLabel12);
-            this.tabPageAdv1.Controls.Add(this.chbFlatfoot);
-            this.tabPageAdv1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageAdv1.Image = null;
-            this.tabPageAdv1.ImageSize = new System.Drawing.Size(16, 16);
-            this.tabPageAdv1.Location = new System.Drawing.Point(2, 30);
-            this.tabPageAdv1.Name = "tabPageAdv1";
-            this.tabPageAdv1.ShowCloseButton = true;
-            this.tabPageAdv1.Size = new System.Drawing.Size(1021, 372);
-            this.tabPageAdv1.TabFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPageAdv1.TabForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
-            this.tabPageAdv1.TabIndex = 3;
-            this.tabPageAdv1.Text = "Otros";
-            this.tabPageAdv1.ThemesEnabled = true;
+            this.tabOther.AutoScroll = true;
+            this.tabOther.Controls.Add(this.autoLabel38);
+            this.tabOther.Controls.Add(this.txtDrug);
+            this.tabOther.Controls.Add(this.autoLabel35);
+            this.tabOther.Controls.Add(this.txtCronic);
+            this.tabOther.Controls.Add(this.autoLabel36);
+            this.tabOther.Controls.Add(this.chbCronic);
+            this.tabOther.Controls.Add(this.cmbSwim);
+            this.tabOther.Controls.Add(this.autoLabel34);
+            this.tabOther.Controls.Add(this.autoLabel33);
+            this.tabOther.Controls.Add(this.chbPregnant);
+            this.tabOther.Controls.Add(this.autoLabel32);
+            this.tabOther.Controls.Add(this.chbVaccine);
+            this.tabOther.Controls.Add(this.autoLabel31);
+            this.tabOther.Controls.Add(this.chbDrug);
+            this.tabOther.Controls.Add(this.autoLabel28);
+            this.tabOther.Controls.Add(this.txtDiet);
+            this.tabOther.Controls.Add(this.autoLabel29);
+            this.tabOther.Controls.Add(this.chbDiet);
+            this.tabOther.Controls.Add(this.autoLabel26);
+            this.tabOther.Controls.Add(this.txtHear);
+            this.tabOther.Controls.Add(this.autoLabel27);
+            this.tabOther.Controls.Add(this.chbHear);
+            this.tabOther.Controls.Add(this.autoLabel24);
+            this.tabOther.Controls.Add(this.txtTreatment);
+            this.tabOther.Controls.Add(this.autoLabel25);
+            this.tabOther.Controls.Add(this.chbTreatment);
+            this.tabOther.Controls.Add(this.autoLabel22);
+            this.tabOther.Controls.Add(this.txtProt);
+            this.tabOther.Controls.Add(this.autoLabel23);
+            this.tabOther.Controls.Add(this.chbProt);
+            this.tabOther.Controls.Add(this.autoLabel20);
+            this.tabOther.Controls.Add(this.txtAllergy);
+            this.tabOther.Controls.Add(this.autoLabel21);
+            this.tabOther.Controls.Add(this.chbAllergy);
+            this.tabOther.Controls.Add(this.autoLabel18);
+            this.tabOther.Controls.Add(this.txtTransfusion);
+            this.tabOther.Controls.Add(this.autoLabel19);
+            this.tabOther.Controls.Add(this.chbTransfusion);
+            this.tabOther.Controls.Add(this.autoLabel16);
+            this.tabOther.Controls.Add(this.txtLimit);
+            this.tabOther.Controls.Add(this.autoLabel17);
+            this.tabOther.Controls.Add(this.chbLimit);
+            this.tabOther.Controls.Add(this.autoLabel15);
+            this.tabOther.Controls.Add(this.txtOperation);
+            this.tabOther.Controls.Add(this.autoLabel14);
+            this.tabOther.Controls.Add(this.chbOperation);
+            this.tabOther.Controls.Add(this.autoLabel13);
+            this.tabOther.Controls.Add(this.chbOrtShoe);
+            this.tabOther.Controls.Add(this.autoLabel12);
+            this.tabOther.Controls.Add(this.chbFlatfoot);
+            this.tabOther.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabOther.Image = null;
+            this.tabOther.ImageSize = new System.Drawing.Size(16, 16);
+            this.tabOther.Location = new System.Drawing.Point(2, 30);
+            this.tabOther.Name = "tabOther";
+            this.tabOther.ShowCloseButton = true;
+            this.tabOther.Size = new System.Drawing.Size(1021, 372);
+            this.tabOther.TabFont = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabOther.TabForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(110)))), ((int)(((byte)(117)))), ((int)(((byte)(125)))));
+            this.tabOther.TabIndex = 3;
+            this.tabOther.Text = "Otros";
+            this.tabOther.ThemesEnabled = true;
             // 
             // autoLabel38
             // 
@@ -712,7 +770,7 @@
             // txtDrug
             // 
             this.txtDrug.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtDrug.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtDrug.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtDrug.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtDrug.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDrug.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -742,7 +800,7 @@
             // txtCronic
             // 
             this.txtCronic.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtCronic.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtCronic.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtCronic.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtCronic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCronic.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -889,7 +947,7 @@
             // txtDiet
             // 
             this.txtDiet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtDiet.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtDiet.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtDiet.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtDiet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDiet.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -940,7 +998,7 @@
             // txtHear
             // 
             this.txtHear.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtHear.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtHear.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtHear.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtHear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtHear.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -991,7 +1049,7 @@
             // txtTreatment
             // 
             this.txtTreatment.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtTreatment.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtTreatment.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtTreatment.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtTreatment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTreatment.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1042,7 +1100,7 @@
             // txtProt
             // 
             this.txtProt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtProt.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtProt.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtProt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtProt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtProt.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1093,7 +1151,7 @@
             // txtAllergy
             // 
             this.txtAllergy.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtAllergy.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtAllergy.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtAllergy.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtAllergy.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtAllergy.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1144,7 +1202,7 @@
             // txtTransfusion
             // 
             this.txtTransfusion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtTransfusion.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtTransfusion.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtTransfusion.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtTransfusion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTransfusion.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1195,7 +1253,7 @@
             // txtLimit
             // 
             this.txtLimit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtLimit.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtLimit.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtLimit.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtLimit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtLimit.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1246,7 +1304,7 @@
             // txtOperation
             // 
             this.txtOperation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtOperation.BeforeTouchSize = new System.Drawing.Size(220, 22);
+            this.txtOperation.BeforeTouchSize = new System.Drawing.Size(220, 23);
             this.txtOperation.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(171)))), ((int)(((byte)(171)))));
             this.txtOperation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtOperation.FocusBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
@@ -1367,64 +1425,6 @@
             this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.errorProvider.ContainerControl = this;
             // 
-            // btnBrowse
-            // 
-            this.btnBrowse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBrowse.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnBrowse.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btnBrowse.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btnBrowse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBrowse.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrowse.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnBrowse.Location = new System.Drawing.Point(62, 283);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(110, 35);
-            this.btnBrowse.TabIndex = 196;
-            this.btnBrowse.Text = "Examinar";
-            this.btnBrowse.UseVisualStyleBackColor = true;
-            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
-            // 
-            // lblPdf
-            // 
-            this.lblPdf.AutoSize = true;
-            this.lblPdf.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPdf.Location = new System.Drawing.Point(213, 247);
-            this.lblPdf.Name = "lblPdf";
-            this.lblPdf.Size = new System.Drawing.Size(66, 20);
-            this.lblPdf.TabIndex = 198;
-            this.lblPdf.Text = "Ninguno";
-            // 
-            // autoLabel40
-            // 
-            this.autoLabel40.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.autoLabel40.DX = -151;
-            this.autoLabel40.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.autoLabel40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
-            this.autoLabel40.LabeledControl = this.lblPdf;
-            this.autoLabel40.Location = new System.Drawing.Point(62, 247);
-            this.autoLabel40.Name = "autoLabel40";
-            this.autoLabel40.Size = new System.Drawing.Size(147, 20);
-            this.autoLabel40.TabIndex = 197;
-            this.autoLabel40.Text = "Archivo PDF adjunto:";
-            this.autoLabel40.ThemeName = "Office2016White";
-            // 
-            // btnOpenPdf
-            // 
-            this.btnOpenPdf.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOpenPdf.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnOpenPdf.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btnOpenPdf.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(83)))), ((int)(((byte)(251)))));
-            this.btnOpenPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOpenPdf.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenPdf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170)))));
-            this.btnOpenPdf.Location = new System.Drawing.Point(434, 283);
-            this.btnOpenPdf.Name = "btnOpenPdf";
-            this.btnOpenPdf.Size = new System.Drawing.Size(143, 35);
-            this.btnOpenPdf.TabIndex = 199;
-            this.btnOpenPdf.Text = "Ver archivo adjunto";
-            this.btnOpenPdf.UseVisualStyleBackColor = true;
-            this.btnOpenPdf.Click += new System.EventHandler(this.btnOpenPdf_Click);
-            // 
             // frmMedicalRecord
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1446,16 +1446,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtRelationship1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContact2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContact1)).EndInit();
-            this.tabHome.ResumeLayout(false);
-            this.tabHome.PerformLayout();
+            this.tabData.ResumeLayout(false);
+            this.tabData.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSocial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbSocial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtWeight)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbBloodType)).EndInit();
-            this.tabPageAdv1.ResumeLayout(false);
-            this.tabPageAdv1.PerformLayout();
+            this.tabOther.ResumeLayout(false);
+            this.tabOther.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtDrug)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCronic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chbCronic)).EndInit();
@@ -1488,11 +1488,6 @@
         }
 
         #endregion
-
-        private Syncfusion.Windows.Forms.Tools.TabControlAdv tabMedical;
-        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabContact;
-        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabHome;
-        private Syncfusion.Windows.Forms.Tools.TabPageAdv tabPageAdv1;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel1;
         private Syncfusion.Windows.Forms.Tools.TextBoxExt txtContact2;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel2;
@@ -1575,7 +1570,11 @@
         private System.Windows.Forms.ErrorProvider errorProvider;
         public System.Windows.Forms.Label lblPdf;
         private Syncfusion.Windows.Forms.Tools.AutoLabel autoLabel40;
-        private System.Windows.Forms.Button btnBrowse;
-        private System.Windows.Forms.Button btnOpenPdf;
+        public Syncfusion.Windows.Forms.Tools.TabControlAdv tabMedical;
+        public Syncfusion.Windows.Forms.Tools.TabPageAdv tabContact;
+        public Syncfusion.Windows.Forms.Tools.TabPageAdv tabData;
+        public Syncfusion.Windows.Forms.Tools.TabPageAdv tabOther;
+        public System.Windows.Forms.Button btnBrowse;
+        public System.Windows.Forms.Button btnOpenPdf;
     }
 }

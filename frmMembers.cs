@@ -71,10 +71,50 @@ namespace RegnalUDB
             switch (currentUser.Perfile.idPerfil)
             {
                 case 3:
-                   //hide panels
+                    lblInscripciones.Hide();
+                    lblFunctions.Hide();
+                    lblPosition.Hide();
+                    tabPersonal.Enabled = false;
+                    tabHome.Enabled = false;
+                    frmMedicalRecord.Instance.tabContact.Enabled = false;
+                    frmMedicalRecord.Instance.tabData.Enabled = false;
+                    frmMedicalRecord.Instance.tabOther.Enabled = false;
+                    frmMedicalRecord.Instance.btnOpenPdf.Enabled = true;
+                    frmMedicalRecord.Instance.btnBrowse.Hide();
                     break;
                 case 7:
-                    //hide panels
+                    lblInscripciones.Hide();
+                    lblFunctions.Hide();
+                    lblPosition.Hide();
+                    tabPersonal.Enabled = false;
+                    tabHome.Enabled = false;
+                    frmMedicalRecord.Instance.tabContact.Enabled = false;
+                    frmMedicalRecord.Instance.tabData.Enabled = false;
+                    frmMedicalRecord.Instance.tabOther.Enabled = false;
+                    frmMedicalRecord.Instance.btnOpenPdf.Enabled = true;
+                    frmMedicalRecord.Instance.btnBrowse.Hide();
+                    break;
+            }
+        }
+
+        private void setReadOnlySection()
+        {
+            switch (currentUser.Perfile.idPerfil)
+            {
+                case 2:
+                    rdbAssociated.Enabled = false;
+                    rdbNoAssociated.Enabled = false;
+                    cmbSection.Enabled = false;
+                    break;
+                case 4:
+                    rdbAssociated.Enabled = false;
+                    rdbNoAssociated.Enabled = false;
+                    cmbSection.Enabled = false;
+                    break;
+                case 6:
+                    rdbAssociated.Enabled = false;
+                    rdbNoAssociated.Enabled = false;
+                    cmbSection.Enabled = false;
                     break;
             }
         }
@@ -439,6 +479,11 @@ namespace RegnalUDB
 
             lblDomicileDuplicity.Text = "La dirección de este miembro ya está en el sistema (Otro miembro ya registrado vive con él/ella)";
             chbDuplicity.Checked = false;
+
+            
+            rdbAssociated.Enabled = true;
+            rdbNoAssociated.Enabled = true;
+            cmbSection.Enabled = true;
 
             frmMemberPosition.Instance.clean();
             frmMedicalRecord.Instance.cleanForm();
@@ -897,6 +942,8 @@ namespace RegnalUDB
 
                     lblDomicileDuplicity.Text = "Este miembro ha cambiado de domicilio, pero los demás miembros que comparten el domicilio no";
                     chbDuplicity.Checked = false;
+
+                    setReadOnlySection();
 
                     showMissingInfo();
 

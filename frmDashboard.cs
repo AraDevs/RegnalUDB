@@ -57,7 +57,7 @@ namespace RegnalUDB
                     btnFormTypeUsers.Hide();
                     btnFormFunctions.Hide();
                     btnFormDepartments.Hide();
-                    ShowChildForm(new frmMembers());
+                    ShowChildForm(new frmMembers(currentUser));
                     break;
                 case 3:
                     btnFormEvents.Hide();
@@ -76,7 +76,7 @@ namespace RegnalUDB
                     btnFormTypeUsers.Hide();
                     btnFormFunctions.Hide();
                     btnFormDepartments.Hide();
-                    ShowChildForm(new frmMembers());
+                    ShowChildForm(new frmMembers(currentUser));
                     break;
                 case 4:
                     btnFormSchoolarship.Hide();
@@ -93,7 +93,7 @@ namespace RegnalUDB
                     btnFormTypeUsers.Hide();
                     btnFormFunctions.Hide();
                     btnFormDepartments.Hide();
-                    ShowChildForm(new frmMembers());
+                    ShowChildForm(new frmMembers(currentUser));
                     break;
                 case 5:
                     btnFormMembers.Hide();
@@ -113,7 +113,7 @@ namespace RegnalUDB
                     btnFormTypeUsers.Hide();
                     btnFormFunctions.Hide();
                     btnFormDepartments.Hide();
-                    ShowChildForm(new frmDistricts());
+                    ShowChildForm(new frmDistricts(currentUser));
                     break;
                 case 6:
                     btnFormUsers.Hide();
@@ -132,7 +132,7 @@ namespace RegnalUDB
                     btnFormFunctions.Hide();
                     btnFormSchoolarship.Hide();
                     btnFormDepartments.Hide();
-                    ShowChildForm(new frmMembers());
+                    ShowChildForm(new frmMembers(currentUser));
                     break;
                 case 7:
                     btnFormUsers.Hide();
@@ -151,7 +151,7 @@ namespace RegnalUDB
                     btnFormFunctions.Hide();
                     btnFormSchoolarship.Hide();
                     btnFormDepartments.Hide();
-                    ShowChildForm(new frmMembers());
+                    ShowChildForm(new frmMembers(currentUser));
                     break;
             }
         }
