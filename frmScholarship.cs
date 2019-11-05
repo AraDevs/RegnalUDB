@@ -114,8 +114,8 @@ namespace RegnalUDB
             dgvScholarships.DataSource = scholarships;
             FormUtils.hideColumnsForDgv(columnsToHideForScholarship, dgvScholarships);
             FormUtils.changeTitlesForDgv(titlesforScholarship, columnsToChangeForScholarship, dgvScholarships);
-            /*dgvScholarships.AutoResizeColumns();
-            dgvScholarships.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;*/
+            dgvScholarships.AutoResizeColumns();
+            dgvScholarships.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             return;
         }
 

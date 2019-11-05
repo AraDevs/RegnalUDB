@@ -1331,8 +1331,6 @@
             // 
             // dgvMembers
             // 
-            this.dgvMembers.BackgroundColor = System.Drawing.Color.White;
-            this.dgvMembers.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMembers.Location = new System.Drawing.Point(22, 59);
             this.dgvMembers.Name = "dgvMembers";

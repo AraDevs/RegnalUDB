@@ -169,9 +169,6 @@
             // 
             // dgvReligions
             // 
-            this.dgvReligions.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvReligions.BackgroundColor = System.Drawing.Color.White;
-            this.dgvReligions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReligions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReligions.Location = new System.Drawing.Point(16, 72);
             this.dgvReligions.Name = "dgvReligions";
