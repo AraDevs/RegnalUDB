@@ -21,6 +21,7 @@ namespace RegnalUDB
         private static ProvinceController provinceController = new ProvinceController();
         private List<Distrito> districts = new List<Distrito>();
         private List<Provincia> provinces = new List<Provincia>();
+        Usuario currentUser = new Usuario();
 
         private Distrito selectedDistrict = null;
 
@@ -34,6 +35,27 @@ namespace RegnalUDB
             txtName.Text = currentDistrict.nombre;
             cmbProvincess.SelectedItem = currentDistrict.Provincia;
             chbStatus.Checked = currentDistrict.baja;
+        }
+
+        private void setReadOnly()
+        {
+            switch (currentUser.Perfile.idPerfil)
+            {
+                case 2:
+                    panel2.Enabled = false;
+                    break;
+                case 3:
+                    panel2.Enabled = false;
+                    break;
+                case 4:
+                    panel2.Enabled = false;
+                    break;
+                case 5:
+                    panel2.Enabled = false;
+                    break;
+                 
+
+            }
         }
 
         private void loadcmb()
@@ -155,9 +177,15 @@ namespace RegnalUDB
         {
             InitializeComponent();
         }
+        public frmDistricts(Usuario u)
+        {
+            InitializeComponent();
+            currentUser = u;
+        }
 
         private void frmDistricts_Load(object sender, EventArgs e)
         {
+            setReadOnly();
             loadTable();
             loadcmb();
             chbStatus.Checked = true;

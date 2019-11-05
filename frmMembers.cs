@@ -42,6 +42,8 @@ namespace RegnalUDB
         private Miembro selectedMember = null;
         private Domicilio searchedDomicile = null;
 
+        Usuario currentUser = new Usuario();
+
         private string imagePath = "D:\\Desktop\\photos";
         public static string pdfPath = "C:\\Users\\kevin\\Desktop\\records\\";
 
@@ -57,6 +59,24 @@ namespace RegnalUDB
         {
 
             InitializeComponent();
+        }
+        public frmMembers(Usuario u)
+        {
+
+            InitializeComponent();
+            currentUser = u;
+        }
+        private void setReadOnly()
+        {
+            switch (currentUser.Perfile.idPerfil)
+            {
+                case 3:
+                   //hide panels
+                    break;
+                case 7:
+                    //hide panels
+                    break;
+            }
         }
 
         private ToValidate[] getValidators()
@@ -721,6 +741,7 @@ namespace RegnalUDB
 
             lblDatosPersonales.ForeColor = System.Drawing.Color.FromArgb(127, 41, 181);
             try {
+                setReadOnly();
                 loadCmbs();
                 loadTable();
                 loadPositions();
@@ -966,7 +987,7 @@ namespace RegnalUDB
                 FormUtils.defaultErrorMessage(ex);
             }
         }
-
+        
         private void lblFolder_Click(object sender, EventArgs e)
         {
 

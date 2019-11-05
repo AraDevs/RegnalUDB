@@ -214,12 +214,12 @@ namespace RegnalUDB
 
         private void btnFormMembers_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new frmMembers());
+            ShowChildForm(new frmMembers(currentUser));
         }
 
         private void btnFormGroups_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new frmGroups());
+            ShowChildForm(new frmGroups(currentUser));
         }
 
         private void btnFormSections_Click(object sender, EventArgs e)
@@ -229,7 +229,7 @@ namespace RegnalUDB
 
         private void btnFormEvents_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new frmEvents());
+            ShowChildForm(new frmEvents(currentUser));
         }
 
         private void btnFormPositions_Click(object sender, EventArgs e)
@@ -239,7 +239,7 @@ namespace RegnalUDB
 
         private void btnFormDistrictis_Click(object sender, EventArgs e)
         {
-            ShowChildForm(new frmDistricts());
+            ShowChildForm(new frmDistricts(currentUser));
         }
 
         private void btnFormSchoolarship_Click(object sender, EventArgs e)

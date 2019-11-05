@@ -28,7 +28,7 @@ namespace RegnalUDB
 
         private static FunctionController functionController = new FunctionController();
         private List<Funcione> functions = new List<Funcione>();
-        
+        Usuario currentUser = new Usuario();
         private Evento selectedEvent = null;
 
         // data for custom DataGridView
@@ -40,6 +40,11 @@ namespace RegnalUDB
         public frmEvents()
         {
             InitializeComponent();
+        }
+        public frmEvents(Usuario u)
+        {
+            InitializeComponent();
+            currentUser = u;
         }
 
         private void fillSelectedData(Evento currentEvent)
@@ -314,11 +319,38 @@ namespace RegnalUDB
             Control[] controls = { txtName, txtPrice, txtDescription, txtNumber, txtMin, txtResp };
             return controls;
         }
-
+        private void setReadOnly()
+        {
+            switch (currentUser.Perfile.idPerfil)
+            {
+                case 4:
+                    pnlEventData.Enabled = false;
+                    lblPosition.Visible = false;
+                    lblSection.Visible = false;
+                    lblFunction.Visible = false;
+                    lblMember.Visible = false;
+                    break;
+                case 6:
+                    pnlEventData.Enabled = false;
+                    lblPosition.Visible = false;
+                    lblSection.Visible = false;
+                    lblFunction.Visible = false;
+                    lblMember.Visible = false;
+                    break;
+                case 7:
+                    pnlEventData.Enabled = false;
+                    lblPosition.Visible = false;
+                    lblSection.Visible = false;
+                    lblFunction.Visible = false;
+                    lblMember.Visible = false;
+                    break;
+            }
+        }
         private void frmEvents_Load(object sender, EventArgs e)
         {
             try
             {
+                setReadOnly();
                 loadTable();
                 loadPositions();
                 loadSections();

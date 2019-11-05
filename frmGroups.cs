@@ -22,6 +22,8 @@ namespace RegnalUDB
         private List<Grupos> filterGroups = new List<Grupos>();
 
         private Grupos selectedGroup = null;
+
+        private Usuario currentUser = new Usuario();
         
         // data for custom DataGridView
         private int[] columnsToHideForGroups = { 6, 7, 12, 13 };
@@ -68,9 +70,35 @@ namespace RegnalUDB
             chbRegistration.Checked = true;
 
         }
+        public frmGroups(Usuario u)
+        {
+            InitializeComponent();
+            currentUser = u;
+        }
+
+        private void setReadOnly()
+        {
+            switch (currentUser.Perfile.idPerfil)
+            {
+                case 2:
+                    panel2.Enabled = false;
+                    break;
+                case 3:
+                    panel2.Enabled = false;
+                    break;
+                case 5:
+                    panel2.Enabled = false;
+                    break;
+                case 7:
+                    panel2.Enabled = false;
+                    break;
+            }
+        }
 
         private void frmGroups_Load(object sender, EventArgs e)
-        { }
+        {
+            setReadOnly();
+        }
 
 
         private void dgvGroups_CellClick(object sender, DataGridViewCellEventArgs e)
