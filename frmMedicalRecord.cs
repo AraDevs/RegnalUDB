@@ -173,7 +173,7 @@ namespace RegnalUDB
                 txtEmail.Text = fm.email;
                 chbSocial.Checked = fm.ss;
                 cmbBloodType.SelectedItem = fm.sangre;
-                lblPdf.Text = fm.imagen;
+                lblPdf.Text = frmMembers.pdfPath + fm.imagen;
 
                 chbFlatfoot.Checked = fm.piePlano;
                 chbOrtShoe.Checked = fm.ortopedico;
@@ -260,7 +260,7 @@ namespace RegnalUDB
                 mujer = chbPregnant.Checked,
                 natacion = cmbSwim.SelectedIndex,
                 fecha = System.DateTime.Today,
-                imagen = pdfName
+                imagen = selectedMember.cum + ".pdf"
             };
 
             Operation<FichasMedica> operation = fmController.addRecord(tempFm);
@@ -326,11 +326,11 @@ namespace RegnalUDB
             {
                 if (fmTemp.imagen == "")
                 {
-                    fmTemp.imagen = frmMembers.pdfPath + selectedMember.cum + ".pdf";
+                    fmTemp.imagen = selectedMember.cum + ".pdf";
                 }
 
                 //Overwriting pdf file if it was changed
-                System.IO.File.Copy(lblPdf.Text, fmTemp.imagen, true);
+                System.IO.File.Copy(lblPdf.Text, frmMembers.pdfPath + selectedMember.cum + ".pdf", true);
             }
 
 
