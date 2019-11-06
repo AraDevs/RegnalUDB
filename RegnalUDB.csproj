@@ -603,6 +603,7 @@
       <DependentUpon>MainModel.edmx</DependentUpon>
       <LastGenOutput>MainModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\commercial_40px.png" />
     <None Include="Resources\close_window_purple.png" />
     <None Include="Resources\user_40px.png" />
     <None Include="Resources\id_not_verified_40px.png" />

@@ -57,6 +57,7 @@ namespace RegnalUDB
                     btnFormTypeUsers.Hide();
                     btnFormFunctions.Hide();
                     btnFormDepartments.Hide();
+                    btnFormAdvertisements.Hide();
 
                     btnFormMembers.Location = new Point(12, 144);
                     btnFormEvents.Location = new Point(12, 198);
@@ -83,6 +84,7 @@ namespace RegnalUDB
                     btnFormTypeUsers.Hide();
                     btnFormFunctions.Hide();
                     btnFormDepartments.Hide();
+                    btnFormAdvertisements.Hide();
 
                     btnFormMembers.Location = new Point(12, 144);
                     btnFormDistrictis.Location = new Point(12, 198);
@@ -112,6 +114,7 @@ namespace RegnalUDB
                     btnFormUsers.Location = new Point(12, 252);
                     btnFormDistrictis.Location = new Point(12, 306);
                     btnFormGroups.Location = new Point(12, 360);
+                    btnFormAdvertisements.Location = new Point(12, 414);
 
                     button1.Location = new Point(12, 734);
 
@@ -135,6 +138,7 @@ namespace RegnalUDB
                     btnFormTypeUsers.Hide();
                     btnFormFunctions.Hide();
                     btnFormDepartments.Hide();
+                    btnFormAdvertisements.Hide();
 
                     btnFormDistrictis.Location = new Point(12, 144);
                     btnFormGroups.Location = new Point(12, 198);
@@ -160,6 +164,7 @@ namespace RegnalUDB
                     btnFormFunctions.Hide();
                     btnFormSchoolarship.Hide();
                     btnFormDepartments.Hide();
+                    btnFormAdvertisements.Hide();
 
                     btnFormMembers.Location = new Point(12, 144);
                     btnFormEvents.Location = new Point(12, 198);
@@ -187,6 +192,7 @@ namespace RegnalUDB
                     btnFormFunctions.Hide();
                     btnFormSchoolarship.Hide();
                     btnFormDepartments.Hide();
+                    btnFormAdvertisements.Hide();
 
                     btnFormMembers.Location = new Point(12, 144);
                     btnFormEvents.Location = new Point(12, 198);
@@ -355,6 +361,11 @@ namespace RegnalUDB
         private void btnFormFunctions_Click(object sender, EventArgs e)
         {
             ShowChildForm(new frmFunctions());
+        }
+
+        private void btnFormAdvertisements_Click(object sender, EventArgs e)
+        {
+            ShowChildForm(new frmAnnouncements());
         }
     }
 }

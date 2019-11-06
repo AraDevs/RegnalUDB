@@ -37,11 +37,12 @@
             this.pcbMaximizeWindow = new System.Windows.Forms.PictureBox();
             this.pcbMinimizeWindow = new System.Windows.Forms.PictureBox();
             this.pnlMenu = new Syncfusion.Windows.Forms.Tools.GradientPanel();
+            this.btnFormAdvertisements = new System.Windows.Forms.Button();
+            this.btnFormTypeMovements = new System.Windows.Forms.Button();
             this.btnFormTypeUsers = new System.Windows.Forms.Button();
             this.btnFormBlackList = new System.Windows.Forms.Button();
             this.btnFormCivilStatus = new System.Windows.Forms.Button();
             this.btnFormBitacora = new System.Windows.Forms.Button();
-            this.btnFormTypeMovements = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btnFormFunctions = new System.Windows.Forms.Button();
             this.btnFormReligions = new System.Windows.Forms.Button();
@@ -108,7 +109,7 @@
             this.pnlMenuTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlMenuTop.Location = new System.Drawing.Point(294, 0);
             this.pnlMenuTop.Name = "pnlMenuTop";
-            this.pnlMenuTop.Size = new System.Drawing.Size(1076, 80);
+            this.pnlMenuTop.Size = new System.Drawing.Size(1100, 80);
             this.pnlMenuTop.TabIndex = 0;
             // 
             // pcbInfo
@@ -116,7 +117,7 @@
             this.pcbInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbInfo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbInfo.Image = global::RegnalUDB.Properties.Resources.info_40px;
-            this.pcbInfo.Location = new System.Drawing.Point(882, 24);
+            this.pcbInfo.Location = new System.Drawing.Point(906, 24);
             this.pcbInfo.Name = "pcbInfo";
             this.pcbInfo.Size = new System.Drawing.Size(32, 32);
             this.pcbInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -129,7 +130,7 @@
             this.pcbRestoreWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbRestoreWindow.Enabled = false;
             this.pcbRestoreWindow.Image = global::RegnalUDB.Properties.Resources.restore_window_40px;
-            this.pcbRestoreWindow.Location = new System.Drawing.Point(985, 24);
+            this.pcbRestoreWindow.Location = new System.Drawing.Point(1009, 24);
             this.pcbRestoreWindow.Name = "pcbRestoreWindow";
             this.pcbRestoreWindow.Size = new System.Drawing.Size(32, 32);
             this.pcbRestoreWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -143,7 +144,7 @@
             this.pcbCloseWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbCloseWindow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbCloseWindow.Image = global::RegnalUDB.Properties.Resources.close_window_40px;
-            this.pcbCloseWindow.Location = new System.Drawing.Point(1023, 24);
+            this.pcbCloseWindow.Location = new System.Drawing.Point(1047, 24);
             this.pcbCloseWindow.Name = "pcbCloseWindow";
             this.pcbCloseWindow.Size = new System.Drawing.Size(32, 32);
             this.pcbCloseWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -155,7 +156,7 @@
             // 
             this.pcbMaximizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbMaximizeWindow.Image = global::RegnalUDB.Properties.Resources.maximize_window_40px;
-            this.pcbMaximizeWindow.Location = new System.Drawing.Point(985, 24);
+            this.pcbMaximizeWindow.Location = new System.Drawing.Point(1009, 24);
             this.pcbMaximizeWindow.Name = "pcbMaximizeWindow";
             this.pcbMaximizeWindow.Size = new System.Drawing.Size(32, 32);
             this.pcbMaximizeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -168,7 +169,7 @@
             this.pcbMinimizeWindow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pcbMinimizeWindow.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pcbMinimizeWindow.Image = global::RegnalUDB.Properties.Resources.minimize_window_40px;
-            this.pcbMinimizeWindow.Location = new System.Drawing.Point(947, 24);
+            this.pcbMinimizeWindow.Location = new System.Drawing.Point(971, 24);
             this.pcbMinimizeWindow.Name = "pcbMinimizeWindow";
             this.pcbMinimizeWindow.Size = new System.Drawing.Size(32, 32);
             this.pcbMinimizeWindow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -181,11 +182,12 @@
             this.pnlMenu.AutoScroll = true;
             this.pnlMenu.BackgroundColor = new Syncfusion.Drawing.BrushInfo(System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(44)))), ((int)(((byte)(170))))));
             this.pnlMenu.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.pnlMenu.Controls.Add(this.btnFormAdvertisements);
+            this.pnlMenu.Controls.Add(this.btnFormTypeMovements);
             this.pnlMenu.Controls.Add(this.btnFormTypeUsers);
             this.pnlMenu.Controls.Add(this.btnFormBlackList);
             this.pnlMenu.Controls.Add(this.btnFormCivilStatus);
             this.pnlMenu.Controls.Add(this.btnFormBitacora);
-            this.pnlMenu.Controls.Add(this.btnFormTypeMovements);
             this.pnlMenu.Controls.Add(this.button1);
             this.pnlMenu.Controls.Add(this.btnFormFunctions);
             this.pnlMenu.Controls.Add(this.btnFormReligions);
@@ -210,9 +212,51 @@
             this.pnlMenu.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlMenu.Location = new System.Drawing.Point(0, 0);
             this.pnlMenu.Name = "pnlMenu";
-            this.pnlMenu.Size = new System.Drawing.Size(294, 749);
+            this.pnlMenu.Size = new System.Drawing.Size(294, 800);
             this.pnlMenu.TabIndex = 2;
             this.pnlMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlMenu_Paint);
+            // 
+            // btnFormAdvertisements
+            // 
+            this.btnFormAdvertisements.BackColor = System.Drawing.Color.Transparent;
+            this.btnFormAdvertisements.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFormAdvertisements.FlatAppearance.BorderSize = 0;
+            this.btnFormAdvertisements.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormAdvertisements.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormAdvertisements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFormAdvertisements.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormAdvertisements.ForeColor = System.Drawing.Color.LightGray;
+            this.btnFormAdvertisements.Image = global::RegnalUDB.Properties.Resources.commercial_40px;
+            this.btnFormAdvertisements.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormAdvertisements.Location = new System.Drawing.Point(12, 1055);
+            this.btnFormAdvertisements.Name = "btnFormAdvertisements";
+            this.btnFormAdvertisements.Size = new System.Drawing.Size(265, 48);
+            this.btnFormAdvertisements.TabIndex = 29;
+            this.btnFormAdvertisements.Text = "              Anuncios";
+            this.btnFormAdvertisements.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormAdvertisements.UseVisualStyleBackColor = false;
+            this.btnFormAdvertisements.Click += new System.EventHandler(this.btnFormAdvertisements_Click);
+            // 
+            // btnFormTypeMovements
+            // 
+            this.btnFormTypeMovements.BackColor = System.Drawing.Color.Transparent;
+            this.btnFormTypeMovements.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFormTypeMovements.FlatAppearance.BorderSize = 0;
+            this.btnFormTypeMovements.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormTypeMovements.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
+            this.btnFormTypeMovements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFormTypeMovements.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFormTypeMovements.ForeColor = System.Drawing.Color.LightGray;
+            this.btnFormTypeMovements.Image = global::RegnalUDB.Properties.Resources.resize_four_directions_40px;
+            this.btnFormTypeMovements.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormTypeMovements.Location = new System.Drawing.Point(12, 1119);
+            this.btnFormTypeMovements.Name = "btnFormTypeMovements";
+            this.btnFormTypeMovements.Size = new System.Drawing.Size(265, 48);
+            this.btnFormTypeMovements.TabIndex = 28;
+            this.btnFormTypeMovements.Text = "              Tipo de Movimientos";
+            this.btnFormTypeMovements.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFormTypeMovements.UseVisualStyleBackColor = false;
+            this.btnFormTypeMovements.Visible = false;
             // 
             // btnFormTypeUsers
             // 
@@ -247,7 +291,7 @@
             this.btnFormBlackList.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormBlackList.Image = global::RegnalUDB.Properties.Resources.id_not_verified_40px;
             this.btnFormBlackList.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormBlackList.Location = new System.Drawing.Point(9, 1093);
+            this.btnFormBlackList.Location = new System.Drawing.Point(12, 1001);
             this.btnFormBlackList.Name = "btnFormBlackList";
             this.btnFormBlackList.Size = new System.Drawing.Size(265, 48);
             this.btnFormBlackList.TabIndex = 26;
@@ -268,7 +312,7 @@
             this.btnFormCivilStatus.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormCivilStatus.Image = global::RegnalUDB.Properties.Resources.couple_man_woman_40px;
             this.btnFormCivilStatus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormCivilStatus.Location = new System.Drawing.Point(12, 1046);
+            this.btnFormCivilStatus.Location = new System.Drawing.Point(12, 947);
             this.btnFormCivilStatus.Name = "btnFormCivilStatus";
             this.btnFormCivilStatus.Size = new System.Drawing.Size(265, 48);
             this.btnFormCivilStatus.TabIndex = 25;
@@ -289,7 +333,7 @@
             this.btnFormBitacora.ForeColor = System.Drawing.Color.LightGray;
             this.btnFormBitacora.Image = global::RegnalUDB.Properties.Resources.bill_40px;
             this.btnFormBitacora.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormBitacora.Location = new System.Drawing.Point(12, 995);
+            this.btnFormBitacora.Location = new System.Drawing.Point(12, 1119);
             this.btnFormBitacora.Name = "btnFormBitacora";
             this.btnFormBitacora.Size = new System.Drawing.Size(265, 48);
             this.btnFormBitacora.TabIndex = 24;
@@ -297,28 +341,6 @@
             this.btnFormBitacora.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFormBitacora.UseVisualStyleBackColor = false;
             this.btnFormBitacora.Visible = false;
-            // 
-            // btnFormTypeMovements
-            // 
-            this.btnFormTypeMovements.BackColor = System.Drawing.Color.Transparent;
-            this.btnFormTypeMovements.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFormTypeMovements.FlatAppearance.BorderSize = 0;
-            this.btnFormTypeMovements.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
-            this.btnFormTypeMovements.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(41)))), ((int)(((byte)(187)))));
-            this.btnFormTypeMovements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFormTypeMovements.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFormTypeMovements.ForeColor = System.Drawing.Color.LightGray;
-            this.btnFormTypeMovements.Image = global::RegnalUDB.Properties.Resources.resize_four_directions_40px;
-            this.btnFormTypeMovements.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormTypeMovements.Location = new System.Drawing.Point(12, 944);
-            this.btnFormTypeMovements.Name = "btnFormTypeMovements";
-            this.btnFormTypeMovements.Size = new System.Drawing.Size(265, 48);
-            this.btnFormTypeMovements.TabIndex = 23;
-            this.btnFormTypeMovements.Text = "              Tipo de Movimientos";
-            this.btnFormTypeMovements.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFormTypeMovements.UseVisualStyleBackColor = false;
-            this.btnFormTypeMovements.Visible = false;
-            this.btnFormTypeMovements.Click += new System.EventHandler(this.btnFormTypeMovements_Click);
             // 
             // button1
             // 
@@ -332,7 +354,7 @@
             this.button1.ForeColor = System.Drawing.Color.LightGray;
             this.button1.Image = global::RegnalUDB.Properties.Resources.logout_rounded_left_40px;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(12, 1169);
+            this.button1.Location = new System.Drawing.Point(12, 1163);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(265, 48);
             this.button1.TabIndex = 22;
@@ -669,14 +691,14 @@
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContent.Location = new System.Drawing.Point(294, 80);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Size = new System.Drawing.Size(1076, 669);
+            this.pnlContent.Size = new System.Drawing.Size(1100, 720);
             this.pnlContent.TabIndex = 3;
             // 
             // frmDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1394, 800);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlMenuTop);
             this.Controls.Add(this.pnlMenu);
@@ -730,10 +752,11 @@
         private System.Windows.Forms.Button btnFormFunctions;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnFormBitacora;
-        private System.Windows.Forms.Button btnFormTypeMovements;
         private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.Button btnFormCivilStatus;
         private System.Windows.Forms.Button btnFormBlackList;
         private System.Windows.Forms.Button btnFormTypeUsers;
+        private System.Windows.Forms.Button btnFormTypeMovements;
+        private System.Windows.Forms.Button btnFormAdvertisements;
     }
 }

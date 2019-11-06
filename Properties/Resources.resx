@@ -136,11 +136,11 @@
   <data name="id_not_verified_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\id_not_verified_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="map_pin_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\map_pin_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="close_window_black_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\close_window_black_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="layers_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\layers_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="restore-window-40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\restore-window-40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -165,6 +165,9 @@
   </data>
   <data name="search_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="layers_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\layers_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="signpost_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\signpost_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +196,8 @@
   <data name="icono" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="map_pin_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\map_pin_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="close_window_purple" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\close_window_purple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="school_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\school_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -223,7 +226,7 @@
   <data name="user_group_man_woman_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_group_man_woman_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="close_window_purple" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\close_window_purple.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="commercial_40px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\commercial_40px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
