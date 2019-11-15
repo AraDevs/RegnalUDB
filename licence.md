@@ -1,0 +1,2 @@
+# Licence of use:
+The following code is provided "as is" and can be used by anyone who has access to it however it cannot be sold or generate any kind of profit by anyone who is not contempled in the contributors list of the repository before november 1st of 2019. 

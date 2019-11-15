@@ -88,6 +88,27 @@ namespace RegnalUDB
             }
         }
 
+        public void loadCmb()
+        {
+            try
+            {
+                Operation<Funcione> getFunctionsOperation = functionController.getActiveRecords();
+                if (getFunctionsOperation.State)
+                {
+                    functions = getFunctionsOperation.Data;
+                    cmbFunction.DataSource = functions;
+                }
+                else
+                {
+                    MessageBox.Show("Error al cargar la lista de funciones. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                FormUtils.defaultErrorMessage(ex);
+            }
+        }
+
         private void saveData()
         {
             MiembroFuncion tempMf = new MiembroFuncion
@@ -136,22 +157,7 @@ namespace RegnalUDB
 
         private void frmMemberFunction_Load(object sender, EventArgs e)
         {
-            try { 
-                Operation<Funcione> getFunctionsOperation = functionController.getActiveRecords();
-                if (getFunctionsOperation.State)
-                {
-                    functions = getFunctionsOperation.Data;
-                    cmbFunction.DataSource = functions;
-                }
-                else
-                {
-                    MessageBox.Show("Error al cargar la lista de funciones. Por favor reinicie el módulo.", "Error al obtener datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            catch (Exception ex)
-            {
-                FormUtils.defaultErrorMessage(ex);
-            }
+            loadCmb();
         }
 
         private void btnNewClean_Click(object sender, EventArgs e)

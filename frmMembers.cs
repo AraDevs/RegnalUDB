@@ -1126,6 +1126,8 @@ namespace RegnalUDB
                     frmMemberFunction.Instance.BringToFront();
                 }
 
+                frmMemberFunction.Instance.loadCmb();
+
                 label1.Focus();
             }
             catch (Exception ex)
